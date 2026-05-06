@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Source of truth for all open tasks across the Pinyo Empire.**
-**Last Updated:** 2026-05-06 | Session 27 (end of session)
+**Last Updated:** 2026-05-06 | Session 28
 **Rule:** Items are ONLY marked ✅ when personally confirmed completed in session. Never assumed.
 
 ---
@@ -17,7 +17,7 @@
 
 | # | Item | Status | Owner | Notes |
 |---|------|--------|-------|-------|
-| I-01 | Cowork/Claude second Discord bot | ❌ Open | Session 28 | Create new bot in Discord Dev Portal — so Claude messages are distinct from Artie's |
+| I-01 | Cowork/Claude second Discord bot | ✅ Done | S28 | Create new bot in Discord Dev Portal — so Claude messages are distinct from Artie's |
 | I-02 | Drive folder reorganization | ❌ Open | Session 28 | Soul/Artie/, Soul/SHARED/, Soul/Claude/ — never executed despite being planned S23-S26 |
 | I-04 | Artie HTML dashboard generator script | ❌ Open | Future | generate_dashboard.py on Artie — reads EMPIRE_STATUS, writes index.html |
 | I-05 | Drive flag watcher cron (15-min) | ❌ Open | Future | Checks REGEN_DASHBOARD.flag, regenerates if found |
@@ -61,6 +61,7 @@
 
 | Item | Completed | Session |
 |------|-----------|---------|
+| Cowork Discord bot created + live in #general | ✅ | S28 |
 | ops.radrooster.co migrated to Cloudflare Pages (auto-deploys from GitHub) | ✅ | S27 |
 | Dashboard open items moved to top of layout | ✅ | S27 |
 | MASTER_OPEN_ITEMS.md created on GitHub (this file) | ✅ | S27 |
