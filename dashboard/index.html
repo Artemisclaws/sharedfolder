@@ -22,54 +22,66 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; }
 
-  /* HEADER */
   .header { padding: 20px 16px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
   .header h1 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
   .header h1 span { color: var(--purple); }
   .updated { font-size: 11px; color: var(--muted); }
 
-  /* GRID */
   .grid { display: grid; gap: 12px; padding: 14px; }
   .grid-2 { grid-template-columns: 1fr 1fr; }
-  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
-  @media (max-width: 640px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
 
-  /* SECTION LABEL */
   .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin: 16px 16px 4px; }
 
-  /* CARD */
   .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
-  .card-title { font-size: 13px; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-  .card-title .emoji { font-size: 16px; }
+  .card-title { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
 
-  /* STATUS BADGE */
-  .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; padding: 2px 8px; border-radius: 20px; }
+  .badge { display: inline-flex; align-items: center; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; padding: 2px 8px; border-radius: 20px; }
   .badge-green { background: rgba(76,175,125,0.15); color: var(--green); }
   .badge-yellow { background: rgba(245,166,35,0.15); color: var(--yellow); }
   .badge-red { background: rgba(224,85,85,0.15); color: var(--red); }
   .badge-blue { background: rgba(91,141,239,0.15); color: var(--blue); }
   .badge-muted { background: rgba(124,131,168,0.12); color: var(--muted); }
 
-  /* BUSINESS CARD */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 4px; }
+  @media (max-width: 480px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--card2); border-radius: 8px; padding: 10px; text-align: center; }
+  .stat .n { font-size: 22px; font-weight: 800; }
+  .stat .l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+
+  /* OPEN ITEMS */
+  .item-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
+  .item-row:last-child { border-bottom: none; }
+  .item-id { font-size: 10px; color: var(--muted); font-family: monospace; min-width: 36px; padding-top: 1px; }
+  .item-text { flex: 1; }
+  .item-tag { font-size: 10px; white-space: nowrap; padding-top: 1px; }
+  .tag-s28 { color: var(--red); }
+  .tag-urgent { color: var(--yellow); }
+  .tag-chris { color: var(--blue); }
+  .tag-future { color: var(--muted); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .dot-red { background: var(--red); }
+  .dot-yellow { background: var(--yellow); }
+  .dot-blue { background: var(--blue); }
+  .dot-green { background: var(--green); }
+  .dot-muted { background: var(--muted); }
+
+  /* BUSINESS */
   .biz-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 8px; }
   .biz-name { font-weight: 600; font-size: 13px; }
   .biz-detail { font-size: 12px; color: var(--muted); margin-top: 3px; }
-  .biz-metric { text-align: right; white-space: nowrap; }
   .biz-metric .val { font-size: 15px; font-weight: 700; color: var(--yellow); }
-  .biz-metric .target { font-size: 10px; color: var(--muted); }
+  .biz-metric .target { font-size: 10px; color: var(--muted); text-align: right; }
   .divider { height: 1px; background: var(--border); margin: 10px 0; }
-
-  /* BLOCKER ROW */
-  .blocker { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 12px; border-bottom: 1px solid var(--border); }
+  .blocker { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 12px; border-bottom: 1px solid var(--border); }
   .blocker:last-child { border-bottom: none; }
-  .blocker .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-  .dot-red { background: var(--red); }
-  .dot-yellow { background: var(--yellow); }
-  .dot-green { background: var(--green); }
-  .dot-blue { background: var(--blue); }
   .blocker-owner { font-size: 10px; color: var(--muted); margin-left: auto; white-space: nowrap; }
+  .progress-wrap { margin-top: 6px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .progress-bar { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--yellow); border-radius: 4px; }
 
-  /* TEAM CARD */
+  /* TEAM */
   .team-member { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
   .team-member:last-child { border-bottom: none; }
   .avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
@@ -80,32 +92,7 @@
   .team-name { font-weight: 600; font-size: 13px; }
   .team-status { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
-  /* OPEN ITEMS */
-  .item-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); }
-  .item-row:last-child { border-bottom: none; }
-  .item-id { font-size: 10px; color: var(--muted); font-family: monospace; min-width: 36px; margin-top: 1px; }
-  .item-text { flex: 1; font-size: 12px; }
-  .item-tag { font-size: 10px; color: var(--muted); white-space: nowrap; margin-top: 1px; }
-
-  /* STATS ROW */
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
-  .stat { background: var(--card2); border-radius: 8px; padding: 10px; text-align: center; }
-  .stat .n { font-size: 22px; font-weight: 800; }
-  .stat .l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
-  .stat .n-green { color: var(--green); }
-  .stat .n-yellow { color: var(--yellow); }
-  .stat .n-red { color: var(--red); }
-
-  /* FOOTER */
   .footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); margin-top: 8px; }
-
-  /* PROGRESS BAR */
-  .progress-wrap { margin-top: 6px; }
-  .progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
-  .progress-bar { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; }
-  .progress-fill { height: 100%; border-radius: 4px; }
-  .fill-yellow { background: var(--yellow); }
-  .fill-green { background: var(--green); }
 </style>
 </head>
 <body>
@@ -115,274 +102,152 @@
   <div class="updated">Updated: May 6, 2026 · Session 27</div>
 </div>
 
-<!-- SNAPSHOT STATS -->
+<!-- STATS -->
 <div style="padding: 14px 14px 0;">
   <div class="stats">
-    <div class="stat"><div class="n n-green">2</div><div class="l">Active T1</div></div>
-    <div class="stat"><div class="n n-yellow">2</div><div class="l">On Hold</div></div>
-    <div class="stat"><div class="n n-red">16</div><div class="l">Open Items</div></div>
+    <div class="stat"><div class="n" style="color:var(--green);">2</div><div class="l">Active T1</div></div>
+    <div class="stat"><div class="n" style="color:var(--yellow);">2</div><div class="l">On Hold</div></div>
+    <div class="stat"><div class="n" style="color:var(--red);">10</div><div class="l">Infra Items</div></div>
+    <div class="stat"><div class="n" style="color:var(--yellow);">8</div><div class="l">Ops Items</div></div>
   </div>
 </div>
 
-<!-- BUSINESSES -->
+<!-- ═══ OPEN ITEMS TOP ═══ -->
+<div class="section-label">🔴 Open Items — Infrastructure</div>
+<div class="grid">
+  <div class="card">
+    <div class="item-row"><div class="dot dot-red"></div><div class="item-id">I-01</div><div class="item-text">Build Cowork/Claude second Discord bot — so Claude messages are distinct from Artie</div><div class="item-tag tag-s28">S28 #1</div></div>
+    <div class="item-row"><div class="dot dot-red"></div><div class="item-id">I-02</div><div class="item-text">Drive folder reorganization — Soul/Artie/, Soul/SHARED/, Soul/Claude/</div><div class="item-tag tag-s28">S28 #2</div></div>
+    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-06</div><div class="item-text">Daily digest cron for #general — decide time with Chris, then build</div><div class="item-tag tag-s28">S28</div></div>
+    <div class="item-row"><div class="dot dot-red"></div><div class="item-id">I-07</div><div class="item-text">9 cron job backends — all disabled crons need backends built</div><div class="item-tag tag-future">Dedicated session</div></div>
+    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-08</div><div class="item-text">Telegram → Discord full migration — cron redirect done, backends pending</div><div class="item-tag tag-future">Future</div></div>
+    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-09</div><div class="item-text">Live market data for morning briefing — Section 1 currently skipped</div><div class="item-tag tag-future">Future</div></div>
+    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-11</div><div class="item-text">Verify Cloudflare Tunnel on Artie machine can be decommissioned</div><div class="item-tag tag-s28">S28</div></div>
+    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-12</div><div class="item-text">Telegram thread routing test — SOP 11 written, Finance thread unconfirmed</div><div class="item-tag tag-urgent">⚠️ Artie</div></div>
+    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">I-14</div><div class="item-text">Delete old EMPIRE_STATUS Google Doc (Drive ID: 1AMnMkAzD8xoYsGHwDRRl7-VRL2OADb6irVsnZdFVpoQ)</div><div class="item-tag tag-chris">Chris</div></div>
+    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">I-15</div><div class="item-text">Delete 4 old files on Mac/Aura Thai — must do in Finder (shell read-only)</div><div class="item-tag tag-chris">Chris</div></div>
+  </div>
+</div>
+
+<div class="section-label">🟡 Open Items — Operations & Business</div>
+<div class="grid">
+  <div class="card">
+    <div class="item-row"><div class="dot dot-red"></div><div class="item-id">O-01</div><div class="item-text">Playwright downloader — DD/UE auth wall bypass for pending_downloads.json</div><div class="item-tag tag-future">Dedicated</div></div>
+    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">O-02</div><div class="item-text">Daily financial tracking SOP for Artie — AI Ventures stream tracking</div><div class="item-tag tag-future">Future</div></div>
+    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">O-03</div><div class="item-text">Aura Thai: Lavu integration — blocked on Chris</div><div class="item-tag tag-chris">❌ Chris</div></div>
+    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">O-04</div><div class="item-text">Aura Thai: Shift Close integration — blocked on Chris</div><div class="item-tag tag-chris">❌ Chris</div></div>
+    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">O-05</div><div class="item-text">Aura Thai: Grubhub markup — live but not confirmed working</div><div class="item-tag tag-urgent">⚠️ Chris</div></div>
+    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">B-01</div><div class="item-text">Pinyo Farms market validation research — Phase 1 greenlit, not started</div><div class="item-tag tag-chris">Claude+Chris</div></div>
+    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">B-02</div><div class="item-text">Roam master content plan — no Artie tasks until complete</div><div class="item-tag tag-chris">Claude+Chris</div></div>
+    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">B-03</div><div class="item-text">Aura Thai Google Ads launch — plan built (v2), execution not started</div><div class="item-tag tag-chris">Chris</div></div>
+  </div>
+</div>
+
+<!-- ═══ BUSINESSES ═══ -->
 <div class="section-label">Businesses</div>
 <div class="grid">
-
-  <!-- Aura Thai -->
   <div class="card">
     <div class="biz-row">
-      <div>
-        <div class="biz-name"><span class="emoji">🍜</span> Aura Thai</div>
-        <div style="margin-top:4px;"><span class="badge badge-green">T1 Active</span></div>
-      </div>
-      <div class="biz-metric">
-        <div class="val">$2,765</div>
-        <div class="target">of $5K/day target</div>
-      </div>
+      <div><div class="biz-name">🍜 Aura Thai</div><div style="margin-top:4px;"><span class="badge badge-green">T1 Active</span></div></div>
+      <div class="biz-metric"><div class="val">$2,765</div><div class="target">of $5K/day target</div></div>
     </div>
     <div class="progress-wrap">
-      <div class="progress-label"><span>Daily Revenue</span><span>55%</span></div>
-      <div class="progress-bar"><div class="progress-fill fill-yellow" style="width:55%"></div></div>
+      <div class="progress-label"><span>Daily revenue</span><span>55%</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:55%"></div></div>
     </div>
     <div class="divider"></div>
     <div class="blocker"><div class="dot dot-green"></div>DD + UE markup live<div class="blocker-owner">✅</div></div>
     <div class="blocker"><div class="dot dot-yellow"></div>Grubhub markup<div class="blocker-owner">⚠️ unconfirmed</div></div>
-    <div class="blocker"><div class="dot dot-red"></div>Lavu integration<div class="blocker-owner">❌ Chris</div></div>
-    <div class="blocker"><div class="dot dot-red"></div>Shift Close<div class="blocker-owner">❌ Chris</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>Google Ads launch<div class="blocker-owner">⚠️ Plan ready</div></div>
+    <div class="blocker"><div class="dot dot-red"></div>Lavu · Shift Close<div class="blocker-owner">❌ blocked on Chris</div></div>
+    <div class="blocker"><div class="dot dot-yellow"></div>Google Ads<div class="blocker-owner">⚠️ plan ready, not launched</div></div>
   </div>
-
-  <!-- FB Arbitrage -->
   <div class="card">
-    <div class="biz-row">
-      <div>
-        <div class="biz-name"><span class="emoji">📦</span> FB Arbitrage</div>
-        <div style="margin-top:4px;"><span class="badge badge-green">T1 Active</span></div>
-      </div>
-    </div>
+    <div class="biz-row"><div><div class="biz-name">📦 FB Arbitrage</div><div style="margin-top:4px;"><span class="badge badge-green">T1 Active</span></div></div></div>
     <div class="biz-detail" style="margin-top:6px;">Vine backlog clearing daily. Artie drafting reviews + listings.</div>
     <div class="divider"></div>
     <div class="blocker"><div class="dot dot-green"></div>Vine pipeline running<div class="blocker-owner">✅ Artie</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>Daily financial SOP<div class="blocker-owner">❌ Not built</div></div>
+    <div class="blocker"><div class="dot dot-yellow"></div>Daily financial SOP<div class="blocker-owner">❌ not built</div></div>
   </div>
-
-  <!-- AI Ventures -->
   <div class="card">
     <div class="biz-row">
-      <div>
-        <div class="biz-name"><span class="emoji">🤖</span> AI Ventures</div>
-        <div style="margin-top:4px;"><span class="badge badge-blue">T2 Active</span></div>
-      </div>
-      <div class="biz-metric">
-        <div class="val" style="font-size:13px;">$3–4K</div>
-        <div class="target">monthly target</div>
-      </div>
+      <div><div class="biz-name">🤖 AI Ventures</div><div style="margin-top:4px;"><span class="badge badge-blue">T2 Active</span></div></div>
+      <div class="biz-metric"><div class="val" style="font-size:13px;">$3–4K</div><div class="target">monthly target</div></div>
     </div>
     <div class="divider"></div>
     <div class="blocker"><div class="dot dot-green"></div>Stream 1: Vine arbitrage<div class="blocker-owner">Running</div></div>
     <div class="blocker"><div class="dot dot-yellow"></div>Stream 2: Restaurant subs<div class="blocker-owner">Defined</div></div>
-    <div class="blocker"><div class="dot dot-red"></div>Financial tracking SOP<div class="blocker-owner">❌ Not built</div></div>
+    <div class="blocker"><div class="dot dot-red"></div>Financial tracking SOP<div class="blocker-owner">❌ not built</div></div>
   </div>
-
-  <!-- Pinyo Farms -->
   <div class="card">
-    <div class="biz-row">
-      <div>
-        <div class="biz-name"><span class="emoji">🌱</span> Pinyo Farms</div>
-        <div style="margin-top:4px;"><span class="badge badge-muted">On Hold</span></div>
-      </div>
-    </div>
-    <div class="biz-detail" style="margin-top:6px;">Phase 1 greenlit. Pending market validation research — Claude + Chris session needed.</div>
+    <div class="biz-row"><div><div class="biz-name">🌱 Pinyo Farms</div><div style="margin-top:4px;"><span class="badge badge-muted">On Hold</span></div></div></div>
+    <div class="biz-detail" style="margin-top:6px;">Phase 1 greenlit. Pending market validation — Claude + Chris session needed.</div>
   </div>
-
-  <!-- Roam -->
   <div class="card">
-    <div class="biz-row">
-      <div>
-        <div class="biz-name"><span class="emoji">✈️</span> Roam with Chris</div>
-        <div style="margin-top:4px;"><span class="badge badge-muted">On Hold</span></div>
-      </div>
-    </div>
+    <div class="biz-row"><div><div class="biz-name">✈️ Roam with Chris</div><div style="margin-top:4px;"><span class="badge badge-muted">On Hold</span></div></div></div>
     <div class="biz-detail" style="margin-top:6px;">Master content plan required before any Artie tasks. Claude + Chris session needed.</div>
   </div>
-
 </div>
 
-<!-- TEAM STATUS -->
+<!-- ═══ TEAM ═══ -->
 <div class="section-label">Team</div>
 <div class="grid">
   <div class="card">
     <div class="team-member">
       <div class="avatar av-purple">🧠</div>
-      <div class="team-info">
-        <div class="team-name">Claude (Cowork)</div>
-        <div class="team-status">Discord API wired · Handoffs consolidated · Dashboard rebuilt</div>
-      </div>
+      <div class="team-info"><div class="team-name">Claude (Cowork)</div><div class="team-status">Discord API wired · Dashboard on Cloudflare Pages · Handoffs consolidated</div></div>
       <span class="badge badge-green">Active</span>
     </div>
     <div class="team-member">
       <div class="avatar av-blue">🤖</div>
-      <div class="team-info">
-        <div class="team-name">Artie</div>
-        <div class="team-status">Morning briefing → Discord · 9 crons disabled · Financial pipeline running</div>
-      </div>
+      <div class="team-info"><div class="team-name">Artie</div><div class="team-status">Morning briefing → Discord · 9 crons disabled · Financial pipeline running</div></div>
       <span class="badge badge-green">Active</span>
     </div>
     <div class="team-member">
       <div class="avatar av-green">👤</div>
-      <div class="team-info">
-        <div class="team-name">Chris</div>
-        <div class="team-status">Decisions needed: Lavu · Shift Close · Google Ads launch</div>
-      </div>
+      <div class="team-info"><div class="team-name">Chris</div><div class="team-status">Decisions needed: Lavu · Shift Close · Grubhub · Google Ads</div></div>
       <span class="badge badge-yellow">Action needed</span>
     </div>
   </div>
 </div>
 
-<!-- OPEN ITEMS -->
-<div class="section-label">Open Items — Infrastructure</div>
-<div class="grid">
-  <div class="card">
-    <div class="item-row">
-      <div class="item-id">I-01</div>
-      <div class="item-text">Build Cowork/Claude second Discord bot — so Claude messages are distinct from Artie</div>
-      <div class="item-tag">S28</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">I-02</div>
-      <div class="item-text">Drive folder reorganization — Soul/Artie/, Soul/SHARED/, Soul/Claude/</div>
-      <div class="item-tag">S28</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">I-06</div>
-      <div class="item-text">Daily digest cron for #general — decide time with Chris, then build</div>
-      <div class="item-tag">S28</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">I-07</div>
-      <div class="item-text">9 cron job backends — all disabled crons need backends built (dedicated session)</div>
-      <div class="item-tag">Future</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">I-08</div>
-      <div class="item-text">Telegram → Discord full migration — cron redirect done, backends + switchover pending</div>
-      <div class="item-tag">Future</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">I-09</div>
-      <div class="item-text">Live market data for morning briefing — Section 1 currently skipped</div>
-      <div class="item-tag">Future</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">I-11</div>
-      <div class="item-text">ops.radrooster.co — verify tunnel + server still running on Artie machine</div>
-      <div class="item-tag">⚠️ Tonight</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">I-12</div>
-      <div class="item-text">Telegram thread routing test — SOP 11 written, Finance thread landing unconfirmed</div>
-      <div class="item-tag">⚠️ Artie</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">I-14</div>
-      <div class="item-text">Delete old EMPIRE_STATUS Google Doc (Drive ID: 1AMnMkAzD8xoYsGHwDRRl7-VRL2OADb6irVsnZdFVpoQ)</div>
-      <div class="item-tag">Chris</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">I-15</div>
-      <div class="item-text">Delete 4 old files on Mac/Aura Thai folder (Finder — shell is read-only)</div>
-      <div class="item-tag">Chris</div>
-    </div>
-  </div>
-</div>
-
-<div class="section-label">Open Items — Operations & Business</div>
-<div class="grid">
-  <div class="card">
-    <div class="item-row">
-      <div class="item-id">O-01</div>
-      <div class="item-text">Playwright downloader — DD/UE auth wall bypass for pending_downloads.json</div>
-      <div class="item-tag">Dedicated</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">O-02</div>
-      <div class="item-text">Daily financial tracking SOP for Artie — AI Ventures stream tracking</div>
-      <div class="item-tag">Future</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">O-03</div>
-      <div class="item-text">Aura Thai: Lavu integration — blocked on Chris</div>
-      <div class="item-tag">❌ Chris</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">O-04</div>
-      <div class="item-text">Aura Thai: Shift Close integration — blocked on Chris</div>
-      <div class="item-tag">❌ Chris</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">O-05</div>
-      <div class="item-text">Aura Thai: Grubhub markup — live but not confirmed working</div>
-      <div class="item-tag">⚠️ Chris</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">B-01</div>
-      <div class="item-text">Pinyo Farms market validation research — Phase 1 greenlit, research not started</div>
-      <div class="item-tag">Claude+Chris</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">B-02</div>
-      <div class="item-text">Roam master content plan — no Artie tasks until complete</div>
-      <div class="item-tag">Claude+Chris</div>
-    </div>
-    <div class="item-row">
-      <div class="item-id">B-03</div>
-      <div class="item-text">Aura Thai Google Ads launch — plan built (v2), execution not started</div>
-      <div class="item-tag">Chris</div>
-    </div>
-  </div>
-</div>
-
-<!-- CONFIRMED DONE -->
+<!-- ═══ CONFIRMED DONE ═══ -->
 <div class="section-label">Confirmed Done ✅</div>
 <div class="grid">
   <div class="card">
-    <div class="blocker"><div class="dot dot-green"></div>GitHub repo live (github.com/Artemisclaws/sharedfolder)<div class="blocker-owner">S26</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>Discord fully wired — all 8 channels<div class="blocker-owner">S26</div></div>
+    <div class="blocker"><div class="dot dot-green"></div>ops.radrooster.co → Cloudflare Pages (no more tunnel dependency)<div class="blocker-owner">S27 ✅</div></div>
+    <div class="blocker"><div class="dot dot-green"></div>GitHub repo live (github.com/Artemisclaws/sharedfolder)<div class="blocker-owner">S26 ✅</div></div>
+    <div class="blocker"><div class="dot dot-green"></div>Discord fully wired — all 8 channels<div class="blocker-owner">S26 ✅</div></div>
     <div class="blocker"><div class="dot dot-green"></div>Morning briefing → Discord #general<div class="blocker-owner">S27 ✅</div></div>
     <div class="blocker"><div class="dot dot-green"></div>9 cron jobs disabled<div class="blocker-owner">S27 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>Discord API accessible from Cowork<div class="blocker-owner">S27 ✅</div></div>
     <div class="blocker"><div class="dot dot-green"></div>MASTER_OPEN_ITEMS.md + SESSION_HISTORY.md on GitHub<div class="blocker-owner">S27 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>14 duplicate files resolved<div class="blocker-owner">S24</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>artie_report_sync.py v2 — 13-parser 3PD email pipeline<div class="blocker-owner">S20</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>OpenClaw upgraded 2026.4.12 → 2026.4.21<div class="blocker-owner">S16</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>Cloudflare Tunnel + ops.radrooster.co deployed<div class="blocker-owner">S22</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>EMPIRE_STATUS.md on GitHub (source of truth)<div class="blocker-owner">S26</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>Google OAuth + Gmail API wired for Artie<div class="blocker-owner">S19</div></div>
+    <div class="blocker"><div class="dot dot-green"></div>14 duplicate files resolved<div class="blocker-owner">S24 ✅</div></div>
+    <div class="blocker"><div class="dot dot-green"></div>artie_report_sync.py v2 — 13-parser 3PD email pipeline<div class="blocker-owner">S20 ✅</div></div>
+    <div class="blocker"><div class="dot dot-green"></div>OpenClaw upgraded 2026.4.12 → 2026.4.21<div class="blocker-owner">S16 ✅</div></div>
+    <div class="blocker"><div class="dot dot-green"></div>Google OAuth + Gmail API wired for Artie<div class="blocker-owner">S19 ✅</div></div>
   </div>
 </div>
 
+<!-- ═══ QUICK REF ═══ -->
 <div class="section-label">Quick Reference</div>
 <div class="grid grid-2">
   <div class="card">
-    <div class="card-title">🔗 System Links</div>
+    <div class="card-title">🔗 Links</div>
     <div class="blocker"><div class="dot dot-blue"></div>Dashboard<div class="blocker-owner"><a href="https://ops.radrooster.co" style="color:var(--blue);text-decoration:none;">ops.radrooster.co</a></div></div>
     <div class="blocker"><div class="dot dot-blue"></div>GitHub<div class="blocker-owner"><a href="https://github.com/Artemisclaws/sharedfolder" style="color:var(--blue);text-decoration:none;">Artemisclaws/sharedfolder</a></div></div>
     <div class="blocker"><div class="dot dot-blue"></div>Discord Server<div class="blocker-owner">ID: 1493421633359315086</div></div>
-    <div class="blocker"><div class="dot dot-blue"></div>Backup dashboard<div class="blocker-owner"><a href="https://pinyodashboard.netlify.app" style="color:var(--blue);text-decoration:none;">netlify</a></div></div>
   </div>
   <div class="card">
     <div class="card-title">📋 Session 28 Priorities</div>
     <div class="blocker"><div class="dot dot-red"></div>#1 — Cowork second Discord bot<div class="blocker-owner">I-01</div></div>
     <div class="blocker"><div class="dot dot-red"></div>#2 — Drive folder reorg<div class="blocker-owner">I-02</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>#3 — Verify radrooster.co live<div class="blocker-owner">I-11</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>#4 — Daily digest cron #general<div class="blocker-owner">I-06</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>#5 — Playwright downloader<div class="blocker-owner">O-01</div></div>
+    <div class="blocker"><div class="dot dot-yellow"></div>#3 — Daily digest cron #general<div class="blocker-owner">I-06</div></div>
+    <div class="blocker"><div class="dot dot-yellow"></div>#4 — Playwright downloader<div class="blocker-owner">O-01</div></div>
   </div>
 </div>
 
 <div class="footer">
-  Pinyo Empire Ops · ops.radrooster.co · Last updated May 6, 2026 · Session 27<br>
-  <span style="color:var(--border);">Source of truth: github.com/Artemisclaws/sharedfolder</span>
+  Pinyo Empire Ops · ops.radrooster.co · May 6, 2026 · Session 27<br>
+  <span style="color:var(--border);">Auto-deploys from github.com/Artemisclaws/sharedfolder on every push</span>
 </div>
 
 </body>
