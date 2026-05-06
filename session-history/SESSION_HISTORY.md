@@ -1,6 +1,6 @@
 # SESSION_HISTORY.md
 **Chronological log of every Claude + Artie build session.**
-**Last Updated:** 2026-05-06 | Session 27
+**Last Updated:** 2026-05-06 | Session 28
 **Purpose:** YouTube content reference, pattern tracking, progress narrative
 
 ---
@@ -210,6 +210,30 @@ Source files on Drive:
 - `session-history/SESSION_HISTORY.md` (created)
 - `dashboard/index.html` (layout updated — open items at top)
 - `dashboard/dashboard.html` (sync copy)
+
+---
+
+
+## SESSION 28 — 2026-05-06
+**Type:** Infrastructure — Discord identity separation
+**Theme:** One item. Do it clean. Ship it.
+
+**What was built:**
+- Cowork Discord bot created (Bot ID: 1501667305518530711) — distinct identity from Artie Bot
+- Bot invited to Pinyo Empire server, test message posted to #general confirmed ✅
+- GitHub PAT + Cowork bot token stored in session core (never committed to repo)
+- CLAUDE_EMPIRE_CORE.md established — permanent session context file (GitHub URLs, channel map, credentials)
+
+**Key decisions:**
+- GitHub is the bloodline — pull MASTER_OPEN_ITEMS + EMPIRE_STATUS at the start of every session, no exceptions
+- Claude messages now post as "Cowork" / Artie messages post as "Artie Bot" — loop prevention + identity clarity solved
+- I-02 (Drive reorganization) deferred to S29
+
+**Files pushed to GitHub this session:**
+- `master-open-items/MASTER_OPEN_ITEMS.md` — I-01 marked ✅
+- `empire-status/EMPIRE_STATUS.md` — Cowork bot marked LIVE
+
+**S29 starts with:** Pull MASTER_OPEN_ITEMS + EMPIRE_STATUS. Start with I-02: Drive folder reorganization.
 
 ---
 
