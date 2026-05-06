@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-05-05 | Session 26
-**Updated By:** Claude (Session 26)
+**Last Updated:** 2026-05-06 | Session 27
+**Updated By:** Claude (Session 27)
 
 ---
 
@@ -10,13 +10,14 @@
 |------|--------|-------|
 | GitHub setup | ✅ LIVE | `github.com/Artemisclaws/sharedfolder` |
 | Discord setup | ✅ LIVE | All 8 channels wired, Artie responding |
-| Morning briefing → Discord | ⚠️ PENDING | Sent to Artie, awaiting confirmation |
-| 9 cron jobs disabled | ⚠️ PENDING | Sent to Artie, awaiting confirmation |
-| Daily digest cron (#general) | ❌ NOT BUILT | Session 27 |
+| Morning briefing → Discord | ✅ CONFIRMED | Verified by Chris, Session 27 |
+| 9 cron jobs disabled | ✅ CONFIRMED | Verified by Chris, Session 27 |
+| Cowork → Discord bot (2nd bot) | ❌ NOT BUILT | Session 28 — create separate "Cowork" bot so Claude messages are distinct from Artie |
+| Daily digest cron (#general) | ❌ NOT BUILT | Session 28+ |
 | Telegram → Discord migration | 🔄 IN PROGRESS | Cron redirect done, backends pending |
-| Dashboard rebuild | ❌ DEFERRED | Session 27+ |
-| Pinyo Farms research | ❌ DEFERRED | Session 27+ |
-| Playwright downloader | ❌ DEFERRED | Session 27+ |
+| Dashboard rebuild | ❌ DEFERRED | Session 28+ |
+| Pinyo Farms research | ❌ DEFERRED | Session 28+ |
+| Playwright downloader | ❌ DEFERRED | Session 28+ |
 | 9 cron job backends | ❌ NOT BUILT | Dedicated session needed |
 | Live market data | ❌ NOT SET UP | Future session |
 
@@ -50,10 +51,14 @@
 
 ## OPEN ITEMS FOR NEXT SESSION
 
-1. Confirm Artie completed cron changes
-2. Test morning briefing manually in Discord
-3. Decide time + build daily #general digest cron
-4. Plan 9 cron job backend builds
+1. Build Cowork/Claude second Discord bot (Developer Portal → new bot → token → test)
+2. Decide time + build daily #general digest cron
+3. Plan 9 cron job backend builds
+4. Telegram → Discord full migration
+5. Live market data setup for morning briefing
+6. Dashboard rebuild
+7. Pinyo Farms research
+8. Playwright downloader
 
 ---
 
