@@ -182,23 +182,34 @@ Source files on Drive:
 
 ---
 
-## SESSION 27 — 2026-05-06 (Today)
-**Type:** Verification + consolidation
-**Theme:** Confirm what's actually done, build one source of truth
+## SESSION 27 — 2026-05-06
+**Type:** Verification + consolidation + infrastructure migration
+**Theme:** Confirm what's actually done. Build one source of truth. Get ops live tonight.
 
-**Key outputs:**
-- Cron changes confirmed by Chris ✅ (morning briefing → Discord, 9 jobs disabled)
-- Discord API tested via bot token — Cowork can now read/send to any Discord channel
-- No Discord MCP in registry — bot token approach is the current solution
-- EMPIRE_STATUS.md updated on GitHub (crons confirmed, Cowork bot task added for S28)
-- SESSION_HISTORY.md created — this file
-- MASTER_OPEN_ITEMS.md created — replaces scattered handoff open-item lists permanently
-- New handoff system adopted: 5-line handoffs + GitHub as task tracker
+**What was confirmed:**
+- Cron changes from S26 verified by Chris ✅ (morning briefing → Discord #general, 9 jobs disabled)
+- Discord API tested via Artie Bot token — Cowork can POST/read any channel
+- Discovery: posting AS Artie Bot means Artie's loop prevention ignores the message → need separate bot
+
+**Key builds this session:**
+- MASTER_OPEN_ITEMS.md — living GitHub task tracker (replaces scattered handoff open-item lists forever)
+- SESSION_HISTORY.md — this file, created this session, YouTube-ready narrative log
+- EMPIRE_STATUS.md — updated on GitHub (crons confirmed, Pages migration, dashboard status)
+- ops.radrooster.co migrated from Cloudflare Tunnel (Artie's PC dependency) → Cloudflare Pages (auto-deploys from GitHub on every push — no Artie's PC needed)
+- dashboard/index.html — open items (Infrastructure + Operations) moved to top of layout; pushed to GitHub → auto-deployed to ops.radrooster.co
+- Handoff system reformed: 5-line handoffs + GitHub as living task tracker
 
 **Key decisions:**
-- Second Discord bot ("Cowork") needed for Session 28 — currently posting as Artie Bot
-- Drive folder reorganization still never done — added to S28 priorities
-- Handoff system reformed: no more copying open items into each handoff
+- Second Discord bot ("Cowork") required — S28 I-01
+- Cloudflare Tunnel on Artie can now be decommissioned (ops no longer depends on it)
+- MASTER_OPEN_ITEMS.md is permanent — update it, never recreate it
+
+**Files pushed to GitHub this session:**
+- `empire-status/EMPIRE_STATUS.md` (updated)
+- `master-open-items/MASTER_OPEN_ITEMS.md` (created)
+- `session-history/SESSION_HISTORY.md` (created)
+- `dashboard/index.html` (layout updated — open items at top)
+- `dashboard/dashboard.html` (sync copy)
 
 ---
 
@@ -212,7 +223,7 @@ Source files on Drive:
 | **Arc 4: The Chaos Session** | 23 | "I feel lost." Full system audit. Everything mapped for the first time. |
 | **Arc 5: Cleaning House** | 24–25 | 14 duplicates killed. Protocols locked. Drive limitations exposed. |
 | **Arc 6: Going Live** | 26 | GitHub + Discord. Two major systems live in one session. |
-| **Arc 7: One Source of Truth** | 27 | Stop the scatter. Build the system that runs the system. |
+| **Arc 7: One Source of Truth** | 27 | Stop the scatter. Build the system that runs the system. Dashboard live on Pages. |
 
 ---
 
