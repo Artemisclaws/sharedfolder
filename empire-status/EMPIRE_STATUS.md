@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-05-06 | Session 27
-**Updated By:** Claude (Session 27 — end of session)
+**Last Updated:** 2026-05-06 | Session 28
+**Updated By:** Claude (Session 28)
 
 ---
 
@@ -17,7 +17,7 @@
 | MASTER_OPEN_ITEMS.md | ✅ LIVE | GitHub: `master-open-items/MASTER_OPEN_ITEMS.md` |
 | SESSION_HISTORY.md | ✅ LIVE | GitHub: `session-history/SESSION_HISTORY.md` |
 | Handoff system | ✅ REFORMED | 5-line handoffs + GitHub as living task tracker |
-| Cowork → Discord bot (2nd bot) | ❌ NOT BUILT | S28 — create "Cowork" bot so Claude messages ≠ Artie Bot |
+| Cowork → Discord bot (2nd bot) | ✅ LIVE | S28 — Bot ID 1501667305518530711, posting in #general |
 | Daily digest cron (#general) | ❌ NOT BUILT | S28+ |
 | Telegram → Discord migration | 🔄 IN PROGRESS | Cron redirect done; backends pending |
 | Old Cloudflare Tunnel (Artie) | 🔄 DECOMMISSION PENDING | ops.radrooster.co now on Pages — tunnel no longer needed |
