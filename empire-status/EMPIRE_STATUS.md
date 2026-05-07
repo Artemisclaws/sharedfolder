@@ -1,5 +1,5 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-05-07 | Session 29–30
+**Last Updated:** 2026-05-07 | Session 31
 **Updated By:** Claude (Session 28)
 
 ---
@@ -79,7 +79,7 @@
 |------|--------|-------|
 | GitHub brain restructure (S29) | ✅ COMPLETE | soul/, indexes/, 00-load-me/ all pushed to main |
 | Artie soul files → GitHub soul/artie/ (S30) | ✅ COMPLETE | All 5 files live. sync_soul.sh updated in ARTIE-CORE V4 |
-| Drive folder skeleton (I-19) | ❌ PENDING | Folder structure to be created; Chris drags files |
+| Drive folder skeleton (I-19) | ✅ COMPLETE | PROJECTS (5 biz subfolders), DATA, JOURNAL, REFERENCE, _ARCHIVE created on Drive |
 | THINKING_OS dedup from ARTIE-STANDARDS (I-20) | ❌ PENDING | S30+ |
 | Daily digest cron (I-06) | ❌ NOT BUILT | S30+ |
 | Decommission old Cloudflare Tunnel (I-17) | ❌ PENDING | S30+ |
