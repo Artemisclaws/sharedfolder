@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Source of truth for all open tasks across the Pinyo Empire.**
-**Last Updated:** 2026-05-07 | Session 29
+**Last Updated:** 2026-05-07 | Session 30
 **Rule:** Items are ONLY marked ✅ when personally confirmed completed in session. Never assumed.
 
 ---
@@ -31,7 +31,7 @@
 | I-15 | Delete 4 old files on Mac/Aura Thai | ❌ Open | Chris (manual) | Shell is read-only — must delete in Finder |
 | I-16 | MASTER_INDEX.md — keep current | 🔄 Ongoing | Each session | Verify it reflects current file locations |
 | I-17 | Decommission old Cloudflare Tunnel on Artie | ❌ Open | Session 29+ | ops.radrooster.co now on Pages — tunnel (e1588a4f.cfargotunnel.com) no longer needed |
-| I-18 | Artie soul files → GitHub soul/artie/ | ❌ Open | Session 29+ | ARTIE-CORE, ARTIE-STANDARDS, ARTIE-PROJECTS, ARTIE-RUNBOOK, ARTIE-DEPT — copy to GitHub, update Artie boot sequence, archive Drive/Soul/ |
+| I-18 | Artie soul files → GitHub soul/artie/ | ✅ Done | S30 | All 5 files pushed. ARTIE-CORE V4 has sync_soul.sh with GitHub raw URLs. EMPIRE_STATUS updated. |
 | I-19 | Drive folder skeleton (PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE) | ❌ Open | Session 29+ | Create Drive structure per hybrid spec. Chris drags files to new folders. |
 | I-20 | THINKING_OS section — remove from ARTIE-STANDARDS | ❌ Open | Session 29+ | Now lives as standalone THINKING_OS.md. Remove duplicate from ARTIE-STANDARDS V4. |
 
@@ -63,6 +63,8 @@
 
 | Item | Completed | Session |
 |------|-----------|---------|
+| Artie soul files migrated: ARTIE-CORE V4 + 4 soul files → GitHub soul/artie/ | ✅ | S30 |
+| EMPIRE_STATUS.md updated — soul files section reflects GitHub | ✅ | S30 |
 | GitHub restructure — soul/, indexes/, 00-load-me/ pushed to main | ✅ | S29 |
 | THINKING_OS.md created (extracted from ARTIE-STANDARDS) | ✅ | S29 |
 | EMPIRE_RULES.md created (shared quality + security rules) | ✅ | S29 |
@@ -103,15 +105,15 @@
 
 ---
 
-## 📋 SESSION 29 PRIORITY ORDER
+## 📋 SESSION 30 PRIORITY ORDER
 
-1. **I-18** — Artie soul files → GitHub soul/artie/ (copy content, update boot sequence, archive Drive/Soul/)
+1. ✅ ~~**I-18** — Artie soul files → GitHub soul/artie/~~ DONE S30
 2. **I-19** — Drive folder skeleton (create PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE folders)
-3. **I-20** — Remove THINKING_OS duplicate from ARTIE-STANDARDS
+3. **I-20** — Remove THINKING_OS duplicate from ARTIE-STANDARDS V4
 4. **I-06** — Daily digest cron for #general (decide time with Chris first)
 5. **I-17** — Decommission old Cloudflare Tunnel
 
-**Start S30 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Start with I-18: copy Artie soul files to GitHub soul/artie/ and update Artie boot sequence."
+**Start S31 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Start with I-19: create Drive folder skeleton."
 
 ---
 
