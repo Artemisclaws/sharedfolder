@@ -1,29 +1,36 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude at start of each sprint
-**Last Updated:** 2026-05-07 | Session 29
+**Updated by:** Claude at handoff — automatic
+**Last Updated:** 2026-05-07 | Session 32
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SPRINT GOAL — MAY 2026
+## ACTIVE ITEMS — S32 DIGEST
 
-**Theme:** Infrastructure lock-in. Build the foundation so the businesses can run without friction.
+*Full detail in MASTER_OPEN_ITEMS.md. This digest is the fast-load version. Updated at every handoff.*
 
-The empire cannot grow until the plumbing works. This sprint is not about new revenue — it's about making every system reliable, findable, and agent-proof.
+| ID | Item | Status |
+|----|------|--------|
+| I-21 | Soul architecture + handoff keyword | ✅ Done S32 |
+| I-22 | SHARED-CORE rebuild + RPG game | ✅ Done S32 |
+| I-06 | Daily digest cron for #general | ❌ Open — decide time with Chris |
+| I-07 | 9 cron job backends | ❌ Open — dedicated session |
+| I-17 | Decommission old Cloudflare Tunnel | ❌ Open |
+| I-10 | Artie bot token → .bashrc env variable | ❌ Open |
+| I-02 | Drive + GitHub restructure (final cleanup) | 🔄 In Progress |
+| B-01 | Pinyo Farms market validation | ❌ Open — queued |
+| B-02 | Roam master content plan | ❌ Open — queued |
+| O-01 | Playwright downloader (DD/UE) | ❌ Open — dedicated session |
 
 ---
 
-## TOP 5 PRIORITIES (in order)
+## SPRINT GOAL — MAY 2026
 
-| # | Item | Owner | Status | Ref |
-|---|------|-------|--------|-----|
-| 1 | GitHub + Drive restructure (hybrid Musk/Bezos/Munger) | Claude | 🟡 In Progress | I-02 |
-| 2 | Daily digest cron for Discord #general | Claude + Artie | ❌ Open — decide time with Chris | I-06 |
-| 3 | Decommission old Cloudflare Tunnel on Artie's machine | Artie | ❌ Open | I-17 |
-| 4 | Artie bot token → env variable (.bashrc) | Artie | ❌ Open | I-10 |
-| 5 | Plan Playwright downloader build session | Claude | ❌ Open | O-01 |
+**Theme:** Infrastructure lock-in. Soul files loading. Handoff automatic. Businesses ready to grow.
+
+S32 closes the soul file architecture gap permanently. Next sprint shifts toward operations and business activation: daily digest live, Pinyo Farms research started, Artie cron backends planned.
 
 ---
 
@@ -31,21 +38,21 @@ The empire cannot grow until the plumbing works. This sprint is not about new re
 
 | Business | Status | Priority Action |
 |----------|--------|-----------------|
-| Aura Thai | 🟡 Active | Lavu integration (blocked on Chris) |
-| FB Arbitrage | 🟢 Running | Vine review backlog — Artie handles |
-| Pinyo Farms | ⏳ Planning | Market validation research — not started |
+| Aura Thai | 🟡 Active | Lavu integration (blocked on Chris completing setup) |
+| Vine Arbitrage | 🟢 Running | Artie handles review backlog — no Claude action needed |
+| Pinyo Farms | ⏳ Planning | Market validation research — not started, B-01 |
 | AI Ventures | ⏳ Planning | Restaurant subscription stream — defined, not planned |
-| Roam | ⏳ Planning | Master content plan — not started |
+| Roam | ⏳ Planning | Master content plan — not started, B-02 |
 
 ---
 
-## CHRIS — DECISIONS NEEDED THIS SPRINT
+## CHRIS — DECISIONS NEEDED
 
 | Decision | Context | Urgency |
 |----------|---------|---------|
-| Daily digest time for #general | I-06 can't be built until Chris picks a time (6am? 8am?) | High |
-| Lavu setup completion | O-03 and O-04 blocked until Chris finishes Lavu | Medium |
-| Playwright downloader go/no-go | Script is built. Chris needs to review and greenlight | Medium |
+| Daily digest time for #general | I-06 blocked until Chris picks a time (6am? 8am?) | High |
+| Lavu setup completion | O-03 and O-04 blocked until Chris finishes Lavu setup | Medium |
+| GitHub PAT for handoff auto-push | One-time setup — store at `~/.pinyo_github_pat` | High (unlocks handoff keyword) |
 
 ---
 
@@ -55,8 +62,9 @@ The empire cannot grow until the plumbing works. This sprint is not about new re
 |------|---------|
 | O-03 Aura Thai Lavu integration | Chris needs to complete Lavu setup |
 | O-04 Aura Thai Shift Close integration | Chris needs to complete setup |
+| Handoff auto-push | Needs GitHub PAT stored at known path (one-time) |
 
 ---
 
-*Updated each sprint. Cross-reference: MASTER_OPEN_ITEMS.md for full task list.*
-*Previous sprint file archived in Drive/_ARCHIVE/.*
+*Cross-reference: MASTER_OPEN_ITEMS.md for full task list and history.*
+*Updated automatically at every handoff. Never edit manually.*
