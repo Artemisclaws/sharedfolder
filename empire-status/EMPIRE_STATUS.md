@@ -1,5 +1,5 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-05-07 | Session 31
+**Last Updated:** 2026-05-07 | Session 31 (closed)
 **Updated By:** Claude (Session 28)
 
 ---
@@ -20,6 +20,7 @@
 | Cowork → Discord bot (2nd bot) | ✅ LIVE | S28 — Bot ID 1501667305518530711, posting in #general |
 | Daily digest cron (#general) | ❌ NOT BUILT | S28+ |
 | Telegram → Discord migration | 🔄 IN PROGRESS | Cron redirect done; backends pending |
+| Naming convention | ✅ LOCKED | FB Arbitrage → Vine Arbitrage S31 |
 | Old Cloudflare Tunnel (Artie) | 🔄 DECOMMISSION PENDING | ops.radrooster.co now on Pages — tunnel no longer needed |
 | Playwright downloader | ❌ DEFERRED | Dedicated session — DD/UE auth wall |
 | 9 cron job backends | ❌ NOT BUILT | Dedicated session needed |
@@ -83,6 +84,8 @@
 | THINKING_OS dedup from ARTIE-STANDARDS (I-20) | ✅ COMPLETE | Removed S31. Pointer to soul/shared/THINKING_OS.md in place. |
 | Daily digest cron (I-06) | ❌ NOT BUILT | S30+ |
 | Decommission old Cloudflare Tunnel (I-17) | ❌ PENDING | S30+ |
+| Soul file architecture — SHARED-CORE.md + handoff keyword (I-21) | ❌ PENDING | S32 |
+| SHARED-CORE.md content rebuild — coaching + RPG game (I-22) | ❌ PENDING | S32 |
 
 ---
 
