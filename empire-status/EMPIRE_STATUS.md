@@ -68,7 +68,7 @@
 | Session handoffs | GitHub: `sessions/` |
 | Live dashboard | GitHub: `dashboard/index.html` → ops.radrooster.co |
 | Soul files (Artie) | GitHub: `soul/artie/` — ARTIE-CORE, ARTIE-STANDARDS, ARTIE-PROJECTS, ARTIE-RUNBOOK, ARTIE-DEPT |
-| Soul files (Shared) | GitHub: `soul/shared/` — THINKING_OS, EMPIRE_RULES |
+| Soul files (Shared) | GitHub: `soul/shared/` — SHARED-CORE (new S32), THINKING_OS. EMPIRE_RULES archived. |
 | Soul files (Claude) | GitHub: `soul/claude/` — CLAUDE-CORE, CLAUDE-PROJECTS |
 | Drive Soul folder | ARCHIVED — 17fK3GEn4plJBbBrSWTXybxESckqXk3ZQ — no longer source of truth |
 
@@ -88,5 +88,19 @@
 | SHARED-CORE.md content rebuild — coaching + RPG game (I-22) | ❌ PENDING | S32 |
 
 ---
+
+## S32 STATUS — SOUL ARCHITECTURE
+
+| Item | Status | Notes |
+|------|--------|-------|
+| SHARED-CORE.md (I-21/I-22) | ✅ COMPLETE | Coaching philosophy, 11 models trigger table, RPG layer, rules v3. Both agents load. |
+| CLAUDE-CORE.md V3 (I-21) | ✅ COMPLETE | Handoff keyword protocol added. Auto-push to GitHub on "handoff". |
+| ARTIE-CORE.md V5 (I-21) | ✅ COMPLETE | SHARED-CORE in load sequence. sync_soul.sh updated. |
+| SPRINT.md Active Items digest (I-21) | ✅ COMPLETE | Compact digest replaces full MASTER_OPEN_ITEMS load. |
+| RPG_LEDGER.md (I-22) | ✅ COMPLETE | Background tracking live at indexes/RPG_LEDGER.md |
+| EMPIRE_RULES.md | ✅ ARCHIVED | Content absorbed into SHARED-CORE.md S32. |
+| GitHub PAT stored | ✅ COMPLETE | Saved to ~/.pinyo_github_pat — handoff auto-push active. |
+| Claude UI boot-loader | ✅ COMPLETE | Chris updated custom instructions. |
+
 
 *Drive EMPIRE_STATUS location: DEPRECATED. GitHub is source of truth.*
