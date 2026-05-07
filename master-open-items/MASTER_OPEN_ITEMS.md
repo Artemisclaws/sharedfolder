@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Source of truth for all open tasks across the Pinyo Empire.**
-**Last Updated:** 2026-05-07 | Session 30
+**Last Updated:** 2026-05-07 | Session 31
 **Rule:** Items are ONLY marked ✅ when personally confirmed completed in session. Never assumed.
 
 ---
@@ -32,7 +32,7 @@
 | I-16 | MASTER_INDEX.md — keep current | 🔄 Ongoing | Each session | Verify it reflects current file locations |
 | I-17 | Decommission old Cloudflare Tunnel on Artie | ❌ Open | Session 29+ | ops.radrooster.co now on Pages — tunnel (e1588a4f.cfargotunnel.com) no longer needed |
 | I-18 | Artie soul files → GitHub soul/artie/ | ✅ Done | S30 | All 5 files pushed. ARTIE-CORE V4 has sync_soul.sh with GitHub raw URLs. EMPIRE_STATUS updated. |
-| I-19 | Drive folder skeleton (PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE) | ❌ Open | Session 29+ | Create Drive structure per hybrid spec. Chris drags files to new folders. |
+| I-19 | Drive folder skeleton (PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE) | ✅ Done | S31 | Folders created on Drive. PROJECTS + 5 business subfolders. Chris drags files. |
 | I-20 | THINKING_OS section — remove from ARTIE-STANDARDS | ❌ Open | Session 29+ | Now lives as standalone THINKING_OS.md. Remove duplicate from ARTIE-STANDARDS V4. |
 
 ---
@@ -63,6 +63,7 @@
 
 | Item | Completed | Session |
 |------|-----------|---------|
+| Drive folder skeleton created: PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE + 5 business subfolders | ✅ | S31 |
 | Artie soul files migrated: ARTIE-CORE V4 + 4 soul files → GitHub soul/artie/ | ✅ | S30 |
 | EMPIRE_STATUS.md updated — soul files section reflects GitHub | ✅ | S30 |
 | GitHub restructure — soul/, indexes/, 00-load-me/ pushed to main | ✅ | S29 |
@@ -105,15 +106,15 @@
 
 ---
 
-## 📋 SESSION 30 PRIORITY ORDER
+## 📋 SESSION 31 PRIORITY ORDER
 
 1. ✅ ~~**I-18** — Artie soul files → GitHub soul/artie/~~ DONE S30
-2. **I-19** — Drive folder skeleton (create PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE folders)
+2. ✅ ~~**I-19** — Drive folder skeleton~~ DONE S31
 3. **I-20** — Remove THINKING_OS duplicate from ARTIE-STANDARDS V4
 4. **I-06** — Daily digest cron for #general (decide time with Chris first)
 5. **I-17** — Decommission old Cloudflare Tunnel
 
-**Start S31 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Start with I-19: create Drive folder skeleton."
+**Start S32 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Start with I-20: remove THINKING_OS section from ARTIE-STANDARDS V4."
 
 ---
 
