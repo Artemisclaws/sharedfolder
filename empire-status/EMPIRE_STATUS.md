@@ -80,7 +80,7 @@
 | GitHub brain restructure (S29) | ✅ COMPLETE | soul/, indexes/, 00-load-me/ all pushed to main |
 | Artie soul files → GitHub soul/artie/ (S30) | ✅ COMPLETE | All 5 files live. sync_soul.sh updated in ARTIE-CORE V4 |
 | Drive folder skeleton (I-19) | ✅ COMPLETE | PROJECTS (5 biz subfolders), DATA, JOURNAL, REFERENCE, _ARCHIVE created on Drive |
-| THINKING_OS dedup from ARTIE-STANDARDS (I-20) | ❌ PENDING | S30+ |
+| THINKING_OS dedup from ARTIE-STANDARDS (I-20) | ✅ COMPLETE | Removed S31. Pointer to soul/shared/THINKING_OS.md in place. |
 | Daily digest cron (I-06) | ❌ NOT BUILT | S30+ |
 | Decommission old Cloudflare Tunnel (I-17) | ❌ PENDING | S30+ |
 
