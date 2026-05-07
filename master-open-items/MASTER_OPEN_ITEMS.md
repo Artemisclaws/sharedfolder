@@ -33,7 +33,7 @@
 | I-17 | Decommission old Cloudflare Tunnel on Artie | ❌ Open | Session 29+ | ops.radrooster.co now on Pages — tunnel (e1588a4f.cfargotunnel.com) no longer needed |
 | I-18 | Artie soul files → GitHub soul/artie/ | ✅ Done | S30 | All 5 files pushed. ARTIE-CORE V4 has sync_soul.sh with GitHub raw URLs. EMPIRE_STATUS updated. |
 | I-19 | Drive folder skeleton (PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE) | ✅ Done | S31 | Folders created on Drive. PROJECTS + 5 business subfolders. Chris drags files. |
-| I-20 | THINKING_OS section — remove from ARTIE-STANDARDS | ❌ Open | Session 29+ | Now lives as standalone THINKING_OS.md. Remove duplicate from ARTIE-STANDARDS V4. |
+| I-20 | THINKING_OS section — remove from ARTIE-STANDARDS | ✅ Done | S31 | Removed L132–222. One-line pointer to soul/shared/THINKING_OS.md added. |
 
 ---
 
@@ -63,6 +63,7 @@
 
 | Item | Completed | Session |
 |------|-----------|---------|
+| THINKING_OS duplicate removed from ARTIE-STANDARDS V4 — pointer to soul/shared/THINKING_OS.md added | ✅ | S31 |
 | Drive folder skeleton created: PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE + 5 business subfolders | ✅ | S31 |
 | Artie soul files migrated: ARTIE-CORE V4 + 4 soul files → GitHub soul/artie/ | ✅ | S30 |
 | EMPIRE_STATUS.md updated — soul files section reflects GitHub | ✅ | S30 |
@@ -110,11 +111,11 @@
 
 1. ✅ ~~**I-18** — Artie soul files → GitHub soul/artie/~~ DONE S30
 2. ✅ ~~**I-19** — Drive folder skeleton~~ DONE S31
-3. **I-20** — Remove THINKING_OS duplicate from ARTIE-STANDARDS V4
+3. ✅ ~~**I-20** — Remove THINKING_OS duplicate from ARTIE-STANDARDS V4~~ DONE S31
 4. **I-06** — Daily digest cron for #general (decide time with Chris first)
 5. **I-17** — Decommission old Cloudflare Tunnel
 
-**Start S32 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Start with I-20: remove THINKING_OS section from ARTIE-STANDARDS V4."
+**Start S32 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Start with I-06: daily digest cron for Discord #general — confirm time with Chris first."
 
 ---
 
