@@ -43,6 +43,7 @@
 
 | # | Item | Status | Owner | Notes |
 |---|------|--------|-------|-------|
+| I-23 | Artie automated task audit — crons not triggering | ❌ Open | S33 | Aura Thai finance pull/analyze/daily update + Vine reviews/product descriptions. Diagnose why crons aren't firing and fix backends. |
 | O-01 | Playwright downloader (DD/UE) | ❌ Open | Dedicated session | artie_playwright_downloader_UPDATED.py — reads pending_downloads.json, bypasses auth wall |
 | O-02 | Daily financial tracking SOP (AI Ventures) | ❌ Open | Future | SOP for Artie — daily financials → Vine → secondary |
 | O-03 | Aura Thai: Lavu integration | ❌ Blocked | Chris | Blocked on Chris completing Lavu setup |
@@ -119,7 +120,7 @@
 4. **I-17** — Decommission old Cloudflare Tunnel
 5. **B-01** — Pinyo Farms market validation (leverage is flat — time to move)
 
-**Start S33 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Load SPRINT.md. Top priority: I-06 (daily digest — pick a time), then B-01 (Pinyo Farms validation research)."
+**Start S33 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Load SPRINT.md. Priority order: I-23 (Artie cron audit — Aura Thai finance + Vine reviews not triggering), I-06 (daily digest time), B-01 (Pinyo Farms validation)."
 
 ---
 
