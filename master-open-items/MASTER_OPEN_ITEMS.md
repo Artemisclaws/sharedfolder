@@ -34,6 +34,8 @@
 | I-18 | Artie soul files → GitHub soul/artie/ | ✅ Done | S30 | All 5 files pushed. ARTIE-CORE V4 has sync_soul.sh with GitHub raw URLs. EMPIRE_STATUS updated. |
 | I-19 | Drive folder skeleton (PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE) | ✅ Done | S31 | Folders created on Drive. PROJECTS + 5 business subfolders. Chris drags files. |
 | I-20 | THINKING_OS section — remove from ARTIE-STANDARDS | ✅ Done | S31 | Removed L132–222. One-line pointer to soul/shared/THINKING_OS.md added. |
+| I-21 | Soul file architecture — build SHARED-CORE.md + handoff keyword | ❌ Open | S32 | Create soul/shared/SHARED-CORE.md. Embed handoff protocol in CLAUDE-CORE.md. Give Chris new UI instructions boot-loader. |
+| I-22 | SHARED-CORE.md content rebuild — coaching + RPG game | ❌ Open | S32 | Old coaching philosophy is stale. Rebuild with current business context. RPG life tracking game has gone dead — rebuild as subtle background layer. |
 
 ---
 
@@ -115,7 +117,7 @@
 4. **I-06** — Daily digest cron for #general (decide time with Chris first)
 5. **I-17** — Decommission old Cloudflare Tunnel
 
-**Start S32 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Start with I-06: daily digest cron for Discord #general — confirm time with Chris first."
+**Start S32 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Two goals this session: I-21 (soul file architecture + handoff keyword) and I-22 (SHARED-CORE.md content rebuild including coaching philosophy + RPG game). Start with I-21."
 
 ---
 
