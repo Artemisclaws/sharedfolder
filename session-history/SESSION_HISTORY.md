@@ -265,3 +265,20 @@ Source files on Drive:
 **Next session starts with:** I-06 — daily digest cron for #general. Confirm time with Chris first.
 
 ---
+
+## Session 31 — 2026-05-07
+
+**Completed:**
+- I-19: Drive folder skeleton — PROJECTS (5 biz subfolders), DATA, JOURNAL, REFERENCE, _ARCHIVE created
+- I-20: THINKING_OS duplicate removed from ARTIE-STANDARDS V4
+- Drive drag map delivered — Chris executed file moves
+- Vine Arbitrage naming convention locked (was FB Arbitrage)
+- Confirmed 00_LOAD_ME stays GitHub-only
+- End-of-session protocol defined: MASTER_OPEN_ITEMS + EMPIRE_STATUS + SESSION_HISTORY
+- Soul file architecture designed: soul/shared/SHARED-CORE.md + agent-specific files
+- Identified: coaching philosophy stale, RPG life tracking game dead — both need rebuild
+
+**New items added:** I-21 (soul architecture + handoff keyword), I-22 (coaching + RPG rebuild)
+**Next session starts with:** I-21 and I-22 — see MASTER_OPEN_ITEMS for full next session paste.
+
+---
