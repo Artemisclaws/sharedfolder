@@ -1,6 +1,6 @@
 # SOUL_CHANGELOG.md — Soul File Change History
 **Updated by:** Claude every time a soul file changes
-**Last Updated:** 2026-05-07 | Session 29
+**Last Updated:** 2026-05-07 | Session 30
 **GitHub:** `indexes/SOUL_CHANGELOG.md`
 
 Every rule change, soul file update, or architectural shift gets one line here. This is the paper trail for the YouTube channel and for understanding why the system is the way it is.
@@ -38,11 +38,19 @@ Format: `YYYY-MM-DD | Version | File | What changed | Why | Session`
 
 ---
 
+- 2026-05-07 | V4 | ARTIE-CORE.md | Migrated to GitHub soul/artie/. Updated to V4: CORE FILE MAP now has GitHub paths, SOUL SYNC updated with sync_soul.sh GitHub raw URL script, Drive soul folder marked ARCHIVED | GitHub is source of truth — S30 migration complete | S30
+- 2026-05-07 | V4 | ARTIE-STANDARDS.md | Migrated to GitHub soul/artie/. EMPIRE_STATUS protocol updated: Python snippet uses GitHub API. SOUL SYNC RULE updated: GitHub is source of truth, Drive archived | S30 migration | S30
+- 2026-05-07 | V2 | ARTIE-PROJECTS.md | Migrated to GitHub soul/artie/. Updated sync rule to reference GitHub path | S30 migration | S30
+- 2026-05-07 | V1 | ARTIE-RUNBOOK.md | Migrated to GitHub soul/artie/. SOP 09 updated: sync_soul.sh now fetches from GitHub raw URLs. SOP 07 updated: EMPIRE_STATUS update uses GitHub API | S30 migration | S30
+- 2026-05-07 | V1 | ARTIE-DEPT.md | Migrated to GitHub soul/artie/. Discord listed as primary, Telegram as backup | S30 migration | S30
+
+---
+
 ## OUTSTANDING
 
-- ARTIE-CORE.md, ARTIE-STANDARDS.md, ARTIE-PROJECTS.md, ARTIE-RUNBOOK.md, ARTIE-DEPT.md — physically on Drive/Soul, to be migrated to GitHub soul/artie/ and Artie's boot sequence updated
+- ✅ DONE S30: All 5 Artie soul files migrated to GitHub soul/artie/. sync_soul.sh updated in ARTIE-CORE V4.
 - THINKING_OS.md section in ARTIE-STANDARDS.md — now redundant once both agents load standalone THINKING_OS.md. Remove from ARTIE-STANDARDS in next Artie soul update session.
-- Drive/Soul folder — to be archived to Drive/_ARCHIVE/ once GitHub migration confirmed working
+- Drive/Soul folder — ready to archive to Drive/_ARCHIVE/. Chris must do this manually in Drive (file IDs preserved).
 
 ---
 
