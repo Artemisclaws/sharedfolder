@@ -252,3 +252,16 @@ Source files on Drive:
 ---
 
 *This file is append-only. Add a new session block at the bottom each session. Never delete history.*
+
+## Session 31 — 2026-05-07
+
+**Completed:**
+- I-19: Drive folder skeleton created — PROJECTS (Aura_Thai, Vine_Arbitrage, Pinyo_Farms, AI_Ventures, Roam), DATA, JOURNAL, REFERENCE, _ARCHIVE
+- I-20: THINKING_OS duplicate removed from ARTIE-STANDARDS V4 — pointer to soul/shared/THINKING_OS.md added
+- Naming convention locked: FB Arbitrage → Vine Arbitrage going forward
+- Confirmed: 00_LOAD_ME stays GitHub-only (visible via ops.radrooster.co)
+- Confirmed end-of-session protocol: MASTER_OPEN_ITEMS + EMPIRE_STATUS + SESSION_HISTORY
+
+**Next session starts with:** I-06 — daily digest cron for #general. Confirm time with Chris first.
+
+---
