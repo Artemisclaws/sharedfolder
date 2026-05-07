@@ -1,5 +1,5 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-05-06 | Session 28
+**Last Updated:** 2026-05-07 | Session 29–30
 **Updated By:** Claude (Session 28)
 
 ---
@@ -66,17 +66,23 @@
 | Master File Map | GitHub: `master-file-map/MASTER_FILE_MAP.md` |
 | Session handoffs | GitHub: `sessions/` |
 | Live dashboard | GitHub: `dashboard/index.html` → ops.radrooster.co |
-| Soul files | Google Drive Soul folder (ID: 17fK3GEn4plJBbBrSWTXybxESckqXk3ZQ) |
+| Soul files (Artie) | GitHub: `soul/artie/` — ARTIE-CORE, ARTIE-STANDARDS, ARTIE-PROJECTS, ARTIE-RUNBOOK, ARTIE-DEPT |
+| Soul files (Shared) | GitHub: `soul/shared/` — THINKING_OS, EMPIRE_RULES |
+| Soul files (Claude) | GitHub: `soul/claude/` — CLAUDE-CORE, CLAUDE-PROJECTS |
+| Drive Soul folder | ARCHIVED — 17fK3GEn4plJBbBrSWTXybxESckqXk3ZQ — no longer source of truth |
 
 ---
 
-## S28 PRIORITIES
+## S30 STATUS — INFRASTRUCTURE
 
-1. Build Cowork/Claude second Discord bot (I-01)
-2. Drive folder reorganization (I-02)
-3. Daily digest cron for #general (I-06)
-4. Decommission old Cloudflare Tunnel on Artie's machine
-5. Plan Playwright downloader build session (O-01)
+| Item | Status | Notes |
+|------|--------|-------|
+| GitHub brain restructure (S29) | ✅ COMPLETE | soul/, indexes/, 00-load-me/ all pushed to main |
+| Artie soul files → GitHub soul/artie/ (S30) | ✅ COMPLETE | All 5 files live. sync_soul.sh updated in ARTIE-CORE V4 |
+| Drive folder skeleton (I-19) | ❌ PENDING | Folder structure to be created; Chris drags files |
+| THINKING_OS dedup from ARTIE-STANDARDS (I-20) | ❌ PENDING | S30+ |
+| Daily digest cron (I-06) | ❌ NOT BUILT | S30+ |
+| Decommission old Cloudflare Tunnel (I-17) | ❌ PENDING | S30+ |
 
 ---
 
