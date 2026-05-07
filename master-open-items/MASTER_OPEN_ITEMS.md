@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Source of truth for all open tasks across the Pinyo Empire.**
-**Last Updated:** 2026-05-07 | Session 31
+**Last Updated:** 2026-05-07 | Session 32
 **Rule:** Items are ONLY marked ✅ when personally confirmed completed in session. Never assumed.
 
 ---
@@ -34,8 +34,8 @@
 | I-18 | Artie soul files → GitHub soul/artie/ | ✅ Done | S30 | All 5 files pushed. ARTIE-CORE V4 has sync_soul.sh with GitHub raw URLs. EMPIRE_STATUS updated. |
 | I-19 | Drive folder skeleton (PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE) | ✅ Done | S31 | Folders created on Drive. PROJECTS + 5 business subfolders. Chris drags files. |
 | I-20 | THINKING_OS section — remove from ARTIE-STANDARDS | ✅ Done | S31 | Removed L132–222. One-line pointer to soul/shared/THINKING_OS.md added. |
-| I-21 | Soul file architecture — build SHARED-CORE.md + handoff keyword | ❌ Open | S32 | Create soul/shared/SHARED-CORE.md. Embed handoff protocol in CLAUDE-CORE.md. Give Chris new UI instructions boot-loader. |
-| I-22 | SHARED-CORE.md content rebuild — coaching + RPG game | ❌ Open | S32 | Old coaching philosophy is stale. Rebuild with current business context. RPG life tracking game has gone dead — rebuild as subtle background layer. |
+| I-21 | Soul file architecture — build SHARED-CORE.md + handoff keyword | ✅ Done | S32 | SHARED-CORE.md + handoff keyword + boot-loader delivered. |
+| I-22 | SHARED-CORE.md content rebuild — coaching + RPG game | ✅ Done | S32 | Coaching rebuilt S31 context. RPG ledger live. Background layer active. |
 
 ---
 
@@ -65,6 +65,8 @@
 
 | Item | Completed | Session |
 |------|-----------|---------|
+| Soul file architecture (I-21): SHARED-CORE.md + handoff keyword + boot-loader | ✅ | S32 |
+| SHARED-CORE.md content rebuild (I-22): coaching philosophy + RPG game + rules v3 | ✅ | S32 |
 | THINKING_OS duplicate removed from ARTIE-STANDARDS V4 — pointer to soul/shared/THINKING_OS.md added | ✅ | S31 |
 | Drive folder skeleton created: PROJECTS, DATA, JOURNAL, REFERENCE, _ARCHIVE + 5 business subfolders | ✅ | S31 |
 | Artie soul files migrated: ARTIE-CORE V4 + 4 soul files → GitHub soul/artie/ | ✅ | S30 |
@@ -109,15 +111,15 @@
 
 ---
 
-## 📋 SESSION 31 PRIORITY ORDER
+## 📋 SESSION 32 PRIORITY ORDER
 
-1. ✅ ~~**I-18** — Artie soul files → GitHub soul/artie/~~ DONE S30
-2. ✅ ~~**I-19** — Drive folder skeleton~~ DONE S31
-3. ✅ ~~**I-20** — Remove THINKING_OS duplicate from ARTIE-STANDARDS V4~~ DONE S31
-4. **I-06** — Daily digest cron for #general (decide time with Chris first)
-5. **I-17** — Decommission old Cloudflare Tunnel
+1. ✅ ~~**I-21** — Soul file architecture + handoff keyword~~ DONE S32
+2. ✅ ~~**I-22** — SHARED-CORE.md content rebuild + RPG game~~ DONE S32
+3. **I-06** — Daily digest cron for #general (decide time with Chris first)
+4. **I-17** — Decommission old Cloudflare Tunnel
+5. **B-01** — Pinyo Farms market validation (leverage is flat — time to move)
 
-**Start S32 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Two goals this session: I-21 (soul file architecture + handoff keyword) and I-22 (SHARED-CORE.md content rebuild including coaching philosophy + RPG game). Start with I-21."
+**Start S33 with:** "Pull MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md from GitHub. Load SPRINT.md. Top priority: I-06 (daily digest — pick a time), then B-01 (Pinyo Farms validation research)."
 
 ---
 
