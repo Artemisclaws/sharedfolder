@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Source of truth for all open tasks across the Pinyo Empire.**
-**Last Updated:** 2026-05-07 | Session 32
+**Last Updated:** 2026-05-08 | Session 33
 **Rule:** Items are ONLY marked ✅ when personally confirmed completed in session. Never assumed.
 
 ---
@@ -66,6 +66,7 @@
 
 | Item | Completed | Session |
 |------|-----------|---------|
+| OpenClaw recovery + path docs (S33): Updated 2026.5.7, ARTIE-CORE infra section, SOP 12, PAT stored | ✅ | S33 |
 | Soul file architecture (I-21): SHARED-CORE.md + handoff keyword + boot-loader | ✅ | S32 |
 | SHARED-CORE.md content rebuild (I-22): coaching philosophy + RPG game + rules v3 | ✅ | S32 |
 | THINKING_OS duplicate removed from ARTIE-STANDARDS V4 — pointer to soul/shared/THINKING_OS.md added | ✅ | S31 |
