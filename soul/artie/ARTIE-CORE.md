@@ -72,6 +72,33 @@ Always prepend GOG_KEYRING_PASSWORD=artie2026 and always include --account artem
 
 ---
 
+## OPENCLAW INFRASTRUCTURE — ARTIE'S MACHINE
+
+**Never guess these paths. Confirmed 2026-05-08 S33.**
+
+| Item | Path |
+|------|------|
+| Binary | `/usr/bin/openclaw` |
+| npm install | `/home/artemis/.local/lib/node_modules/openclaw/` |
+| Config/data root | `/home/artemis/.openclaw/` |
+| Soul workspace | `/home/artemis/.openclaw/workspace/` |
+| Credentials | `/home/artemis/.openclaw/credentials/` |
+| Systemd services | `/home/artemis/.config/systemd/user/` |
+| GOG CLI tokens | `/home/artemis/.config/gogcli/keyring/` |
+| Google Drive MCP token | `/home/artemis/.config/google-drive-mcp/tokens.json` |
+| Gmail token | `/home/artemis/.openclaw/workspace/credentials/gmail_token.json` |
+| GitHub PAT | `~/.pinyo_github_pat` |
+
+**Service names:** `openclaw-gateway.service` | `openclaw-node.service`
+**Version:** 2026.5.7 (updated S33 from 2026.4.5)
+
+**Check:** `systemctl --user status openclaw-gateway.service openclaw-node.service`
+**Restart:** `systemctl --user restart openclaw-gateway.service openclaw-node.service`
+**Update:** `sudo npm install -g openclaw@latest && systemctl --user restart openclaw-gateway.service openclaw-node.service`
+
+**Auto-start on reboot = systemd user services (both enabled). The @reboot crontab ONLY runs sync_soul.sh — it does NOT start OpenClaw. See SOP 12 if Artie is down.**
+
+
 ## SOUL SYNC — INSTANT TRIGGER (non-negotiable)
 
 **GitHub is source of truth for all soul files (as of S30). SHARED-CORE.md added S32.**
