@@ -1,5 +1,5 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-05-07 | Session 31 (closed)
+**Last Updated:** 2026-05-08 | Session 33
 **Updated By:** Claude (Session 28)
 
 ---
@@ -8,6 +8,7 @@
 
 | Area | Status | Notes |
 |------|--------|-------|
+| OpenClaw | 2026.5.7 | Updated S33. Services: openclaw-gateway + openclaw-node (systemd --user). Paths confirmed. |
 | GitHub setup | ✅ LIVE | `github.com/Artemisclaws/sharedfolder` |
 | Discord setup | ✅ LIVE | All 8 channels wired, Artie responding |
 | Morning briefing → Discord | ✅ CONFIRMED | Verified by Chris, Session 27 |
