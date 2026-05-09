@@ -291,6 +291,20 @@ Your call on each — reply with "drop [item]" or "hold [item]"
 4. Never dump cross-department outputs into #general
 5. Format every message to answer: "What happened, what does it mean, what happens next?"
 
+## SOP 12 — ARTIE RECOVERY (Down After Reboot or Crash)
+
+**Trigger:** Artie unresponsive on Discord/Telegram, or after any reboot
+
+1. TeamViewer into Artie's machine, open terminal
+2. Check: `systemctl --user status openclaw-gateway.service openclaw-node.service`
+3. If stopped: `systemctl --user start openclaw-gateway.service openclaw-node.service`
+4. If version mismatch error: `sudo npm install -g openclaw@latest && systemctl --user restart openclaw-gateway.service openclaw-node.service`
+5. Confirm both show `active (running)`
+6. Discord to Chris: "✅ Artie back online"
+
+**Root cause log — 2026-05-08 S33:** Binary (2026.4.5) behind config (2026.4.12) caused silent boot failure. Updated to 2026.5.7. Fixed.
+
+
 ## RUNBOOK GAPS LOG
 
 *Artie adds here when encountering a situation not covered above. Claude reviews and writes the SOP.*
