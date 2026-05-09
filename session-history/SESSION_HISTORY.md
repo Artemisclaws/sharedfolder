@@ -282,3 +282,32 @@ Source files on Drive:
 **Next session starts with:** I-21 and I-22 — see MASTER_OPEN_ITEMS for full next session paste.
 
 ---
+
+## Session 32 — 2026-05-07
+
+**Completed:**
+- I-21: SHARED-CORE.md created — coaching philosophy, 11 model trigger table, RPG life layer, rules V3
+- I-22: CLAUDE-CORE.md V3 — handoff keyword protocol added
+- ARTIE-CORE.md V5 — SHARED-CORE in load sequence; sync_soul.sh updated
+- SPRINT.md Active Items digest live
+- RPG_LEDGER.md created at indexes/RPG_LEDGER.md
+- EMPIRE_RULES.md archived — content absorbed into SHARED-CORE
+- GitHub PAT stored at ~/.pinyo_github_pat (confirmed S33)
+
+**Next session starts with:** I-06 daily digest cron OR Pinyo Farms B-01
+
+---
+
+## Session 33 — 2026-05-08
+
+**Completed:**
+- Artie down after reboot — OpenClaw binary (2026.4.5) behind config (2026.4.12) → silent boot failure
+- Updated OpenClaw 2026.4.5 → 2026.5.7 via npm — both systemd services back online
+- ARTIE-CORE.md — OPENCLAW INFRASTRUCTURE section: every critical path documented permanently
+- ARTIE-RUNBOOK.md — SOP 12: Artie Recovery (exact commands, no guessing ever again)
+- GitHub PAT confirmed at ~/.pinyo_github_pat — handoff auto-push now fully operational
+- EMPIRE_STATUS.md updated
+
+**Next session starts with:** I-06 daily digest cron (decide time with Chris), or I-23 cron audit
+
+---
