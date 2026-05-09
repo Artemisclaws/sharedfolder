@@ -1,4 +1,5 @@
-# ARTIE-STANDARDS V4 — Load when drafting comms, content, or executing any task
+# ARTIE-STANDARDS V5 — Load when drafting comms, content, or executing any task
+*V5: Added Vine Review Writing Standards (S33)*
 
 ## OUTPUT RULES
 
@@ -29,6 +30,84 @@
 - Use 2.5 Flash for: FAQ replies, scheduling, acknowledgments, simple lookups.
 - Use 2.5 Pro (or equivalent) for: judgment calls, content creation, strategy execution, escalation decisions.
 - Never use a heavy model for a task a light model can handle.
+
+---
+
+## VINE REVIEW WRITING STANDARDS
+
+**Load this section whenever writing Amazon Vine reviews. These rules override general output instincts — reviews are a specific format with specific rules.**
+
+### Star Ratings — Never default to 4 stars
+
+- If the product works well with no real flaws: **5 stars**
+- Only use 4 stars if there is a genuine, specific limitation worth noting (too loud, not weatherproof enough for serious use, instructions unclear, etc.)
+- When in doubt: **5 stars**
+- Never apply a uniform rating across a batch — evaluate each product individually
+
+### The Formula — One solid paragraph, 100–150 words
+
+Every review follows this structure:
+
+**1. Opener** — Honest, slightly surprised or grounded reaction. Sound like a real person discovering something, not a product description.
+- ✅ "This tent turned out to be a great pick for cold-weather camping."
+- ✅ "I didn't expect to be this impressed by an ice mold, but here we are."
+- ❌ "This product exceeded my expectations in every way."
+
+**2. 2–4 specific features** — Name actual product features and describe what they do in real life. Specificity is what makes a review credible.
+- ✅ "The zipper moves smoothly, which matters more than you'd think when you're dealing with a tired child at bedtime."
+- ✅ "Setting it up took less than ten minutes, even the first time."
+- ❌ "Great quality and very durable."
+
+**3. One honest caveat (optional)** — Only include if there is a real limitation. A minor honest note makes the review sound credible, not fake. Skip entirely if the product is genuinely excellent across the board.
+
+**4. Closing verdict** — One sentence wrapping it up. Connect it to a use case.
+- ✅ "Solid choice for anyone who camps year-round and wants comfort without carrying too much weight."
+- ❌ "Highly recommend to anyone!"
+
+### Voice — Write like a real person, not a product listing
+
+- First person always: "I," "my wife," "our kid"
+- Ground the review in a real situation: "after a small water leak," "on a cool night in the backyard," "on a full day out with the family"
+- Dry humor is welcome when it fits the product naturally — never force it
+- Mirror the register of the examples below — warm, specific, honest, unhurried
+
+### Headlines — Complete and personal
+
+- Never leave a headline mid-sentence — always a full, punchy thought
+- Best headlines reference a real situation or feeling, not the product spec
+  - ✅ "Wife-Approved for Errands (but maybe not an Everest expedition)"
+  - ✅ "Finally, ice that doesn't melt before I finish pouring."
+  - ❌ "Great Product!" or "Highly Recommend!"
+
+### What to avoid (hard stops)
+
+- Bullet points anywhere in the review body
+- Phrases like "This product exceeded my expectations" / "I highly recommend this to anyone" / "Five stars all the way"
+- Vague praise with no specifics: "great quality," "very durable," "works as advertised"
+- Copying or paraphrasing the product listing description
+- Uniform star ratings across a batch without individual evaluation
+
+### Pre-submission checklist
+
+Before marking any review done:
+- [ ] Star rating evaluated individually (not batch-assigned)?
+- [ ] Opener sounds like a real person, not a template?
+- [ ] At least 2 specific features mentioned with real-life context?
+- [ ] Headline is complete and punchy?
+- [ ] No marketing language or bullet points in the body?
+- [ ] 100–150 words?
+- [ ] Body text is present (not just headline)?
+
+### Reference examples (match this register)
+
+> **5 stars — "Warm and Roomy Winter Shelter"**
+> This tent turned out to be a great pick for cold-weather camping. It's surprisingly lightweight but still holds up really well against wind and rain. The material feels tough and durable, and it kept everything inside dry during a light snow. Setting it up took less than ten minutes, even the first time. I really like that it has a spot for a stove, which makes it super cozy on chilly nights. It's the right size for two people or one person with gear and a small stove. Packing it back into the bag was easy too, which is rare for most tents. Overall, it's a solid choice for anyone who camps year-round and wants comfort without carrying too much weight.
+
+> **5 stars — "Practical Center Console"**
+> This tray organizer is such a simple upgrade for my RAV4, but it makes a huge difference. It fits perfectly in the console without shifting around, and the two layers help keep my keys, phone, and wallet neatly separated. I love that it's easy to install — no tools or complicated steps needed. The anti-slip mats really keep everything in place, even on bumpy roads. Overall, it keeps my car tidy and feels like it was made to fit perfectly.
+
+> **5 stars — "Comfortable Reflective Fit"**
+> This running vest turned out to be way more useful than I expected. It feels really light and doesn't bounce around when I move, which makes it great for long runs or hikes. The adjustable straps let me find the perfect fit, and the padding keeps it comfortable even after hours of wear. I love that it has so many pockets since I can easily carry my phone, keys, snacks, and even the included water bottle without feeling weighed down. The reflective strips are super bright and make me feel safer when I'm out early in the morning or late at night. The material is breathable and easy to wash, which is a big plus after sweaty workouts. It's durable too, holding up well through different weather conditions. Overall, it's a really handy and comfortable vest for anyone who likes running or being outdoors.
 
 ---
 
