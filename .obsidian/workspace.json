@@ -11,10 +11,10 @@
             "id": "0d22b2ab83bb6302",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -173,9 +173,16 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false,
+      "homepage:Open homepage": false,
+      "githobs:Manage a github issue": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "0d22b2ab83bb6302",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "soul/artie/ARTIE-STANDARDS.md",
+    "_inbox/obsidian-second-brain-live.md"
+  ]
 }
