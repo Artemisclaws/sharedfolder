@@ -63,3 +63,9 @@ S33 closes the Artie recovery gap. Next sprint: daily digest live, cron backends
 
 *Cross-reference: MASTER_OPEN_ITEMS.md for full task list and history.*
 *Updated automatically at every handoff. Never edit manually.*
+
+---
+
+## 🔗 Graph Links
+[[HOME]] | [[EMPIRE_STATUS]] | [[MASTER_OPEN_ITEMS]]
+[[aura-thai]] | [[vine-arbitrage]] | [[pinyo-farms]] | [[ai-ventures]] | [[roam]]

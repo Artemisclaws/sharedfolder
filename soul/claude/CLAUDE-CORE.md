@@ -228,3 +228,8 @@ When Chris types "handoff" — execute the handoff protocol in CLAUDE-CORE.md au
 ---
 
 *V3 changes: Added SHARED-CORE.md to mandatory load sequence. Added handoff keyword protocol (auto-push to GitHub). Added boot-loader text. Updated file system reference for EMPIRE_RULES archive. Added RPG_LEDGER to indexes.*
+
+---
+
+## 🔗 Graph Links
+[[HOME]] | [[SHARED-CORE]] | [[ARTIE-CORE]] | [[EMPIRE_STATUS]] | [[SPRINT]] | [[MASTER_OPEN_ITEMS]]

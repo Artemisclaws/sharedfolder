@@ -176,3 +176,9 @@ Stats are updated at every handoff. Chris never needs to manage the ledger — C
 *Every change to this file logged in: `indexes/SOUL_CHANGELOG.md`*
 *Full mental model library: `soul/shared/THINKING_OS.md`*
 *Archived predecessor: `soul/shared/EMPIRE_RULES.md` (S32)*
+
+---
+
+## 🔗 Graph Links
+[[HOME]] | [[CLAUDE-CORE]] | [[ARTIE-CORE]] | [[EMPIRE_STATUS]] | [[SPRINT]]
+[[aura-thai]] | [[vine-arbitrage]] | [[pinyo-farms]] | [[ai-ventures]] | [[roam]]

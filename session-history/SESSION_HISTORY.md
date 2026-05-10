@@ -311,3 +311,8 @@ Source files on Drive:
 **Next session starts with:** I-06 daily digest cron (decide time with Chris), or I-23 cron audit
 
 ---
+
+---
+
+## 🔗 Graph Links
+[[HOME]] | [[SPRINT]] | [[EMPIRE_STATUS]] | [[MASTER_OPEN_ITEMS]]

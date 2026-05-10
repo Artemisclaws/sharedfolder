@@ -126,3 +126,9 @@
 ---
 
 *GitHub source of truth. Updated end of every session. Never recreated — only appended/edited.*
+
+---
+
+## 🔗 Graph Links
+[[HOME]] | [[SPRINT]] | [[EMPIRE_STATUS]] | [[SESSION_HISTORY]]
+[[aura-thai]] | [[vine-arbitrage]] | [[pinyo-farms]] | [[ai-ventures]] | [[roam]]
