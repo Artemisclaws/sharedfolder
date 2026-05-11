@@ -316,3 +316,20 @@ Source files on Drive:
 
 ## 🔗 Graph Links
 [[HOME]] | [[SPRINT]] | [[EMPIRE_STATUS]] | [[MASTER_OPEN_ITEMS]]
+
+## Session 34 — 2026-05-10
+
+**Completed:**
+- Designed and built Obsidian second brain — full architecture session
+- Vault cloned from GitHub repo (~/Documents/pinyo-empire) — live on Chris's Mac
+- HOME.md built — command center with Dataview panels and wikilinks to all nodes
+- 5 business notes created: aura-thai, vine-arbitrage, pinyo-farms, ai-ventures, roam
+- _inbox/ and _templates/ created — Claude drops notes, Chris receives notification
+- Wikilinks added to all core files — graph live with HOME as central hub
+- Obsidian Git configured — auto-pull every 5min, pull on startup, auto-commit-and-sync
+- Homepage plugin pointed to HOME.md
+- Sync loop tested and confirmed — note pushed to GitHub appeared in vault
+- PAT saved permanently to outputs/github_pat.txt — no more session uploads needed
+- EMPIRE_STATUS updated — Obsidian marked live
+
+**Next session starts with:** I-06 daily digest cron (Chris picks a time), then I-23 cron backends

@@ -1,13 +1,13 @@
 # SPRINT.md — Current Sprint Priorities
 **Updated by:** Claude at handoff — automatic
-**Last Updated:** 2026-05-08 | Session 33
+**Last Updated:** 2026-05-10 | Session 34
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## ACTIVE ITEMS — S33 DIGEST
+## ACTIVE ITEMS — S34 DIGEST
 
 | ID | Item | Status |
 |----|------|--------|
@@ -27,7 +27,7 @@ Both agents load this file. It answers: what matters most right now?
 
 **Theme:** Operations activation. Infrastructure is locked. Now we make Artie actually run things.
 
-S33 closes the Artie recovery gap. Next sprint: daily digest live, cron backends fixed, first business research started.
+S34 delivered the second brain — Obsidian vault live, graph active, HOME as hub, auto-sync confirmed. Next: daily digest live, cron backends fixed, first business research started.
 
 ---
 
@@ -61,8 +61,12 @@ S33 closes the Artie recovery gap. Next sprint: daily digest live, cron backends
 
 ---
 
-*Cross-reference: MASTER_OPEN_ITEMS.md for full task list and history.*
-*Updated automatically at every handoff. Never edit manually.*
+## S34 COMPLETED
+
+| Item | Done |
+|------|------|
+| Obsidian second brain — vault, graph, HOME, businesses, wikilinks, auto-sync | ✅ S34 |
+| PAT saved permanently to outputs/github_pat.txt | ✅ S34 |
 
 ---
 
