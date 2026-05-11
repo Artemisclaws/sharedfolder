@@ -1,13 +1,13 @@
 # SPRINT.md — Current Sprint Priorities
 **Updated by:** Claude at handoff — automatic
-**Last Updated:** 2026-05-10 | Session 34
+**Last Updated:** 2026-05-10 | Session 35
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## ACTIVE ITEMS — S34 DIGEST
+## ACTIVE ITEMS — S35 DIGEST
 
 | ID | Item | Status |
 |----|------|--------|
@@ -17,6 +17,10 @@ Both agents load this file. It answers: what matters most right now?
 | I-17 | Decommission old Cloudflare Tunnel | ❌ Open |
 | I-10 | Artie bot token → .bashrc env variable | ❌ Open |
 | I-02 | Drive + GitHub restructure (final cleanup) | 🔄 In Progress |
+| A-01 | Aura Thai: run real data through processor (Lavu as primary) | ❌ Blocked — Lavu XLS needs Google Sheets conversion |
+| A-02 | Aura Thai: UberEats price impact analysis | ⏳ Pending — UE Apr/May files uploaded to Drive dump, run next session |
+| A-03 | Aura Thai: push finance dashboard to ops.radrooster.co/aura-thai | ❌ Pending real data |
+| A-04 | Aura Thai: ARTIE SOP 13 (Monthly Finance Update) | ❌ Draft exists, needs formal write |
 | B-01 | Pinyo Farms market validation | ❌ Open — queued |
 | B-02 | Roam master content plan | ❌ Open — queued |
 | O-01 | Playwright downloader (DD/UE) | ❌ Open — dedicated session |
@@ -25,9 +29,9 @@ Both agents load this file. It answers: what matters most right now?
 
 ## SPRINT GOAL — MAY 2026
 
-**Theme:** Operations activation. Infrastructure is locked. Now we make Artie actually run things.
+**Theme:** Operations activation. Infrastructure locked. Now make Artie run things and get real data flowing.
 
-S34 delivered the second brain — Obsidian vault live, graph active, HOME as hub, auto-sync confirmed. Next: daily digest live, cron backends fixed, first business research started.
+S35 delivered real DoorDash price impact analysis — data is live, monitoring is scheduled. Next: UberEats price analysis, Lavu data access, daily digest, cron backends.
 
 ---
 
@@ -35,7 +39,7 @@ S34 delivered the second brain — Obsidian vault live, graph active, HOME as hu
 
 | Business | Status | Priority Action |
 |----------|--------|-----------------|
-| Aura Thai | 🟡 Active | Lavu integration (blocked on Chris completing setup) |
+| Aura Thai | 🟡 Active | UberEats price analysis (A-02) + Lavu data access (A-01) |
 | Vine Arbitrage | 🟢 Running | Artie handles review backlog — no Claude action needed |
 | Pinyo Farms | ⏳ Planning | Market validation research — not started, B-01 |
 | AI Ventures | ⏳ Planning | Restaurant subscription stream — defined, not planned |
@@ -48,7 +52,14 @@ S34 delivered the second brain — Obsidian vault live, graph active, HOME as hu
 | Decision | Context | Urgency |
 |----------|---------|---------|
 | Daily digest time for #general | I-06 blocked until Chris picks a time (6am? 8am?) | High |
+| Convert Lavu XLS → Google Sheets | Jan–Apr Transactions + Sale by Item — needed to make Lavu primary data source | High |
+| Aura Thai price increase: hold or adjust? | DD revenue -5.1%, monitoring weekly. Review after June 9 if still below baseline | Medium |
 | Lavu setup completion | O-03 and O-04 blocked until Chris finishes Lavu setup | Medium |
+
+---
+
+## PROTOCOL — ANALYZE BEFORE EXECUTE (added S35)
+> For any strategy touching pricing, menu, marketing spend, or operations — model scenarios first, define decision criteria, get approval, then move. Added after April 9 price increase went live without pre-analysis.
 
 ---
 
@@ -58,15 +69,18 @@ S34 delivered the second brain — Obsidian vault live, graph active, HOME as hu
 |------|---------|
 | O-03 Aura Thai Lavu integration | Chris needs to complete Lavu setup |
 | O-04 Aura Thai Shift Close integration | Chris needs to complete setup |
+| A-01 Real data processor run | Lavu XLS → Google Sheets conversion needed |
 
 ---
 
-## S34 COMPLETED
+## S35 COMPLETED
 
 | Item | Done |
 |------|------|
-| Obsidian second brain — vault, graph, HOME, businesses, wikilinks, auto-sync | ✅ S34 |
-| PAT saved permanently to outputs/github_pat.txt | ✅ S34 |
+| DoorDash price impact analysis — fixed script, ran real data, generated dd_price_impact.html | ✅ S35 |
+| Aura Thai profile (businesses/aura-thai/aura-thai.md) — full update with finance status, price data, monitoring plan | ✅ S35 |
+| Weekly price monitoring scheduled task (every Monday 9am) | ✅ S35 |
+| "Analyze before execute" protocol established | ✅ S35 |
 
 ---
 

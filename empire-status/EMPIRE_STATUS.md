@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-05-08 | Session 33
-**Updated By:** Claude (Session 28)
+**Last Updated:** 2026-05-10 | Session 35
+**Updated By:** Claude (Session 35)
 
 ---
 
@@ -28,6 +28,26 @@
 | Drive folder reorganization | ❌ DEFERRED | S28 — I-02 |
 | Live market data | ❌ NOT SET UP | Future session |
 | Obsidian Second Brain | ✅ LIVE | S34 — vault synced, graph live, HOME as hub, auto-pull every 5min |
+| Aura Thai Finance Dashboard | 🟡 IN PROGRESS | S34–S35 — dashboard + processor built, sample data. Real data pending Lavu XLS conversion. |
+| Aura Thai Price Increase Monitoring | ✅ ACTIVE | S35 — DD +20% went live Apr 9. Revenue -5.1%, monitoring weekly (Mon 9am scheduled task). |
+
+---
+
+## AURA THAI — FINANCE & PRICE ANALYSIS (S35)
+
+| Item | Status |
+|------|--------|
+| `aura_thai_finance.html` | ✅ Built — dark theme, GH data. Push to ops.radrooster.co/aura-thai pending. |
+| `aura_thai_revenue_processor.py` | ✅ Built — auto-detects all platform files, delta processing |
+| `dd_price_impact.html` | ✅ Built — Apr 2–18 analysis, Chart.js charts |
+| DoorDash price impact (Apr 2–18) | ✅ Analyzed — ticket +13.1%, orders -16.2%, revenue -5.1%. Verdict: slightly hurting. |
+| GrubHub control group | ✅ Orders +11.1%, revenue +0.2% in same window |
+| UberEats price analysis | ⏳ Pending — Apr/May files now in Drive dump. Run next session. |
+| Lavu as primary source | ❌ Blocked — XLS files need conversion to Google Sheets (Jan–Apr) |
+| Weekly price monitoring | ✅ Scheduled — every Monday 9am, posts to #finance |
+| ARTIE SOP 13 | ❌ Draft in checkpoint, needs formal write in ARTIE-RUNBOOK.md |
+
+**Protocol note:** Analyze before execute — established S35 after price increase went live without pre-analysis.
 
 ---
 
@@ -69,6 +89,7 @@
 | Master File Map | GitHub: `master-file-map/MASTER_FILE_MAP.md` |
 | Session handoffs | GitHub: `sessions/` |
 | Live dashboard | GitHub: `dashboard/index.html` → ops.radrooster.co |
+| Aura Thai profile | GitHub: `businesses/aura-thai/aura-thai.md` |
 | Soul files (Artie) | GitHub: `soul/artie/` — ARTIE-CORE, ARTIE-STANDARDS, ARTIE-PROJECTS, ARTIE-RUNBOOK, ARTIE-DEPT |
 | Soul files (Shared) | GitHub: `soul/shared/` — SHARED-CORE (new S32), THINKING_OS. EMPIRE_RULES archived. |
 | Soul files (Claude) | GitHub: `soul/claude/` — CLAUDE-CORE, CLAUDE-PROJECTS |
