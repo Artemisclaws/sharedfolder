@@ -27,6 +27,7 @@
 | 9 cron job backends | ❌ NOT BUILT | Dedicated session needed |
 | Drive folder reorganization | ❌ DEFERRED | S28 — I-02 |
 | Live market data | ❌ NOT SET UP | Future session |
+| Obsidian Second Brain | ✅ LIVE | S34 — vault synced, graph live, HOME as hub, auto-pull every 5min |
 
 ---
 

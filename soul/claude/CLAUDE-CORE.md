@@ -99,7 +99,7 @@ Create a file at one of these paths containing only your GitHub PAT:
 After that — handoff is fully automatic.
 
 **PAT location (confirmed S33):** Chris uploads the PAT as an RTF file via Cowork uploads.
-Read it in bash with: `strings "/sessions/[session-name]/mnt/uploads/Github PAT.rtf" | grep ghp_`
+Read it in bash with: `cat /sessions/quirky-busy-planck/mnt/outputs/github_pat.txt`
 Never ask Chris for the PAT again — it lives in the uploads folder each session.
 
 ### Step 7 — Deliver handoff summary to Chris
