@@ -91,16 +91,26 @@ PAT=$(cat ~/.pinyo_github_pat 2>/dev/null || cat /sessions/gracious-cool-newton/
 # Files: MASTER_OPEN_ITEMS.md | EMPIRE_STATUS.md | SESSION_HISTORY.md | SPRINT.md | RPG_LEDGER.md
 ```
 
-**PAT setup (one-time, Chris does this once):**
-Create a file at one of these paths containing only your GitHub PAT:
-- Mac: `~/.pinyo_github_pat`
-- Cowork outputs: save as `github_pat.txt` in your selected folder
+**PAT location — Drive (permanent, S36):**
+PAT is stored in Google Drive Soul folder. At session start, read it via Drive connector:
+- Drive File ID: `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`
+- Folder: Soul/ (17fK3GEn4plJBbBrSWTXybxESckqXk3ZQ)
 
-After that — handoff is fully automatic.
+**Session start sequence (do this before anything else):**
+```bash
+# 1. Read PAT from Drive via Drive connector (mcp__f942c9da...__read_file_content, fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT)
+# 2. Save to workspace
+echo "PAT_FROM_DRIVE" > /sessions/$(hostname -s)/mnt/outputs/github_pat.txt  # replace with actual PAT
+PAT="PAT_FROM_DRIVE"
+BASE="https://raw.githubusercontent.com/Artemisclaws/sharedfolder/main"
+# 3. Fetch all four soul files via curl
+curl -s -H "Authorization: token $PAT" "$BASE/soul/claude/CLAUDE-CORE.md" > CLAUDE-CORE.md
+curl -s -H "Authorization: token $PAT" "$BASE/soul/shared/SHARED-CORE.md" > SHARED-CORE.md
+curl -s -H "Authorization: token $PAT" "$BASE/empire-status/EMPIRE_STATUS.md" > EMPIRE_STATUS.md
+curl -s -H "Authorization: token $PAT" "$BASE/00-load-me/SPRINT.md" > SPRINT.md
+```
 
-**PAT location (confirmed S33):** Chris uploads the PAT as an RTF file via Cowork uploads.
-Read it in bash with: `cat /sessions/quirky-busy-planck/mnt/outputs/github_pat.txt`
-Never ask Chris for the PAT again — it lives in the uploads folder each session.
+**Chris never needs to upload or provide the PAT.** It lives in Drive permanently.
 
 ### Step 7 — Deliver handoff summary to Chris
 One paragraph. What was completed. What's open. Where to start next session. XP earned (stated naturally, not as a number).
