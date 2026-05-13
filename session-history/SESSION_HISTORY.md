@@ -316,3 +316,62 @@ Source files on Drive:
 
 ## 🔗 Graph Links
 [[HOME]] | [[SPRINT]] | [[EMPIRE_STATUS]] | [[MASTER_OPEN_ITEMS]]
+
+## Session 34 — 2026-05-10
+
+**Completed:**
+- Designed and built Obsidian second brain — full architecture session
+- Vault cloned from GitHub repo (~/Documents/pinyo-empire) — live on Chris's Mac
+- HOME.md built — command center with Dataview panels and wikilinks to all nodes
+- 5 business notes created: aura-thai, vine-arbitrage, pinyo-farms, ai-ventures, roam
+- _inbox/ and _templates/ created — Claude drops notes, Chris receives notification
+- Wikilinks added to all core files — graph live with HOME as central hub
+- Obsidian Git configured — auto-pull every 5min, pull on startup, auto-commit-and-sync
+- Homepage plugin pointed to HOME.md
+- Sync loop tested and confirmed — note pushed to GitHub appeared in vault
+- PAT saved permanently to outputs/github_pat.txt — no more session uploads needed
+- EMPIRE_STATUS updated — Obsidian marked live
+
+**Next session starts with:** I-06 daily digest cron (Chris picks a time), then I-23 cron backends
+
+## Session 35 — 2026-05-10
+
+**Completed:**
+- Fixed price_impact_analysis.py (f-string ValueError — nested dict expressions + conditional format specs extracted to pre-computed variables)
+- Ran DoorDash price impact analysis with real data: ticket +13.1%, orders/day -16.2%, revenue/day -5.1% vs pre-increase baseline
+- GrubHub control group: orders +11.1%, revenue +0.2% in same window — confirms DD volume loss is price-driven, not market-driven
+- Generated dd_price_impact.html — Chart.js report with daily charts, comparison table, verdict, insights
+- Updated Aura Thai profile (businesses/aura-thai/aura-thai.md) — full status, finance build, price findings, monitoring plan
+- Set up weekly price monitoring scheduled task (every Monday 9am → #finance)
+- Established "analyze before execute" protocol for all pricing/strategy decisions
+- UberEats Apr/May files confirmed uploaded to Drive dump — ready for next session
+
+**Next session starts with:** Load soul files. Run UberEats price impact analysis (files in Drive dump). Then Lavu XLS → Google Sheets conversion so Lavu becomes primary data source. Also: I-06 daily digest time with Chris.
+
+## Session 35 — 2026-05-10
+
+**Completed:**
+- Fixed price_impact_analysis.py (f-string ValueError — nested dict expressions + conditional format specs extracted to pre-computed variables)
+- Ran DoorDash price impact analysis with real data: ticket +13.1%, orders/day -16.2%, revenue/day -5.1% vs pre-increase baseline
+- GrubHub control group: orders +11.1%, revenue +0.2% in same window — confirms DD volume loss is price-driven, not market-driven
+- Generated dd_price_impact.html — Chart.js report with daily charts, comparison table, verdict, insights
+- Updated Aura Thai profile (businesses/aura-thai/aura-thai.md) — full status, finance build, price findings, monitoring plan
+- Set up weekly price monitoring scheduled task (every Monday 9am → #finance)
+- Established "analyze before execute" protocol for all pricing/strategy decisions
+- UberEats Apr/May files confirmed uploaded to Drive dump — ready for next session
+
+**Next session starts with:** Load soul files. Run UberEats price impact analysis (files in Drive dump). Then Lavu XLS → Google Sheets conversion so Lavu becomes primary data source. Also: I-06 daily digest time with Chris.
+
+## Session 35 — 2026-05-10
+
+**Completed:**
+- Fixed price_impact_analysis.py (f-string ValueError — nested dict expressions + conditional format specs extracted to pre-computed variables)
+- Ran DoorDash price impact analysis with real data: ticket +13.1%, orders/day -16.2%, revenue/day -5.1% vs pre-increase baseline
+- GrubHub control group: orders +11.1%, revenue +0.2% in same window — confirms DD volume loss is price-driven, not market-driven
+- Generated dd_price_impact.html — Chart.js report with daily charts, comparison table, verdict, insights
+- Updated Aura Thai profile (businesses/aura-thai/aura-thai.md) — full status, finance build, price findings, monitoring plan
+- Set up weekly price monitoring scheduled task (every Monday 9am → #finance)
+- Established "analyze before execute" protocol for all pricing/strategy decisions
+- UberEats Apr/May files confirmed uploaded to Drive dump — ready for next session
+
+**Next session starts with:** Load soul files. Run UberEats price impact analysis (files in Drive dump). Then Lavu XLS → Google Sheets conversion so Lavu becomes primary data source. Also: I-06 daily digest time with Chris.

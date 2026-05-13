@@ -66,6 +66,7 @@
 
 | Item | Completed | Session |
 |------|-----------|---------|
+| Obsidian second brain live — vault, graph, HOME, 5 business notes, wikilinks, auto-sync | ✅ | S34 |
 | OpenClaw recovery + path docs (S33): Updated 2026.5.7, ARTIE-CORE infra section, SOP 12, PAT stored | ✅ | S33 |
 | Soul file architecture (I-21): SHARED-CORE.md + handoff keyword + boot-loader | ✅ | S32 |
 | SHARED-CORE.md content rebuild (I-22): coaching philosophy + RPG game + rules v3 | ✅ | S32 |
@@ -132,3 +133,11 @@
 ## 🔗 Graph Links
 [[HOME]] | [[SPRINT]] | [[EMPIRE_STATUS]] | [[SESSION_HISTORY]]
 [[aura-thai]] | [[vine-arbitrage]] | [[pinyo-farms]] | [[ai-ventures]] | [[roam]]
+
+## 📋 SESSION 34 PRIORITY ORDER
+
+1. **I-06** — Daily digest cron for #general (decide time with Chris)
+2. **I-23** — Artie cron audit (fix backends)
+3. **B-01** — Pinyo Farms market validation
+
+**Start S35 with:** Load soul files. Check Obsidian vault is auto-pulling correctly. Priority: I-06 (daily digest — pick a time), then I-23 (cron backends).
