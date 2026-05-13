@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "bc4d51d40699e7e3",
+        "id": "56153a3b9e3837ed",
         "type": "tabs",
         "children": [
           {
-            "id": "0d22b2ab83bb6302",
+            "id": "e180b3641cf36874",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_inbox/obsidian-second-brain-live.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "obsidian-second-brain-live"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_inbox/obsidian-second-brain-live.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for obsidian-second-brain-live"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_inbox/obsidian-second-brain-live.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from obsidian-second-brain-live"
+              "title": "Outgoing links"
             }
           },
           {
@@ -156,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_inbox/obsidian-second-brain-live.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of obsidian-second-brain-live"
+              "title": "Outline"
             }
           }
         ]
@@ -187,9 +180,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0d22b2ab83bb6302",
+  "active": "e180b3641cf36874",
   "lastOpenFiles": [
-    "soul/artie/ARTIE-STANDARDS.md",
-    "_inbox/obsidian-second-brain-live.md"
+    "soul/artie/ARTIE-PROJECTS.md",
+    "_inbox/obsidian-second-brain-live.md",
+    "soul/artie/ARTIE-STANDARDS.md"
   ]
 }
