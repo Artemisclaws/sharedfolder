@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Source of truth for all open tasks across the Pinyo Empire.**
-**Last Updated:** 2026-05-08 | Session 33
+**Last Updated:** 2026-05-13 | Session 36
 **Rule:** Items are ONLY marked ✅ when personally confirmed completed in session. Never assumed.
 
 ---
@@ -43,7 +43,12 @@
 
 | # | Item | Status | Owner | Notes |
 |---|------|--------|-------|-------|
-| I-23 | Artie automated task audit — crons not triggering | ❌ Open | S33 | Aura Thai finance pull/analyze/daily update + Vine reviews/product descriptions. Diagnose why crons aren't firing and fix backends. |
+| I-23 | Artie automated task audit — crons not triggering | 🔍 Diagnosed | S37 | **ROOT CAUSE (S36):** cron not firing since ~May 8. GH daily PDFs arriving at 3:34 AM May 10/11/12 — all unprocessed. GH CSV in aura_thai_finance stops at May 8 = 4 days missed. **Fix needed S37:** check cron logs, restart cron, verify email detection logic. Artie SOP needed (see A-04). |
+| A-01 | Aura Thai: Lavu XLS → Google Sheets | ❌ Blocked | Chris | Lavu setup not complete. Blocked on Chris. Once unblocked: convert Lavu export → aura_thai_finance sheet. |
+| A-02 | UberEats price impact analysis | 🔄 Partial | S37 | **S36 progress:** ue_price_impact.html v2 in /outputs. Key finding: ticket +34.7% vs March. Easter confound identified. **Still needed:** Jan UE file (Drive folder: 19_v1W_TvzZ8OilqRDzsN5PPJFytJYphw — search title "2026-01") + full Apr 14-30 data. |
+| A-03 | Push aura_thai_finance.html to ops.radrooster.co | ❌ Open | S37+ | Push to GitHub dashboard/ folder → auto-deploys to ops.radrooster.co/aura-thai |
+| A-04 | ARTIE SOP 13 — Monthly Finance Update | ❌ Open | S37 | Write Artie runbook: check cron logs, restart cron, verify email detection for GH/DD/UE. Update ARTIE-RUNBOOK.md. |
+| A-05 | Wire email pipeline output to aura_thai_finance sheet | ❌ Open | S37 | Sheet ID: 1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE. GH data already in sheet. DD + UE NOT yet loaded (do NOT move source files until confirmed). After successful write: move processed files to _DELETE_ME/. Report to #finance after each run. |
 | O-01 | Playwright downloader (DD/UE) | ❌ Open | Dedicated session | artie_playwright_downloader_UPDATED.py — reads pending_downloads.json, bypasses auth wall |
 | O-02 | Daily financial tracking SOP (AI Ventures) | ❌ Open | Future | SOP for Artie — daily financials → Vine → secondary |
 | O-03 | Aura Thai: Lavu integration | ❌ Blocked | Chris | Blocked on Chris completing Lavu setup |
@@ -141,3 +146,42 @@
 3. **B-01** — Pinyo Farms market validation
 
 **Start S35 with:** Load soul files. Check Obsidian vault is auto-pulling correctly. Priority: I-06 (daily digest — pick a time), then I-23 (cron backends).
+
+---
+
+## 📋 SESSION 36 COMPLETED + S37 START INSTRUCTIONS
+
+**S36 Summary (2026-05-13):**
+- PAT permanently fixed — now stored in Google Drive Soul folder (fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT). No more session uploads. CLAUDE-CORE.md updated and pushed to GitHub.
+- I-23 diagnosed: cron not firing since ~May 8. Evidence = GH daily PDFs arriving but not processed.
+- A-02 partially complete: ue_price_impact.html v2 built with Feb/Mar/Apr partial data. Easter confound identified. Key finding: ticket +34.7-39.8% vs March baseline (most defensible). Orders near-flat (-1.5%) vs DD's -16.2% collapse.
+
+**S37 SESSION START SEQUENCE:**
+```
+# 1. Read PAT from Drive connector
+#    Tool: mcp__f942c9da...__read_file_content
+#    fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT
+# 2. Load soul files via bash+curl with PAT
+PAT="[from Drive]"
+BASE="https://raw.githubusercontent.com/Artemisclaws/sharedfolder/main"
+curl -s -H "Authorization: token $PAT" "$BASE/soul/claude/CLAUDE-CORE.md" > CLAUDE-CORE.md
+curl -s -H "Authorization: token $PAT" "$BASE/soul/shared/SHARED-CORE.md" > SHARED-CORE.md
+curl -s -H "Authorization: token $PAT" "$BASE/empire-status/EMPIRE_STATUS.md" > EMPIRE_STATUS.md
+curl -s -H "Authorization: token $PAT" "$BASE/00-load-me/SPRINT.md" > SPRINT.md
+# 3. Pull this file + SESSION_HISTORY.md + RPG_LEDGER.md from GitHub
+```
+
+**S37 PRIORITY ORDER:**
+1. **A-02 COMPLETE** — Find Jan UE file: search Drive folder `19_v1W_TvzZ8OilqRDzsN5PPJFytJYphw` for title containing "2026-01". Get full Apr 14-30 data from April file (Drive ID: `1oUBI8HM7rIpAB0DU9V3EBGJbznqpIb5Y6VjyfijcEeU`) — all 5 tools have truncation at row 50; try `download_file_content` + bash parse. Rerun analysis → final `ue_price_impact.html`.
+2. **A-04** — Write Artie SOP for cron restart + I-23 fix. Update ARTIE-RUNBOOK.md.
+3. **A-05** — Wire artie_report_sync.py output → aura_thai_finance sheet (ID: 1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE). GH data already in sheet ✅. DD/UE NOT loaded yet — don't move those source files.
+
+**KEY DATA NOTES FOR S37:**
+- UE price markup went live: **April 9, 2026** (same day as DD)
+- PRE window = Apr 1-8 (Easter week — confound: orders suppressed vs March baseline)
+- March comparison (no Easter): avg ticket $33.45 (outlier removed) — USE THIS as PRE baseline
+- Apr POST (Apr 9-13 only, 5 days): avg ticket $45.05
+- DD comparison (complete data): ticket +13.1%, orders -16.2%, revenue -5.1% — "slightly hurting"
+- UE (partial): ticket +34.7%, orders -1.5%, revenue +37.7% — MUCH better than DD, but only 5 days
+- Easter Sunday = April 5 = 0 UE orders. Apr 6 (Mon) = 1 order. Recovery started Apr 7.
+- March file is Transactions format ("Sales excl. tax" = ticket size). Apr/Feb files are order_history format ("Ticket Size").
