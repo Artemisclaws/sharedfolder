@@ -348,30 +348,26 @@ Source files on Drive:
 
 **Next session starts with:** Load soul files. Run UberEats price impact analysis (files in Drive dump). Then Lavu XLS → Google Sheets conversion so Lavu becomes primary data source. Also: I-06 daily digest time with Chris.
 
-## Session 35 — 2026-05-10
+## Session 36 — 2026-05-13
+
+**Theme:** Infrastructure fix + Aura Thai intelligence
 
 **Completed:**
-- Fixed price_impact_analysis.py (f-string ValueError — nested dict expressions + conditional format specs extracted to pre-computed variables)
-- Ran DoorDash price impact analysis with real data: ticket +13.1%, orders/day -16.2%, revenue/day -5.1% vs pre-increase baseline
-- GrubHub control group: orders +11.1%, revenue +0.2% in same window — confirms DD volume loss is price-driven, not market-driven
-- Generated dd_price_impact.html — Chart.js report with daily charts, comparison table, verdict, insights
-- Updated Aura Thai profile (businesses/aura-thai/aura-thai.md) — full status, finance build, price findings, monitoring plan
-- Set up weekly price monitoring scheduled task (every Monday 9am → #finance)
-- Established "analyze before execute" protocol for all pricing/strategy decisions
-- UberEats Apr/May files confirmed uploaded to Drive dump — ready for next session
+- **PAT permanently fixed** — GitHub PAT now stored in Google Drive Soul folder (fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT). CLAUDE-CORE.md updated with new Drive-based startup sequence and pushed to GitHub. No more session uploads, ever.
+- **I-23 diagnosed** — artie_report_sync.py cron confirmed NOT firing since ~May 8. GH daily PDFs arriving at 3:34 AM on May 10/11/12, all unread/unprocessed. GH CSV in aura_thai_finance stops at May 8 = 4 days missed. Root cause confirmed; fix SOP deferred to S37.
+- **A-02 (partial)** — ue_price_impact.html v2 built. Full analysis with Feb, Mar, Apr UberEats data. Key findings:
+  - Ticket size: +34.7% vs March no-outlier baseline ($33.45 → $45.05). Most defensible metric.
+  - Orders: near-flat, -1.5% vs DoorDash's -16.2% volume collapse
+  - Revenue: +37.7% (5-day POST window — needs confirmation over time)
+  - **Easter confound identified and documented:** Apr 1-8 was Easter week (Apr 5 = 0 orders). PRE baseline is suppressed. March comparison is more reliable than Apr PRE.
+  - Platform comparison: UE dramatically outperforming DD on volume retention post-markup
+- Discovered file format inconsistency: March UE is Transactions format, Apr/Feb are Order History format. "Sales excl. tax" = "Ticket Size" — confirmed equivalent.
+- Confirmed Jan UE file exists in Drive folder 19_v1W_TvzZ8OilqRDzsN5PPJFytJYphw (Chris confirmed). Not yet extracted — deferred to S37.
 
-**Next session starts with:** Load soul files. Run UberEats price impact analysis (files in Drive dump). Then Lavu XLS → Google Sheets conversion so Lavu becomes primary data source. Also: I-06 daily digest time with Chris.
+**Files created/modified:**
+- `/outputs/ue_price_impact.html` — v2 UberEats price impact dashboard (Chart.js, dark theme)
+- `/outputs/CLAUDE-CORE.md` — updated and pushed to GitHub (Drive PAT startup sequence)
 
-## Session 35 — 2026-05-10
+**What's still needed for A-02:** Jan UE data + full Apr 14-30 data (truncation problem = only Apr 1-13 readable via Drive MCP). Try download_file_content → bash parse in S37.
 
-**Completed:**
-- Fixed price_impact_analysis.py (f-string ValueError — nested dict expressions + conditional format specs extracted to pre-computed variables)
-- Ran DoorDash price impact analysis with real data: ticket +13.1%, orders/day -16.2%, revenue/day -5.1% vs pre-increase baseline
-- GrubHub control group: orders +11.1%, revenue +0.2% in same window — confirms DD volume loss is price-driven, not market-driven
-- Generated dd_price_impact.html — Chart.js report with daily charts, comparison table, verdict, insights
-- Updated Aura Thai profile (businesses/aura-thai/aura-thai.md) — full status, finance build, price findings, monitoring plan
-- Set up weekly price monitoring scheduled task (every Monday 9am → #finance)
-- Established "analyze before execute" protocol for all pricing/strategy decisions
-- UberEats Apr/May files confirmed uploaded to Drive dump — ready for next session
-
-**Next session starts with:** Load soul files. Run UberEats price impact analysis (files in Drive dump). Then Lavu XLS → Google Sheets conversion so Lavu becomes primary data source. Also: I-06 daily digest time with Chris.
+**Next session starts with:** S37 start sequence in MASTER_OPEN_ITEMS.md. Priority: complete A-02 (Jan UE + full Apr), then A-04 (I-23 fix SOP for Artie), then A-05 (pipeline → aura_thai_finance sheet).
