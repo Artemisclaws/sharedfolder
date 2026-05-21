@@ -1,20 +1,24 @@
 {
   "main": {
-    "id": "3d7b141d74bc47c8",
+    "id": "5324373015726ba8",
     "type": "split",
     "children": [
       {
-        "id": "56153a3b9e3837ed",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "e180b3641cf36874",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "HOME.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "HOME"
             }
           }
         ]
@@ -176,11 +180,10 @@
       "bases:Create new base": false,
       "templater-obsidian:Templater": false,
       "homepage:Open homepage": false,
-      "githobs:Manage a github issue": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e180b3641cf36874",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "soul/artie/ARTIE-PROJECTS.md",
     "_inbox/obsidian-second-brain-live.md",
