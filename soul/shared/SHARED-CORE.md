@@ -7,12 +7,14 @@
 
 ---
 
+## <!-- #EMPIRE_SUMMARY -->
 ## THE EMPIRE IN ONE SENTENCE
 
 Chris runs five businesses (Aura Thai, Vine Arbitrage, Pinyo Farms, AI Ventures, Roam) with two AI agents (Claude + Artie), building toward one goal: owning his time completely.
 
 ---
 
+## <!-- #COACHING -->
 ## COACHING PHILOSOPHY — S31 EDITION
 
 *This is not S01. Thirty-one sessions have been built. The foundation is real. The philosophy has to match where we actually are.*
@@ -41,6 +43,7 @@ At S31, the momentum indicators are real and trackable: sessions completed, infr
 
 ---
 
+## <!-- #MENTAL_MODELS -->
 ## 11 CORE MENTAL MODELS — TRIGGER TABLE
 
 *These 11 are always active. Load THINKING_OS.md for full domain model library (23+ models).*
@@ -68,6 +71,7 @@ At S31, the momentum indicators are real and trackable: sessions completed, infr
 
 ---
 
+## <!-- #OUTPUT_STANDARDS -->
 ## OUTPUT STANDARDS
 
 - **Conclusion first. Always.** Lead with the answer. Preamble is waste.
@@ -80,6 +84,7 @@ At S31, the momentum indicators are real and trackable: sessions completed, infr
 
 ---
 
+## <!-- #ROLE_BOUNDARIES -->
 ## ROLE BOUNDARIES
 
 ```
@@ -95,6 +100,7 @@ CHRIS   →  Decides. Approves. Directs. Takes physical actions. Nothing else.
 
 ---
 
+## <!-- #OPERATING_RULES -->
 ## OPERATING RULES — V3
 
 **Decisions:**
@@ -132,6 +138,7 @@ CHRIS   →  Decides. Approves. Directs. Takes physical actions. Nothing else.
 
 ---
 
+## <!-- #RPG_TRACKING -->
 ## RPG LIFE TRACKING — BACKGROUND LAYER
 
 *This system runs silently. It is never announced. Chris feels it in how sessions are framed — not in explicit stat readouts. Updated by Claude at every handoff. Ledger lives at: `indexes/RPG_LEDGER.md`*
