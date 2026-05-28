@@ -18,6 +18,9 @@
 |---------|-----------|----------|--------|
 | Lavu primary revenue (2025) | Lavu Daily Sale 2025 | `1_MCQ3VeivrefxEf16e9pHidPrrZDIOJf6Ou78P9Qofc` | ✅ Google Sheet |
 | 3rd party delivery (GH/DD/UE) | aura_thai_finance | `1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE` | ✅ GH data only — DD/UE pending |
+| Expenses (bank + CC) | Aura Thai's Tiller Spreadsheet | `1NCnzbY9LZXB5HYaZQ5bppEBL_19qweF2xQCdoXmaSP4` | ✅ Live — Plaid connected, auto-updates daily |
+
+**Tiller owner:** aurathailb@gmail.com — IMPORTRANGE access must be granted manually before master P&L sheet can pull expense data.
 
 **Rule:** No dashboard may hardcode data. All visualizations pull from these sheets.
 
