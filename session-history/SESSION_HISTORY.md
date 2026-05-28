@@ -426,3 +426,39 @@ Source files on Drive:
 - Current menu prices per platform (dine-in, DD, UE, GH)
 
 **Next session starts with:** Load soul files (SPRINT.md is current at S39). Chris uploads May Lavu Daily Sale → read it. Read Lavu 2025 Google Sheet (ID: 1_MCQ3VeivrefxEf16e9pHidPrrZDIOJf6Ou78P9Qofc) for full 2025 baseline. Build Aura Thai Decision Dashboard (A-06). Use haiku for data reads.
+## Session 40 — 2026-05-28
+
+**Theme:** A-06 Decision Dashboard delivered. Revenue tab live on ops.radrooster.co.
+
+**Completed:**
+- Parsed April 2026 Lavu XLS (UTF-16LE TSV) — 29 days, $72,214.09 confirmed via summary row
+- Parsed May 1-26 2026 Lavu XLS — $65,407.69 from summary row (3 days missing from parse, summary used as ground truth)
+- Read Lavu Daily Sale 2025 Google Sheet — monthly baselines Jan-Jul 2025 extracted
+- Built A-06 Decision Dashboard (dark theme HTML, Chart.js) — YoY comparison, weekly breakdown, BOH labor ratios, next-week prediction, action recommendations
+- Added Revenue tab to ops.radrooster.co — tabbed interface (Ops + Revenue). Both auto-deploy from GitHub.
+- Pushed dashboard/revenue.html + dashboard/index.html (tabbed) to GitHub → auto-deployed
+- Deleted temp staging files (apr2026_b64.txt, may2026_b64.txt) after data extraction
+- S40 journal entry added to JOURNAL_INDEX.md
+- Discovered: Lavu XLS files are UTF-16LE TSV — no Google Sheets conversion needed. Base64 decode → BOM strip → UTF-16LE parse. This is now the standard pipeline.
+
+**Key findings:**
+- April 2026: $72,214 vs April 2025: $81,437 → -11.3% YoY
+- May 1-26 2026: $65,408 vs May 1-26 2025: $70,792 → -7.6% YoY
+- Current week (May 20-26): $18,344 vs prior week $16,296 → +12.6% WoW (positive signal)
+- BOH labor ratio at April revenue: 20.8% (target <18%, need ~$83K/month to hit target)
+
+**Files pushed to GitHub:**
+- `dashboard/index.html` — tabbed (Ops + Revenue)
+- `dashboard/revenue.html` — A-06 Decision Dashboard (static S40)
+- `indexes/JOURNAL_INDEX.md` — S40 entry added
+- `00-load-me/SPRINT.md` — S40 update
+- `empire-status/EMPIRE_STATUS.md` — S40 update
+- `master-open-items/MASTER_OPEN_ITEMS.md` — S40 update
+- `indexes/RPG_LEDGER.md` — S40 update
+
+**What dashboard still needs (A-06b — S41):**
+- Live data connection: master Google Sheet (Artie appends Lavu data) → revenue.html reads on load
+- 3rd party fees layer (A-06c): GH/DD/UE fee rates factored into net revenue and projections
+- Jan-Mar 2026 Lavu data: 3 Drive folders confirmed by Chris, haiku model to find + parse S41
+
+**Next session starts with:** Load soul files (SPRINT.md current at S40). Use haiku to search 3 Drive folders for Jan-Mar 2026 XLS files. Then A-06b: design master Lavu sheet + live data connection for revenue.html. Then A-06c: 3rd party fees.
