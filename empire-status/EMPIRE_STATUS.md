@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-05-10 | Session 35
-**Updated By:** Claude (Session 35)
+**Last Updated:** 2026-05-27 | Session 39
+**Updated By:** Claude (Session 39)
 
 ---
 
@@ -33,7 +33,41 @@
 
 ---
 
-## AURA THAI — FINANCE & PRICE ANALYSIS (S35)
+## AURA THAI — KEY FACTS (do not ask Chris again)
+
+### Revenue Model — CORRECTED S39
+- **Lavu = primary revenue source.** Captures ALL sales (dine-in + delivery + catering).
+- GH/DD/UE are delivery sub-channels — they contribute TO Lavu totals, not separate from them.
+- GH-only data ≠ revenue baseline. Lavu Daily Sale is the ground truth.
+- Lavu Daily Sale 2025: Google Sheet in Drive ✅. 2023/2024: XLS (need conversion).
+- **Rad Rooster: NOT launched (confirmed S39)**. No ghost kitchen revenue yet.
+
+### BOH Labor — Captured S39
+Pay cycle: every 2 weeks | Structure: 32–40 hrs @ $20/hr on paycheck, remainder cash
+
+| Name | Role | $/day | Days/period | Total/period |
+|------|------|-------|-------------|--------------|
+| Miguel | Head Chef | $175 | 12 | $2,100 |
+| P Sang | 2nd Head Chef | $155 | 12 | $1,860 |
+| Eliseo | Chef | $130 | 10.5 | $1,365 |
+| Rambo | Dishwasher | $125 | 10.5 | $1,312.50 |
+| Erick | Chef | $140 | 2 | $280 |
+| **Total** | | | | **$6,917.50/period** |
+
+Daily BOH cost: ~$494/day | Monthly: ~$15,000 | FOH tracked in Lavu time cards.
+
+### Drive Data Inventory — S39
+- Lavu Daily Sale 2025: ✅ Google Sheet (Drive/Lavu/)
+- Lavu Daily Sale 2023/2024: ⚠️ XLS (needs conversion)
+- Lavu Daily Sale Apr 2026: ⚠️ XLS
+- Lavu Daily Sale Jan–Mar 2026: ⚠️ XLS (parsing issues — prefer monthly)
+- Lavu Time Cards Jan–Apr 2026: ✅ CSV
+- Decision Dashboard Checklist: ✅ Built S38 (Drive/Financial Data/)
+- **Still needed:** May 2026 Lavu Daily Sale, current menu prices per platform
+
+---
+
+## AURA THAI — FINANCE & PRICE ANALYSIS (S35–S39)
 
 | Item | Status |
 |------|--------|
