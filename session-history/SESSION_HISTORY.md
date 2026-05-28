@@ -371,3 +371,58 @@ Source files on Drive:
 **What's still needed for A-02:** Jan UE data + full Apr 14-30 data (truncation problem = only Apr 1-13 readable via Drive MCP). Try download_file_content → bash parse in S37.
 
 **Next session starts with:** S37 start sequence in MASTER_OPEN_ITEMS.md. Priority: complete A-02 (Jan UE + full Apr), then A-04 (I-23 fix SOP for Artie), then A-05 (pipeline → aura_thai_finance sheet).
+
+## Session 37 — 2026-05-13/14
+
+**Theme:** Data organization (details not captured — handoff not pushed)
+
+**Completed:**
+- Lavu data files organized into Drive Financial Data/Lavu/ folder structure
+- Multiple Lavu XLS files uploaded: Transactions Jan-Apr 2026, Sale by Item Jan-Apr 2026, Time Cards Jan-Apr 2026
+- Lavu Daily Sale 2025 converted to Google Sheet ✅
+- Lavu Daily Sale 2023, 2024 XLS uploaded to Drive
+
+**Note:** Handoff was not pushed to GitHub — session details reconstructed from Drive file timestamps.
+
+**Next session starts with:** Build Decision Dashboard (A-06). Pull Lavu 2025 sheet for baseline.
+
+## Session 38 — 2026-05-14
+
+**Theme:** Decision Dashboard planning
+
+**Completed:**
+- Built "Aura Thai — Decision Dashboard Data Checklist" (Drive/Financial Data/) — full data requirements, dashboard feature spec, priority order for Chris to gather files
+- Dashboard spec: current status, next week prediction, action recommendations, product mix, labor efficiency
+- Confirmed data gaps: May 2026 Lavu Daily Sale, chef pay rates, current menu prices per platform
+
+**Files created:**
+- Drive: `Financial Data/Aura Thai — Decision Dashboard Data Checklist` (created S38)
+
+**Next session starts with:** Chris uploads May Lavu Daily Sale. Capture chef pay. Then build dashboard.
+
+## Session 39 — 2026-05-27
+
+**Theme:** Context recovery + dashboard infrastructure
+
+**Completed:**
+- Discovered SPRINT.md was 4 sessions stale (stuck at S35) — pulled SESSION_HISTORY + MASTER_OPEN_ITEMS via bash to catch up
+- Corrected revenue model permanently: Lavu = primary source. GH/DD/UE are delivery sub-channels, not standalone baselines
+- Confirmed Rad Rooster NOT launched
+- Captured full BOH chef labor structure: Miguel $175/day, P Sang $155/day, Eliseo $130/day, Rambo $125/day, Erick $140/day — $6,917.50/pay period (~$494/day, ~$15K/month)
+- Surveyed Drive data inventory — Lavu Daily Sale 2025 readable as Google Sheet ✅. 2023/2024 XLS need conversion.
+- Added SESSION_HISTORY/MASTER_OPEN_ITEMS as fallback load note in SPRINT.md (token-efficient — only pull when gap detected)
+- Rebuilt SPRINT.md to S39: corrected data model, chef pay table, data inventory, A-06 as priority
+- Updated EMPIRE_STATUS.md: revenue model correction, BOH labor, Drive inventory
+- Rebuilt ops.radrooster.co dashboard as fully dynamic — fetches SPRINT.md + EMPIRE_STATUS.md live from GitHub on every page load, auto-refreshes every 5 min, manual refresh button
+- Pushed SPRINT.md, EMPIRE_STATUS.md, dashboard/index.html to GitHub
+
+**Files pushed to GitHub:**
+- `00-load-me/SPRINT.md` — full S39 rewrite
+- `empire-status/EMPIRE_STATUS.md` — revenue model + chef pay + inventory added
+- `dashboard/index.html` — dynamic live-fetch rebuild
+
+**What's still needed from Chris:**
+- May 2026 Lavu Daily Sale export (summary format, same as April)
+- Current menu prices per platform (dine-in, DD, UE, GH)
+
+**Next session starts with:** Load soul files (SPRINT.md is current at S39). Chris uploads May Lavu Daily Sale → read it. Read Lavu 2025 Google Sheet (ID: 1_MCQ3VeivrefxEf16e9pHidPrrZDIOJf6Ou78P9Qofc) for full 2025 baseline. Build Aura Thai Decision Dashboard (A-06). Use haiku for data reads.
