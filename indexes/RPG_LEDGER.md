@@ -68,3 +68,8 @@
 - DISCIPLINE +1 → 71: Clean session. No context drift. Journal written. Static dashboard is an honest limitation, not a failure — it is the right first step before wiring live data. DISCIPLINE hits 75 when the live data connection (A-06b) is complete and the pipeline runs without Claude intervention.
 
 *S41: Haiku finds Jan-Mar 2026 files. A-06b: live data architecture. A-06c: 3PD fees. When the dashboard self-updates from Artie input — that is the compound moment.*
+## S40 — 2026-05-28
+**Deliverables:** BOOT.md (lean session system), CLAUDE-CORE V4, MASTER_FILE_MAP rebuilt, Tiller found + wired, P&L architecture designed, document anchor system planned
+**XP:** +50 (BOOT.md = major system deliverable) +25 (one-way door: changed boot protocol) +15 (handoff clean) = **+90 XP**
+**Stats:** SYSTEMS +3 (85% token reduction on boot), LEVERAGE +2 (fixed the right constraint), MOMENTUM +2
+**Note:** Third session closing infrastructure debt. The system is getting leaner. That's compounding.
