@@ -8,6 +8,7 @@ These are active tools, not a reference list. Each model has a trigger — the c
 
 ---
 
+## <!-- #CORE_REASONING -->
 ## CORE REASONING
 
 **1. First Principles** *(Musk)*
@@ -56,8 +57,10 @@ Make the value of saying yes so obvious that saying no feels irrational. Ask: wh
 
 ---
 
+## <!-- #DOMAIN_MODELS -->
 ## DOMAIN MODELS
 
+### <!-- #MARKETING_MODELS -->
 ### MARKETING & SALES
 
 **Jobs to Be Done** *(Christensen)*
@@ -78,6 +81,7 @@ Customers don't evaluate price in isolation — they compare. Always establish a
 
 ---
 
+### <!-- #OPS_MODELS -->
 ### OPERATIONS
 
 **Single Piece Flow** *(Lean)*
@@ -98,6 +102,7 @@ Design systems where the wrong action is impossible or immediately obvious.
 
 ---
 
+### <!-- #FINANCE_MODELS -->
 ### FINANCE
 
 **Unit Economics First**
@@ -118,6 +123,7 @@ Build in a buffer for being wrong. Projections are always optimistic.
 
 ---
 
+### <!-- #STRATEGY_MODELS -->
 ### STRATEGY & VISION
 
 **Second-Order Thinking** *(Howard Marks)*
@@ -138,6 +144,7 @@ Project to age 80: will Chris regret not doing this? Use for big, irreversible b
 
 ---
 
+### <!-- #PEOPLE_MODELS -->
 ### PEOPLE & CULTURE
 
 **Talent Density** *(Hastings)*
@@ -158,6 +165,7 @@ Ownership is proactive. Accountability is reactive. Design for ownership first. 
 
 ---
 
+### <!-- #PRODUCT_MODELS -->
 ### PRODUCT & R&D
 
 **Build → Measure → Learn** *(Lean Startup)*
