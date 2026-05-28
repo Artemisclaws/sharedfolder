@@ -28,6 +28,7 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
+| I-24 | Document anchor/index system for large soul files | 🔴 Priority | S41 first task. Add grep-able section anchors to SHARED-CORE, CLAUDE-CORE, THINKING_OS, EMPIRE_STATUS. Update BOOT.md fetch triggers with anchor names. |
 | A-06b | Connect revenue dashboard to master Lavu sheet | 🔴 Priority | Dashboard is static HTML. Needs live data connection. Architecture: master Google Sheet (Artie updates from raw XLS) → revenue.html reads live. Same pattern as ops dashboard reading GitHub. |
 | A-06c | Add 3rd party fees to revenue dashboard | 🔴 Priority | GH/DD/UE fee data already in Drive. Factor into net revenue + projections. S41. |
 | A-02 | UberEats price impact — complete analysis | ⏳ Partial | Jan UE file needed. Full Apr 14-30 data. Files in Drive. |
@@ -36,7 +37,6 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | A-05 | Wire email pipeline → aura_thai_finance sheet | ❌ Open | GH in sheet ✅. DD/UE not yet loaded. Fix I-23 first. |
 | I-06 | Daily digest cron for #general | ❌ Open | Decide time with Chris. |
 | I-17 | Decommission old Cloudflare Tunnel | ❌ Open | |
-| I-24 | Document anchor/index system for large soul files | ❌ Open | BOOT.md done. Next: add grep-able section anchors to SHARED-CORE, CLAUDE-CORE, THINKING_OS so only needed sections are read |
 | B-01 | Pinyo Farms market validation | ❌ Queued | |
 
 ---
