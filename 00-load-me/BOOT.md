@@ -25,18 +25,20 @@ If Chris is doing something either agent could handle → system failure.
 ---
 
 ## FETCH TRIGGERS
-| When | Load |
-|------|------|
-| Working on Aura Thai | `businesses/aura-thai/aura-thai.md` |
-| Any strategy or planning session | `soul/shared/THINKING_OS.md` |
-| Coaching moment / RPG update | `soul/shared/SHARED-CORE.md` |
-| Building or updating Artie SOPs | `soul/artie/ARTIE-RUNBOOK.md` |
-| File operations / new deliverables | `master-file-map/MASTER_FILE_MAP.md` |
-| System-wide status check | `empire-status/EMPIRE_STATUS.md` |
-| Full identity/rules reference | `soul/claude/CLAUDE-CORE.md` |
-| "handoff" keyword fired | MASTER_OPEN_ITEMS + EMPIRE_STATUS + SESSION_HISTORY + SPRINT |
+| When | Load | Key Anchors |
+|------|------|-------------|
+| Working on Aura Thai | `businesses/aura-thai/aura-thai.md` | — |
+| Any strategy or planning session | `soul/shared/THINKING_OS.md` | `#CORE_REASONING` `#DOMAIN_MODELS` |
+| Coaching moment / RPG update | `soul/shared/SHARED-CORE.md` | `#COACHING` `#RPG_TRACKING` `#MENTAL_MODELS` |
+| Building or updating Artie SOPs | `soul/artie/ARTIE-RUNBOOK.md` | — |
+| File operations / new deliverables | `master-file-map/MASTER_FILE_MAP.md` | — |
+| System-wide status check | `empire-status/EMPIRE_STATUS.md` | `#STATUS_OVERVIEW` `#AURA_THAI_FACTS` |
+| Full identity/rules reference | `soul/claude/CLAUDE-CORE.md` | `#IDENTITY` `#HANDOFF_PROTOCOL` `#CLAUDE_AUTHORITY` |
+| "handoff" keyword fired | MASTER_OPEN_ITEMS + EMPIRE_STATUS + SESSION_HISTORY + SPRINT | — |
 
 All files: `https://raw.githubusercontent.com/Artemisclaws/sharedfolder/main/`
+
+**Grep usage:** `grep -n "<!-- #ANCHOR_NAME -->" file.md` → returns line number → read with `offset=N limit=40`
 
 ---
 
