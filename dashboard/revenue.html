@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A-06 | Aura Thai Decision Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161a24;
+    --surface2: #1e2436;
+    --border: #2a3147;
+    --accent: #e8a84c;
+    --accent2: #5b8ef0;
+    --red: #e85c5c;
+    --green: #4ec98a;
+    --yellow: #f0c040;
+    --text: #e8eaf2;
+    --muted: #7a85a0;
+    --label: #a0aac0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 24px;
+    min-height: 100vh;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-left h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .header-left .subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .header-right .updated {
+    color: var(--label);
+    font-weight: 600;
+  }
+
+  /* GRID LAYOUT */
+  .grid {
+    display: grid;
+    gap: 16px;
+  }
+  .grid-top {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-mid {
+    grid-template-columns: 2fr 1fr;
+    margin-top: 0;
+  }
+  .grid-bot {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0;
+  }
+  @media (max-width: 900px) {
+    .grid-top { grid-template-columns: 1fr 1fr; }
+    .grid-mid, .grid-bot { grid-template-columns: 1fr; }
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .card-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  /* STAT CARD */
+  .stat-card .main-value {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-card .sub-value {
+    font-size: 12px;
+    color: var(--label);
+    margin-top: 4px;
+  }
+  .stat-card .delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+  .delta.up { background: rgba(78,201,138,0.12); color: var(--green); }
+  .delta.down { background: rgba(232,92,92,0.12); color: var(--red); }
+  .delta.neutral { background: rgba(160,170,192,0.12); color: var(--label); }
+  .delta-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* STATUS BADGE */
+  .status-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .badge.warn { background: rgba(232,92,92,0.18); color: var(--red); border: 1px solid rgba(232,92,92,0.3); }
+  .badge.ok { background: rgba(78,201,138,0.14); color: var(--green); border: 1px solid rgba(78,201,138,0.3); }
+  .badge.caution { background: rgba(240,192,64,0.14); color: var(--yellow); border: 1px solid rgba(240,192,64,0.3); }
+
+  /* CHART CARD */
+  .chart-card canvas {
+    max-height: 260px;
+  }
+
+  /* WEEK TABLE */
+  .week-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+  }
+  .week-table th {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 6px 8px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .week-table td {
+    padding: 8px 8px;
+    border-bottom: 1px solid rgba(42,49,71,0.5);
+    font-size: 13px;
+  }
+  .week-table tr:last-child td { border-bottom: none; }
+  .week-table .total-row td {
+    font-weight: 700;
+    color: var(--accent);
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+  .week-table .avg-daily {
+    color: var(--label);
+    font-size: 11px;
+  }
+  .bar-mini {
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--accent2);
+    margin-top: 4px;
+    opacity: 0.6;
+  }
+
+  /* PREDICTION CARD */
+  .prediction-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-top: 10px;
+  }
+  .prediction-box .pred-label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .prediction-box .pred-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--accent2);
+    margin-top: 4px;
+  }
+  .prediction-box .pred-range {
+    font-size: 11px;
+    color: var(--label);
+    margin-top: 2px;
+  }
+  .pred-factors {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pred-factor {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--label);
+  }
+  .pred-factor .icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ACTIONS */
+  .action-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .action-item {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--accent);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .action-item.critical { border-left-color: var(--red); }
+  .action-item.watch { border-left-color: var(--yellow); }
+  .action-item.opportunity { border-left-color: var(--green); }
+  .action-item .action-icon { font-size: 18px; flex-shrink: 0; }
+  .action-item .action-body {}
+  .action-item .action-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .action-item .action-desc {
+    font-size: 12px;
+    color: var(--label);
+    line-height: 1.5;
+  }
+  .action-item .action-owner {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  /* LABOR CARD */
+  .labor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .labor-stat {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .labor-stat .ls-label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 4px;
+  }
+  .labor-stat .ls-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .labor-stat .ls-pct {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .labor-stat .ls-pct.warn { color: var(--red); }
+  .labor-stat .ls-pct.ok { color: var(--green); }
+
+  .section-gap { margin-top: 16px; }
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+  }
+
+  /* SPARKLINE row for monthly */
+  .month-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(42,49,71,0.5);
+  }
+  .month-row:last-child { border-bottom: none; }
+  .month-name {
+    width: 40px;
+    font-size: 12px;
+    color: var(--label);
+    font-weight: 600;
+  }
+  .month-bars {
+    flex: 1;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 0 12px;
+  }
+  .bar-2025, .bar-2026 {
+    height: 10px;
+    border-radius: 2px;
+    transition: width 0.3s;
+  }
+  .bar-2025 { background: var(--accent2); opacity: 0.5; }
+  .bar-2026 { background: var(--accent); }
+  .month-vals {
+    text-align: right;
+    font-size: 11px;
+    min-width: 110px;
+  }
+  .v2025 { color: var(--muted); }
+  .v2026 { color: var(--text); font-weight: 600; }
+  .v-delta { font-size: 10px; }
+  .v-delta.neg { color: var(--red); }
+  .v-delta.pos { color: var(--green); }
+
+  footer {
+    margin-top: 28px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .legend-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>⚡ A-06 | Aura Thai Decision Dashboard</h1>
+    <div class="subtitle">Pinyo Empire · Revenue Intelligence · S40 Build</div>
+  </div>
+  <div class="header-right">
+    <div class="updated">Data through May 26, 2026</div>
+    <div>Source: Lavu POS · Built by Claude, S40</div>
+  </div>
+</header>
+
+<!-- TOP STATS ROW -->
+<div class="grid grid-top">
+
+  <!-- Current Week -->
+  <div class="card stat-card">
+    <div class="card-title">Current Week (May 20–26)</div>
+    <div class="main-value">$18,344</div>
+    <div class="sub-value">vs. prior week $16,296</div>
+    <div>
+      <span class="delta up">▲ +12.6%</span>
+    </div>
+    <div class="delta-label">Week-over-week</div>
+    <div class="status-row" style="margin-top:10px">
+      <span class="badge ok">TRENDING UP</span>
+    </div>
+  </div>
+
+  <!-- May MTD -->
+  <div class="card stat-card">
+    <div class="card-title">May MTD (1–26)</div>
+    <div class="main-value">$65,408</div>
+    <div class="sub-value">May 1–26 2025: $70,792</div>
+    <div>
+      <span class="delta down">▼ -7.6% YoY</span>
+    </div>
+    <div class="delta-label">Same 26 days last year</div>
+    <div class="status-row" style="margin-top:10px">
+      <span class="badge warn">BELOW 2025</span>
+    </div>
+  </div>
+
+  <!-- April 2026 -->
+  <div class="card stat-card">
+    <div class="card-title">April 2026 (Full Month)</div>
+    <div class="main-value">$72,214</div>
+    <div class="sub-value">April 2025: $81,437</div>
+    <div>
+      <span class="delta down">▼ -11.3% YoY</span>
+    </div>
+    <div class="delta-label">Year-over-year</div>
+    <div class="status-row" style="margin-top:10px">
+      <span class="badge warn">SIGNIFICANT GAP</span>
+    </div>
+  </div>
+
+  <!-- BOH Labor -->
+  <div class="card stat-card">
+    <div class="card-title">BOH Labor (Fixed)</div>
+    <div class="main-value">$494<span style="font-size:14px;color:var(--muted)">/day</span></div>
+    <div class="sub-value">~$15,000/month fixed cost</div>
+    <div>
+      <span class="delta neutral">20.8% of Apr revenue</span>
+    </div>
+    <div class="delta-label">at $72,214 monthly</div>
+    <div class="status-row" style="margin-top:10px">
+      <span class="badge caution">MONITOR RATIO</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-gap"></div>
+
+<!-- MID ROW: Chart + Weekly Breakdown -->
+<div class="grid grid-mid">
+
+  <!-- Monthly Trend Chart -->
+  <div class="card chart-card">
+    <div class="card-title">Monthly Revenue — 2025 vs 2026</div>
+    <canvas id="monthlyChart"></canvas>
+    <div style="margin-top:12px; font-size:11px; color:var(--muted)">
+      <span class="legend-dot" style="background:var(--accent2); opacity:0.7"></span> 2025 baseline &nbsp;
+      <span class="legend-dot" style="background:var(--accent)"></span> 2026 actuals &nbsp;
+      <span style="color:var(--label)">· Aug–Dec 2025 not yet loaded · May/Jun 2026 projected</span>
+    </div>
+  </div>
+
+  <!-- Weekly Breakdown -->
+  <div class="card">
+    <div class="card-title">Week-by-Week May 2026</div>
+    <table class="week-table">
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Days</th>
+          <th style="text-align:right">Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>May 1–3</td>
+          <td><span class="avg-daily">3 days</span></td>
+          <td style="text-align:right">$9,589</td>
+        </tr>
+        <tr>
+          <td>May 4–10</td>
+          <td><span class="avg-daily">7 days</span></td>
+          <td style="text-align:right">~$18,563</td>
+        </tr>
+        <tr>
+          <td>May 11–16</td>
+          <td><span class="avg-daily">6 days</span></td>
+          <td style="text-align:right">$13,833</td>
+        </tr>
+        <tr>
+          <td><strong>May 17–19</strong></td>
+          <td><span class="avg-daily">3 days</span></td>
+          <td style="text-align:right">$6,392</td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--accent)">May 20–26 ✦</strong></td>
+          <td><span class="avg-daily">7 days</span></td>
+          <td style="text-align:right"><strong style="color:var(--accent)">$18,344</strong></td>
+        </tr>
+        <tr class="total-row">
+          <td>MTD TOTAL</td>
+          <td></td>
+          <td style="text-align:right">$65,408</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px;">
+      <div class="card-title" style="margin-bottom:8px">Daily Avg by Period</div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <div style="background:var(--surface2); border-radius:6px; padding:8px 12px; flex:1; min-width:80px;">
+          <div style="font-size:10px;color:var(--muted)">May Avg/day</div>
+          <div style="font-size:18px;font-weight:800;color:var(--text)">$2,516</div>
+        </div>
+        <div style="background:var(--surface2); border-radius:6px; padding:8px 12px; flex:1; min-width:80px;">
+          <div style="font-size:10px;color:var(--muted)">Apr Avg/day</div>
+          <div style="font-size:18px;font-weight:800;color:var(--text)">$2,490</div>
+        </div>
+        <div style="background:var(--surface2); border-radius:6px; padding:8px 12px; flex:1; min-width:80px;">
+          <div style="font-size:10px;color:var(--muted)">2025 May Avg</div>
+          <div style="font-size:18px;font-weight:800;color:var(--muted)">$2,691</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-gap"></div>
+
+<!-- BOT ROW: YoY Monthly + Prediction + Actions -->
+<div class="grid grid-bot">
+
+  <!-- YoY Monthly Breakdown -->
+  <div class="card">
+    <div class="card-title">YoY Monthly Comparison — 2025 vs 2026</div>
+    <div style="margin-top:4px">
+
+      <div class="month-row">
+        <span class="month-name">JAN</span>
+        <div class="month-bars">
+          <div class="bar-2025" style="width:110px" title="2025: $90,360"></div>
+          <div style="font-size:9px;color:var(--muted);padding:0 4px">·</div>
+          <div style="font-size:9px;color:var(--muted)">No 2026 data yet</div>
+        </div>
+        <div class="month-vals">
+          <span class="v2025">$90,360</span><br>
+          <span class="v2026" style="color:var(--muted)">—</span>
+        </div>
+      </div>
+
+      <div class="month-row">
+        <span class="month-name">FEB</span>
+        <div class="month-bars">
+          <div class="bar-2025" style="width:94px"></div>
+          <div style="font-size:9px;color:var(--muted);padding:0 4px">·</div>
+          <div style="font-size:9px;color:var(--muted)">No 2026 data yet</div>
+        </div>
+        <div class="month-vals">
+          <span class="v2025">$77,122</span><br>
+          <span class="v2026" style="color:var(--muted)">—</span>
+        </div>
+      </div>
+
+      <div class="month-row">
+        <span class="month-name">MAR</span>
+        <div class="month-bars">
+          <div class="bar-2025" style="width:112px"></div>
+          <div style="font-size:9px;color:var(--muted);padding:0 4px">·</div>
+          <div style="font-size:9px;color:var(--muted)">No 2026 data yet</div>
+        </div>
+        <div class="month-vals">
+          <span class="v2025">$92,324</span><br>
+          <span class="v2026" style="color:var(--muted)">—</span>
+        </div>
+      </div>
+
+      <div class="month-row">
+        <span class="month-name">APR</span>
+        <div class="month-bars">
+          <div class="bar-2025" style="width:100px"></div>
+          <div style="font-size:9px;color:var(--muted);padding:0 2px">→</div>
+          <div class="bar-2026" style="width:88px"></div>
+        </div>
+        <div class="month-vals">
+          <span class="v2025">$81,437</span><br>
+          <span class="v2026">$72,214</span><br>
+          <span class="v-delta neg">▼ -11.3%</span>
+        </div>
+      </div>
+
+      <div class="month-row">
+        <span class="month-name">MAY</span>
+        <div class="month-bars">
+          <div class="bar-2025" style="width:102px; opacity:0.4"></div>
+          <div style="font-size:9px;color:var(--muted);padding:0 2px">→</div>
+          <div class="bar-2026" style="width:80px; opacity:0.9"></div>
+        </div>
+        <div class="month-vals">
+          <span class="v2025">$83,422</span><br>
+          <span class="v2026">$65,408 <span style="font-size:9px;color:var(--muted)">(to d26)</span></span><br>
+          <span class="v-delta neg">▼ -7.6% MTD</span>
+        </div>
+      </div>
+
+      <div class="month-row">
+        <span class="month-name">JUN</span>
+        <div class="month-bars">
+          <div class="bar-2025" style="width:95px"></div>
+          <div style="font-size:9px;color:var(--muted);padding:0 4px">·</div>
+          <div style="font-size:9px;color:var(--muted)">Upcoming</div>
+        </div>
+        <div class="month-vals">
+          <span class="v2025">$78,048</span><br>
+          <span class="v2026" style="color:var(--muted)">—</span>
+        </div>
+      </div>
+
+      <div class="month-row">
+        <span class="month-name">JUL</span>
+        <div class="month-bars">
+          <div class="bar-2025" style="width:91px"></div>
+          <div style="font-size:9px;color:var(--muted);padding:0 4px">·</div>
+          <div style="font-size:9px;color:var(--muted)">Upcoming</div>
+        </div>
+        <div class="month-vals">
+          <span class="v2025">$74,852</span><br>
+          <span class="v2026" style="color:var(--muted)">—</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Labor Ratio -->
+    <div class="divider"></div>
+    <div class="card-title">BOH Labor as % of Revenue</div>
+    <div class="labor-grid">
+      <div class="labor-stat">
+        <div class="ls-label">April 2026</div>
+        <div class="ls-value">20.8%</div>
+        <div class="ls-pct warn">$15,000 / $72,214</div>
+      </div>
+      <div class="labor-stat">
+        <div class="ls-label">At 2025 Apr Level</div>
+        <div class="ls-value">18.4%</div>
+        <div class="ls-pct ok">$15,000 / $81,437</div>
+      </div>
+      <div class="labor-stat">
+        <div class="ls-label">May (proj. ~$78K)</div>
+        <div class="ls-value">19.2%</div>
+        <div class="ls-pct caution" style="color:var(--yellow)">$15,000 / $78,000</div>
+      </div>
+      <div class="labor-stat">
+        <div class="ls-label">Target Ratio</div>
+        <div class="ls-value">&lt; 18%</div>
+        <div class="ls-pct ok">Need ~$83K/mo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT COL: Prediction + Actions -->
+  <div style="display:flex; flex-direction:column; gap:16px;">
+
+    <!-- Next Week Prediction -->
+    <div class="card">
+      <div class="card-title">Next Week Prediction (May 27 – Jun 2)</div>
+      <div class="prediction-box">
+        <div class="pred-label">Projected Revenue</div>
+        <div class="pred-value">$17,500 – $19,200</div>
+        <div class="pred-range">Midpoint: ~$18,300/week · $2,614/day</div>
+      </div>
+      <div class="pred-factors">
+        <div class="pred-factor">
+          <span class="icon">📈</span>
+          <span>Current week trending up +12.6% WoW — momentum carries if consistent ops</span>
+        </div>
+        <div class="pred-factor">
+          <span class="icon">📅</span>
+          <span>Memorial Day (May 27) historically mixed — possible dine-in drop, delivery boost</span>
+        </div>
+        <div class="pred-factor">
+          <span class="icon">📊</span>
+          <span>May avg/day is $2,516 — projection assumes similar pattern with slight weekend lift</span>
+        </div>
+        <div class="pred-factor">
+          <span class="icon">⚠️</span>
+          <span>Still tracking -7.6% vs 2025. Need strong close to minimize the annual gap.</span>
+        </div>
+      </div>
+      <div style="margin-top:12px; padding:10px 14px; background:var(--surface2); border-radius:8px;">
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;">May Full-Month Projection</div>
+        <div style="font-size:20px;font-weight:800;color:var(--accent2);">$78,000 – $81,000</div>
+        <div style="font-size:11px;color:var(--label);margin-top:2px;">Based on $65,408 through d26 + 5 remaining days at $2,500–3,100/day avg</div>
+      </div>
+    </div>
+
+    <!-- Action Recommendations -->
+    <div class="card">
+      <div class="card-title">Action Recommendations</div>
+      <div class="action-list">
+
+        <div class="action-item critical">
+          <div class="action-icon">🚨</div>
+          <div class="action-body">
+            <div class="action-title">Investigate the 2025 Revenue Gap</div>
+            <div class="action-desc">Apr -11.3%, May -7.6% YoY. This is a structural signal, not noise. Need root cause: fewer guests, lower check avg, channel mix shift, or lost regulars?</div>
+            <div class="action-owner">→ CHRIS + ARTIE · This week</div>
+          </div>
+        </div>
+
+        <div class="action-item watch">
+          <div class="action-icon">⚡</div>
+          <div class="action-body">
+            <div class="action-title">Protect BOH Labor Ratio</div>
+            <div class="action-desc">At $72K/mo, BOH labor is 20.8% — above 18% target. Every $1K in recovered revenue drops ratio ~0.2pp. Focus on revenue recovery before any cost action.</div>
+            <div class="action-owner">→ Monitor weekly · Target &lt;18% by Q3</div>
+          </div>
+        </div>
+
+        <div class="action-item opportunity">
+          <div class="action-icon">📦</div>
+          <div class="action-body">
+            <div class="action-title">Leverage May WoW Recovery</div>
+            <div class="action-desc">+12.6% this week is the bright spot. Identify what drove it (weather, promo, weekend volume?) and replicate. One good week doesn't fix the gap — needs to be systematic.</div>
+            <div class="action-owner">→ ARTIE · Check guest count vs last week</div>
+          </div>
+        </div>
+
+        <div class="action-item">
+          <div class="action-icon">📋</div>
+          <div class="action-body">
+            <div class="action-title">Load Jan–Mar 2026 Lavu Files</div>
+            <div class="action-desc">Dashboard is missing Q1 2026 data. Can't diagnose the full YoY trend without Jan/Feb/Mar actuals. Upload XLS files to Drive and tag Claude in next sprint.</div>
+            <div class="action-owner">→ CHRIS · Before S41</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div>
+    <strong style="color:var(--label)">Pinyo Empire</strong> · A-06 Decision Dashboard · Built S40 · 2026-05-28
+  </div>
+  <div>
+    Data: Lavu POS (real actuals) · 2025 baseline: Lavu Google Sheet · BOH labor: $494/day confirmed S39
+  </div>
+</footer>
+
+<script>
+// Monthly comparison chart
+const ctx = document.getElementById('monthlyChart').getContext('2d');
+
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+const data2025 = [90360, 77122, 92324, 81437, 83422, 78048, 74852];
+const data2026 = [null, null, null, 72214, 65408, null, null]; // May = MTD, not final
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: months,
+    datasets: [
+      {
+        label: '2025',
+        data: data2025,
+        backgroundColor: 'rgba(91,142,240,0.35)',
+        borderColor: 'rgba(91,142,240,0.7)',
+        borderWidth: 1,
+        borderRadius: 4,
+      },
+      {
+        label: '2026',
+        data: data2026,
+        backgroundColor: 'rgba(232,168,76,0.75)',
+        borderColor: 'rgba(232,168,76,1)',
+        borderWidth: 1,
+        borderRadius: 4,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1e2436',
+        borderColor: '#2a3147',
+        borderWidth: 1,
+        titleColor: '#e8eaf2',
+        bodyColor: '#a0aac0',
+        callbacks: {
+          label: function(ctx) {
+            if (ctx.raw === null) return ctx.dataset.label + ': No data';
+            const suffix = (ctx.dataset.label === '2026' && ctx.dataIndex === 4) ? ' (MTD d26)' : '';
+            return ctx.dataset.label + ': $' + ctx.raw.toLocaleString() + suffix;
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(42,49,71,0.6)' },
+        ticks: { color: '#7a85a0', font: { size: 11 } }
+      },
+      y: {
+        grid: { color: 'rgba(42,49,71,0.4)' },
+        ticks: {
+          color: '#7a85a0',
+          font: { size: 11 },
+          callback: v => '$' + (v/1000).toFixed(0) + 'K'
+        },
+        suggestedMin: 60000,
+        suggestedMax: 100000
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
