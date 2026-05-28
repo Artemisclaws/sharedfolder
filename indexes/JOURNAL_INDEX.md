@@ -66,3 +66,5 @@ At the end of every session, when the journal Google Doc is created in Drive:
 3. Commit to GitHub: `git add indexes/JOURNAL_INDEX.md && git commit -m "S[NN] journal index updated"`
 
 Tags reference: `#aura-thai` `#pinyo-farms` `#fb-arbitrage` `#ai-ventures` `#roam` `#artie` `#infrastructure` `#systems` `#organization` `#soul` `#thinking-os` `#strategy` `#finance` `#discord` `#github` `#dashboard` `#security`
+
+| S40 | 2026-05-28 | Infrastructure | BOOT.md lean session system; MASTER_FILE_MAP rebuilt; Tiller sheet found (ID: 1NCnzbY9LZ...); P&L architecture: aura_thai_finance = master sheet, Tiller IMPORTRANGE unblocked; document anchor system (I-24) planned; CLAUDE-CORE V4 pushed |
