@@ -13,13 +13,42 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; }
 
-  .header { padding: 20px 16px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-  .header h1 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+  .header { padding: 20px 16px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
+  .header h1 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 12px; }
   .header h1 span { color: var(--purple); }
-  .header-right { display: flex; align-items: center; gap: 12px; }
+  .header-right { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; }
   .updated { font-size: 11px; color: var(--muted); }
   .refresh-btn { font-size: 11px; color: var(--blue); background: none; border: 1px solid var(--border); border-radius: 6px; padding: 3px 10px; cursor: pointer; }
   .refresh-btn:hover { background: var(--card2); }
+
+  /* TAB NAV */
+  .tab-nav { display: flex; gap: 0; border-bottom: 1px solid var(--border); background: var(--bg); }
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--purple); border-bottom-color: var(--purple); }
+
+  /* TAB PANELS */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Revenue iframe */
+  .revenue-frame {
+    width: 100%;
+    height: calc(100vh - 110px);
+    border: none;
+    background: var(--bg);
+  }
 
   .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin: 16px 16px 6px; }
   .grid { display: grid; gap: 12px; padding: 0 14px 12px; }
@@ -29,7 +58,6 @@
   .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
   .card-title { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
 
-  /* Items */
   .item-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
   .item-row:last-child { border-bottom: none; }
   .item-id { font-size: 10px; color: var(--muted); font-family: monospace; min-width: 38px; padding-top: 2px; }
@@ -42,7 +70,6 @@
   .dot-green { background: var(--green); }
   .dot-muted { background: var(--muted); }
 
-  /* Business rows */
   .biz-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--border); gap: 8px; }
   .biz-row:last-child { border-bottom: none; }
   .biz-name { font-weight: 600; font-size: 13px; }
@@ -54,29 +81,23 @@
   .badge-blue { background: rgba(91,141,239,0.15); color: var(--blue); }
   .badge-muted { background: rgba(124,131,168,0.12); color: var(--muted); }
 
-  /* Stat strip */
   .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px 14px 0; }
   @media (max-width: 480px) { .stats { grid-template-columns: repeat(2, 1fr); } }
   .stat { background: var(--card2); border-radius: 8px; padding: 10px; text-align: center; border: 1px solid var(--border); }
   .stat .n { font-size: 22px; font-weight: 800; }
   .stat .l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
 
-  /* Sprint goal banner */
   .goal-banner { background: rgba(155,109,255,0.08); border: 1px solid rgba(155,109,255,0.25); border-radius: var(--radius); padding: 12px 14px; margin: 0 14px 4px; font-size: 12px; }
   .goal-label { font-size: 10px; color: var(--purple); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 4px; }
 
-  /* Chef table */
   .chef-table { width: 100%; border-collapse: collapse; font-size: 12px; }
   .chef-table th { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; padding: 4px 8px; text-align: left; border-bottom: 1px solid var(--border); }
   .chef-table td { padding: 6px 8px; border-bottom: 1px solid var(--border); }
   .chef-table tr:last-child td { border-bottom: none; font-weight: 700; color: var(--yellow); }
 
-  /* Loading */
   .loading { text-align: center; padding: 40px; color: var(--muted); font-size: 13px; }
   .error-msg { background: rgba(224,85,85,0.1); border: 1px solid rgba(224,85,85,0.3); border-radius: 8px; padding: 12px; margin: 14px; font-size: 12px; color: var(--red); }
-
   .footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); margin-top: 8px; }
-
   .data-model-note { background: rgba(91,141,239,0.08); border-left: 3px solid var(--blue); padding: 8px 12px; font-size: 11px; color: var(--muted); margin-bottom: 10px; border-radius: 0 6px 6px 0; }
 </style>
 </head>
@@ -86,18 +107,49 @@
   <h1>📡 Pinyo <span>Empire</span> Ops</h1>
   <div class="header-right">
     <div class="updated" id="fetch-time">Loading...</div>
-    <button class="refresh-btn" onclick="loadAll()">↻ Refresh</button>
+    <button class="refresh-btn" onclick="refreshActive()">↻ Refresh</button>
   </div>
 </div>
 
-<div id="dashboard-content">
-  <div class="loading">⏳ Fetching live data from GitHub...</div>
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('ops', this)">⚙️ Ops</button>
+  <button class="tab-btn" onclick="switchTab('revenue', this)">📊 Revenue</button>
 </div>
 
-<div class="footer">Live data · GitHub: Artemisclaws/sharedfolder · Cloudflare Pages auto-deploy</div>
+<!-- OPS TAB -->
+<div id="tab-ops" class="tab-panel active">
+  <div id="dashboard-content">
+    <div class="loading">⏳ Fetching live data from GitHub...</div>
+  </div>
+  <div class="footer">Live data · GitHub: Artemisclaws/sharedfolder · Cloudflare Pages auto-deploy</div>
+</div>
+
+<!-- REVENUE TAB -->
+<div id="tab-revenue" class="tab-panel">
+  <iframe class="revenue-frame" src="/revenue.html" title="A-06 Revenue Dashboard"></iframe>
+</div>
 
 <script>
 const RAW = 'https://raw.githubusercontent.com/Artemisclaws/sharedfolder/main/';
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  // Show refresh only on ops tab
+  document.querySelector('.refresh-btn').style.display = (name === 'ops') ? '' : 'none';
+  document.getElementById('fetch-time').style.display = (name === 'ops') ? '' : 'none';
+}
+
+function refreshActive() {
+  const active = document.querySelector('.tab-panel.active');
+  if (active && active.id === 'tab-ops') loadAll();
+  if (active && active.id === 'tab-revenue') {
+    const f = document.querySelector('.revenue-frame');
+    f.src = f.src;
+  }
+}
 
 function statusDot(s) {
   if (!s) return 'dot-muted';
@@ -118,7 +170,6 @@ function badgeFor(status) {
   return `<span class="badge badge-muted">${s}</span>`;
 }
 
-// Parse markdown table into array of objects
 function parseTable(text, heading) {
   const lines = text.split('\n');
   let inTable = false, headers = [], rows = [];
@@ -140,7 +191,6 @@ function parseTable(text, heading) {
   return rows;
 }
 
-// Extract section between two headings
 function extractSection(text, startHeading, stopHeading) {
   const lines = text.split('\n');
   let capturing = false, result = [];
@@ -152,71 +202,37 @@ function extractSection(text, startHeading, stopHeading) {
   return result.join('\n');
 }
 
-// Get value from a single-field table (## heading → | Key | Value | rows)
-function extractKeyValue(text, heading) {
-  const section = extractSection(text, heading, '##');
-  const rows = parseTable(section, '');
-  const map = {};
-  rows.forEach(r => {
-    const keys = Object.keys(r);
-    if (keys.length >= 2) map[r[keys[0]]] = r[keys[1]];
-  });
-  return map;
-}
-
 function buildDashboard(sprint, empire) {
-  // --- Parse SPRINT active items ---
   const sprintSection = extractSection(sprint, 'ACTIVE ITEMS', 'AURA THAI PIPELINE');
   const activeItems = parseTable(sprintSection, '');
-
-  // --- Parse businesses ---
   const bizSection = extractSection(sprint, 'BUSINESSES', 'PROTOCOL');
   const businesses = parseTable(bizSection, '');
-
-  // --- Parse blocked ---
   const blockedSection = extractSection(sprint, 'BLOCKED', 'S3');
   const blocked = parseTable(blockedSection, '');
-
-  // --- Sprint goal ---
   const goalMatch = sprint.match(/\*\*Theme:\*\* (.+)/);
   const sprintGoal = goalMatch ? goalMatch[1] : '—';
-
-  // --- Last updated ---
   const updatedMatch = sprint.match(/\*\*Last Updated:\*\* (.+)/);
   const lastUpdated = updatedMatch ? updatedMatch[1] : '—';
-
-  // --- Chef table (from SPRINT) ---
   const chefSection = extractSection(sprint, 'CHEF / BOH LABOR', 'AURA THAI PIPELINE');
   const chefRows = parseTable(chefSection, '');
-
-  // --- Empire status overview ---
   const statusSection = extractSection(empire, 'STATUS OVERVIEW', 'AURA THAI');
   const statusRows = parseTable(statusSection, '');
 
-  // --- Count open items ---
   const openCount = activeItems.filter(i => { const s = Object.values(i).join(' '); return s.includes('❌') || s.includes('🔄') || s.includes('⏳'); }).length;
   const redCount = activeItems.filter(i => Object.values(i).join(' ').includes('🔴')).length;
   const blockedCount = blocked.length;
   const bizActive = businesses.filter(b => { const s = Object.values(b).join(' '); return s.includes('🟢') || s.includes('🔴') || s.includes('🟡'); }).length;
 
   let html = '';
-
-  // STATS STRIP
   html += `<div class="stats">
     <div class="stat"><div class="n" style="color:var(--red)">${redCount}</div><div class="l">Priority</div></div>
     <div class="stat"><div class="n" style="color:var(--yellow)">${openCount}</div><div class="l">Open Items</div></div>
     <div class="stat"><div class="n" style="color:var(--blue)">${blockedCount}</div><div class="l">Blocked</div></div>
     <div class="stat"><div class="n" style="color:var(--green)">${bizActive}</div><div class="l">Businesses</div></div>
   </div>`;
-
-  // SPRINT GOAL
   html += `<div style="margin-top:14px"></div>
-  <div class="goal-banner">
-    <div class="goal-label">Sprint Goal</div>
-    ${sprintGoal}
-  </div>`;
+  <div class="goal-banner"><div class="goal-label">Sprint Goal</div>${sprintGoal}</div>`;
 
-  // ACTIVE ITEMS
   if (activeItems.length) {
     html += `<div class="section-label">🔴 Active Items</div><div class="grid"><div class="card">`;
     html += `<div class="data-model-note">Lavu = primary revenue. GH/DD/UE are delivery sub-channels. Rad Rooster not launched.</div>`;
@@ -226,72 +242,47 @@ function buildDashboard(sprint, empire) {
       const status = item['Status'] || '';
       const notes = item['Notes'] || '';
       const dot = statusDot(status);
-      html += `<div class="item-row">
-        <div class="dot ${dot}"></div>
-        <div class="item-id">${id}</div>
-        <div class="item-text">${name}${notes ? `<br><span style="color:var(--muted);font-size:11px">${notes}</span>` : ''}</div>
-        <div class="item-status" style="color:var(--muted)">${status}</div>
-      </div>`;
+      html += `<div class="item-row"><div class="dot ${dot}"></div><div class="item-id">${id}</div><div class="item-text">${name}${notes ? `<br><span style="color:var(--muted);font-size:11px">${notes}</span>` : ''}</div><div class="item-status" style="color:var(--muted)">${status}</div></div>`;
     });
     html += `</div></div>`;
   }
 
-  // BUSINESSES
   if (businesses.length) {
     html += `<div class="section-label">Businesses</div><div class="grid"><div class="card">`;
     businesses.forEach(b => {
       const name = b['Business'] || '';
       const status = b['Status'] || '';
       const action = b['Priority Action'] || '';
-      html += `<div class="biz-row">
-        <div><div class="biz-name">${name}</div><div class="biz-action">${action}</div></div>
-        ${badgeFor(status)}
-      </div>`;
+      html += `<div class="biz-row"><div><div class="biz-name">${name}</div><div class="biz-action">${action}</div></div>${badgeFor(status)}</div>`;
     });
     html += `</div></div>`;
   }
 
-  // CHEF / BOH LABOR
   if (chefRows.length) {
     html += `<div class="section-label">💰 BOH Labor (~$494/day · $15K/mo)</div><div class="grid"><div class="card">`;
     html += `<table class="chef-table"><thead><tr>`;
     Object.keys(chefRows[0]).forEach(h => html += `<th>${h}</th>`);
     html += `</tr></thead><tbody>`;
-    chefRows.forEach(row => {
-      html += `<tr>`;
-      Object.values(row).forEach(v => html += `<td>${v}</td>`);
-      html += `</tr>`;
-    });
+    chefRows.forEach(row => { html += `<tr>`; Object.values(row).forEach(v => html += `<td>${v}</td>`); html += `</tr>`; });
     html += `</tbody></table></div></div>`;
   }
 
-  // BLOCKED
   if (blocked.length) {
     html += `<div class="section-label">🔵 Blocked — Do Not Touch</div><div class="grid"><div class="card">`;
     blocked.forEach(b => {
       const item = b['Item'] || '';
       const blocker = b['Blocker'] || '';
-      html += `<div class="item-row">
-        <div class="dot dot-blue"></div>
-        <div class="item-text">${item}</div>
-        <div class="item-status" style="color:var(--blue);font-size:11px">${blocker}</div>
-      </div>`;
+      html += `<div class="item-row"><div class="dot dot-blue"></div><div class="item-text">${item}</div><div class="item-status" style="color:var(--blue);font-size:11px">${blocker}</div></div>`;
     });
     html += `</div></div>`;
   }
 
-  // EMPIRE STATUS — key infra
   if (statusRows.length) {
-    const live = statusRows.filter(r => (r['Status']||'').includes('✅') || (r['Status']||'').includes('LIVE'));
     const issues = statusRows.filter(r => (r['Status']||'').includes('❌') || (r['Status']||'').includes('NOT BUILT') || (r['Status']||'').includes('PENDING'));
     if (issues.length) {
       html += `<div class="section-label">⚙️ Infrastructure — Needs Attention</div><div class="grid"><div class="card">`;
       issues.slice(0,8).forEach(r => {
-        html += `<div class="item-row">
-          <div class="dot dot-red"></div>
-          <div class="item-text">${r['Area']||''}</div>
-          <div class="item-status" style="color:var(--muted);font-size:11px">${r['Notes']||r['Status']||''}</div>
-        </div>`;
+        html += `<div class="item-row"><div class="dot dot-red"></div><div class="item-text">${r['Area']||''}</div><div class="item-status" style="color:var(--muted);font-size:11px">${r['Notes']||r['Status']||''}</div></div>`;
       });
       html += `</div></div>`;
     }
@@ -318,7 +309,6 @@ async function loadAll() {
   }
 }
 
-// Auto-refresh every 5 minutes
 loadAll();
 setInterval(loadAll, 5 * 60 * 1000);
 </script>
