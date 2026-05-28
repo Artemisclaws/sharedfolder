@@ -67,4 +67,4 @@ At the end of every session, when the journal Google Doc is created in Drive:
 
 Tags reference: `#aura-thai` `#pinyo-farms` `#fb-arbitrage` `#ai-ventures` `#roam` `#artie` `#infrastructure` `#systems` `#organization` `#soul` `#thinking-os` `#strategy` `#finance` `#discord` `#github` `#dashboard` `#security`
 
-| S40 | 2026-05-28 | Infrastructure | BOOT.md lean session system; MASTER_FILE_MAP rebuilt; Tiller sheet found (ID: 1NCnzbY9LZ...); P&L architecture: aura_thai_finance = master sheet, Tiller IMPORTRANGE unblocked; document anchor system (I-24) planned; CLAUDE-CORE V4 pushed |
+| S40 | 2026-05-28 | Infrastructure / Foundation | BOOT.md replaces 4-file load (85% token reduction). Master P&L architecture locked: aura_thai_finance + Tiller. Document anchor system planned (I-24). | #infrastructure #systems #soul #dashboard #aura-thai #finance | [S40 Journal](https://docs.google.com/document/d/19I1UXYCZfdc4whQCX2L9Xh1MXn8dEgFcCn53O6TbZsk/edit) |
