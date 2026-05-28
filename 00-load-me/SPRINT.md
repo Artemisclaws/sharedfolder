@@ -1,5 +1,5 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S39 | 2026-05-27
+**Updated by:** Claude | Session S40 | 2026-05-28
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
@@ -18,61 +18,60 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 ## CORRECTED DATA MODEL (S39 — do not revert)
 - **Lavu = primary revenue source.** Lavu captures ALL sales: dine-in + delivery + catering.
 - GH, DD, UE are 3rd-party delivery sub-channels. They contribute TO Lavu totals.
-- GH-only data in `aura_thai_finance` sheet is NOT a revenue baseline — it's one channel.
+- GH-only data in `aura_thai_finance` sheet is NOT a revenue baseline — it is one channel.
 - **True daily revenue baseline comes from Lavu Daily Sale reports.**
 - Lavu Daily Sale 2025 is already a Google Sheet in Drive (readable). 2023/2024 are XLS.
 
 ---
 
-## ACTIVE ITEMS — S39 DIGEST
+## ACTIVE ITEMS — S40 DIGEST
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
-| A-06 | Aura Thai: Decision Dashboard | 🔴 Priority | Checklist built S38. Data inventory mostly in Drive. Need May Lavu + chef pay (captured S39). |
-| A-02 | UberEats price impact — complete analysis | ⏳ Partial | Missing Jan UE + full Apr 14-30. Files in Drive UE folder. |
-| I-23 | artie_report_sync.py cron — fix trigger | ❌ Open | Confirmed not firing since ~May 8. Fix SOP needed (A-04). |
+| A-06b | Connect revenue dashboard to master Lavu sheet | 🔴 Priority | Dashboard is static HTML. Needs live data connection. Architecture: master Google Sheet (Artie updates from raw XLS) → revenue.html reads live. Same pattern as ops dashboard reading GitHub. |
+| A-06c | Add 3rd party fees to revenue dashboard | 🔴 Priority | GH/DD/UE fee data already in Drive. Factor into net revenue + projections. S41. |
+| A-02 | UberEats price impact — complete analysis | ⏳ Partial | Jan UE file needed. Full Apr 14-30 data. Files in Drive. |
+| I-23 | artie_report_sync.py cron — fix trigger | ❌ Open | Not firing since ~May 8. Fix SOP needed (A-04). |
 | A-04 | ARTIE SOP 13 — cron fix + monthly finance | ❌ Open | Write to ARTIE-RUNBOOK.md. |
 | A-05 | Wire email pipeline → aura_thai_finance sheet | ❌ Open | GH in sheet ✅. DD/UE not yet loaded. Fix I-23 first. |
-| A-03 | Push aura_thai_finance.html → ops.radrooster.co | ❌ Pending | Needs real Lavu data first. |
 | I-06 | Daily digest cron for #general | ❌ Open | Decide time with Chris. |
 | I-17 | Decommission old Cloudflare Tunnel | ❌ Open | |
 | B-01 | Pinyo Farms market validation | ❌ Queued | |
 
 ---
 
-## AURA THAI — DECISION DASHBOARD (A-06, PRIORITY)
-**Goal:** Dashboard showing current status, next week prediction, action recommendations.
-**Checklist file:** Drive → Financial Data → `Aura Thai — Decision Dashboard Data Checklist` (created S38)
+## A-06 DECISION DASHBOARD — STATUS (built S40)
+**Live at:** ops.radrooster.co → Revenue tab
+**Files:** `dashboard/revenue.html` (static), `dashboard/index.html` (tabbed)
+**Current state:** Static HTML with hardcoded Apr + May 2026 numbers.
 
-### Data inventory — what's in Drive now
-| Data | Location | Status |
-|------|----------|--------|
-| Lavu Daily Sale 2025 | Drive/Lavu/ — Google Sheet | ✅ Readable |
-| Lavu Daily Sale 2024 | Drive/Lavu/ — XLS | ⚠️ Needs conversion |
-| Lavu Daily Sale 2023 | Drive/Lavu/ — XLS | ⚠️ Needs conversion |
-| Lavu Daily Sale Apr 2026 | Drive/Lavu/ — XLS | ⚠️ Needs conversion |
-| Lavu Daily Sale Jan–Mar 2026 | Drive/Lavu/ — XLS | ⚠️ Had parsing issues — prefer monthly exports |
-| Lavu Transactions Jan–May 2026 | Drive/Lavu/ — XLS by month/day | ✅ Available |
-| Lavu Time Cards Jan–Apr 2026 | Drive/Lavu/ — CSV | ✅ Readable |
-| Sale by Item Jan–Apr 2026 | Drive/Lavu/Sale by Item — XLS | ⚠️ XLS |
-| Chef fixed pay (BOH) | Captured S39 — see below | ✅ Recorded |
-| GH data Jan–May 8 2026 | aura_thai_finance Google Sheet | ✅ Live |
-| DD/UE delivery data | Drive/Financial Data/ folders | ✅ Available |
+### What is baked in (static, S40)
+| Data | Value |
+|------|-------|
+| April 2026 total | $72,214 (29 days, $2,490/day) |
+| May 1-26 2026 total | $65,408 (from Lavu summary row) |
+| April 2025 baseline | $81,437 → -11.3% YoY |
+| May 1-26 2025 baseline | $70,792 → -7.6% YoY |
+| Current week May 20-26 | $18,344 (+12.6% WoW) |
+| BOH labor | $494/day, ~$15,000/month |
+| Monthly 2025 baselines | Jan-Jul loaded |
 
-### Still needed from Chris
-| Item | Priority |
-|------|----------|
-| May 2026 Lavu Daily Sale export (summary) | 🔴 High |
-| Current menu prices (dine-in, DD, UE, GH) | 🔴 High |
-| Lavu labor reports 2024–2026 | 🟡 Medium |
-| 2023 delivery platform exports (GH/DD/UE) | 🟢 Low |
+### What is needed to make it live (A-06b, S41)
+1. Create master Lavu Google Sheet — one row per day, all months
+2. Artie: when new XLS arrives in Drive → parse → append to master sheet
+3. revenue.html: read from master sheet via Sheets API on page load (like ops reads GitHub)
+4. Dashboard auto-updates whenever Artie adds data. No Claude needed to rebuild.
+
+### Drive folders for S41 — Jan-Mar 2026 XLS
+Chris confirmed Jan-Mar files are in Drive. Use haiku model to find and parse:
+- Folder 1: https://drive.google.com/drive/folders/1_5WYvoliZ46w4mRuIayLm8uoMBeHb-mZ
+- Folder 2: https://drive.google.com/drive/folders/1jNC_5d4fK1JxAfvC6oWUMVK5Cbe-56rx
+- Folder 3: https://drive.google.com/drive/folders/1bAl7InIONZGy_XshNWzrtzcLMOXzuS7k
 
 ---
 
 ## AURA THAI — CHEF / BOH LABOR (captured S39)
-**Pay cycle:** Every 2 weeks
-**Structure:** 32–40 hrs @ $20/hr on paycheck (after tax), remainder in cash
-**Example:** $1,000 total → $400 paycheck, ~$100 tax withheld → $400 check + $600 cash
+**Daily BOH labor cost:** ~$494/day | **Monthly:** ~$15,000/month
 
 | Name | Role | Rate | Days/Period | Total/Period |
 |------|------|------|-------------|--------------|
@@ -83,8 +82,6 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | Erick | Chef | $140/day | 2 | $280 |
 | **TOTAL** | | | | **$6,917.50/period** |
 
-**Daily BOH labor cost:** ~$494/day (6,917.50 ÷ 14 days)
-**Monthly BOH labor:** ~$15,000/month
 FOH labor tracked in Lavu time cards (servers @ $16/hr).
 
 ---
@@ -96,27 +93,26 @@ FOH labor tracked in Lavu time cards (servers @ $16/hr).
 - DD + UE NOT in sheet yet — do not move those source files
 - Sheet ID: `1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE`
 - Rad Rooster: NOT launched (confirmed S39)
+- Lavu XLS files are UTF-16LE TSV (not real Excel) — decode: base64 → BOM strip → UTF-16LE parse
 
 ---
 
 ## AURA THAI — PRICE ANALYSIS RESULTS
-- DD +20% went live Apr 9: ticket +13.1%, orders -16.2%, revenue -5.1% — slightly hurting ✅ complete
-- UE +20% went live Apr 9: ticket +34.7% vs March, orders -1.5% — PARTIAL (only 5 days POST, Easter confound)
-- Analysis files: `dd_price_impact.html`, `ue_price_impact.html` v2 in /outputs
+- DD +20% live Apr 9: ticket +13.1%, orders -16.2%, revenue -5.1% ✅ complete
+- UE +20% live Apr 9: ticket +34.7% vs March, orders -1.5% — PARTIAL (Easter confound, 5-day window)
 
 ---
 
 ## INFRASTRUCTURE — KEY FACTS (do not ask Chris)
-- **GitHub repo:** `~/Documents/Claude/sharedfolder` on Chris's Mac
-- **GitHub PAT:** Drive Soul folder (fileId: `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`) — also `~/.pinyo_github_pat`
-- **Push script:** `outputs/handoff/push_handoff.sh` — run from Terminal.app
+- **GitHub PAT:** Drive Soul folder (fileId: `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`)
 - **Cloudflare Pages:** auto-deploys on push → ops.radrooster.co
-- **Drive Data Dump:** `1C96_Z8__1WVzbApAnHQaKxkiPFVNViDt` → Financial Data subfolder → Lavu/GH/DD/UE folders
+- **ops.radrooster.co:** Ops tab (live from GitHub) + Revenue tab (revenue.html — static S40)
+- **Drive Data Dump:** `1C96_Z8__1WVzbApAnHQaKxkiPFVNViDt` → Financial Data subfolder
 
 ---
 
 ## SPRINT GOAL — MAY/JUN 2026
-**Theme:** Build the Aura Thai Decision Dashboard. Lavu as primary data source. Real numbers. Real predictions. Actionable weekly recommendations.
+**Theme:** Make the Aura Thai Decision Dashboard live — connected to real data, auto-updating.
 
 ---
 
@@ -124,7 +120,7 @@ FOH labor tracked in Lavu time cards (servers @ $16/hr).
 
 | Business | Status | Priority Action |
 |----------|--------|-----------------|
-| Aura Thai | 🔴 Active | Decision Dashboard (A-06). Fix cron (I-23). Complete UE analysis (A-02). |
+| Aura Thai | 🔴 Active | A-06b: live data connection. A-06c: 3PD fees. Parse Jan-Mar 2026. |
 | Vine Arbitrage | 🟢 Running | Artie handles — no Claude action needed |
 | Pinyo Farms | ⏳ Planning | Market validation — B-01, queued |
 | AI Ventures | ⏳ Planning | Not started |
