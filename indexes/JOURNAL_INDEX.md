@@ -50,6 +50,8 @@ Format: `Session NN | YYYY-MM-DD | Topic | One-line hook | Tags | Drive Link`
 
 ---
 
+- Session 40 | 2026-05-28 | A-06 Decision Dashboard — Lavu revenue intelligence built | "Two months of POS data. One dashboard. And a ~10% YoY revenue gap I didn't know existed until I looked." | #aura-thai #finance #dashboard | pending Drive link
+
 ## Backfill Queue
 
 Sessions 06–14 and 22–29 have technical records but no YouTube-format journal entry yet. Write narrative entries during dedicated backfill sessions or retroactively as related topics come up. **Do not block forward progress on backfill.**
