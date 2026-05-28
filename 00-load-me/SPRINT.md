@@ -36,6 +36,7 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | A-05 | Wire email pipeline → aura_thai_finance sheet | ❌ Open | GH in sheet ✅. DD/UE not yet loaded. Fix I-23 first. |
 | I-06 | Daily digest cron for #general | ❌ Open | Decide time with Chris. |
 | I-17 | Decommission old Cloudflare Tunnel | ❌ Open | |
+| I-24 | Document anchor/index system for large soul files | ❌ Open | BOOT.md done. Next: add grep-able section anchors to SHARED-CORE, CLAUDE-CORE, THINKING_OS so only needed sections are read |
 | B-01 | Pinyo Farms market validation | ❌ Queued | |
 
 ---
