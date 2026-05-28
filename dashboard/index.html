@@ -6,18 +6,9 @@
 <title>Pinyo Empire — Ops Dashboard</title>
 <style>
   :root {
-    --bg: #0f1117;
-    --card: #1a1d27;
-    --card2: #22263a;
-    --border: #2e3250;
-    --text: #e8eaf6;
-    --muted: #7c83a8;
-    --green: #4caf7d;
-    --yellow: #f5a623;
-    --red: #e05555;
-    --blue: #5b8def;
-    --purple: #9b6dff;
-    --radius: 12px;
+    --bg: #0f1117; --card: #1a1d27; --card2: #22263a; --border: #2e3250;
+    --text: #e8eaf6; --muted: #7c83a8; --green: #4caf7d; --yellow: #f5a623;
+    --red: #e05555; --blue: #5b8def; --purple: #9b6dff; --radius: 12px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; }
@@ -25,230 +16,311 @@
   .header { padding: 20px 16px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
   .header h1 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
   .header h1 span { color: var(--purple); }
+  .header-right { display: flex; align-items: center; gap: 12px; }
   .updated { font-size: 11px; color: var(--muted); }
+  .refresh-btn { font-size: 11px; color: var(--blue); background: none; border: 1px solid var(--border); border-radius: 6px; padding: 3px 10px; cursor: pointer; }
+  .refresh-btn:hover { background: var(--card2); }
 
-  .grid { display: grid; gap: 12px; padding: 14px; }
+  .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin: 16px 16px 6px; }
+  .grid { display: grid; gap: 12px; padding: 0 14px 12px; }
   .grid-2 { grid-template-columns: 1fr 1fr; }
   @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
 
-  .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin: 16px 16px 4px; }
-
   .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
-  .card-title { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+  .card-title { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
 
-  .badge { display: inline-flex; align-items: center; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; padding: 2px 8px; border-radius: 20px; }
-  .badge-green { background: rgba(76,175,125,0.15); color: var(--green); }
-  .badge-yellow { background: rgba(245,166,35,0.15); color: var(--yellow); }
-  .badge-red { background: rgba(224,85,85,0.15); color: var(--red); }
-  .badge-blue { background: rgba(91,141,239,0.15); color: var(--blue); }
-  .badge-muted { background: rgba(124,131,168,0.12); color: var(--muted); }
-
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 4px; }
-  @media (max-width: 480px) { .stats { grid-template-columns: repeat(2, 1fr); } }
-  .stat { background: var(--card2); border-radius: 8px; padding: 10px; text-align: center; }
-  .stat .n { font-size: 22px; font-weight: 800; }
-  .stat .l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
-
-  /* OPEN ITEMS */
+  /* Items */
   .item-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
   .item-row:last-child { border-bottom: none; }
-  .item-id { font-size: 10px; color: var(--muted); font-family: monospace; min-width: 36px; padding-top: 1px; }
+  .item-id { font-size: 10px; color: var(--muted); font-family: monospace; min-width: 38px; padding-top: 2px; }
   .item-text { flex: 1; }
-  .item-tag { font-size: 10px; white-space: nowrap; padding-top: 1px; }
-  .tag-s28 { color: var(--red); }
-  .tag-urgent { color: var(--yellow); }
-  .tag-chris { color: var(--blue); }
-  .tag-future { color: var(--muted); }
-  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .item-status { font-size: 11px; white-space: nowrap; padding-top: 1px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
   .dot-red { background: var(--red); }
   .dot-yellow { background: var(--yellow); }
   .dot-blue { background: var(--blue); }
   .dot-green { background: var(--green); }
   .dot-muted { background: var(--muted); }
 
-  /* BUSINESS */
-  .biz-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 8px; }
+  /* Business rows */
+  .biz-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--border); gap: 8px; }
+  .biz-row:last-child { border-bottom: none; }
   .biz-name { font-weight: 600; font-size: 13px; }
-  .biz-detail { font-size: 12px; color: var(--muted); margin-top: 3px; }
-  .biz-metric .val { font-size: 15px; font-weight: 700; color: var(--yellow); }
-  .biz-metric .target { font-size: 10px; color: var(--muted); text-align: right; }
-  .divider { height: 1px; background: var(--border); margin: 10px 0; }
-  .blocker { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 12px; border-bottom: 1px solid var(--border); }
-  .blocker:last-child { border-bottom: none; }
-  .blocker-owner { font-size: 10px; color: var(--muted); margin-left: auto; white-space: nowrap; }
-  .progress-wrap { margin-top: 6px; }
-  .progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
-  .progress-bar { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; }
-  .progress-fill { height: 100%; background: var(--yellow); border-radius: 4px; }
+  .biz-action { font-size: 11px; color: var(--muted); margin-top: 2px; max-width: 220px; }
+  .badge { display: inline-flex; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+  .badge-green { background: rgba(76,175,125,0.15); color: var(--green); }
+  .badge-yellow { background: rgba(245,166,35,0.15); color: var(--yellow); }
+  .badge-red { background: rgba(224,85,85,0.15); color: var(--red); }
+  .badge-blue { background: rgba(91,141,239,0.15); color: var(--blue); }
+  .badge-muted { background: rgba(124,131,168,0.12); color: var(--muted); }
 
-  /* TEAM */
-  .team-member { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
-  .team-member:last-child { border-bottom: none; }
-  .avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
-  .av-purple { background: rgba(155,109,255,0.2); }
-  .av-blue { background: rgba(91,141,239,0.2); }
-  .av-green { background: rgba(76,175,125,0.2); }
-  .team-info { flex: 1; }
-  .team-name { font-weight: 600; font-size: 13px; }
-  .team-status { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  /* Stat strip */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px 14px 0; }
+  @media (max-width: 480px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--card2); border-radius: 8px; padding: 10px; text-align: center; border: 1px solid var(--border); }
+  .stat .n { font-size: 22px; font-weight: 800; }
+  .stat .l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+
+  /* Sprint goal banner */
+  .goal-banner { background: rgba(155,109,255,0.08); border: 1px solid rgba(155,109,255,0.25); border-radius: var(--radius); padding: 12px 14px; margin: 0 14px 4px; font-size: 12px; }
+  .goal-label { font-size: 10px; color: var(--purple); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 4px; }
+
+  /* Chef table */
+  .chef-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .chef-table th { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; padding: 4px 8px; text-align: left; border-bottom: 1px solid var(--border); }
+  .chef-table td { padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  .chef-table tr:last-child td { border-bottom: none; font-weight: 700; color: var(--yellow); }
+
+  /* Loading */
+  .loading { text-align: center; padding: 40px; color: var(--muted); font-size: 13px; }
+  .error-msg { background: rgba(224,85,85,0.1); border: 1px solid rgba(224,85,85,0.3); border-radius: 8px; padding: 12px; margin: 14px; font-size: 12px; color: var(--red); }
 
   .footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); margin-top: 8px; }
+
+  .data-model-note { background: rgba(91,141,239,0.08); border-left: 3px solid var(--blue); padding: 8px 12px; font-size: 11px; color: var(--muted); margin-bottom: 10px; border-radius: 0 6px 6px 0; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>📡 Pinyo <span>Empire</span> Ops</h1>
-  <div class="updated">Updated: May 6, 2026 · Session 27</div>
-</div>
-
-<!-- STATS -->
-<div style="padding: 14px 14px 0;">
-  <div class="stats">
-    <div class="stat"><div class="n" style="color:var(--green);">2</div><div class="l">Active T1</div></div>
-    <div class="stat"><div class="n" style="color:var(--yellow);">2</div><div class="l">On Hold</div></div>
-    <div class="stat"><div class="n" style="color:var(--red);">10</div><div class="l">Infra Items</div></div>
-    <div class="stat"><div class="n" style="color:var(--yellow);">8</div><div class="l">Ops Items</div></div>
+  <div class="header-right">
+    <div class="updated" id="fetch-time">Loading...</div>
+    <button class="refresh-btn" onclick="loadAll()">↻ Refresh</button>
   </div>
 </div>
 
-<!-- ═══ OPEN ITEMS TOP ═══ -->
-<div class="section-label">🔴 Open Items — Infrastructure</div>
-<div class="grid">
-  <div class="card">
-    <div class="item-row"><div class="dot dot-red"></div><div class="item-id">I-01</div><div class="item-text">Build Cowork/Claude second Discord bot — so Claude messages are distinct from Artie</div><div class="item-tag tag-s28">S28 #1</div></div>
-    <div class="item-row"><div class="dot dot-red"></div><div class="item-id">I-02</div><div class="item-text">Drive folder reorganization — Soul/Artie/, Soul/SHARED/, Soul/Claude/</div><div class="item-tag tag-s28">S28 #2</div></div>
-    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-06</div><div class="item-text">Daily digest cron for #general — decide time with Chris, then build</div><div class="item-tag tag-s28">S28</div></div>
-    <div class="item-row"><div class="dot dot-red"></div><div class="item-id">I-07</div><div class="item-text">9 cron job backends — all disabled crons need backends built</div><div class="item-tag tag-future">Dedicated session</div></div>
-    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-08</div><div class="item-text">Telegram → Discord full migration — cron redirect done, backends pending</div><div class="item-tag tag-future">Future</div></div>
-    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-09</div><div class="item-text">Live market data for morning briefing — Section 1 currently skipped</div><div class="item-tag tag-future">Future</div></div>
-    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-11</div><div class="item-text">Verify Cloudflare Tunnel on Artie machine can be decommissioned</div><div class="item-tag tag-s28">S28</div></div>
-    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">I-12</div><div class="item-text">Telegram thread routing test — SOP 11 written, Finance thread unconfirmed</div><div class="item-tag tag-urgent">⚠️ Artie</div></div>
-    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">I-14</div><div class="item-text">Delete old EMPIRE_STATUS Google Doc (Drive ID: 1AMnMkAzD8xoYsGHwDRRl7-VRL2OADb6irVsnZdFVpoQ)</div><div class="item-tag tag-chris">Chris</div></div>
-    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">I-15</div><div class="item-text">Delete 4 old files on Mac/Aura Thai — must do in Finder (shell read-only)</div><div class="item-tag tag-chris">Chris</div></div>
-  </div>
+<div id="dashboard-content">
+  <div class="loading">⏳ Fetching live data from GitHub...</div>
 </div>
 
-<div class="section-label">🟡 Open Items — Operations & Business</div>
-<div class="grid">
-  <div class="card">
-    <div class="item-row"><div class="dot dot-red"></div><div class="item-id">O-01</div><div class="item-text">Playwright downloader — DD/UE auth wall bypass for pending_downloads.json</div><div class="item-tag tag-future">Dedicated</div></div>
-    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">O-02</div><div class="item-text">Daily financial tracking SOP for Artie — AI Ventures stream tracking</div><div class="item-tag tag-future">Future</div></div>
-    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">O-03</div><div class="item-text">Aura Thai: Lavu integration — blocked on Chris</div><div class="item-tag tag-chris">❌ Chris</div></div>
-    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">O-04</div><div class="item-text">Aura Thai: Shift Close integration — blocked on Chris</div><div class="item-tag tag-chris">❌ Chris</div></div>
-    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">O-05</div><div class="item-text">Aura Thai: Grubhub markup — live but not confirmed working</div><div class="item-tag tag-urgent">⚠️ Chris</div></div>
-    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">B-01</div><div class="item-text">Pinyo Farms market validation research — Phase 1 greenlit, not started</div><div class="item-tag tag-chris">Claude+Chris</div></div>
-    <div class="item-row"><div class="dot dot-yellow"></div><div class="item-id">B-02</div><div class="item-text">Roam master content plan — no Artie tasks until complete</div><div class="item-tag tag-chris">Claude+Chris</div></div>
-    <div class="item-row"><div class="dot dot-blue"></div><div class="item-id">B-03</div><div class="item-text">Aura Thai Google Ads launch — plan built (v2), execution not started</div><div class="item-tag tag-chris">Chris</div></div>
-  </div>
-</div>
+<div class="footer">Live data · GitHub: Artemisclaws/sharedfolder · Cloudflare Pages auto-deploy</div>
 
-<!-- ═══ BUSINESSES ═══ -->
-<div class="section-label">Businesses</div>
-<div class="grid">
-  <div class="card">
-    <div class="biz-row">
-      <div><div class="biz-name">🍜 Aura Thai</div><div style="margin-top:4px;"><span class="badge badge-green">T1 Active</span></div></div>
-      <div class="biz-metric"><div class="val">$2,765</div><div class="target">of $5K/day target</div></div>
-    </div>
-    <div class="progress-wrap">
-      <div class="progress-label"><span>Daily revenue</span><span>55%</span></div>
-      <div class="progress-bar"><div class="progress-fill" style="width:55%"></div></div>
-    </div>
-    <div class="divider"></div>
-    <div class="blocker"><div class="dot dot-green"></div>DD + UE markup live<div class="blocker-owner">✅</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>Grubhub markup<div class="blocker-owner">⚠️ unconfirmed</div></div>
-    <div class="blocker"><div class="dot dot-red"></div>Lavu · Shift Close<div class="blocker-owner">❌ blocked on Chris</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>Google Ads<div class="blocker-owner">⚠️ plan ready, not launched</div></div>
-  </div>
-  <div class="card">
-    <div class="biz-row"><div><div class="biz-name">📦 FB Arbitrage</div><div style="margin-top:4px;"><span class="badge badge-green">T1 Active</span></div></div></div>
-    <div class="biz-detail" style="margin-top:6px;">Vine backlog clearing daily. Artie drafting reviews + listings.</div>
-    <div class="divider"></div>
-    <div class="blocker"><div class="dot dot-green"></div>Vine pipeline running<div class="blocker-owner">✅ Artie</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>Daily financial SOP<div class="blocker-owner">❌ not built</div></div>
-  </div>
-  <div class="card">
-    <div class="biz-row">
-      <div><div class="biz-name">🤖 AI Ventures</div><div style="margin-top:4px;"><span class="badge badge-blue">T2 Active</span></div></div>
-      <div class="biz-metric"><div class="val" style="font-size:13px;">$3–4K</div><div class="target">monthly target</div></div>
-    </div>
-    <div class="divider"></div>
-    <div class="blocker"><div class="dot dot-green"></div>Stream 1: Vine arbitrage<div class="blocker-owner">Running</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>Stream 2: Restaurant subs<div class="blocker-owner">Defined</div></div>
-    <div class="blocker"><div class="dot dot-red"></div>Financial tracking SOP<div class="blocker-owner">❌ not built</div></div>
-  </div>
-  <div class="card">
-    <div class="biz-row"><div><div class="biz-name">🌱 Pinyo Farms</div><div style="margin-top:4px;"><span class="badge badge-muted">On Hold</span></div></div></div>
-    <div class="biz-detail" style="margin-top:6px;">Phase 1 greenlit. Pending market validation — Claude + Chris session needed.</div>
-  </div>
-  <div class="card">
-    <div class="biz-row"><div><div class="biz-name">✈️ Roam with Chris</div><div style="margin-top:4px;"><span class="badge badge-muted">On Hold</span></div></div></div>
-    <div class="biz-detail" style="margin-top:6px;">Master content plan required before any Artie tasks. Claude + Chris session needed.</div>
-  </div>
-</div>
+<script>
+const RAW = 'https://raw.githubusercontent.com/Artemisclaws/sharedfolder/main/';
 
-<!-- ═══ TEAM ═══ -->
-<div class="section-label">Team</div>
-<div class="grid">
-  <div class="card">
-    <div class="team-member">
-      <div class="avatar av-purple">🧠</div>
-      <div class="team-info"><div class="team-name">Claude (Cowork)</div><div class="team-status">Discord API wired · Dashboard on Cloudflare Pages · Handoffs consolidated</div></div>
-      <span class="badge badge-green">Active</span>
-    </div>
-    <div class="team-member">
-      <div class="avatar av-blue">🤖</div>
-      <div class="team-info"><div class="team-name">Artie</div><div class="team-status">Morning briefing → Discord · 9 crons disabled · Financial pipeline running</div></div>
-      <span class="badge badge-green">Active</span>
-    </div>
-    <div class="team-member">
-      <div class="avatar av-green">👤</div>
-      <div class="team-info"><div class="team-name">Chris</div><div class="team-status">Decisions needed: Lavu · Shift Close · Grubhub · Google Ads</div></div>
-      <span class="badge badge-yellow">Action needed</span>
-    </div>
-  </div>
-</div>
+function statusDot(s) {
+  if (!s) return 'dot-muted';
+  if (s.includes('✅') || s.includes('🟢')) return 'dot-green';
+  if (s.includes('⏳') || s.includes('🟡') || s.includes('🔄')) return 'dot-yellow';
+  if (s.includes('❌') || s.includes('🔴')) return 'dot-red';
+  if (s.includes('🔵') || s.includes('Chris')) return 'dot-blue';
+  return 'dot-muted';
+}
 
-<!-- ═══ CONFIRMED DONE ═══ -->
-<div class="section-label">Confirmed Done ✅</div>
-<div class="grid">
-  <div class="card">
-    <div class="blocker"><div class="dot dot-green"></div>ops.radrooster.co → Cloudflare Pages (no more tunnel dependency)<div class="blocker-owner">S27 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>GitHub repo live (github.com/Artemisclaws/sharedfolder)<div class="blocker-owner">S26 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>Discord fully wired — all 8 channels<div class="blocker-owner">S26 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>Morning briefing → Discord #general<div class="blocker-owner">S27 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>9 cron jobs disabled<div class="blocker-owner">S27 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>MASTER_OPEN_ITEMS.md + SESSION_HISTORY.md on GitHub<div class="blocker-owner">S27 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>14 duplicate files resolved<div class="blocker-owner">S24 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>artie_report_sync.py v2 — 13-parser 3PD email pipeline<div class="blocker-owner">S20 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>OpenClaw upgraded 2026.4.12 → 2026.4.21<div class="blocker-owner">S16 ✅</div></div>
-    <div class="blocker"><div class="dot dot-green"></div>Google OAuth + Gmail API wired for Artie<div class="blocker-owner">S19 ✅</div></div>
-  </div>
-</div>
+function badgeFor(status) {
+  if (!status) return `<span class="badge badge-muted">—</span>`;
+  const s = status.trim();
+  if (s.includes('🟢') || s.includes('✅') || s.toLowerCase().includes('running')) return `<span class="badge badge-green">${s}</span>`;
+  if (s.includes('🔴') || s.toLowerCase().includes('priority')) return `<span class="badge badge-red">${s}</span>`;
+  if (s.includes('🟡') || s.toLowerCase().includes('active') || s.includes('⏳')) return `<span class="badge badge-yellow">${s}</span>`;
+  if (s.toLowerCase().includes('planning')) return `<span class="badge badge-muted">${s}</span>`;
+  return `<span class="badge badge-muted">${s}</span>`;
+}
 
-<!-- ═══ QUICK REF ═══ -->
-<div class="section-label">Quick Reference</div>
-<div class="grid grid-2">
-  <div class="card">
-    <div class="card-title">🔗 Links</div>
-    <div class="blocker"><div class="dot dot-blue"></div>Dashboard<div class="blocker-owner"><a href="https://ops.radrooster.co" style="color:var(--blue);text-decoration:none;">ops.radrooster.co</a></div></div>
-    <div class="blocker"><div class="dot dot-blue"></div>GitHub<div class="blocker-owner"><a href="https://github.com/Artemisclaws/sharedfolder" style="color:var(--blue);text-decoration:none;">Artemisclaws/sharedfolder</a></div></div>
-    <div class="blocker"><div class="dot dot-blue"></div>Discord Server<div class="blocker-owner">ID: 1493421633359315086</div></div>
-  </div>
-  <div class="card">
-    <div class="card-title">📋 Session 28 Priorities</div>
-    <div class="blocker"><div class="dot dot-red"></div>#1 — Cowork second Discord bot<div class="blocker-owner">I-01</div></div>
-    <div class="blocker"><div class="dot dot-red"></div>#2 — Drive folder reorg<div class="blocker-owner">I-02</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>#3 — Daily digest cron #general<div class="blocker-owner">I-06</div></div>
-    <div class="blocker"><div class="dot dot-yellow"></div>#4 — Playwright downloader<div class="blocker-owner">O-01</div></div>
-  </div>
-</div>
+// Parse markdown table into array of objects
+function parseTable(text, heading) {
+  const lines = text.split('\n');
+  let inTable = false, headers = [], rows = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!inTable && heading && lines[i-1] && lines[i-1].includes(heading)) inTable = true;
+    if (!inTable && line.startsWith('| ') && i > 0) {
+      const prev = lines[i-1].trim();
+      if (!prev.startsWith('|') && !headers.length) inTable = true;
+    }
+    if (line.startsWith('|') && !line.match(/^\|[\s\-|]+\|$/)) {
+      const cells = line.split('|').slice(1,-1).map(c => c.trim());
+      if (!headers.length) { headers = cells; }
+      else { const obj = {}; headers.forEach((h,i) => obj[h] = cells[i]||''); rows.push(obj); }
+    } else if (inTable && headers.length && !line.startsWith('|') && line !== '') {
+      break;
+    }
+  }
+  return rows;
+}
 
-<div class="footer">
-  Pinyo Empire Ops · ops.radrooster.co · May 6, 2026 · Session 27<br>
-  <span style="color:var(--border);">Auto-deploys from github.com/Artemisclaws/sharedfolder on every push</span>
-</div>
+// Extract section between two headings
+function extractSection(text, startHeading, stopHeading) {
+  const lines = text.split('\n');
+  let capturing = false, result = [];
+  for (const line of lines) {
+    if (line.startsWith('#') && line.includes(startHeading)) { capturing = true; continue; }
+    if (capturing && stopHeading && line.startsWith('#') && line.includes(stopHeading)) break;
+    if (capturing) result.push(line);
+  }
+  return result.join('\n');
+}
 
+// Get value from a single-field table (## heading → | Key | Value | rows)
+function extractKeyValue(text, heading) {
+  const section = extractSection(text, heading, '##');
+  const rows = parseTable(section, '');
+  const map = {};
+  rows.forEach(r => {
+    const keys = Object.keys(r);
+    if (keys.length >= 2) map[r[keys[0]]] = r[keys[1]];
+  });
+  return map;
+}
+
+function buildDashboard(sprint, empire) {
+  // --- Parse SPRINT active items ---
+  const sprintSection = extractSection(sprint, 'ACTIVE ITEMS', 'AURA THAI PIPELINE');
+  const activeItems = parseTable(sprintSection, '');
+
+  // --- Parse businesses ---
+  const bizSection = extractSection(sprint, 'BUSINESSES', 'PROTOCOL');
+  const businesses = parseTable(bizSection, '');
+
+  // --- Parse blocked ---
+  const blockedSection = extractSection(sprint, 'BLOCKED', 'S3');
+  const blocked = parseTable(blockedSection, '');
+
+  // --- Sprint goal ---
+  const goalMatch = sprint.match(/\*\*Theme:\*\* (.+)/);
+  const sprintGoal = goalMatch ? goalMatch[1] : '—';
+
+  // --- Last updated ---
+  const updatedMatch = sprint.match(/\*\*Last Updated:\*\* (.+)/);
+  const lastUpdated = updatedMatch ? updatedMatch[1] : '—';
+
+  // --- Chef table (from SPRINT) ---
+  const chefSection = extractSection(sprint, 'CHEF / BOH LABOR', 'AURA THAI PIPELINE');
+  const chefRows = parseTable(chefSection, '');
+
+  // --- Empire status overview ---
+  const statusSection = extractSection(empire, 'STATUS OVERVIEW', 'AURA THAI');
+  const statusRows = parseTable(statusSection, '');
+
+  // --- Count open items ---
+  const openCount = activeItems.filter(i => { const s = Object.values(i).join(' '); return s.includes('❌') || s.includes('🔄') || s.includes('⏳'); }).length;
+  const redCount = activeItems.filter(i => Object.values(i).join(' ').includes('🔴')).length;
+  const blockedCount = blocked.length;
+  const bizActive = businesses.filter(b => { const s = Object.values(b).join(' '); return s.includes('🟢') || s.includes('🔴') || s.includes('🟡'); }).length;
+
+  let html = '';
+
+  // STATS STRIP
+  html += `<div class="stats">
+    <div class="stat"><div class="n" style="color:var(--red)">${redCount}</div><div class="l">Priority</div></div>
+    <div class="stat"><div class="n" style="color:var(--yellow)">${openCount}</div><div class="l">Open Items</div></div>
+    <div class="stat"><div class="n" style="color:var(--blue)">${blockedCount}</div><div class="l">Blocked</div></div>
+    <div class="stat"><div class="n" style="color:var(--green)">${bizActive}</div><div class="l">Businesses</div></div>
+  </div>`;
+
+  // SPRINT GOAL
+  html += `<div style="margin-top:14px"></div>
+  <div class="goal-banner">
+    <div class="goal-label">Sprint Goal</div>
+    ${sprintGoal}
+  </div>`;
+
+  // ACTIVE ITEMS
+  if (activeItems.length) {
+    html += `<div class="section-label">🔴 Active Items</div><div class="grid"><div class="card">`;
+    html += `<div class="data-model-note">Lavu = primary revenue. GH/DD/UE are delivery sub-channels. Rad Rooster not launched.</div>`;
+    activeItems.forEach(item => {
+      const id = item['ID'] || '';
+      const name = item['Item'] || '';
+      const status = item['Status'] || '';
+      const notes = item['Notes'] || '';
+      const dot = statusDot(status);
+      html += `<div class="item-row">
+        <div class="dot ${dot}"></div>
+        <div class="item-id">${id}</div>
+        <div class="item-text">${name}${notes ? `<br><span style="color:var(--muted);font-size:11px">${notes}</span>` : ''}</div>
+        <div class="item-status" style="color:var(--muted)">${status}</div>
+      </div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  // BUSINESSES
+  if (businesses.length) {
+    html += `<div class="section-label">Businesses</div><div class="grid"><div class="card">`;
+    businesses.forEach(b => {
+      const name = b['Business'] || '';
+      const status = b['Status'] || '';
+      const action = b['Priority Action'] || '';
+      html += `<div class="biz-row">
+        <div><div class="biz-name">${name}</div><div class="biz-action">${action}</div></div>
+        ${badgeFor(status)}
+      </div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  // CHEF / BOH LABOR
+  if (chefRows.length) {
+    html += `<div class="section-label">💰 BOH Labor (~$494/day · $15K/mo)</div><div class="grid"><div class="card">`;
+    html += `<table class="chef-table"><thead><tr>`;
+    Object.keys(chefRows[0]).forEach(h => html += `<th>${h}</th>`);
+    html += `</tr></thead><tbody>`;
+    chefRows.forEach(row => {
+      html += `<tr>`;
+      Object.values(row).forEach(v => html += `<td>${v}</td>`);
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div></div>`;
+  }
+
+  // BLOCKED
+  if (blocked.length) {
+    html += `<div class="section-label">🔵 Blocked — Do Not Touch</div><div class="grid"><div class="card">`;
+    blocked.forEach(b => {
+      const item = b['Item'] || '';
+      const blocker = b['Blocker'] || '';
+      html += `<div class="item-row">
+        <div class="dot dot-blue"></div>
+        <div class="item-text">${item}</div>
+        <div class="item-status" style="color:var(--blue);font-size:11px">${blocker}</div>
+      </div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  // EMPIRE STATUS — key infra
+  if (statusRows.length) {
+    const live = statusRows.filter(r => (r['Status']||'').includes('✅') || (r['Status']||'').includes('LIVE'));
+    const issues = statusRows.filter(r => (r['Status']||'').includes('❌') || (r['Status']||'').includes('NOT BUILT') || (r['Status']||'').includes('PENDING'));
+    if (issues.length) {
+      html += `<div class="section-label">⚙️ Infrastructure — Needs Attention</div><div class="grid"><div class="card">`;
+      issues.slice(0,8).forEach(r => {
+        html += `<div class="item-row">
+          <div class="dot dot-red"></div>
+          <div class="item-text">${r['Area']||''}</div>
+          <div class="item-status" style="color:var(--muted);font-size:11px">${r['Notes']||r['Status']||''}</div>
+        </div>`;
+      });
+      html += `</div></div>`;
+    }
+  }
+
+  document.getElementById('dashboard-content').innerHTML = html;
+  document.getElementById('fetch-time').textContent = `Live · fetched ${new Date().toLocaleTimeString()} · Source: ${lastUpdated}`;
+}
+
+async function loadAll() {
+  document.getElementById('fetch-time').textContent = 'Refreshing...';
+  try {
+    const [sprintRes, empireRes] = await Promise.all([
+      fetch(RAW + '00-load-me/SPRINT.md?nocache=' + Date.now()),
+      fetch(RAW + 'empire-status/EMPIRE_STATUS.md?nocache=' + Date.now())
+    ]);
+    if (!sprintRes.ok || !empireRes.ok) throw new Error('GitHub fetch failed');
+    const [sprint, empire] = await Promise.all([sprintRes.text(), empireRes.text()]);
+    buildDashboard(sprint, empire);
+  } catch(e) {
+    document.getElementById('dashboard-content').innerHTML =
+      `<div class="error-msg">⚠️ Could not load data from GitHub. Check connection.<br><small>${e.message}</small></div>`;
+    document.getElementById('fetch-time').textContent = 'Error — retry';
+  }
+}
+
+// Auto-refresh every 5 minutes
+loadAll();
+setInterval(loadAll, 5 * 60 * 1000);
+</script>
 </body>
 </html>
