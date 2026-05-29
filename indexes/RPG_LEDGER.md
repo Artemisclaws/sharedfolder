@@ -11,20 +11,21 @@
 
 | Stat | Score | Trend |
 |------|-------|-------|
-| DISCIPLINE | 71 | ↑ |
-| SYSTEMS | 93 | ↑↑ |
-| MOMENTUM | 84 | ↑ |
-| LEVERAGE | 73 | ↑ |
-| CLARITY | 87 | ↑↑ |
+| DISCIPLINE | 72 | ↑ |
+| SYSTEMS | 95 | ↑↑ |
+| MOMENTUM | 86 | ↑ |
+| LEVERAGE | 75 | ↑ |
+| CLARITY | 89 | ↑↑ |
 
 ---
 
 ## XP LEDGER
 
-**Total XP:** 1,625
+**Total XP:** 1,720
 
 | Session | XP Earned | XP Lost | Net | Notes |
 |---------|-----------|---------|-----|-------|
+| S41 | +95 | 0 | +95 | I-24 complete (33 anchors). P&L tabs built. Dashboard v2 delivered. Dashboard rule locked. Design prompt written. Clean handoff. |
 | S40 | +95 | -5 | +90 | A-06 dashboard delivered. Revenue tab live on ops.radrooster.co. YoY gap quantified. Real data pipeline established. -5: dashboard still static (A-06b not done yet). |
 | S39 | +90 | −10 | +80 | Dynamic dashboard built. Lavu model corrected. Chef pay captured. Drive inventory done. SPRINT.md was 4 sessions stale (−10). |
 | S38 | +30 | 0 | +30 | Decision Dashboard Checklist built. Data inventory organized. |
