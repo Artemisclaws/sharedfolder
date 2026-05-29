@@ -305,6 +305,67 @@ Your call on each — reply with "drop [item]" or "hold [item]"
 **Root cause log — 2026-05-08 S33:** Binary (2026.4.5) behind config (2026.4.12) caused silent boot failure. Updated to 2026.5.7. Fixed.
 
 
+## SOP 13 — ARTIE_REPORT_SYNC.PY CRON FIX (Aura Thai, On-Demand)
+
+**Trigger:** artie_report_sync.py not running automatically OR no platform data appearing in morning reports OR Chris reports missing DD/GH/UE data
+
+**Root cause history:** Cron was wiped during OpenClaw crash on 2026-05-08 (version mismatch S33). Script itself was intact — cron entry was lost.
+
+**The cron entry (canonical — do not change):**
+```
+0 4 * * * python3 /home/artemis/.openclaw/workspace/artie_report_sync.py >> /home/artemis/.openclaw/workspace/artie_report_sync.log 2>&1
+```
+Runs daily at 4:00 AM. Output appended to artie_report_sync.log.
+
+### Step 1 — Verify cron is missing
+```bash
+crontab -l | grep artie_report_sync
+```
+If blank: cron is missing. Proceed to Step 2.
+If entry appears: cron exists — skip to Step 4 to test manually.
+
+### Step 2 — Re-add the cron entry
+```bash
+(crontab -l 2>/dev/null; echo "0 4 * * * python3 /home/artemis/.openclaw/workspace/artie_report_sync.py >> /home/artemis/.openclaw/workspace/artie_report_sync.log 2>&1") | crontab -
+```
+
+### Step 3 — Verify it was added
+```bash
+crontab -l | grep artie_report_sync
+```
+Must return the exact line above. If blank, re-run Step 2.
+
+### Step 4 — Test the script manually
+```bash
+python3 /home/artemis/.openclaw/workspace/artie_report_sync.py 2>&1 | tail -30
+```
+Expected output: "Telegram sent" and "Artie Report Sync — complete."
+If errors appear: log them verbatim and escalate to Claude — do not attempt to fix the script.
+
+### Step 5 — Check the log
+```bash
+tail -20 /home/artemis/.openclaw/workspace/artie_report_sync.log
+```
+Confirm last run timestamp is recent and no errors present.
+
+### Step 6 — Report to Discord (#operations)
+```
+✅ ARTIE_REPORT_SYNC CRON RESTORED — [DATE]
+
+Cron entry confirmed: 0 4 * * * (daily 4am)
+Manual test result: [passed / failed + error if any]
+GrubHub: [parsed / no data]
+DoorDash: [parsed / queued for Playwright — expected]
+UberEats: [parsed / queued for Playwright — expected]
+
+I-23 resolved.
+```
+
+**Known limitation:** DD and UE require portal auth (Playwright downloader not yet built). Script will always report "No data — queued for Playwright" for DD and UE until that system is built. This is expected — not a script failure.
+
+**Script location:** `/home/artemis/.openclaw/workspace/artie_report_sync.py`
+**Log location:** `/home/artemis/.openclaw/workspace/artie_report_sync.log`
+
 ## RUNBOOK GAPS LOG
 
 *Artie adds here when encountering a situation not covered above. Claude reviews and writes the SOP.*
