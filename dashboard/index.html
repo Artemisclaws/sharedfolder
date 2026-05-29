@@ -99,6 +99,46 @@
   .error-msg { background: rgba(224,85,85,0.1); border: 1px solid rgba(224,85,85,0.3); border-radius: 8px; padding: 12px; margin: 14px; font-size: 12px; color: var(--red); }
   .footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); margin-top: 8px; }
   .data-model-note { background: rgba(91,141,239,0.08); border-left: 3px solid var(--blue); padding: 8px 12px; font-size: 11px; color: var(--muted); margin-bottom: 10px; border-radius: 0 6px 6px 0; }
+
+  /* ── FINANCE TAB ─────────────────────────────────────── */
+  .fin-hero { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 14px; }
+  @media (max-width: 600px) { .fin-hero { grid-template-columns: 1fr; } }
+  .fin-hero-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; text-align: center; }
+  .fin-hero-card.alert { border-color: rgba(224,85,85,0.5); background: rgba(224,85,85,0.05); }
+  .fin-hero-card.warn { border-color: rgba(245,166,35,0.4); background: rgba(245,166,35,0.04); }
+  .fin-hero-card.ok { border-color: rgba(76,175,125,0.4); background: rgba(76,175,125,0.04); }
+  .fin-big { font-size: 28px; font-weight: 800; line-height: 1; margin: 6px 0 4px; }
+  .fin-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+  .fin-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .fin-alert-box { margin: 0 14px 12px; background: rgba(224,85,85,0.08); border: 1px solid rgba(224,85,85,0.3); border-radius: 8px; padding: 10px 14px; font-size: 12px; }
+  .fin-alert-title { font-weight: 700; color: var(--red); font-size: 12px; margin-bottom: 4px; }
+  .fin-bar-section { padding: 0 14px 14px; }
+  .fin-bar-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .fin-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 12px; }
+  .fin-bar-month { width: 32px; color: var(--muted); font-size: 11px; flex-shrink: 0; }
+  .fin-bar-wrap { flex: 1; background: rgba(255,255,255,0.04); border-radius: 4px; height: 20px; position: relative; overflow: hidden; }
+  .fin-bar { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; font-size: 10px; font-weight: 600; white-space: nowrap; overflow: hidden; transition: width 0.4s; }
+  .fin-bar-25 { background: rgba(91,141,239,0.6); }
+  .fin-bar-26 { background: rgba(76,175,125,0.7); }
+  .fin-bar-26.down { background: rgba(224,85,85,0.7); }
+  .fin-bar-val { width: 80px; text-align: right; font-size: 11px; }
+  .fin-bar-yoy { width: 52px; text-align: right; font-size: 11px; font-weight: 700; }
+  .fin-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; }
+  .fin-table th { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; padding: 5px 8px; text-align: right; border-bottom: 1px solid var(--border); }
+  .fin-table th:first-child { text-align: left; }
+  .fin-table td { padding: 6px 8px; border-bottom: 1px solid rgba(46,50,80,0.5); text-align: right; }
+  .fin-table td:first-child { text-align: left; color: var(--muted); }
+  .fin-table tr.current td { color: var(--text); font-weight: 600; }
+  .fin-table .neg { color: var(--red); }
+  .fin-table .pos { color: var(--green); }
+  .fin-reco { margin: 0 14px 12px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+  .fin-reco-title { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--purple); font-weight: 700; margin-bottom: 8px; }
+  .fin-reco-item { display: flex; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--border); font-size: 12px; align-items: flex-start; }
+  .fin-reco-item:last-child { border-bottom: none; }
+  .fin-reco-num { color: var(--purple); font-weight: 700; min-width: 20px; }
+  .fin-freshness { margin: 0 14px 14px; font-size: 11px; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap; }
+  .fin-freshness span { display: flex; align-items: center; gap: 4px; }
+
 </style>
 </head>
 <body>
@@ -114,6 +154,7 @@
 <div class="tab-nav">
   <button class="tab-btn active" onclick="switchTab('ops', this)">⚙️ Ops</button>
   <button class="tab-btn" onclick="switchTab('revenue', this)">📊 Revenue</button>
+  <button class="tab-btn" onclick="switchTab('finance', this)">💰 Finance</button>
 </div>
 
 <!-- OPS TAB -->
@@ -122,6 +163,13 @@
     <div class="loading">⏳ Fetching live data from GitHub...</div>
   </div>
   <div class="footer">Live data · GitHub: Artemisclaws/sharedfolder · Cloudflare Pages auto-deploy</div>
+</div>
+
+
+<!-- FINANCE TAB -->
+<div id="tab-finance" class="tab-panel">
+  <div id="finance-content"></div>
+  <div class="footer">Data: Lavu (revenue) · BOH Labor (fixed) · Last data: May 26, 2026</div>
 </div>
 
 <!-- REVENUE TAB -->
@@ -308,6 +356,184 @@ async function loadAll() {
     document.getElementById('fetch-time').textContent = 'Error — retry';
   }
 }
+
+// ── FINANCE DATA ──────────────────────────────────────────────────────────
+const FINANCE_DATA = {
+  // 2025: Jan-Jul complete, Aug partial (1-19 only)
+  rev2025: [90361, 77122, 92324, 81437, 83422, 78048, 74852, null, null, null, null, null],
+  // 2026: Q1 monthly est. by 2025 ratio (Q1 verified total $243,389), Apr verified, May partial 1-26
+  rev2026: [84651, 72248, 86490, 72214, 65408, null, null, null, null, null, null, null],
+  // May 2025 days 1-26 for apples-to-apples May comparison
+  may2025_26d: 70792,
+  boh_monthly: 15000,  // $6,917.50 bi-weekly x2 periods
+  months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+  // May 2026: partial (26 days), projected full month
+  may26_daily_avg: 2516,
+  may26_projected: 77986,
+  ytd_2026: 381011,   // Jan 1 - May 26 2026
+  ytd_2025_same: 412036,  // 2025 same days
+  data_through: 'May 26, 2026'
+};
+
+function buildFinance() {
+  const D = FINANCE_DATA;
+  const curMonth = 5; // May (1-indexed)
+  const curRevRaw = D.rev2026[4]; // 65408 (partial)
+  const curRevProj = D.may26_projected; // 77986 projected full month
+  const prevYearRev = D.rev2025[4]; // 83422 full May 2025
+  const boh = D.boh_monthly;
+  const yoyPct = ((curRevProj - prevYearRev) / prevYearRev * 100).toFixed(1);
+  const bohPct = (boh / curRevProj * 100).toFixed(1);
+  const ytdChg = ((D.ytd_2026 - D.ytd_2025_same) / D.ytd_2025_same * 100).toFixed(1);
+
+  // Hero color logic
+  const heroRevClass = parseFloat(yoyPct) < -10 ? 'alert' : parseFloat(yoyPct) < 0 ? 'warn' : 'ok';
+  const heroBohClass = parseFloat(bohPct) > 25 ? 'alert' : parseFloat(bohPct) > 20 ? 'warn' : 'ok';
+  const heroYtdClass = parseFloat(ytdChg) < -10 ? 'alert' : parseFloat(ytdChg) < 0 ? 'warn' : 'ok';
+
+  let html = '';
+
+  // ALERT BANNER
+  if (parseFloat(ytdChg) < 0) {
+    html += `<div class="fin-alert-box">
+      <div class="fin-alert-title">⚠️ Revenue Trend Alert</div>
+      Revenue is down <strong>${Math.abs(ytdChg)}%</strong> YTD vs same period 2025 ($${(D.ytd_2026/1000).toFixed(0)}K vs $${(D.ytd_2025_same/1000).toFixed(0)}K). 
+      Every month in 2026 is below prior year. April was worst at <strong>-11.3%</strong>. True profitability requires COGS tracking — set up next.
+    </div>`;
+  }
+
+  // HERO METRICS
+  html += `<div class="fin-hero">
+    <div class="fin-hero-card ${heroRevClass}">
+      <div class="fin-label">May Revenue (projected)</div>
+      <div class="fin-big" style="color:${parseFloat(yoyPct)<0?'var(--red)':'var(--green)'}">$${(curRevProj/1000).toFixed(1)}K</div>
+      <div class="fin-sub">${yoyPct}% vs May 2025 · ${D.data_through} actual</div>
+    </div>
+    <div class="fin-hero-card ${heroYtdClass}">
+      <div class="fin-label">YTD vs 2025 (same days)</div>
+      <div class="fin-big" style="color:var(--red)">${ytdChg}%</div>
+      <div class="fin-sub">$${(D.ytd_2026/1000).toFixed(0)}K vs $${(D.ytd_2025_same/1000).toFixed(0)}K · Jan–May 26</div>
+    </div>
+    <div class="fin-hero-card ${heroBohClass}">
+      <div class="fin-label">BOH Labor % (May proj.)</div>
+      <div class="fin-big" style="color:${parseFloat(bohPct)>25?'var(--red)':parseFloat(bohPct)>20?'var(--yellow)':'var(--green)'}">
+        ${bohPct}%
+      </div>
+      <div class="fin-sub">$${(boh/1000).toFixed(0)}K fixed · Target &lt;20%</div>
+    </div>
+  </div>`;
+
+  // YEAR-OVER-YEAR BAR CHART
+  const maxRev = 100000;
+  html += `<div class="fin-bar-section">
+    <div class="fin-bar-label">Monthly Revenue — 2025 vs 2026</div>`;
+
+  // Legend
+  html += `<div style="display:flex;gap:16px;margin-bottom:10px;font-size:11px">
+    <span><span style="display:inline-block;width:12px;height:8px;background:rgba(91,141,239,0.6);border-radius:2px;margin-right:4px"></span>2025</span>
+    <span><span style="display:inline-block;width:12px;height:8px;background:rgba(76,175,125,0.7);border-radius:2px;margin-right:4px"></span>2026</span>
+    <span style="color:var(--muted);font-size:10px">* = Q1 est. by 2025 ratio · May = 26-day actual</span>
+  </div>`;
+
+  for (let i = 0; i < 7; i++) {
+    const m = D.months[i];
+    const v25 = D.rev2025[i];
+    const v26 = i === 4 ? D.may26_projected : D.rev2026[i]; // use projected for May
+    const v26_raw = D.rev2026[i]; // actual partial for display
+    if (!v25 && !v26) continue;
+
+    const pct25 = v25 ? (v25 / maxRev * 100).toFixed(1) : 0;
+    const pct26 = v26 ? (v26 / maxRev * 100).toFixed(1) : 0;
+    const yoy = v25 && v26 ? ((v26 - v25)/v25*100).toFixed(1) : '';
+    const isDown = parseFloat(yoy) < 0;
+    const yoyColor = isDown ? 'var(--red)' : 'var(--green)';
+    const note = i === 4 ? '*' : (i < 3 ? '†' : '');
+
+    html += `<div class="fin-bar-row">
+      <div class="fin-bar-month">${m}</div>
+      <div style="flex:1">
+        ${v25 ? `<div class="fin-bar-wrap" style="margin-bottom:3px"><div class="fin-bar fin-bar-25" style="width:${pct25}%">$${(v25/1000).toFixed(0)}K</div></div>` : ''}
+        ${v26 ? `<div class="fin-bar-wrap"><div class="fin-bar fin-bar-26 ${isDown?'down':''}" style="width:${pct26}%">$${(v26/1000).toFixed(0)}K${note}</div></div>` : ''}
+      </div>
+      <div class="fin-bar-yoy" style="color:${yoyColor}">${yoy ? yoy+'%' : '—'}</div>
+    </div>`;
+  }
+  html += `</div>`;
+
+  // MONTHLY TABLE
+  html += `<div class="fin-bar-section">
+    <div class="fin-bar-label">Detailed Monthly Comparison</div>
+    <div class="card" style="overflow-x:auto">
+    <table class="fin-table">
+      <thead><tr>
+        <th>Month</th><th>2025 Rev</th><th>2026 Rev</th><th>YoY</th><th>BOH Labor</th><th>Rev−BOH</th>
+      </tr></thead><tbody>`;
+
+  for (let i = 0; i < 7; i++) {
+    const m = D.months[i];
+    const v25 = D.rev2025[i];
+    const v26raw = D.rev2026[i];
+    const v26 = i === 4 ? D.may26_projected : v26raw;
+    const isCur = i === 4;
+    if (!v25 && !v26) continue;
+    const yoy = v25 && v26 ? ((v26-v25)/v25*100).toFixed(1) : '—';
+    const revMinusBoh = v26 ? v26 - D.boh_monthly : null;
+    const note = i === 4 ? ' (proj)' : (i < 3 ? '*' : '');
+    const rowClass = isCur ? 'current' : '';
+    const yoyClass = parseFloat(yoy) < 0 ? 'neg' : 'pos';
+
+    html += `<tr class="${rowClass}">
+      <td>${m}${isCur?'<span style="color:var(--muted);font-size:10px"> curr</span>':''}</td>
+      <td>${v25 ? '$'+v25.toLocaleString() : '—'}</td>
+      <td>${v26 ? '$'+Math.round(v26).toLocaleString()+note : '—'}</td>
+      <td class="${yoyClass}">${yoy !== '—' ? yoy+'%' : '—'}</td>
+      <td style="color:var(--muted)">$15,000</td>
+      <td class="${revMinusBoh && revMinusBoh > 0 ? 'pos' : 'neg'}">${revMinusBoh ? '$'+Math.round(revMinusBoh).toLocaleString() : '—'}</td>
+    </tr>`;
+  }
+  html += `</tbody></table>
+    <div style="font-size:10px;color:var(--muted);padding:8px 0 0">* Q1 individual months estimated by 2025 ratio (Q1 total $243,389 verified) · Rev−BOH = revenue minus BOH labor only (excludes COGS, FOH labor, overhead)</div>
+    </div>
+  </div>`;
+
+  // RECOMMENDATIONS
+  html += `<div class="fin-reco">
+    <div class="fin-reco-title">📋 Action Recommendations</div>
+    <div class="fin-reco-item"><div class="fin-reco-num">1</div><div>
+      <strong>Revenue down 7.5% YTD.</strong> Every month in 2026 is below 2025. April was -11.3% — identify what changed. Was it delivery price increases? Seasonal? Investigate GrubHub/DD/UE performance for April specifically.
+    </div></div>
+    <div class="fin-reco-item"><div class="fin-reco-num">2</div><div>
+      <strong>May is tracking at $78K projected</strong> (-6.5% vs May 2025). Need 5 strong remaining days ($2,516/day minimum) to hit projection. Daily revenue target: <strong>$2,516+</strong>.
+    </div></div>
+    <div class="fin-reco-item"><div class="fin-reco-num">3</div><div>
+      <strong>BOH labor is 19% of projected May revenue</strong> — healthy for BOH only. But true profitability is unknown without COGS. <strong>Set up COGS tracking before end of June.</strong> This is the critical blind spot.
+    </div></div>
+    <div class="fin-reco-item"><div class="fin-reco-num">4</div><div>
+      <strong>Delivery pipeline broken since May 8.</strong> GH/DD/UE data not flowing. Fix pipeline to get platform-by-platform visibility — needed to evaluate if DD/UE price increases are hurting volume.
+    </div></div>
+    <div class="fin-reco-item"><div class="fin-reco-num">5</div><div>
+      <strong>Draw threshold:</strong> Do not draw from the business until monthly revenue consistently exceeds $85K AND true net profit (after all costs) is confirmed positive for 2+ consecutive months.
+    </div></div>
+  </div>`;
+
+  // DATA FRESHNESS
+  html += `<div class="fin-freshness">
+    <span>📊 <strong>Revenue:</strong> Lavu — through ${D.data_through}</span>
+    <span>💰 <strong>BOH Labor:</strong> Fixed $6,917.50/period</span>
+    <span>⚠️ <strong>COGS:</strong> Not tracked — next priority</span>
+    <span>❌ <strong>GH/DD/UE pipeline:</strong> Broken since May 8</span>
+    <span style="color:var(--red)">⚠️ <strong>FOH Labor:</strong> Not included — enter from Lavu time cards</span>
+  </div>`;
+
+  document.getElementById('finance-content').innerHTML = html;
+}
+
+// Call buildFinance when tab is shown
+const origSwitch = window.switchTab;
+window.switchTab = function(name, btn) {
+  origSwitch(name, btn);
+  if (name === 'finance') buildFinance();
+};
 
 loadAll();
 setInterval(loadAll, 5 * 60 * 1000);
