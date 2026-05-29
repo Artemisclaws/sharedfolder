@@ -1,12 +1,19 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S41 | 2026-05-29
+**Updated by:** Claude | Session S40 | 2026-05-29
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## ⚠️ LOAD NOTE — TOKEN EFFICIENCY
+## SESSION START COMMAND — S41
+```
+Load soul files, then read sessions/S40/checkpoint_S40_aura-thai-finance-dashboard_2026-05-29.md
+```
+
+---
+
+## LOAD NOTE — TOKEN EFFICIENCY
 Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 - If SPRINT.md session number is behind → pull those files from GitHub.
 - Otherwise: SPRINT.md is the only context file needed at session start.
@@ -15,15 +22,15 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 ## CORRECTED DATA MODEL (S39 — do not revert)
 - **Lavu = primary revenue source.** Captures ALL sales: dine-in + delivery + catering.
-- GH, DD, UE are 3rd-party delivery sub-channels. They contribute TO Lavu totals.
-- **True daily revenue baseline comes from Lavu Daily Sale reports.**
-- Lavu XLS files = UTF-16LE TSV — no Google Sheets conversion needed. Base64 decode → BOM strip → parse.
+- GH, DD, UE are sub-channels. They contribute TO Lavu totals.
+- Lavu XLS = UTF-16LE TSV — base64 decode → BOM strip → parse.
 
 ---
 
-## NEW RULE (S41 — permanent)
-> **All dashboards live at ops.radrooster.co. No standalone URLs ever.**
-> Applies to: aura_thai_finance.html, dd_price_impact.html, ue_price_impact.html, Decision Dashboard.
+## PERMANENT RULES
+> All dashboards live at ops.radrooster.co. No standalone URLs ever.
+> Finance tab hardcodes data — MUST rebuild to read from Google Sheet (DASHBOARD ARCHITECTURE RULE violation).
+> $5K/day focus filter: new ideas → parking lot unless they advance COGS → pipeline → unit economics → growth.
 
 ---
 
@@ -31,68 +38,41 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
-| A-08 | Aura Thai Dashboard Design Session | 🔴 Priority | Answer 26 questions in `aura_thai_dashboard_design_prompt.md`. Design once, build to last. File in outputs/. |
-| A-07 | Integrate Decision Dashboard → ops.radrooster.co | 🔴 Next build | Apps Script JSON endpoint → dashboard/aura-thai.html → ops. See checkpoint_S41. |
-| A-06b | Revenue tab: live data connection | 🔄 Pending | Master Google Sheet (Artie appends Lavu) → revenue.html reads on load. |
-| A-06c | Revenue tab: 3rd party fees layer | 🔄 Pending | GH/DD/UE commission rates factored into net revenue + projections. |
-| A-02 | UberEats price impact — complete analysis | ⏳ Partial | Full Apr 14-30 data still needed. |
-| I-23 | artie_report_sync.py cron — fix trigger | ❌ Open | Not firing since ~May 8. |
-| A-04 | ARTIE SOP 13 — cron fix + monthly finance | ❌ Open | Write to ARTIE-RUNBOOK.md. |
-| A-05 | Wire email pipeline → aura_thai_finance sheet | ❌ Open | Fix I-23 first. |
-| I-06 | Daily digest cron for #general | ❌ Open | Decide time with Chris. |
-| B-01 | Pinyo Farms market validation | ❌ Queued | |
+| A-09 | COGS tracking system | 🔴 TOP PRIORITY | Weekly food cost entry. Target 28-32% revenue. Sustainability concern. |
+| A-08b | Finance tab: rebuild to Google Sheet | 🔴 Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
+| A-08 | Aura Thai Finance tab | ✅ DONE S40 | Live at ops.radrooster.co. YoY chart, hero metrics, 5 recs. Data hardcoded (A-08b). |
+| A-07 | Decision Dashboard → ops.radrooster.co | 🔴 Next build | Apps Script JSON → ops. |
+| A-06b | Revenue tab: live data connection | 🔄 Pending | Master Google Sheet → revenue.html reads on load. |
+| I-23 | artie_report_sync.py cron fix | ❌ Open | Not firing since May 8. |
+| A-04 | ARTIE SOP 13 | ❌ Open | Write to ARTIE-RUNBOOK.md. |
+| I-06 | Daily digest cron #general | ❌ Open | |
+| B-01 | Pinyo Farms market validation | ❌ Queued | Parking lot until COGS done. |
 
 ---
 
-## I-24 ✅ COMPLETE (S41)
-- 33 grep-able anchors added to SHARED-CORE.md (7), CLAUDE-CORE.md (10), THINKING_OS.md (8), EMPIRE_STATUS.md (8)
-- BOOT.md fetch triggers updated with anchor names + grep usage note
-- Pattern: `grep -n "<!-- #ANCHOR -->" file.md` → line N → `awk NR>=N && NR<=N+40`
+## KEY REVENUE NUMBERS (S40 verified)
+- YTD 2026: $381,011 | YTD 2025: $412,036 | **YoY: -7.5%**
+- Apr 2026 vs 2025: **-11.3%** (worst month so far)
+- May MTD apples-to-apples 26 days: **-7.6%**
+- BOH Labor: ~$15,000/month | ~$494/day
+
+## FINANCE DATA STATUS
+| Source | Coverage | Status |
+|--------|----------|--------|
+| Lavu 2025 Google Sheet | Jan-Jul 2025 | ✅ |
+| Lavu Jan-Mar 2026 XLS | Q1 ($243,389.16 verified) | ✅ monthly splits by ratio |
+| Lavu Apr 2026 XLS | $72,214.09 verified | ✅ |
+| Lavu May 1-26 2026 XLS | $65,408 partial | ✅ |
+| 2023/2024 XLS | Full years | ❌ Too large — need Sheets conversion |
+| GH/DD/UE pipeline | May 8+ | ❌ Broken (I-23) |
+| COGS | — | ❌ Not tracked yet (A-09) |
 
 ---
 
-## AURA THAI P&L INFRASTRUCTURE — S41
-- **aura_thai_finance sheet:** 5 tabs live (Lavu Revenue, Delivery Payouts, Tiller Expenses, Labor, P&L Summary)
-- **Tiller IMPORTRANGE:** Set up — needs "Allow access" click in Tiller Expenses tab if not done
-- **BOH Labor:** Pre-filled ($6,917.50/period, $494/day, ~$15k/month)
-- **Decision Dashboard v2:** Built as Apps Script Web App — must move to ops next session (A-07)
-- **Design prompt:** `outputs/aura_thai_dashboard_design_prompt.md` — 26 questions, answer before building final dashboard
+## CLAUDE-CORE.md V5 (S40 — permanent)
+- Build Protocol: test logic before building. Never hardcode data in dashboards.
+- Within-session file rule: no re-fetching already-loaded files.
+- Haiku agent default for mechanical tasks (file search, parsing, format conversion).
 
----
-
-## KNOWN SYSTEM ISSUE (S41)
-`MASTER_OPEN_ITEMS.md` and `EMPIRE_STATUS.md` on GitHub contain only `$ITEMS` / `$EMPIRE` placeholders.
-Artie to investigate — these files may be generated by a script and the placeholder is the template source.
-Do not overwrite. Full content visible via web_fetch from raw URL (may be CDN cached).
-
----
-
-## SESSION START COMMAND — S42
-```
-Load BOOT.md and SPRINT.md.
-First: run dashboard design session using outputs/aura_thai_dashboard_design_prompt.md (Option B or C).
-Then: A-07 — integrate Decision Dashboard into ops.radrooster.co.
-Reference: checkpoint_S41_2026-05-29.md in outputs/.
-```
-
----
-
-## SPRINT GOAL — MAY/JUN 2026
-**Theme:** One ops dashboard to rule them all. Aura Thai P&L visible, actionable, live.
-
----
-
-## BUSINESSES — CURRENT FOCUS
-
-| Business | Status | Priority Action |
-|----------|--------|-----------------|
-| Aura Thai | 🔴 Active | Dashboard design (A-08) → ops integration (A-07) → live data (A-06b) |
-| Vine Arbitrage | 🟢 Running | Artie handles |
-| Pinyo Farms | ⏳ Planning | B-01 queued |
-| AI Ventures | ⏳ Planning | Not started |
-| Roam | ⏳ Planning | Not started |
-
----
-
-## 🔗 Graph Links
-[[HOME]] | [[EMPIRE_STATUS]] | [[MASTER_OPEN_ITEMS]]
+## I-24 ✅ COMPLETE (prior session)
+- 33 grep-able anchors added to shared files.
