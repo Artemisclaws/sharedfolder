@@ -1,6 +1,6 @@
 # CLAUDE-CORE.md — V3
 **Always load this file at the start of every Claude session.**
-*Updated: 2026-05-28 | Session 40 | V4: Added MASTER_FILE_MAP reference, Dashboard Architecture Rule*
+*Updated: 2026-05-29 | Session 40 | V5: Added Build Protocol, Within-session file rule, Haiku agent rule*
 *Maintained by: Claude | Approved by: Chris*
 
 ---
@@ -43,6 +43,14 @@ Load in this exact order. Do not skip steps. Do not start work until all mandato
 | 3 | EMPIRE_STATUS.md | `empire-status/EMPIRE_STATUS.md` | Always |
 | 4 | SPRINT.md | `00-load-me/SPRINT.md` | Always — contains Active Items digest |
 | 5 | Task-specific file | varies | Only when working on a specific business or project |
+
+**Within-session file rule:**
+Once soul files are loaded at session start — do not re-fetch them. They are in context.
+At session start, also fetch the latest checkpoint from `sessions/[current sprint]/` on GitHub.
+That checkpoint is the working reference for the session. If something is answered there — use it. Do not re-read GitHub source files.
+
+**Between sessions:**
+Load the 4 soul files + the latest session checkpoint. The checkpoint tells you where you left off, what files exist, and what data was already processed. Do not re-scan /uploads/ or /outputs/ if the checkpoint documents it.
 
 **THINKING_OS.md** (`soul/shared/THINKING_OS.md`) — load when: planning, strategy, novel problem, or any trigger in the model table fires. Not mandatory on load, but referenced constantly.
 
@@ -233,7 +241,13 @@ _ARCHIVE/                everything superseded
 | SPRINT.md | 00-load-me/ | ✅ Every session | ✅ Every session | Claude updates at handoff |
 
 ---
+### Use Haiku agents for mechanical tasks
+When spawning a sub-agent via the Agent tool — default to `model: "haiku"` unless the task requires judgment, synthesis, or complex reasoning.
 
+**Use haiku for:** file search, data parsing, base64 decode, CSV/XLS processing, format conversion, templated file writes, any "do this mechanical thing" task.
+**Use sonnet for:** strategy, architecture decisions, code that requires judgment, writing that requires voice, analysis that requires synthesis.
+
+This applies every time the Agent tool is used. Default to haiku. Upgrade to sonnet only when required.
 
 ---
 
@@ -257,6 +271,32 @@ _ARCHIVE/                everything superseded
 | 3rd party (GH/DD/UE) | aura_thai_finance | `1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE` |
 
 **Before building any dashboard: confirm the master sheet exists and data is in it. If not — build the sheet first.**
+
+---
+
+## <!-- #BUILD_PROTOCOL -->
+## BUILD PROTOCOL — TEST BEFORE YOU BUILD
+*Added S40. Applies to all dashboards, scripts, and multi-step deliverables.*
+
+**Rule: Test logic first. Build deliverable second. Never both at once.**
+
+| Step | What to do |
+|------|-----------|
+| 1 | Run the core logic (Python/bash) and verify outputs are correct |
+| 2 | Only after logic is clean — write the deliverable (HTML, script, doc) |
+| 3 | Never discover broken JS/data after it's already pushed |
+
+**For dashboards specifically:**
+- Confirm data is in the master Google Sheet before building
+- Test any calculations in Python first
+- Do not hardcode data in HTML/JS — violates DASHBOARD ARCHITECTURE RULE
+
+**For scripts:**
+- Write logic as standalone functions, test with sample data
+- Verify edge cases (empty months, partial periods, missing data)
+- Only wrap in final delivery format after passing
+
+---
 
 ## <!-- #BOOT_LOADER -->
 ## CLAUDE UI BOOT-LOADER — CUSTOM INSTRUCTIONS
