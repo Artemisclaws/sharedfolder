@@ -462,3 +462,30 @@ Source files on Drive:
 - Jan-Mar 2026 Lavu data: 3 Drive folders confirmed by Chris, haiku model to find + parse S41
 
 **Next session starts with:** Load soul files (SPRINT.md current at S40). Use haiku to search 3 Drive folders for Jan-Mar 2026 XLS files. Then A-06b: design master Lavu sheet + live data connection for revenue.html. Then A-06c: 3rd party fees.
+---
+
+## S41 — 2026-05-29
+
+**Goals:** I-24 (section anchors), P&L sheet tabs, Decision Dashboard
+
+**Deliverables:**
+- ✅ I-24: 33 grep-able anchors across SHARED-CORE, CLAUDE-CORE, THINKING_OS, EMPIRE_STATUS. BOOT.md fetch triggers updated with anchor names. Grep test confirmed working.
+- ✅ P&L tabs built: 5 tabs on aura_thai_finance via Apps Script (Lavu Revenue, Delivery Payouts, Tiller Expenses w/ IMPORTRANGE, Labor pre-filled, P&L Summary formula-driven)
+- ✅ Decision Dashboard v2: Apps Script Web App — reads all tabs, shows real data, missing report checklist. Deployed temporarily as standalone (must move to ops — A-07)
+- ✅ Dashboard rule locked: All dashboards → ops.radrooster.co. No standalone URLs ever.
+- ✅ Dashboard design prompt written: 26-question framework (outputs/aura_thai_dashboard_design_prompt.md)
+- ✅ Checkpoint + handoff written
+
+**Key decisions:**
+- Dashboard consolidation rule (one-way door): ops.radrooster.co is the only home for all dashboards
+- Design before build: answer 26 questions before touching final dashboard code
+- This is S41, not S40 — S40 already ran (revenue.html, Lavu XLS parsing, ops Revenue tab)
+
+**Open items added:**
+- A-07: Integrate Decision Dashboard → ops (Apps Script JSON → aura-thai.html)
+- A-08: Dashboard design session (26 questions → spec → build)
+
+**System issue flagged:**
+- MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md on GitHub = `$ITEMS`/`$EMPIRE` placeholders. Artie to investigate.
+
+**Next session starts with:** Load BOOT.md + SPRINT.md. Run dashboard design session (Option B or C from design prompt). Then A-07 ops integration.
