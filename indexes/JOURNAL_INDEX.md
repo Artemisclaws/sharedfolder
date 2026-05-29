@@ -67,4 +67,5 @@ At the end of every session, when the journal Google Doc is created in Drive:
 
 Tags reference: `#aura-thai` `#pinyo-farms` `#fb-arbitrage` `#ai-ventures` `#roam` `#artie` `#infrastructure` `#systems` `#organization` `#soul` `#thinking-os` `#strategy` `#finance` `#discord` `#github` `#dashboard` `#security`
 
+| S41 | 2026-05-29 | Infrastructure / P&L Build | I-24: 33 grep-able anchors across 4 soul files. P&L tabs built on aura_thai_finance (5 tabs + Apps Script). Decision Dashboard v2 built. New rule: all dashboards → ops.radrooster.co. Design prompt written for final dashboard session. | #infrastructure #systems #soul #dashboard #aura-thai #finance | — |
 | S40 | 2026-05-28 | Infrastructure / Foundation | BOOT.md replaces 4-file load (85% token reduction). Master P&L architecture locked: aura_thai_finance + Tiller. Document anchor system planned (I-24). | #infrastructure #systems #soul #dashboard #aura-thai #finance | [S40 Journal](https://docs.google.com/document/d/19I1UXYCZfdc4whQCX2L9Xh1MXn8dEgFcCn53O6TbZsk/edit) |
