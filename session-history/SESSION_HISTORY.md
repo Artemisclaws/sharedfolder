@@ -489,3 +489,23 @@ Source files on Drive:
 - MASTER_OPEN_ITEMS.md and EMPIRE_STATUS.md on GitHub = `$ITEMS`/`$EMPIRE` placeholders. Artie to investigate.
 
 **Next session starts with:** Load BOOT.md + SPRINT.md. Run dashboard design session (Option B or C from design prompt). Then A-07 ops integration.
+
+---
+
+## SESSION 40 — 2026-05-29
+**Type:** Finance dashboard build + protocol upgrade
+**Key builds:**
+- Finance tab added to ops.radrooster.co (💰 Finance alongside Ops + Revenue tabs)
+- Features: YoY bar chart (2025 vs 2026 Jan–Jul), 3 hero metrics, monthly detail table, 5 action recommendations, data freshness indicators, auto-alert banner when YTD below prior year
+- CLAUDE-CORE.md upgraded to V5: Build Protocol (test before build), within-session file rule, Haiku agent default for mechanical tasks
+- Hardcode violation flagged: FINANCE_DATA embedded in HTML — violates DASHBOARD ARCHITECTURE RULE. A-08b queued.
+
+**Revenue findings (verified from Lavu XLS):**
+- YTD 2026: $381,011 vs $412,036 in 2025 = **-7.5%**
+- April worst month: -11.3% YoY
+- Q1 monthly splits estimated by 2025 ratio (verified Q1 total $243,389.16)
+
+**GitHub commits:** dashboard `7464de80`, CLAUDE-CORE V5 `f34eb02b`
+**Checkpoint:** sessions/S40/checkpoint_S40_aura-thai-finance-dashboard_2026-05-29.md
+
+**Next session priority:** COGS tracking system (A-09) — sustainability concern
