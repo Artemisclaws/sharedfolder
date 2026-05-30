@@ -27,6 +27,8 @@
 |---------|-----------|---------|-----|-------|
 | S40 (full) | +100 | -10 | +90 | Finance tab live. Real Lavu data parsed. YoY gap quantified. CLAUDE-CORE V5 (build protocol, haiku agents, no re-scan). -10: hardcode violation in dashboard (A-08b queued). Clean handoff executed. |
 | S41 (prior) | +95 | 0 | +95 | I-24 complete (33 anchors). P&L tabs built. Dashboard v2. Dashboard rule locked. |
+| S41 | +75 | −5 | +70 | Decision Dashboard integrated. Menu partial (Chrome not running). COGS scoped + Google Photos workflow. Handoff clean. |
+| S40 | +90 | 0 | +90 | ops.radrooster.co 3-tab rebuild. Finance tab live. MASTER_FILE_MAP rebuilt. BOOT.md created. |
 | S39 | +90 | −10 | +80 | Dynamic dashboard. Lavu model corrected. Chef pay captured. Drive inventory. |
 | S38 | +30 | 0 | +30 | Decision Dashboard Checklist. Data inventory. |
 | S37 | +20 | 0 | +20 | Drive/data organization. |
@@ -48,6 +50,8 @@
 |---------|-----------|---------|----------|----------|---------|
 | S40 | 74 (+2) | 97 (+2) | 87 (+1) | 76 (+1) | 91 (+2) |
 | S39–S41 | 72 | 95 | 86 | 75 | 89 |
+| S41 | 71 (+1) | 93 (+3) | 84 (+3) | 72 (+2) | 85 (+2) |
+| S40 | 70 (0) | 90 (0) | 81 (0) | 70 (0) | 83 (0) |
 | S39 | 70 (0) | 90 (+4) | 81 (+3) | 70 (+2) | 83 (+3) |
 | S38 | 70 (0) | 87 (+1) | 79 (+1) | 69 (+1) | 81 (+1) |
 | S36 | 70 (0) | 86 (+1) | 78 (+1) | 68 (+1) | 80 (+1) |
