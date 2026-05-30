@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aura Thai — Decision Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1117; --card: #1a1d27; --card2: #22263a; --border: #2e3250;
+    --text: #e8eaf6; --muted: #7c83a8; --green: #4caf7d; --yellow: #f5a623;
+    --red: #e05555; --blue: #5b8def; --purple: #9b6dff; --radius: 12px;
+    --green-bright: #00ff88;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; }
+
+  .header { padding: 20px 16px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .header h1 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+  .header h1 span { color: var(--yellow); }
+  .back-link { font-size: 12px; color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border: 1px solid var(--border); border-radius: 6px; }
+  .back-link:hover { background: var(--card2); }
+  .header-right { display: flex; align-items: center; gap: 12px; }
+  .updated { font-size: 11px; color: var(--muted); }
+  .refresh-btn { font-size: 11px; color: var(--blue); background: none; border: 1px solid var(--border); border-radius: 6px; padding: 3px 10px; cursor: pointer; }
+  .refresh-btn:hover { background: var(--card2); }
+
+  .content { padding: 0 14px 20px; }
+
+  /* Progress bar */
+  .progress-bar { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; margin: 14px 0; }
+  .pb-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
+  .pb-track { background: #0f0f1a; border-radius: 4px; height: 10px; overflow: hidden; }
+  .pb-fill { height: 10px; border-radius: 4px; background: linear-gradient(90deg, #0055cc, #00cc66); transition: width 0.4s ease; }
+  .pb-stat { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .pb-stat .ok { color: var(--green); }
+  .pb-stat .warn { color: var(--yellow); }
+
+  /* KPI grid */
+  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 12px; margin: 14px 0; }
+  .kpi { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+  .kpi.hero { border-color: #00cc66; background: #081a10; }
+  .kpi.danger { border-color: #cc3333; background: #1a0808; }
+  .kpi.warn { border-color: #886600; background: #1a1400; }
+  .kpi .kpi-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; font-weight: 600; }
+  .kpi .kpi-value { font-size: 26px; font-weight: 800; line-height: 1.1; }
+  .kpi.hero .kpi-value { color: var(--green-bright); }
+  .kpi.danger .kpi-value { color: #ff6666; }
+  .kpi.warn .kpi-value { color: var(--yellow); }
+  .kpi .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
+  .kpi .kpi-badge { display: inline-block; font-size: 10px; background: var(--card2); color: var(--muted); padding: 2px 8px; border-radius: 10px; margin-top: 6px; }
+
+  /* Section card */
+  .section-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin: 14px 0; overflow: hidden; }
+  .section-title { background: var(--card2); padding: 10px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); border-bottom: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  td, th { padding: 9px 16px; font-size: 13px; border-bottom: 1px solid var(--border); }
+  td:first-child { color: #ccccdd; }
+  td:not(:first-child), th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+  th { background: #0f0f20; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  .total-row td { font-weight: 700; color: var(--text); background: #0f0f20; }
+
+  /* Checklist */
+  .checklist { padding: 4px 0; }
+  .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--border); }
+  .check-item:last-child { border-bottom: none; }
+  .check-box { width: 18px; height: 18px; border-radius: 4px; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+  .check-box.done { background: #0a3a1a; border: 1px solid #00cc66; color: #00cc66; }
+  .check-box.open { background: var(--card2); border: 1px solid var(--border); color: transparent; }
+  .check-label { font-size: 13px; color: #ccccdd; font-weight: 600; }
+  .check-detail { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .pri { font-size: 14px; width: 20px; flex-shrink: 0; line-height: 1.6; }
+
+  /* States */
+  .loading { text-align: center; padding: 50px 20px; color: var(--muted); font-size: 13px; }
+  .loading .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid var(--border); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 12px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .error-box { background: rgba(224,85,85,0.1); border: 1px solid rgba(224,85,85,0.3); border-radius: 10px; padding: 14px 16px; margin: 14px 0; color: var(--red); font-size: 13px; }
+
+  .footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); margin-top: 8px; }
+  .footer a { color: var(--muted); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="/dashboard/" class="back-link">← Ops</a>
+    <h1>🍜 Aura <span>Thai</span> — Decision Dashboard</h1>
+  </div>
+  <div class="header-right">
+    <div class="updated" id="fetch-time">Loading…</div>
+    <button class="refresh-btn" onclick="loadDashboard()">↻ Refresh</button>
+  </div>
+</div>
+
+<div class="content">
+  <div id="dash-content">
+    <div class="loading">
+      <div class="spinner"></div><br>
+      Fetching live data from Google Sheets…
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Aura Thai Decision Dashboard v2 · S41 ·
+  <a href="https://docs.google.com/spreadsheets/d/1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE" target="_blank">Open Sheet ↗</a>
+</div>
+
+<script>
+// Apps Script JSON endpoint — deployed from aura_thai_finance sheet
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwhamIsOwTQ-bG69EP0I9qp5Z1fE0_NgFsoXyARq6Wn2mmE_4GnZfUUqa9-ieXmxmFJ/exec';
+
+function fmt(v, type) {
+  if (v === null || v === undefined) return '—';
+  if (type === 'currency') return '$' + Number(v).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  if (type === 'pct') return (Number(v)).toFixed(0) + '%';
+  return String(v);
+}
+
+function render(d) {
+  const c = d.completeness;
+  const lab = d.labor;
+  const rev = d.revenue;
+  const exp = d.expenses;
+  const pnl = d.pnl;
+
+  // P&L card class
+  const plClass = pnl.netPL === null ? 'warn' : (pnl.netPL >= 0 ? 'hero' : 'danger');
+  const plValue = pnl.netPL === null
+    ? '<span style="color:var(--yellow);font-size:18px">Need Lavu data</span>'
+    : fmt(pnl.netPL, 'currency');
+
+  let html = '';
+
+  // ── PROGRESS BAR ──
+  html += `
+  <div class="progress-bar">
+    <div class="pb-label">Report Completeness</div>
+    <div class="pb-track"><div class="pb-fill" style="width:${c.pct}%"></div></div>
+    <div class="pb-stat">
+      ${c.count} of ${c.total} data sources connected
+      ${c.canShowPnL
+        ? '&nbsp;·&nbsp;<span class="ok">P&L calculable</span>'
+        : '&nbsp;·&nbsp;<span class="warn">Need Lavu data for P&L</span>'}
+    </div>
+  </div>`;
+
+  // ── KPI ROW ──
+  html += `<div class="kpi-row">`;
+
+  // Net P&L
+  html += `<div class="kpi ${plClass}">
+    <div class="kpi-label">Net Profit / Loss</div>
+    <div class="kpi-value">${plValue}</div>
+    ${pnl.netPL !== null ? `<div class="kpi-sub">${exp.hasTiller ? 'Incl. Tiller expenses' : 'Labor only — Tiller pending'}</div>` : ''}
+    <div class="kpi-badge">${c.canShowPnL ? '✓ calculated' : 'partial data'}</div>
+  </div>`;
+
+  // Total Revenue
+  html += `<div class="kpi ${rev.hasLavu ? '' : 'warn'}">
+    <div class="kpi-label">Total Revenue (known)</div>
+    <div class="kpi-value">${pnl.totalRevKnown !== null ? fmt(pnl.totalRevKnown, 'currency') : '<span style="color:var(--yellow);font-size:18px">—</span>'}</div>
+    ${rev.hasLavu
+      ? `<div class="kpi-sub">Lavu: ${fmt(rev.lavuNetTotal, 'currency')}</div>`
+      : `<div class="kpi-sub" style="color:var(--yellow)">Lavu data needed</div>`}
+    ${rev.hasDelivery
+      ? `<div class="kpi-sub">Delivery net: ${fmt(rev.delivNetTotal, 'currency')}</div>`
+      : `<div class="kpi-sub" style="color:var(--muted)">Delivery payouts: not loaded</div>`}
+  </div>`;
+
+  // Total Expenses
+  html += `<div class="kpi">
+    <div class="kpi-label">Total Expenses (known)</div>
+    <div class="kpi-value">${fmt(pnl.totalExpKnown, 'currency')}</div>
+    ${lab.hasBOH ? `<div class="kpi-sub">BOH Labor: ${fmt(lab.bohMonthly, 'currency')}/mo</div>` : ''}
+    ${exp.hasTiller
+      ? `<div class="kpi-sub">Tiller: ${fmt(exp.tillerTotal, 'currency')} (${exp.tillerRowCount} txns)</div>`
+      : `<div class="kpi-sub" style="color:var(--muted)">Tiller: connecting…</div>`}
+  </div>`;
+
+  // Daily BOH
+  html += `<div class="kpi ${lab.hasBOH ? '' : 'warn'}">
+    <div class="kpi-label">Daily BOH Labor</div>
+    <div class="kpi-value">${fmt(lab.bohDaily, 'currency')}</div>
+    <div class="kpi-sub">${fmt(lab.bohMonthly, 'currency')}/month est.</div>
+    <div class="kpi-badge">✓ from Labor tab</div>
+  </div>`;
+
+  html += `</div>`; // end kpi-row
+
+  // ── LABOR TABLE ──
+  if (lab.hasBOH) {
+    html += `
+    <div class="section-card">
+      <div class="section-title">Labor — BOH (confirmed S39)</div>
+      <table>
+        <tr><th>Source</th><th>Period Total</th><th>Monthly Est.</th><th>Daily</th></tr>
+        <tr><td>BOH Fixed (5 staff)</td><td>$6,917.50</td><td>${fmt(lab.bohMonthly, 'currency')}</td><td>${fmt(lab.bohDaily, 'currency')}</td></tr>
+        <tr><td>FOH (Lavu time cards)</td><td>${fmt(lab.fohTotal, 'currency')}</td><td>—</td><td>—</td></tr>
+        <tr class="total-row"><td>Combined Labor</td><td>—</td><td>${fmt(lab.totalLaborMonthly, 'currency')}</td><td>—</td></tr>
+      </table>
+    </div>`;
+  }
+
+  // ── DELIVERY TABLE ──
+  if (rev.hasDelivery) {
+    html += `
+    <div class="section-card">
+      <div class="section-title">Delivery Payouts (${rev.delivRows} records)</div>
+      <table>
+        <tr><th>Platform</th><th>Net Payout</th></tr>
+        ${rev.ghNet > 0 ? `<tr><td>GrubHub</td><td>${fmt(rev.ghNet, 'currency')}</td></tr>` : ''}
+        ${rev.ddNet > 0 ? `<tr><td>DoorDash</td><td>${fmt(rev.ddNet, 'currency')}</td></tr>` : ''}
+        ${rev.ueNet > 0 ? `<tr><td>UberEats</td><td>${fmt(rev.ueNet, 'currency')}</td></tr>` : ''}
+        <tr class="total-row"><td>TOTAL NET</td><td>${fmt(rev.delivNetTotal, 'currency')}</td></tr>
+      </table>
+    </div>`;
+  }
+
+  // ── CHECKLIST ──
+  html += `
+  <div class="section-card">
+    <div class="section-title">📋 Missing Reports — Complete to unlock full P&L</div>
+    <div class="checklist">`;
+  for (const m of d.missing) {
+    html += `
+      <div class="check-item">
+        <span class="pri">${m.priority}</span>
+        <div class="check-box ${m.done ? 'done' : 'open'}">${m.done ? '✓' : ''}</div>
+        <div>
+          <div class="check-label">${m.label}</div>
+          <div class="check-detail">${m.detail}</div>
+        </div>
+      </div>`;
+  }
+  html += `</div></div>`;
+
+  document.getElementById('dash-content').innerHTML = html;
+  document.getElementById('fetch-time').textContent =
+    `Live · fetched ${new Date().toLocaleTimeString()} · Sheet updated ${new Date(d.meta.generated).toLocaleTimeString()}`;
+}
+
+async function loadDashboard() {
+  document.getElementById('fetch-time').textContent = 'Refreshing…';
+  try {
+    const res = await fetch(ENDPOINT + '?mode=json', { redirect: 'follow' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    render(data);
+  } catch (err) {
+    document.getElementById('dash-content').innerHTML = `
+      <div class="error-box">
+        ⚠️ Could not fetch data from Google Sheets.<br>
+        <small style="opacity:0.7">${err.message} — Check that the Apps Script is deployed as "Anyone with link"</small>
+      </div>`;
+    document.getElementById('fetch-time').textContent = 'Error — retry';
+  }
+}
+
+loadDashboard();
+setInterval(loadDashboard, 5 * 60 * 1000);
+</script>
+</body>
+</html>
