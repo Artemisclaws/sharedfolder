@@ -1,6 +1,6 @@
 # SESSION_HISTORY.md
 **Chronological log of every Claude + Artie build session.**
-**Last Updated:** 2026-05-06 | Session 28
+**Last Updated:** 2026-05-30 | Session 41
 **Purpose:** YouTube content reference, pattern tracking, progress narrative
 
 ---
@@ -509,3 +509,43 @@ Source files on Drive:
 **Checkpoint:** sessions/S40/checkpoint_S40_aura-thai-finance-dashboard_2026-05-29.md
 
 **Next session priority:** COGS tracking system (A-09) — sustainability concern
+
+## Session 40 — 2026-05-28/29
+
+**Theme:** ops.radrooster.co full rebuild + Aura Thai Finance dashboard
+
+**Completed:**
+- MASTER_FILE_MAP rebuilt — full Drive inventory of all Lavu files
+- CLAUDE-CORE.md V4 — added MASTER_FILE_MAP reference + DASHBOARD ARCHITECTURE RULE
+- BOOT.md created — 85% token reduction on session load
+- Master P&L architecture confirmed: Lavu=revenue, Tiller=expenses, aura_thai_finance=master sheet
+- ops.radrooster.co rebuilt with 3 tabs: ⚙️ Ops | 📊 Revenue | 💰 Finance
+- Finance tab: YoY comparison 2025/2026, BOH labor analysis (noted as DASHBOARD ARCHITECTURE RULE violation — A-08b)
+- Key numbers: YTD 2026 $381,011 | YTD 2025 $412,036 | YoY -7.5% | Apr 2026 -11.3%
+
+**Files pushed:** MASTER_FILE_MAP.md | CLAUDE-CORE.md V4 | BOOT.md | EMPIRE_STATUS.md | SPRINT.md | dashboard/index.html
+
+**Next:** S41 — Build Aura Thai Decision Dashboard, wire to Apps Script JSON endpoint.
+
+---
+
+## Session 41 — 2026-05-30
+
+**Theme:** Decision Dashboard integration + menu prices + COGS scoping
+
+**Completed:**
+- decision_dashboard.gs updated — `?mode=json` added (Apps Script serves JSON to static HTML)
+- dashboard/aura-thai.html built — fetches JSON from Apps Script, renders full dashboard
+- dashboard/index.html — 4th tab added: 🍜 Aura Thai (iframes /aura-thai.html)
+- Apps Script redeployed by Chris — final URL: `AKfycbwpqQUUUovr5zjSxKvQ5Fx4bO2zzVZ6PG5VM-C3uL7ATcLl1y9RnwE57ElPezVaeVG7/exec`
+- Menu prices section: Appetizers (17), Soups (11), Salads (8), Noodles (12) = 48 items loaded
+  - Remaining categories (Fried Rice, Curries, Entrees) blocked at session end — Chrome not running
+- COGS (A-09) scoped: Google Photos as invoice source, Claude extracts line items, COGS Tracker tab
+- Tiller confirmed NOT a receipt scanner (bank-feed only)
+- SPRINT.md updated: A-07 DONE, A-09 details, S42 command, Google Photos workflow
+
+**Files pushed:** dashboard/aura-thai.html | dashboard/index.html | SPRINT.md
+
+**Next (S42):** Open Chrome → complete menu. Paste May Lavu data. Start A-09 with Google Photos invoice drops.
+
+---
