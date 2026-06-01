@@ -77,6 +77,22 @@
   @keyframes spin { to { transform: rotate(360deg); } }
   .error-box { background: rgba(224,85,85,0.1); border: 1px solid rgba(224,85,85,0.3); border-radius: 10px; padding: 14px 16px; margin: 14px 0; color: var(--red); font-size: 13px; }
 
+  /* Menu section */
+  .menu-section { padding: 0 14px 20px; }
+  .menu-header { padding: 18px 0 10px; display: flex; align-items: center; gap: 10px; }
+  .menu-header h2 { font-size: 15px; font-weight: 700; }
+  .menu-header .menu-note { font-size: 11px; color: var(--muted); background: var(--card2); padding: 3px 10px; border-radius: 6px; border: 1px solid var(--border); }
+  .menu-cat { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin: 10px 0; overflow: hidden; }
+  .menu-cat-title { background: var(--card2); padding: 9px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .menu-cat-title .count { font-weight: 400; font-size: 10px; }
+  .menu-cat table td { font-size: 12px; padding: 7px 16px; }
+  .menu-cat table td:first-child { color: #ccccdd; }
+  .menu-cat table th { font-size: 10px; }
+  .price-col { color: var(--green) !important; font-weight: 600; }
+  .del-col { color: var(--yellow) !important; }
+  .no-del { color: var(--muted) !important; font-size: 11px; }
+  .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 10px; margin: 10px 0; }
+
   .footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); margin-top: 8px; }
   .footer a { color: var(--muted); text-decoration: none; }
 </style>
@@ -103,110 +119,229 @@
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  💰 MENU PRICES — Static · Source: Price Chart tab · 8/1/2024  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="menu-section">
+  <div class="menu-header">
+    <h2>💰 Menu Prices</h2>
+    <span class="menu-note">Dine-In as of 8/1/2024 · DD/UE = +20%</span>
+  </div>
+
+  <!-- APPETIZERS -->
+  <div class="menu-cat">
+    <div class="menu-cat-title">🍢 Appetizers <span class="count">17 items</span></div>
+    <table>
+      <tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
+      <tr><td>Aura Sampler for 1</td><td class="price-col">$12.99</td><td class="del-col">$15.99</td></tr>
+      <tr><td>Aura Sampler for 2</td><td class="price-col">$18.99</td><td class="del-col">$22.99</td></tr>
+      <tr><td>Satay</td><td class="price-col">$12.99</td><td class="del-col">$15.99</td></tr>
+      <tr><td>Egg Rolls</td><td class="price-col">$10.99</td><td class="del-col">$13.49</td></tr>
+      <tr><td>Fried Wontons</td><td class="price-col">$10.99</td><td class="del-col">$13.49</td></tr>
+      <tr><td>Fried Tofu</td><td class="price-col">$10.99</td><td class="del-col">$13.49</td></tr>
+      <tr><td>Fried Pot Stickers</td><td class="price-col">$11.99</td><td class="del-col">$14.49</td></tr>
+      <tr><td>Fried Calamari</td><td class="price-col">$13.99</td><td class="del-col">$16.99</td></tr>
+      <tr><td>Cozy Shrimps</td><td class="price-col">$13.99</td><td class="del-col">$16.99</td></tr>
+      <tr><td>Thai Sausage</td><td class="price-col">$12.99</td><td class="del-col">$15.99</td></tr>
+      <tr><td>Shrimp Cakes</td><td class="price-col">$13.99</td><td class="del-col">$16.99</td></tr>
+      <tr><td>Firecracker Wings (8 pcs)</td><td class="price-col">$13.99</td><td class="del-col">$16.99</td></tr>
+      <tr><td>Firecracker Wings (15 pcs)</td><td class="price-col">$22.99</td><td class="del-col">$27.99</td></tr>
+      <tr><td>Firecracker Wings (20 pcs)</td><td class="price-col">$27.99</td><td class="del-col">$33.99</td></tr>
+      <tr><td>Firecracker Wings (8 pcs) #WW</td><td class="price-col">$11.99</td><td class="del-col">$14.49</td></tr>
+      <tr><td>Firecracker Wings (15 pcs) #WW</td><td class="price-col">$19.99</td><td class="del-col">$23.99</td></tr>
+      <tr><td>Firecracker Wings (20 pcs) #WW</td><td class="price-col">$22.99</td><td class="del-col">$27.99</td></tr>
+    </table>
+  </div>
+
+  <!-- SOUPS -->
+  <div class="menu-cat">
+    <div class="menu-cat-title">🍲 Soups <span class="count">11 items</span></div>
+    <table>
+      <tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
+      <tr><td>Tom Yum (Ve, To)</td><td class="price-col">$13.99</td><td class="del-col">$16.99</td></tr>
+      <tr><td>Tom Yum (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Tom Yum (Co, SF)</td><td class="price-col">$16.99</td><td class="del-col">$20.49</td></tr>
+      <tr><td>Tom Kha (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Tom Kha (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Tom Kha (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.99</td></tr>
+      <tr><td>Vegetable Soup (Ve, To)</td><td class="price-col">$13.99</td><td class="del-col">$16.99</td></tr>
+      <tr><td>Vegetable Soup (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Vegetable Soup (Co, SF)</td><td class="price-col">$16.99</td><td class="del-col">$20.49</td></tr>
+      <tr><td>Wonton Soup</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Aura Soup</td><td class="price-col">$16.99</td><td class="del-col">$20.49</td></tr>
+    </table>
+  </div>
+
+  <!-- SALADS -->
+  <div class="menu-cat">
+    <div class="menu-cat-title">🥗 Salads <span class="count">8 items</span></div>
+    <table>
+      <tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
+      <tr><td>Som Tum</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Beef Salad</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Pla Shrimp Salad</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Larb</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Nam Tok</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Glass Noodle Salad</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Calamari Salad</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Aura Salad</td><td class="price-col">$16.99</td><td class="del-col">$20.49</td></tr>
+    </table>
+  </div>
+
+  <!-- TWO-COL GRID: Stir-Fried Noodles + Noodle Soups -->
+  <div class="menu-grid">
+
+    <!-- STIR-FRIED NOODLES -->
+    <div class="menu-cat">
+      <div class="menu-cat-title">🍝 Stir-Fried Noodles <span class="count">16 items</span></div>
+      <table>
+        <tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
+        <tr><td>Pad Thai (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+        <tr><td>Pad Thai (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+        <tr><td>Pad Thai (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.99</td></tr>
+        <tr><td>Pad See Iew (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+        <tr><td>Pad See Iew (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+        <tr><td>Pad See Iew (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.99</td></tr>
+        <tr><td>Drunken Noodle (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+        <tr><td>Drunken Noodle (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+        <tr><td>Drunken Noodle (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.99</td></tr>
+        <tr><td>Chowmein (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+        <tr><td>Chowmein (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+        <tr><td>Chowmein (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.99</td></tr>
+        <tr><td>Pad Woon Sen (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+        <tr><td>Pad Woon Sen (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+        <tr><td>Pad Woon Sen (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.99</td></tr>
+        <tr><td>Aura Pan Fried Noodle</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      </table>
+    </div>
+
+    <!-- NOODLE SOUPS -->
+    <div class="menu-cat">
+      <div class="menu-cat-title">🍜 Noodle Soups <span class="count">9 items</span></div>
+      <table>
+        <tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
+        <tr><td>Boat Noodle (Be, Po)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+        <tr><td>Yum Yum Noodle</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+        <tr><td>Chicken Noodle</td><td class="price-col">$13.99</td><td class="del-col">$16.99</td></tr>
+        <tr><td>Vegetable Noodle</td><td class="price-col">$13.99</td><td class="del-col">$16.99</td></tr>
+        <tr><td>Tom Yum Noodle</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+        <tr><td>Curry Noodle</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+        <tr><td>Glass Noodle Soup</td><td class="price-col">$13.99</td><td class="del-col">$16.99</td></tr>
+        <tr><td>Duck Noodle</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+        <tr><td>Aura Noodle Soup</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      </table>
+    </div>
+
+  </div><!-- end menu-grid -->
+
+  <!-- CURRIES -->
+  <div class="menu-cat">
+    <div class="menu-cat-title">🍛 Curries <span class="count">13 items</span></div>
+    <table>
+      <tr><th>Item</th><th>Dine-In</th><th>DD / UE (+20%)</th></tr>
+      <tr><td>Yellow Curry (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Yellow Curry (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.19</td></tr>
+      <tr><td>Yellow Curry (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Red Curry (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Red Curry (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.19</td></tr>
+      <tr><td>Red Curry (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Green Curry (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Green Curry (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.19</td></tr>
+      <tr><td>Green Curry (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Panang Curry (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Panang Curry (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.19</td></tr>
+      <tr><td>Panang Curry (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Aura Curry</td><td class="price-col">$16.99</td><td class="del-col">$19.49</td></tr>
+    </table>
+  </div>
+
+  <!-- ENTREES & STIR FRY -->
+  <div class="menu-cat">
+    <div class="menu-cat-title">🥘 Entrees &amp; Stir Fry <span class="count">34 items</span></div>
+    <table>
+      <tr><th>Item</th><th>Dine-In</th><th>DD / UE (+20%)</th></tr>
+      <tr><td>Broccoli</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Chinese Broccoli with Crispy Pork</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Ruby BBQ Pork</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Roasted Duck</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Orange Chicken</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Krapow (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Krapow (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Krapow (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Prik King (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Prik King (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Prik King (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Garlic (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Garlic (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Garlic (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Sweet &amp; Sour (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Sweet &amp; Sour (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Sweet &amp; Sour (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Cashew Nut (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Cashew Nut (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Cashew Nut (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Vegetable Lovers (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Vegetable Lovers (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Vegetable Lovers (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Eggplant (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Eggplant (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Eggplant (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Fresh Ginger (Ve, To)</td><td class="price-col">$14.99</td><td class="no-del">dine-in only</td></tr>
+      <tr><td>Fresh Ginger (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="no-del">dine-in only</td></tr>
+      <tr><td>Fresh Ginger (Co, SF)</td><td class="price-col">$17.99</td><td class="no-del">dine-in only</td></tr>
+      <tr><td>Rama (Ve, To)</td><td class="price-col">$14.99</td><td class="no-del">dine-in only</td></tr>
+      <tr><td>Rama (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="no-del">dine-in only</td></tr>
+      <tr><td>Rama (Co, SF)</td><td class="price-col">$17.99</td><td class="no-del">dine-in only</td></tr>
+      <tr><td>Aura Fried Rice</td><td class="price-col">$15.99</td><td class="del-col">$19.49</td></tr>
+      <tr><td>Crab Fried Rice</td><td class="price-col">$16.99</td><td class="del-col">$20.49</td></tr>
+    </table>
+  </div>
+
+  <!-- FRIED RICE -->
+  <div class="menu-cat">
+    <div class="menu-cat-title">🍚 Fried Rice <span class="count">9 items</span></div>
+    <table>
+      <tr><th>Item</th><th>Dine-In</th><th>DD / UE (+20%)</th></tr>
+      <tr><td>Thai Fried Rice (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Thai Fried Rice (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.19</td></tr>
+      <tr><td>Thai Fried Rice (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Spicy Fried Rice (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Spicy Fried Rice (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.19</td></tr>
+      <tr><td>Spicy Fried Rice (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+      <tr><td>Pineapple Fried Rice (Ve, To)</td><td class="price-col">$14.99</td><td class="del-col">$17.99</td></tr>
+      <tr><td>Pineapple Fried Rice (Ch, Po, Be, Sh, Ca)</td><td class="price-col">$15.99</td><td class="del-col">$19.19</td></tr>
+      <tr><td>Pineapple Fried Rice (Co, SF)</td><td class="price-col">$17.99</td><td class="del-col">$21.59</td></tr>
+    </table>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-cat">
+    <div class="menu-cat-title">🍨 Desserts <span class="count">8 items</span></div>
+    <table>
+      <tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
+      <tr><td>Coconut Ice Cream</td><td class="price-col">$8.99</td><td class="del-col">$10.99</td></tr>
+      <tr><td>Aura Thai Parfait</td><td class="price-col">$10.99</td><td class="del-col">$12.99</td></tr>
+      <tr><td>Mango Sticky Rice</td><td class="price-col">$12.99</td><td class="del-col">$15.49</td></tr>
+      <tr><td>Fried Banana</td><td class="price-col">$8.99</td><td class="del-col">$10.99</td></tr>
+      <tr><td>Sweet Sticky Rice</td><td class="price-col">$6.00</td><td class="del-col">$7.00</td></tr>
+      <tr><td>Thai Tea Ice Cream</td><td class="price-col">$5.00</td><td class="no-del">dine-in only</td></tr>
+      <tr><td>Umami Fish Sauce Caramel</td><td class="price-col">$5.00</td><td class="no-del">dine-in only</td></tr>
+      <tr><td>Mango Only</td><td class="price-col">$5.00</td><td class="no-del">dine-in only</td></tr>
+    </table>
+  </div>
+
+</div><!-- end menu-section -->
+
 <div class="footer">
-  Aura Thai Decision Dashboard v2 · S41 ·
+  Aura Thai Decision Dashboard v2 · S42 ·
   <a href="https://docs.google.com/spreadsheets/d/1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE" target="_blank">Open Sheet ↗</a>
+  &nbsp;·&nbsp;
+  <a href="https://docs.google.com/spreadsheets/d/1NH9jSLoUaRxGQksqB4Wyh_7eWj4Hju6FiBSuTxTVmuU" target="_blank">Price Chart ↗</a>
 </div>
 
 <script>
 // Apps Script JSON endpoint — deployed from aura_thai_finance sheet
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwpqQUUUovr5zjSxKvQ5Fx4bO2zzVZ6PG5VM-C3uL7ATcLl1y9RnwE57ElPezVaeVG7/exec';
-
-// ── STATIC MENU PRICES ────────────────────────────────────────────────────────
-// Source: Menu Food Price Spreadsheet — Price Chart tab
-// Col D = dine-in current (last updated 8/1/2024)
-// Col E = DD & UE delivery price (+20%)
-const MENU_PRICES_HTML = `
-<div class="section-card" style="margin-top:14px">
-  <div class="section-title">💰 Menu Prices — Dine-In vs Delivery</div>
-  <div style="padding:8px 16px 4px;font-size:11px;color:var(--muted)">
-    Source: Price Chart tab · Last updated 8/1/2024 · DD &amp; UE delivery = dine-in +20%
-    <span style="color:var(--yellow);margin-left:8px">⚠ Fried Rice, Curries, Entrees not yet loaded from spreadsheet</span>
-  </div>
-  <div style="overflow-x:auto">
-
-  <details open style="padding:0 16px 8px">
-    <summary style="cursor:pointer;font-size:12px;font-weight:700;color:var(--text);padding:8px 0;list-style:none;display:flex;align-items:center;gap:6px">
-      <span>▾</span> Appetizers <span style="color:var(--muted);font-weight:400">(17 items)</span>
-    </summary>
-    <table><tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
-      <tr><td>Aura Sampler for 1</td><td>$15.99</td><td>$19.19</td></tr>
-      <tr><td>Aura Sampler for 2</td><td>$22.99</td><td>$27.59</td></tr>
-      <tr><td>Satay</td><td>$15.99</td><td>$19.19</td></tr>
-      <tr><td>Egg Rolls</td><td>$13.49</td><td>$16.19</td></tr>
-      <tr><td>Fried Wontons</td><td>$13.49</td><td>$16.19</td></tr>
-      <tr><td>Fried Tofu</td><td>$13.49</td><td>$16.19</td></tr>
-      <tr><td>Fried Pot Stickers</td><td>$14.49</td><td>$17.39</td></tr>
-      <tr><td>Fried Calamari</td><td>$16.99</td><td>$20.39</td></tr>
-      <tr><td>Cozy Shrimps</td><td>$16.99</td><td>$20.39</td></tr>
-      <tr><td>Thai Sausage</td><td>$15.99</td><td>$19.19</td></tr>
-      <tr><td>Shrimp Cakes</td><td>$16.99</td><td>$20.39</td></tr>
-      <tr><td>Firecracker Wings (8pcs)</td><td>$16.99</td><td>$20.39</td></tr>
-      <tr><td>Firecracker Wings (15pcs)</td><td>$27.99</td><td>$33.59</td></tr>
-      <tr><td>Firecracker Wings (20pcs)</td><td>$33.99</td><td>$40.79</td></tr>
-      <tr><td>Firecracker Wings (8pcs) #WW</td><td>$14.49</td><td>$17.39</td></tr>
-      <tr><td>Firecracker Wings (15pcs) #WW</td><td>$23.99</td><td>$28.79</td></tr>
-      <tr><td>Firecracker Wings (20pcs) #WW</td><td>$27.99</td><td>$33.59</td></tr>
-    </table>
-  </details>
-
-  <details style="padding:0 16px 8px">
-    <summary style="cursor:pointer;font-size:12px;font-weight:700;color:var(--text);padding:8px 0;list-style:none;display:flex;align-items:center;gap:6px">
-      <span>▸</span> Soups <span style="color:var(--muted);font-weight:400">(11 items)</span>
-    </summary>
-    <table><tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
-      <tr><td>Tom Yum (Ve/To)</td><td>$16.99</td><td>$20.39</td></tr>
-      <tr><td>Tom Yum (Ch/Po/Be/Sh/Ca)</td><td>$17.99</td><td>$21.59</td></tr>
-      <tr><td>Tom Yum (Co/SF)</td><td>$20.49</td><td>$24.59</td></tr>
-      <tr><td>Tom Kha (Ve/To)</td><td>$17.99</td><td>$21.59</td></tr>
-      <tr><td>Tom Kha (Ch/Po/Be/Sh/Ca)</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Tom Kha (Co/SF)</td><td>$21.99</td><td>$26.39</td></tr>
-      <tr><td>Vegetable Soup (Ve/To)</td><td>$16.99</td><td>$20.39</td></tr>
-      <tr><td>Vegetable Soup (Ch/Po/Be/Sh/Ca)</td><td>$17.99</td><td>$21.59</td></tr>
-      <tr><td>Vegetable Soup (Co/SF)</td><td>$20.49</td><td>$24.59</td></tr>
-      <tr><td>Wonton Soup</td><td>$17.99</td><td>$21.59</td></tr>
-      <tr><td>Aura Soup</td><td>$20.49</td><td>$24.59</td></tr>
-    </table>
-  </details>
-
-  <details style="padding:0 16px 8px">
-    <summary style="cursor:pointer;font-size:12px;font-weight:700;color:var(--text);padding:8px 0;list-style:none;display:flex;align-items:center;gap:6px">
-      <span>▸</span> Salads <span style="color:var(--muted);font-weight:400">(8 items)</span>
-    </summary>
-    <table><tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
-      <tr><td>Som Tum</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Beef Salad</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Pla Shrimp Salad</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Larb</td><td>$17.99</td><td>$21.59</td></tr>
-      <tr><td>Nam Tok</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Glass Noodle Salad</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Calamari Salad</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Aura Salad</td><td>$20.49</td><td>$24.59</td></tr>
-    </table>
-  </details>
-
-  <details style="padding:0 16px 8px">
-    <summary style="cursor:pointer;font-size:12px;font-weight:700;color:var(--text);padding:8px 0;list-style:none;display:flex;align-items:center;gap:6px">
-      <span>▸</span> Noodles <span style="color:var(--muted);font-weight:400">(12 items)</span>
-    </summary>
-    <table><tr><th>Item</th><th>Dine-In</th><th>DD / UE</th></tr>
-      <tr><td>Pad Thai (Ve/To)</td><td>$17.99</td><td>$21.59</td></tr>
-      <tr><td>Pad Thai (Ch/Po/Be/Sh/Ca)</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Pad Thai (Co/SF)</td><td>$21.99</td><td>$26.39</td></tr>
-      <tr><td>Pad See Iew (Ve/To)</td><td>$17.99</td><td>$21.59</td></tr>
-      <tr><td>Pad See Iew (Ch/Po/Be/Sh/Ca)</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Pad See Iew (Co/SF)</td><td>$21.99</td><td>$26.39</td></tr>
-      <tr><td>Drunken Noodle (Ve/To)</td><td>$17.99</td><td>$21.59</td></tr>
-      <tr><td>Drunken Noodle (Ch/Po/Be/Sh/Ca)</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Drunken Noodle (Co/SF)</td><td>$21.99</td><td>$26.39</td></tr>
-      <tr><td>Chowmein (Ve/To)</td><td>$17.99</td><td>$21.59</td></tr>
-      <tr><td>Chowmein (Ch/Po/Be/Sh/Ca)</td><td>$19.49</td><td>$23.39</td></tr>
-      <tr><td>Chowmein (Co/SF)</td><td>$21.99</td><td>$26.39</td></tr>
-    </table>
-  </details>
-
-  </div>
-</div>`;
 
 function fmt(v, type) {
   if (v === null || v === undefined) return '—';
@@ -222,7 +357,6 @@ function render(d) {
   const exp = d.expenses;
   const pnl = d.pnl;
 
-  // P&L card class
   const plClass = pnl.netPL === null ? 'warn' : (pnl.netPL >= 0 ? 'hero' : 'danger');
   const plValue = pnl.netPL === null
     ? '<span style="color:var(--yellow);font-size:18px">Need Lavu data</span>'
@@ -230,7 +364,6 @@ function render(d) {
 
   let html = '';
 
-  // ── PROGRESS BAR ──
   html += `
   <div class="progress-bar">
     <div class="pb-label">Report Completeness</div>
@@ -243,10 +376,8 @@ function render(d) {
     </div>
   </div>`;
 
-  // ── KPI ROW ──
   html += `<div class="kpi-row">`;
 
-  // Net P&L
   html += `<div class="kpi ${plClass}">
     <div class="kpi-label">Net Profit / Loss</div>
     <div class="kpi-value">${plValue}</div>
@@ -254,7 +385,6 @@ function render(d) {
     <div class="kpi-badge">${c.canShowPnL ? '✓ calculated' : 'partial data'}</div>
   </div>`;
 
-  // Total Revenue
   html += `<div class="kpi ${rev.hasLavu ? '' : 'warn'}">
     <div class="kpi-label">Total Revenue (known)</div>
     <div class="kpi-value">${pnl.totalRevKnown !== null ? fmt(pnl.totalRevKnown, 'currency') : '<span style="color:var(--yellow);font-size:18px">—</span>'}</div>
@@ -266,7 +396,6 @@ function render(d) {
       : `<div class="kpi-sub" style="color:var(--muted)">Delivery payouts: not loaded</div>`}
   </div>`;
 
-  // Total Expenses
   html += `<div class="kpi">
     <div class="kpi-label">Total Expenses (known)</div>
     <div class="kpi-value">${fmt(pnl.totalExpKnown, 'currency')}</div>
@@ -276,7 +405,6 @@ function render(d) {
       : `<div class="kpi-sub" style="color:var(--muted)">Tiller: connecting…</div>`}
   </div>`;
 
-  // Daily BOH
   html += `<div class="kpi ${lab.hasBOH ? '' : 'warn'}">
     <div class="kpi-label">Daily BOH Labor</div>
     <div class="kpi-value">${fmt(lab.bohDaily, 'currency')}</div>
@@ -284,9 +412,8 @@ function render(d) {
     <div class="kpi-badge">✓ from Labor tab</div>
   </div>`;
 
-  html += `</div>`; // end kpi-row
+  html += `</div>`;
 
-  // ── LABOR TABLE ──
   if (lab.hasBOH) {
     html += `
     <div class="section-card">
@@ -300,7 +427,6 @@ function render(d) {
     </div>`;
   }
 
-  // ── DELIVERY TABLE ──
   if (rev.hasDelivery) {
     html += `
     <div class="section-card">
@@ -315,7 +441,6 @@ function render(d) {
     </div>`;
   }
 
-  // ── CHECKLIST ──
   html += `
   <div class="section-card">
     <div class="section-title">📋 Missing Reports — Complete to unlock full P&L</div>
@@ -332,9 +457,6 @@ function render(d) {
       </div>`;
   }
   html += `</div></div>`;
-
-  // ── MENU PRICES (static — Price Chart tab, last updated 8/1/2024) ──
-  html += MENU_PRICES_HTML;
 
   document.getElementById('dash-content').innerHTML = html;
   document.getElementById('fetch-time').textContent =
