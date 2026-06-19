@@ -155,6 +155,24 @@ One paragraph. What was completed. What's open. Where to start next session. XP 
 ---
 
 ## <!-- #ARTIE_HANDOFF -->
+## BUILD PROTOCOL — DESIGN BEFORE CODE
+*Added S40 — Chris's standing instruction*
+
+**Rule: Never write code, scripts, or build systems until the design is approved.**
+
+Before touching any tool, script, or sheet:
+1. Define who uses it (Chris? Artie? Both?) and on what device
+2. Map the data flow — what goes in, what comes out, in what order
+3. Sketch the structure — tab names, columns, relationships, user actions
+4. Present the design to Chris in plain language
+5. Get explicit approval
+6. Then build — once, cleanly
+
+**The test:** Could Chris have predicted every field and every tab before seeing it? If no — Claude didn't ask enough questions.
+
+**Why this rule exists:** S40 — built a Dish Map tab dish-first, then rebuilt it ingredient-first after Chris pointed out the obvious. One design conversation would have prevented two builds.
+
+
 ## HOW CLAUDE HANDS OFF TO ARTIE
 
 When Claude builds something Artie will run:
