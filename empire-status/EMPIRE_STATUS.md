@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-06-10 | Session 42 (ezcater onboarding)
-**Updated By:** Claude (Session 42)
+**Last Updated:** 2026-06-20 | Session 43 (Invoice system stabilized, Artie cleared)
+**Updated By:** Claude (Session 43)
 
 ---
 
@@ -13,15 +13,17 @@
 | Discord setup | LIVE | All 8 channels wired, Artie responding |
 | Morning briefing Discord | CONFIRMED | Verified by Chris, S27 |
 | ops.radrooster.co | LIVE — CLOUDFLARE PAGES | GitHub auto-deploy. No Artie dependency. |
-| MASTER_OPEN_ITEMS.md | LIVE — REBUILT S42 | Was $ITEMS placeholder. Now current. |
+| MASTER_OPEN_ITEMS.md | LIVE | Current as of S43 |
 | SESSION_HISTORY.md | LIVE | GitHub: session-history/SESSION_HISTORY.md |
 | Handoff system | REFORMED | Checkpoint in sessions/S40/ + SPRINT.md digest |
 | Obsidian Second Brain | LIVE | S34 — vault synced, auto-pull every 5min |
+| ARTIE-RUNBOOK.md | LIVE S43 | artie-config/ARTIE-RUNBOOK.md — SOP 13 + SOP 14 (Invoice Entry) |
 | Aura Thai Finance Dashboard | LIVE — Finance tab | S40 — YoY chart, hero metrics, 5 recs. HARDCODE DEBT: FINANCE_DATA embedded in HTML — rebuild A-08b |
 | Aura Thai Decision Dashboard | LIVE — Aura Thai tab | S41 — Apps Script JSON + static HTML at ops.radrooster.co/aura-thai |
 | Aura Thai Price Monitoring | ACTIVE | S35 — DD +20% live Apr 9. Monitoring weekly. |
+| Aura Thai Invoice System | LIVE S43 | 5 tabs in aura_thai_finance. Artie cleared to enter data. Dish Map col D pending Chris. |
 | ezCater Onboarding | IN PROGRESS | S42 — Fee strategy locked, quick-ref doc delivered. Chris completing paperwork. |
-| COGS Tracking System | NOT BUILT | A-09 — TOP PRIORITY next session |
+| COGS Tracking System | IN PROGRESS | Foundation built S40/S43. Artie data entry starting. Analysis pending first data batch. |
 | GH/DD/UE pipeline | BROKEN | I-23 — not firing since May 8 |
 | Rad Rooster | NOT LAUNCHED | Confirmed S39 |
 | Daily digest cron | NOT BUILT | I-06 |
@@ -58,10 +60,12 @@ Pay cycle: every 2 weeks | ~$15,000/month | ~$494/day
 | Extra | Occasional | $100 | 8 | $800 |
 | Total | | | | $6,917.50/period |
 
-### COGS — NOT YET TRACKED
+### COGS — IN PROGRESS (S43)
 - Target: 28-32% of revenue
-- System to be built: A-09 (weekly invoice entry)
-- This is the #1 sustainability concern as of S40
+- Invoice system live in aura_thai_finance (5 tabs)
+- Vendors: Taiwah Trading Corp + SJ Distributors LLC (31 ingredients pre-loaded in Dish Map)
+- Artie SOP 14: artie-config/ARTIE-RUNBOOK.md on GitHub
+- First COGS analysis: when Invoice Log + Sales by Period have overlapping period data
 
 ### ezCater — NEW CHANNEL (S42)
 - Location: 4085 Atlantic Ave, Long Beach, CA
@@ -80,7 +84,7 @@ Finance tab currently violates this (A-08b to fix).
 
 | Business | Status | Notes |
 |----------|--------|-------|
-| Aura Thai | OPERATING | Revenue down -7.5% YTD vs 2025. Sustainability concern. ezCater onboarding S42. |
+| Aura Thai | OPERATING | Revenue down -7.5% YTD vs 2025. COGS system live S43. ezCater onboarding S42. |
 | Rad Rooster | NOT LAUNCHED | Ghost kitchen — pending launch. |
 | Vine Arbitrage | ACTIVE | FB/marketplace arbitrage. |
 | Pinyo Farms | QUEUED | Market validation pending — parked until COGS done. |
