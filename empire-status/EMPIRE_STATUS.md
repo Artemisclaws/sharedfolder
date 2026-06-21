@@ -31,7 +31,7 @@
 | Aura Thai Finance Dashboard | 🟡 IN PROGRESS | S34–S40 — HIGH priority data gaps resolved. Ready to build next session. |
 | Aura Thai Price Increase Monitoring | ✅ ACTIVE | S35 — DD +20% went live Apr 9. Revenue -5.1%, monitoring weekly (Mon 9am scheduled task). |
 | Aura Thai Invoice System | ✅ LIVE | S40/S43/S45 — 5-tab system deployed. 277 rows in Invoice Log. Dish Map synced (53 ingredients). |
-| SOP 14 — Invoice Photo Pipeline | ✅ BUILT S45 | invoice_processor.py: Drive → HEIC → Haiku OCR → Invoice Log → Dish Map. Ready for Artie. |
+| SOP 14 — Invoice Photo Pipeline | ✅ BUILT S45 | invoice_processor.py uses service_account.json (no OAuth). Artie needs: SA file + DRIVE_FOLDER_ID + ANTHROPIC_API_KEY from Chris. |
 | Dish Map | 🟡 AWAITING CHRIS | 53 ingredients synced from Invoice Log. Column B (Dish Name(s)) blank — Chris fills. |
 | artie_report_sync.py cron | ❌ BROKEN | Not firing since May 8 — I-23. |
 
