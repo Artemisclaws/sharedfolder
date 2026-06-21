@@ -9,14 +9,15 @@
 
 | ID | Item | Status | Priority | Notes |
 |----|------|--------|----------|-------|
+| SOP-14-deploy | Deploy invoice_processor.py to Artie | OPEN — CHRIS | High | Files in outputs/. Artie does one-time setup (credentials, DRIVE_FOLDER_ID). Replaces manual invoice entry. |
 | A-09 | COGS — Artie enter invoice backlog + weekly Sales by Period | IN PROGRESS | TOP | Foundation complete S43. Artie cleared to run. Waiting on data for first COGS analysis. |
-| A-09b | Chris fill Dish Map column D (Used In Dishes) | OPEN | High | 31 ingredients loaded. Chris enters dish names per ingredient. Unlocks COGS by Dish analysis. |
+| A-09b | Chris fill Dish Map col B (Dish Name(s)) | OPEN — CHRIS | High | 53 ingredients synced S45. Column B blank. Supplies → "Supply". Universal → "All Dishes". ~35 dish-specific. Unlocks COGS. |
 | A-08b | Finance tab: rebuild to Google Sheet | OPEN | High | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
 | A-06b | Revenue tab: live data connection | Pending | Medium | Master Google Sheet → revenue.html reads on load. |
 | A-10 | ezCater onboarding — complete paperwork | IN PROGRESS | High | Fee strategy + quick-ref doc delivered S42. Chris to complete platform setup. |
 | A-07 | Decision Dashboard ops.radrooster.co | DONE S41 | — | Live at ops.radrooster.co/aura-thai. |
 | A-08 | Aura Thai Finance tab | DONE S40 | — | Live at ops.radrooster.co. |
-| A-04 | ARTIE SOP 13 + SOP 14 | DONE S43 | — | Written to artie-config/ARTIE-RUNBOOK.md on GitHub. SOP 14 (Invoice Entry) live-tested S43. |
+| A-04 | ARTIE SOP 13 + SOP 14 | DONE S43/S45 | — | SOP 13 done S43. SOP 14 (invoice_processor.py pipeline) built S45. Send to Artie: invoice_processor.py + SOP_14_invoice_processing.md. |
 
 ## INFRASTRUCTURE ITEMS
 
