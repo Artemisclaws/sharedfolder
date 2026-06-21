@@ -1,96 +1,202 @@
 # SESSION_HISTORY.md
-**GitHub:** `session-history/SESSION_HISTORY.md`
+**Chronological log of every Claude + Artie build session.**
+**Last Updated:** 2026-06-21 | Session 40
+**Purpose:** YouTube content reference, pattern tracking, progress narrative
 
 ---
 
-## Session 43 — 2026-06-20
+## EARLY SESSIONS (1–14) — Pre-Infrastructure Era
+**Approximate dates:** April 2026 and earlier
+**Theme:** Initial AI journey, early Artie experiments, foundational exploration
 
-**Theme:** Aura Thai — Invoice system stabilization, ARTIE-RUNBOOK created, Artie cleared to run
+Source files on Drive:
+- `Ongoing AI Journey Journal.docx` — earliest journal (chrispinyo@gmail.com)
+- `AI_Journey_Journal` — multi-version Google Doc series (Sessions 1–5 documented)
+- `AI_Journey_Journal_Session4` — Session 4 journal
+- `AI_Journey_Journal_Session5` — Session 5 journal (3 duplicate copies found — cleanup needed)
+- `AI_Journey_Journal_Updated` — consolidated update doc
+- `artie_journal_2026-04-08.md` — Artie's own journal entry (Apr 8)
 
-**Completed:**
-- Fixed resetDishMap() timeout (3 iterations): removed sheet.clear(), switched to batch color calls, cleared data validation explicitly, tightened dropdown ranges from :200 to :35
-- Dish Map now fully populated — all 31 ingredients loaded (21 Taiwah + 10 SJ)
-- Created artie-config/ARTIE-RUNBOOK.md on GitHub — SOP 13 (Monthly Finance) + SOP 14 (Invoice Entry)
-- Live-tested Invoice Log SOP via Chrome: entered full test row (6/17/2026 | INV#296590 | Taiwah | 0009-1 | Basil | Produce | 10.2 lb | $1.59 | $16.22), verified all fields saved correctly, deleted test row
-- Artie cleared to begin data entry: Invoice Log (backlog invoices) + Sales by Period (weekly Lavu)
-
-**Files created/updated:**
-- artie-config/ARTIE-RUNBOOK.md — NEW on GitHub (SOP 13 + SOP 14)
-- /Users/macbook/Downloads/aura_thai_invoice_system.gs — updated (resetDishMap fix)
-- /Users/macbook/Downloads/ARTIE_SOP_invoice_entry.md — source SOP (local)
-
-**Key decisions:**
-- sheet.clear() is slow on formatted sheets — never use it again; target specific ranges instead
-- Dropdowns scoped to tight ranges (B2:B35 vs B2:B200) for performance
-- ARTIE-RUNBOOK.md lives in artie-config/ on GitHub (Artie finds it himself)
-- SOP tested end-to-end before Artie cleared — this is the standard going forward
-
-**Blockers remaining:**
-- Chris still needs to fill Dish Map column D (Used In Dishes) — unlocks COGS by Dish
-- No invoice data yet — COGS analysis cannot run until Artie enters first batch
-
-**Next session starts with:** Load soul files. Check if Artie has entered any invoices (Invoice Log). If data exists for same period in Invoice Log + Sales by Period → run first COGS analysis. If not → fill Dish Map column D or debug with Artie.
+*Full content of these sessions not yet reviewed. Future task: read and summarize for SESSION_HISTORY.*
 
 ---
 
-## Session 42 — 2026-06-10
-
-**Theme:** Aura Thai — ezCater platform onboarding
-
-**Completed:**
-- Researched ezCater platform mechanics (15% commission + 2.99% processing, Fixed-rate recommended fee type)
-- Live-scraped 7+ Long Beach Asian/Thai competitors on ezcater: WaBa Grill, moonbowls, Rascals Teriyaki, Super Mex, Thai Barbeque, Pick Up Stix
-- Key finding: All Reliability Rockstar Asian performers use $30 & up / $100 minimum. Thai-specific competitors with low fees ($10, $11.25) have 2-46 reviews, no Rockstar badge.
-- Locked fee strategy: Fixed-rate, 4 zones. Do NOT carry over small-order DD/UE/GH tiers — ezcater is B2B corporate catering only.
-- Chris set final Zone 4: $60 fee / $350 minimum (personal delivery option for far orders)
-- Built and delivered ezcater_quickref.docx — 4-section Word doc: Delivery Fee Tiers, Competitor Benchmark, Platform Settings, Winning Strategy
-
-**Files created:**
-- outputs/ezcater_quickref.docx — quick-reference onboarding doc (4085 Atlantic Ave, Long Beach CA)
-- outputs/context_business.md — business context file for continuity
-
-**Key decisions:**
-- ezcater = strictly catering platform, not DD/UE/GH equivalent. Minimum $100, no small orders.
-- Reliability Rockstar badge is the #1 visibility driver — accept all orders, 100% on-time.
-- Do not compete with Thai Barbeque ($10 fee, 2 reviews in 6 years). Follow the Rockstar winners.
-
-**Final fee table:**
-| Zone 1 | 0-5mi | $30 | $100 |
-| Zone 2 | 6-10mi | $40 | $150 |
-| Zone 3 | 11-15mi | $50 | $250 |
-| Zone 4 | 16-20mi | $60 | $350 |
-
-**Next session starts with:** Load soul files. A-09 COGS tracking — this is still TOP priority. ezCater onboarding is in Chris's hands (completing paperwork using quick-ref doc).
+## SESSION 15 — 2026-04-19
+**Type:** Unknown (file exists on Drive, content not reviewed)
+**Drive file:** `session-15-2026-04-19.md`
 
 ---
 
-## Session 44 — 2026-06-21
+## SESSIONS 16–18 — Dates Unknown
+**Status:** No handoff files found. Gap in record.
 
-**Theme:** Aura Sweet — Brand naming, poster design, and launch campaign
+---
+
+## SESSION 19 — 2026-04-29
+**Type:** Financial operations pipeline
+**Key build:** Financial ops daily pipeline — foundational plumbing for Artie's financial tracking
+**Outcome:** Foundation for Session 20's 3PD email parser
+
+---
+
+## SESSION 20 — 2026-04-30
+**Type:** 3PD email pipeline
+**Key builds:**
+- `artie_report_sync.py` v2 — full 13-parser 3PD email pipeline
+- GH daily pipeline confirmed live: PDF → parse → Drive upload → Telegram (4 messages sent)
+- DD/UE auth wall detected — URLs queuing to `pending_downloads.json` for future Playwright solution
+- File transfer standard established: `/mnt/c/Users/artem/Downloads/` → WSL2 copy
+
+**Significance:** First fully automated financial reporting flow. Artie starts doing real daily work.
+
+---
+
+## SESSION 21a — 2026-04-30
+**Type:** Dashboard design session
+**Goal:** Chris said "I'm lost on where we're at. It doesn't feel like we have a good system yet."
+**Outcome:** This session defined what a dashboard needed to show — Present/Past/Future/Problems for all three team members (Claude, Artie, Chris)
+
+**Carried forward:** Build the actual dashboard next session
+
+---
+
+## SESSION 21b — 2026-04-30 (parallel)
+**Type:** Playwright downloader spec
+**Goal:** Solve the DD/UE auth wall blocking automated report downloads
+**Outcome:** Full spec written for `artie_playwright_downloader.py`
+
+**Status:** Script spec complete. Build deferred to future session. Still open as of S27.
+
+---
+
+## SESSION 22 — 2026-04-30
+**Type:** Infrastructure deployment
+**Key builds:**
+- `EMPIRE_STATUS.md` — structured 3-layer data architecture
+- `dashboard.html` — mobile-first, all 5 businesses, team status, blockers, queue
+- Cloudflare Tunnel `pinyo-ops` — running as user-level systemd service
+- **ops.radrooster.co — LIVE.**
+
+---
+
+## SESSION 23 — 2026-05-05
+**Type:** Full system audit + architecture design
+**Theme:** "I feel lost. We need one mission control that knows everything."
+**Key outputs:** Full file scan, 14 duplicates identified, new architecture locked, CLAUDE-CORE.md drafted, ARTIE-RUNBOOK.md drafted.
+**Significance:** The session that stopped the chaos.
+
+---
+
+## SESSION 24 — 2026-05-05
+**Type:** System cleanup + infrastructure execution
+**Key outputs:** 14 duplicates resolved, MASTER_INDEX.md v1, ARTIE-PROJECTS.md v2, ARTIE-DEPT.md v2, SOP 11 added.
+
+---
+
+## SESSION 25 — 2026-05-05
+**Type:** Infrastructure + protocol design
+**Key outputs:** Session End Protocol locked, Drive/GitHub split confirmed, GitHub chosen as file database.
+
+---
+
+## SESSION 26 — 2026-05-05
+**Type:** GitHub + Discord infrastructure
+**Key outputs:** GitHub repo live. Discord fully wired (8 channels). Soul files updated. EMPIRE_STATUS.md moved to GitHub permanently.
+
+---
+
+## SESSION 27 — 2026-05-06
+**Type:** Verification + consolidation + infrastructure migration
+**Key outputs:** MASTER_OPEN_ITEMS.md created. SESSION_HISTORY.md created. ops.radrooster.co → Cloudflare Pages.
+
+---
+
+## SESSION 28 — 2026-05-06
+**Type:** Infrastructure — Discord identity separation
+**Key outputs:** Cowork Discord bot created (Bot ID: 1501667305518530711). GitHub PAT + bot token stored.
+
+---
+
+## Session 31 — 2026-05-07
+**Completed:** I-19 Drive folder skeleton, I-20 THINKING_OS dedup, Vine Arbitrage naming locked, soul file architecture designed.
+**Next:** I-21 and I-22.
+
+---
+
+## Session 32 — 2026-05-07
+**Completed:** SHARED-CORE.md, CLAUDE-CORE.md V3 (handoff keyword), ARTIE-CORE.md V5, SPRINT.md digest, RPG_LEDGER.md, EMPIRE_RULES archived.
+
+---
+
+## Session 33 — 2026-05-08
+**Completed:** Artie recovery after reboot (OpenClaw binary mismatch). SOP 12 written. GitHub PAT confirmed.
+
+---
+
+## Session 34 — 2026-05-10
+**Completed:** Obsidian second brain — vault cloned, HOME.md, 5 business notes, auto-pull every 5min, sync confirmed.
+
+---
+
+## Session 35 — 2026-05-10
+**Completed:** DD price impact analysis (ticket +13.1%, orders -16.2%, revenue -5.1%). GH control group. dd_price_impact.html. Weekly monitoring scheduled.
+
+---
+
+## Session 36 — 2026-05-13
+**Completed:** PAT permanently stored in Drive. I-23 diagnosed (cron not firing since May 8). UE price impact: ticket +34.7%, orders -1.5%, revenue +37.7% (5-day window, Easter confound).
+
+---
+
+## Session 37 — 2026-05-13/14
+**Completed:** Lavu data organized in Drive. Files uploaded: Transactions Jan–Apr, Sale by Item Jan–Apr, Time Cards Jan–Apr. Lavu Daily Sale 2025 → Google Sheet ✅.
+
+---
+
+## Session 38 — 2026-05-14
+**Completed:** Decision Dashboard Data Checklist built (Drive/Financial Data/). Full data requirements spec + dashboard feature design.
+
+---
+
+## Session 39 — 2026-05-27
+**Completed:** SPRINT.md rebuilt (4 sessions stale). Revenue model corrected (Lavu = primary). BOH chef labor captured. Drive inventory surveyed. ops.radrooster.co rebuilt as dynamic live-fetch dashboard.
+
+---
+
+## Session 40 — 2026-06-21
+
+**Theme:** Drive map audit — Aura Thai dashboard data inventory
 
 **Completed:**
-- Named all four Aura Sweet ice cream flavors (Option C theme — food/story forward):
-  - The Brew (Thai Tea)
-  - Chef's Secret (Fish Sauce Caramel)
-  - Island Cream (Coconut)
-  - Sweet Grain (Mango Sticky Rice)
-- Built menu poster mockup (HTML) — color bands, descriptions, tagline: "Small batch · Made in-house · Thai-inspired", CTA: "Try all four. Tag us @aurathaiLB"
-- Built mystery poster mockup (dark, Chef's Secret only) — rejected by Chris, one poster confirmed
-- Built Campaign v1 — rejected (too big, wrong fit, revealed fish sauce too early)
-- Built Campaign v2 — master-level 3-move local launch playbook:
-  - Move 1: Proof post (140 scoops, no campaign) — post today
-  - Move 2: BKBA collab post (10K local reach) — this week
-  - Move 3: Chef's Secret reveal video (30 sec, 3 shots) — this week
-- Key discovery: 100 Thai Tea + 40 Chef's Secret scoops sold by poster alone — product already working
+- Loaded all 4 soul files (CLAUDE-CORE, SHARED-CORE, EMPIRE_STATUS, SPRINT)
+- Full Google Drive scan: Financial Data → Lavu/, UberEats/, DoorDash/, GrubHub/ + subfolders
+- Cross-referenced against SPRINT.md S39 data inventory
+- **Both HIGH priority dashboard blockers confirmed resolved:**
+  - May 2026 Lavu Daily Sale → EXISTS (`Lavu/May 2026/Daily Sales May 2026.xls`, ~Jun 1)
+  - Menu Food Price Spreadsheet → EXISTS (`Lavu/Menu Food Price Spreadsheet - Price Chart`, Google Sheet, Jun 1)
+  - Sales by Item May 2026 → EXISTS (`Lavu/May 2026/Sales by Item May 2026.xls`, Jun 1)
+- Confirmed still-missing (lower priority): Lavu Time Card May 2026, labor reports 2024–2025, delivery exports 2023–2024
+- Updated EMPIRE_STATUS.md, SESSION_HISTORY.md, JOURNAL_INDEX.md — all pushed to GitHub
 
-**Key decisions:**
-- One poster only (menu poster) — mystery poster dropped
-- No prices on poster — masters never put prices on brand posters
-- Chef's Secret is the content engine and viral hook
-- BKBA collaboration is the primary reach channel
-- Never reveal fish sauce early — curiosity gap is the asset
+**Decision Dashboard status:** READY TO BUILD next session.
 
-**Open for next session:**
-- "How should we approach Aura Sweet as a spinoff?" — strategy, brand structure, expansion model
+**Next session starts with:** Load soul files. Read Menu Food Price Spreadsheet (ID: 1NH9jSLoUaRxGQksqB4Wyh_7eWj4Hju6FiBSuTxTVmuU) and Daily Sales May 2026.xls (ID: 1FdDS0j_JNS3FXu-j0XzSjJZ7E3oO00z8). Build A-06 Decision Dashboard using Lavu 2025 Google Sheet (ID: 1_MCQ3VeivrefxEf16e9pHidPrrZDIOJf6Ou78P9Qofc) as primary baseline.
 
-**Next session starts with:** Load soul files. Discuss Aura Sweet spinoff strategy — brand independence vs Aura Thai extension, unit economics, scaling model.
+---
+
+## NARRATIVE THREAD (for YouTube)
+
+| Arc | Sessions | Theme |
+|-----|----------|-------|
+| **Arc 1: First Steps** | 1–10 | Learning what AI can do. Early experiments. |
+| **Arc 2: Building Artie** | 11–20 | Artie goes from idea to live automated agent. Financial pipeline built. |
+| **Arc 3: The Dashboard** | 21–22 | First ops dashboard. Empire becomes visible. ops.radrooster.co live. |
+| **Arc 4: The Chaos Session** | 23 | "I feel lost." Full system audit. Everything mapped for the first time. |
+| **Arc 5: Cleaning House** | 24–25 | 14 duplicates killed. Protocols locked. Drive limitations exposed. |
+| **Arc 6: Going Live** | 26 | GitHub + Discord. Two major systems live in one session. |
+| **Arc 7: One Source of Truth** | 27 | Stop the scatter. Build the system that runs the system. Dashboard live on Pages. |
+| **Arc 8: Intelligence Layer** | 35–40 | Price analysis, drive audit, dashboard data assembly. Real numbers incoming. |
+
+---
+
+*This file is append-only. Add a new session block at the bottom each session. Never delete history.*
