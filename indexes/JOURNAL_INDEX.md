@@ -61,6 +61,7 @@ Format: `Session NN | YYYY-MM-DD | Topic | One-line hook | Tags | Drive Link`
 ## 2026 — June
 
 - Session 40 | 2026-06-21 | Drive map audit — Aura Thai dashboard data inventory | "Checked what was actually in the filing cabinet. Both blockers are gone. Time to build." | #aura-thai #finance #dashboard | pending Drive link
+- Session 45 | 2026-06-21 | SOP 14 pipeline + Dish Map sync | "The invoice photos finally have a machine to read them. The map has 53 stops. Chris just needs to name the destinations." | #aura-thai #finance #systems #artie | pending Drive link
 
 ---
 
