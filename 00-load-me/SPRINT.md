@@ -43,7 +43,7 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | A-09b | Chris fill Dish Map col B (Dish Name(s)) | OPEN — CHRIS | 53 ingredients loaded. Supplies → "Supply". Universal costs → "All Dishes". ~35 dish-specific to map. Unlocks COGS. |
 | A-06 | Decision Dashboard | OPEN — CLAUDE | Build next session. |
 | I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
-| SOP-14-deploy | Send invoice_processor.py + SOP_14 to Artie | OPEN — CHRIS | Files in outputs/. Artie needs to do one-time setup (credentials, DRIVE_FOLDER_ID). |
+| SOP-14-deploy | Send invoice_processor.py + SOP_14 to Artie | OPEN — CHRIS | Files in outputs/. Uses service_account.json (no OAuth). Artie needs: SA file, ANTHROPIC_API_KEY from Chris, DRIVE_FOLDER_ID. |
 | A-08b | Finance tab: rebuild to Google Sheet | OPEN | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
 | A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
 | AS-01 | Aura Sweet spinoff strategy | OPEN | Parked — address after COGS. |
