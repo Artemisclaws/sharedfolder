@@ -61,3 +61,36 @@
 | Zone 4 | 16-20mi | $60 | $350 |
 
 **Next session starts with:** Load soul files. A-09 COGS tracking — this is still TOP priority. ezCater onboarding is in Chris's hands (completing paperwork using quick-ref doc).
+
+---
+
+## Session 44 — 2026-06-21
+
+**Theme:** Aura Sweet — Brand naming, poster design, and launch campaign
+
+**Completed:**
+- Named all four Aura Sweet ice cream flavors (Option C theme — food/story forward):
+  - The Brew (Thai Tea)
+  - Chef's Secret (Fish Sauce Caramel)
+  - Island Cream (Coconut)
+  - Sweet Grain (Mango Sticky Rice)
+- Built menu poster mockup (HTML) — color bands, descriptions, tagline: "Small batch · Made in-house · Thai-inspired", CTA: "Try all four. Tag us @aurathaiLB"
+- Built mystery poster mockup (dark, Chef's Secret only) — rejected by Chris, one poster confirmed
+- Built Campaign v1 — rejected (too big, wrong fit, revealed fish sauce too early)
+- Built Campaign v2 — master-level 3-move local launch playbook:
+  - Move 1: Proof post (140 scoops, no campaign) — post today
+  - Move 2: BKBA collab post (10K local reach) — this week
+  - Move 3: Chef's Secret reveal video (30 sec, 3 shots) — this week
+- Key discovery: 100 Thai Tea + 40 Chef's Secret scoops sold by poster alone — product already working
+
+**Key decisions:**
+- One poster only (menu poster) — mystery poster dropped
+- No prices on poster — masters never put prices on brand posters
+- Chef's Secret is the content engine and viral hook
+- BKBA collaboration is the primary reach channel
+- Never reveal fish sauce early — curiosity gap is the asset
+
+**Open for next session:**
+- "How should we approach Aura Sweet as a spinoff?" — strategy, brand structure, expansion model
+
+**Next session starts with:** Load soul files. Discuss Aura Sweet spinoff strategy — brand independence vs Aura Thai extension, unit economics, scaling model.
