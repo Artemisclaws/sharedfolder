@@ -1,16 +1,16 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S44 | 2026-06-21
+**Updated by:** Claude | Session S45 | 2026-06-21
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START COMMAND — S45
+## SESSION START COMMAND — S46
 ```
 Load soul files.
-S44: Aura Sweet naming, poster, and campaign completed. 3-move campaign ready to execute.
-Priority: (1) Aura Sweet spinoff strategy — "How should we approach Aura Sweet as a spinoff?" (2) Check if Artie has entered Invoice Log + Sales by Period data → run COGS if yes. (3) Remind Chris: Dish Map column D still blank.
+S45: SOP 14 pipeline built (invoice_processor.py). Dish Map synced — 53 ingredients, col B blank.
+Priority: (1) A-09b: Chris fill Dish Map col B (Dish Name(s)) — unlocks COGS. (2) A-06: Decision Dashboard. (3) I-23: artie_report_sync.py cron fix. (4) Send invoice_processor.py + SOP_14 to Artie.
 ```
 
 ---
@@ -36,51 +36,42 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 ---
 
-## ACTIVE ITEMS — S44 DIGEST
+## ACTIVE ITEMS — S45 DIGEST
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
-| AS-01 | Aura Sweet spinoff strategy | OPEN — S45 | "How should we approach Aura Sweet as a spinoff?" |
-| AS-02 | Execute 3-move campaign | READY — CHRIS | Move 1: proof post today. Move 2: BKBA collab. Move 3: Chef's Secret video. |
-| AS-03 | Finalize poster in Canva | IN PROGRESS — CHRIS | Mockup complete. Copy locked. Add to Canva. |
-| A-09 | COGS — Artie data entry | IN PROGRESS | Invoice system live. Artie entering backlog invoices + weekly Sales by Period. |
-| A-09b | Chris fill Dish Map column D | OPEN — CHRIS | 31 ingredients loaded. Enter dish names per ingredient. Unlocks COGS by Dish. |
-| A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
-| A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
+| A-09b | Chris fill Dish Map col B (Dish Name(s)) | OPEN — CHRIS | 53 ingredients loaded. Supplies → "Supply". Universal costs → "All Dishes". ~35 dish-specific to map. Unlocks COGS. |
+| A-06 | Decision Dashboard | OPEN — CLAUDE | Build next session. |
 | I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
+| SOP-14-deploy | Send invoice_processor.py + SOP_14 to Artie | OPEN — CHRIS | Files in outputs/. Artie needs to do one-time setup (credentials, DRIVE_FOLDER_ID). |
+| A-08b | Finance tab: rebuild to Google Sheet | OPEN | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
+| A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
+| AS-01 | Aura Sweet spinoff strategy | OPEN | Parked — address after COGS. |
 | B-01 | Pinyo Farms market validation | QUEUED | Parking lot until COGS done. |
 
 ---
 
-## AURA SWEET — S44 STATUS
-**Flavor names locked:**
-- The Brew (Thai Tea)
-- Chef's Secret (Fish Sauce Caramel)
-- Island Cream (Coconut)
-- Sweet Grain (Mango Sticky Rice)
-
-**Poster:** Menu poster mockup complete. One poster only. Copy locked.
-**Campaign:** 3-move local launch playbook ready to execute.
-**Proof:** 100 Thai Tea + 40 Chef's Secret scoops sold by poster alone.
-**Next:** Spinoff strategy discussion S45.
-
----
-
-## AURA THAI INVOICE SYSTEM (S40/S43 — FOUNDATION COMPLETE)
-**Sheet:** aura_thai_finance | 5 new tabs added
-**Artie SOP:** artie-config/ARTIE-RUNBOOK.md → SOP 14
+## AURA THAI INVOICE SYSTEM (S45 — FULLY OPERATIONAL)
+**Sheet:** aura_thai_finance | Script: aura_thai_invoice_system.gs (deployed)
+**Pipeline:** invoice_processor.py → send to Artie with SOP_14_invoice_processing.md
 
 | Tab | Status | Owner |
 |-----|--------|-------|
-| Invoice Log | READY | Artie — enter every delivery |
-| Price Tracker | READY | Auto |
-| Dish Map | READY (col D blank) | Chris — fill Used In Dishes column |
+| Invoice Log | ✅ 277 rows loaded (Feb–May 2026) | Artie — add new deliveries |
+| Price Tracker | READY | Auto — run updatePriceTracker() after invoices |
+| Dish Map | 53 ingredients loaded, col B BLANK | Chris — fill Dish Name(s) |
 | Sales by Period | READY | Artie — weekly from Lavu Sale by Item |
-| COGS by Dish | WAITING FOR DATA | Claude — analyze once Invoice Log + Sales by Period overlap |
+| COGS by Dish | WAITING | Claude — analyze once Dish Map col B + Sales data overlap |
+
+**Dish Map guidance for Chris:**
+- Supplies (chopsticks, bags, cleaning): mark "Supply"
+- Universal costs (fry oils, sugar, vinegar, soy sauces): mark "All Dishes"
+- ~35 dish-specific ingredients: map to actual dish names or shorthand (All Stir Fry, All Curry, etc.)
 
 ---
 
 ## KEY REVENUE NUMBERS (S40 verified)
 - YTD 2026: $381,011 | YTD 2025: $412,036 | **YoY: -7.5%**
 - Apr 2026 vs 2025: **-11.3%** (worst month so far)
-- BOH Labor: ~$15,000/month | ~$494/day
+- BOH Labor: ~$13,835/period | ~$494/day
+
