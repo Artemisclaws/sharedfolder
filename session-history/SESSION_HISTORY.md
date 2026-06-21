@@ -184,6 +184,29 @@ Source files on Drive:
 
 ---
 
+## Session 45 — 2026-06-21
+
+**Theme:** SOP 14 Invoice Pipeline + Dish Map Sync System
+
+**Completed:**
+- Built `invoice_processor.py` — repeatable pipeline for Artie: Drive HEIC download → ImageMagick → Haiku OCR → Invoice Log append → Dish Map sync. Replaces S44 one-time hack.
+- Written `SOP_14_invoice_processing.md` — Artie's full runbook for the pipeline
+- Updated `aura_thai_invoice_system.gs` — Dish Map redesigned from 5-column dish-first to 2-column ingredient-first (Ingredient Name | Dish Name(s))
+- Added `syncIngredientsToDishMapV2()` — no-dialog version that resets old format silently (timeout fix)
+- Deployed updated .gs to aura_thai_finance Apps Script editor
+- **Dish Map synced:** 53 unique ingredients from 277 Invoice Log rows, alphabetically sorted
+- Fixed Apps Script access blocker (broken Drive link → direct sheet URL worked)
+
+**Key decisions:**
+- Dish Map: 2 columns only. No vendor, no notes, no category. Minimum viable.
+- "All Stir Fry / All Curry / All Dishes" shorthand supported in col B — Claude interprets during COGS
+- Supplies (chopsticks, cleaning) → "Supply". Universal costs (oils, sugars) → "All Dishes"
+
+**Next session starts with:** Load soul files. A-09b: Chris fill Dish Map column B (Dish Name(s)) — ~35 dish-specific ingredients, then run COGS analysis. Also: A-06 Decision Dashboard, I-23 cron fix.
+
+
+---
+
 ## NARRATIVE THREAD (for YouTube)
 
 | Arc | Sessions | Theme |
