@@ -1,16 +1,16 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S42 | 2026-06-10
+**Updated by:** Claude | Session S43 | 2026-06-20
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START COMMAND — S43
+## SESSION START COMMAND — S44
 ```
 Load soul files.
-S42 was ezCater onboarding — quick-ref doc delivered, Chris completing paperwork.
-Priority: (1) A-09 COGS tracking system — TOP PRIORITY, still not built. (2) A-08b Finance tab rebuild to Google Sheet.
+S43: Invoice system stabilized. ARTIE-RUNBOOK.md live on GitHub (artie-config/). Artie cleared to enter invoices.
+Priority: (1) Check if Artie has entered Invoice Log data + Sales by Period data for same period → run COGS analysis if yes. (2) Remind Chris to fill Dish Map column D. (3) A-08b Finance tab rebuild if COGS is blocked.
 ```
 
 ---
@@ -36,20 +36,38 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 ---
 
-## ACTIVE ITEMS — S42 DIGEST
+## ACTIVE ITEMS — S43 DIGEST
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
-| A-09 | COGS tracking system | TOP PRIORITY | Weekly food cost entry. Target 28-32% revenue. Sustainability concern. |
+| A-09 | COGS — Artie data entry | IN PROGRESS | Invoice system live. Artie entering backlog invoices + weekly Sales by Period. |
+| A-09b | Chris fill Dish Map column D | OPEN — CHRIS | 31 ingredients loaded. Enter dish names per ingredient. Unlocks COGS by Dish. |
 | A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
 | A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
 | A-06b | Revenue tab: live data connection | Pending | Master Google Sheet → revenue.html reads on load. |
 | I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
-| A-04 | ARTIE SOP 13 | OPEN | Write to ARTIE-RUNBOOK.md. |
 | I-06 | Daily digest cron #general | OPEN | |
 | B-01 | Pinyo Farms market validation | QUEUED | Parking lot until COGS done. |
-| A-07 | Decision Dashboard ops.radrooster.co | DONE S41 | Live at ops.radrooster.co/aura-thai. |
-| A-08 | Aura Thai Finance tab | DONE S40 | Live at ops.radrooster.co. |
+| A-04 | ARTIE SOP 13 + 14 | DONE S43 | artie-config/ARTIE-RUNBOOK.md on GitHub. SOP 14 live-tested. |
+| A-07 | Decision Dashboard ops.radrooster.co | DONE S41 | Live. |
+| A-08 | Aura Thai Finance tab | DONE S40 | Live. |
+
+---
+
+## AURA THAI INVOICE SYSTEM (S40/S43 — FOUNDATION COMPLETE)
+**Sheet:** aura_thai_finance | 5 new tabs added
+**Artie SOP:** artie-config/ARTIE-RUNBOOK.md → SOP 14
+**Sheet URL:** https://docs.google.com/spreadsheets/d/1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE
+
+| Tab | Status | Owner |
+|-----|--------|-------|
+| Invoice Log | READY | Artie — enter every delivery |
+| Price Tracker | READY | Auto — Aura Thai Ops > Refresh Price Tracker |
+| Dish Map | READY (col D blank) | Chris — fill Used In Dishes column |
+| Sales by Period | READY | Artie — weekly from Lavu Sale by Item |
+| COGS by Dish | WAITING FOR DATA | Claude — analyze once Invoice Log + Sales by Period overlap |
+
+**COGS trigger:** When Invoice Log + Sales by Period both have data for the same time period → Claude runs analysis.
 
 ---
 
@@ -73,16 +91,4 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | Lavu May 1-26 2026 XLS | $65,408 partial | Ready |
 | 2023/2024 XLS | Full years | Too large — need Sheets conversion |
 | GH/DD/UE pipeline | May 8+ | BROKEN (I-23) |
-| COGS | — | NOT tracked yet (A-09) |
-
-## AURA THAI — COGS TRACKING (A-09, TOP PRIORITY)
-**Goal:** Build ingredient cost database → COGS % per dish → margin visibility on dashboard.
-**Target:** 28-32% food cost as % of revenue.
-**Architecture:** New tab COGS Tracker in aura_thai_finance. New tab on ops.radrooster.co after Aura Thai.
-**Invoice workflow:** Chris drops invoice photos → Claude extracts line items → paste into COGS Tracker.
-**Note:** Tiller is bank-feed only. For itemized invoice data: use Claude (Cowork) or Dext.
-
-## CLAUDE-CORE.md V5 (S40 — permanent)
-- Build Protocol: test logic before building. Never hardcode data in dashboards.
-- Within-session file rule: no re-fetching already-loaded files.
-- Haiku agent default for mechanical tasks (file search, parsing, format conversion).
+| COGS | Starting S43 | Artie entering invoices |
