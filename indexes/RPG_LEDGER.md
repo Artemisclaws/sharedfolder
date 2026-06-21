@@ -79,3 +79,14 @@
 - Dish Map column D is the only thing Chris needs to do. Frame it as a 20-minute task, not a project.
 - If Artie has entered data → run COGS immediately, show Chris a real food cost %.
 - The system is built. Now it needs to produce intelligence. That's the shift.
+
+**S44 notes:**
+- MOMENTUM +2: Aura Sweet went from unnamed flavors to locked names, finished poster, and a real campaign in one session. That's a complete creative sprint.
+- LEVERAGE +2: The campaign is built around what's already working (140 scoops sold) rather than manufacturing something new. That's the highest-leverage move — amplify proof, don't create fiction.
+- CLARITY +2: "How should we approach Aura Sweet as a spinoff?" is the right next question. Parked cleanly for S45.
+- SYSTEMS +1: Handoff clean. SPRINT.md current. Files pushed.
+- DISCIPLINE 0: Chris caught the fish sauce reveal mistake before it shipped. Good instinct, right correction.
+
+| Session | DISCIPLINE | SYSTEMS | MOMENTUM | LEVERAGE | CLARITY |
+|---------|-----------|---------|----------|----------|---------|
+| S44 | 70 (0) | 85 (+1) | 78 (+2) | 67 (+2) | 79 (+2) |
