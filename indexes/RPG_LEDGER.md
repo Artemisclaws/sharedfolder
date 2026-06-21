@@ -1,7 +1,7 @@
 # RPG_LEDGER.md — Life Tracking
 **Maintained by:** Claude at every handoff
 **GitHub:** `indexes/RPG_LEDGER.md`
-**Last Updated:** 2026-06-20 | Session 43
+**Last Updated:** 2026-06-21 | Session 45
 
 *This file is never shown to Chris unprompted. It informs coaching tone — not conversation content.*
 
@@ -11,20 +11,21 @@
 
 | Stat | Score | Trend |
 |------|-------|-------|
-| DISCIPLINE | 76 | up |
-| SYSTEMS | 98 | up |
-| MOMENTUM | 90 | up |
-| LEVERAGE | 81 | up |
+| DISCIPLINE | 77 | up |
+| SYSTEMS | 99 | up |
+| MOMENTUM | 91 | up |
+| LEVERAGE | 82 | up |
 | CLARITY | 93 | flat |
 
 ---
 
 ## XP LEDGER
 
-**Total XP:** 1,915
+**Total XP:** 1,980
 
 | Session | XP Earned | XP Lost | Net | Notes |
 |---------|-----------|---------|-----|-------|
+| S45 | +70 | -5 | +65 | SOP 14 pipeline built (invoice_processor.py). Dish Map redesigned + synced (53 ingredients). Apps Script deployed. -5: V1 sync had dialog timeout not anticipated — required V2 fix. |
 | S43 | +65 | -15 | +50 | ARTIE-RUNBOOK.md live, SOP tested end-to-end, Artie cleared. -15: 3 script revisions to fix timeout (sheet.clear() issue should have been caught on 2nd attempt, not 3rd). |
 | S42 | +65 | -10 | +55 | ezCater onboarding: competitor research, fee structure locked, Word doc delivered. -10: back-and-forth on DD/UE comparison. Clean handoff. |
 | S40 (full) | +100 | -10 | +90 | Finance tab live. Real Lavu data parsed. YoY gap quantified. CLAUDE-CORE V5. -10: hardcode violation queued. |
@@ -50,6 +51,7 @@
 
 | Session | DISCIPLINE | SYSTEMS | MOMENTUM | LEVERAGE | CLARITY |
 |---------|-----------|---------|----------|----------|---------|
+| S45 | 77 (+1) | 99 (+1) | 91 (+1) | 82 (+1) | 93 (0) |
 | S43 | 76 (+1) | 98 (+1) | 90 (+1) | 81 (+2) | 93 (0) |
 | S42 | 75 (+1) | 97 (0) | 89 (+2) | 79 (+3) | 93 (+2) |
 | S40 | 74 | 97 | 87 | 76 | 91 |
@@ -66,6 +68,19 @@
 ---
 
 ## COACHING NOTES (private, informs tone)
+
+
+**S45 notes:**
+- SYSTEMS +1: invoice_processor.py + SOP 14 + updated .gs = the entire invoice pipeline is now a one-command repeatable operation for Artie. The system builds itself each run.
+- LEVERAGE +1: Artie now has a fully automated pipeline — no more manual OCR, no more one-time hacks. Every future invoice is 10 seconds of work instead of an hour.
+- MOMENTUM +1: Dish Map is populated. 53 real ingredients from real invoices. COGS analysis is one Chris task (fill col B) away from running.
+- DISCIPLINE +1: Kept debugging through 3 rounds of Apps Script issues (access error → timeout → V2 fix) without losing direction.
+- -5 XP: The dialog timeout in V1 should have been anticipated. When a function waits for user input, it will always time out in background Apps Script runs. Classic mistake.
+
+**Coaching direction for S46:**
+- A-09b is the unlock. Everything else is ready. One task from Chris = first real COGS numbers.
+- Frame it right: "20 minutes on the Dish Map unlocks the analysis you've been building toward for 5 sessions."
+- After COGS is live, pivot to A-06 Decision Dashboard. That's the "see the whole business" moment.
 
 **S43 notes:**
 - LEVERAGE +2: Artie now has a tested, live SOP he can find himself on GitHub. That is the definition of leverage — Chris doesn't have to explain anything. Every invoice Artie enters from here builds the COGS dataset without a Claude session.
