@@ -67,11 +67,16 @@ def save_processed_ids(ids):
 # ─── DRIVE ───────────────────────────────────────────────────────────────────
 
 def list_invoice_files(drive_service):
-    query = f"'{DRIVE_FOLDER_ID}' in parents and trashed=false"
+    """List all files in DRIVE_FOLDER_ID and any subfolders, with their actual parent ID."""
+    query = (
+        f"'{DRIVE_FOLDER_ID}' in ancestors "
+        f"and mimeType != 'application/vnd.google-apps.folder' "
+        f"and trashed=false"
+    )
     results = drive_service.files().list(
         q=query,
-        fields="files(id, name, mimeType)",
-        pageSize=200,
+        fields="files(id, name, mimeType, parents)",
+        pageSize=500,
     ).execute()
     return results.get("files", [])
 
@@ -85,12 +90,12 @@ def download_file(drive_service, file_id, dest_path):
             _, done = downloader.next_chunk()
 
 
-def archive_file(drive_service, file_id, filename):
-    """Move file from invoice folder to archive folder."""
+def archive_file(drive_service, file_id, filename, actual_parent_id):
+    """Move file from its current folder to archive folder."""
     drive_service.files().update(
         fileId=file_id,
         addParents=ARCHIVE_FOLDER_ID,
-        removeParents=DRIVE_FOLDER_ID,
+        removeParents=actual_parent_id,
         fields="id, parents",
     ).execute()
     print(f"  → Archived: {filename}")
@@ -274,6 +279,7 @@ def main():
         for f in new_files:
             file_id = f["id"]
             name = f["name"]
+            actual_parent_id = f.get("parents", [DRIVE_FOLDER_ID])[0]
             print(f"\nProcessing: {name}")
 
             raw_path = tmp / name
@@ -307,7 +313,7 @@ def main():
                     continue
 
                 # 6. Both checks passed — archive
-                archive_file(drive_service, file_id, name)
+                archive_file(drive_service, file_id, name, actual_parent_id)
                 newly_processed.add(file_id)
                 archived.append(name)
                 print(f"  ✓ Complete")
