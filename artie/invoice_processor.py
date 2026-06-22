@@ -306,6 +306,9 @@ def main():
 
                 # 3. OCR
                 raw_json = ocr_invoice(str(jpeg_path))
+                if not raw_json:
+                    raise ValueError(f"Haiku returned empty response for {name}")
+                print(f"  Haiku response preview: {repr(raw_json[:120])}")
                 line_items = json.loads(raw_json)
 
                 # 4. Validate (Check 1)
