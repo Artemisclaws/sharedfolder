@@ -11,7 +11,7 @@ Uses service account auth — no browser/OAuth required.
 import os
 import json
 import base64
-import subprocess
+import subprocess  # kept for potential future use
 import tempfile
 import sys
 from datetime import datetime
@@ -19,9 +19,13 @@ from pathlib import Path
 
 import anthropic
 import gspread
+import pillow_heif
+from PIL import Image
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
+
+pillow_heif.register_heif_opener()
 
 # ─── CONFIG ──────────────────────────────────────────────────────────────────
 
@@ -107,13 +111,11 @@ def archive_file(drive_service, file_id, filename, actual_parent_id):
 # ─── HEIC CONVERSION ─────────────────────────────────────────────────────────
 
 def convert_to_jpeg(src_path, dest_path):
-    result = subprocess.run(
-        ["convert", str(src_path), str(dest_path)],
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        raise RuntimeError(f"ImageMagick convert failed: {result.stderr.strip()}")
+    """Convert any image (including HEIC) to JPEG using Pillow + pillow-heif."""
+    img = Image.open(src_path)
+    if img.mode in ("RGBA", "P"):
+        img = img.convert("RGB")
+    img.save(str(dest_path), "JPEG", quality=95)
 
 # ─── OCR VIA HAIKU ───────────────────────────────────────────────────────────
 
