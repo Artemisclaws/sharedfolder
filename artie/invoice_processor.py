@@ -67,18 +67,25 @@ def save_processed_ids(ids):
 # ─── DRIVE ───────────────────────────────────────────────────────────────────
 
 def list_invoice_files(drive_service):
-    """List all files in DRIVE_FOLDER_ID and any subfolders, with their actual parent ID."""
-    query = (
-        f"'{DRIVE_FOLDER_ID}' in ancestors "
-        f"and mimeType != 'application/vnd.google-apps.folder' "
-        f"and trashed=false"
-    )
-    results = drive_service.files().list(
-        q=query,
-        fields="files(id, name, mimeType, parents)",
-        pageSize=500,
-    ).execute()
-    return results.get("files", [])
+    """Recursively list all files in DRIVE_FOLDER_ID and any subfolders."""
+    all_files = []
+    folders_to_check = [DRIVE_FOLDER_ID]
+
+    while folders_to_check:
+        folder_id = folders_to_check.pop(0)
+        query = f"'{folder_id}' in parents and trashed=false"
+        results = drive_service.files().list(
+            q=query,
+            fields="files(id, name, mimeType, parents)",
+            pageSize=500,
+        ).execute()
+        for f in results.get("files", []):
+            if f["mimeType"] == "application/vnd.google-apps.folder":
+                folders_to_check.append(f["id"])
+            else:
+                all_files.append(f)
+
+    return all_files
 
 
 def download_file(drive_service, file_id, dest_path):
