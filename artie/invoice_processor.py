@@ -9,6 +9,7 @@ Uses service account auth — no browser/OAuth required.
 """
 
 import os
+import re
 import json
 import base64
 import subprocess  # kept for potential future use
@@ -162,7 +163,12 @@ def ocr_invoice(image_path):
             }
         ],
     )
-    return message.content[0].text.strip()
+    raw = message.content[0].text.strip()
+    # Strip markdown code fences if Haiku wrapped the JSON
+    match = re.search(r"```(?:json)?\s*([\s\S]*?)```", raw)
+    if match:
+        raw = match.group(1).strip()
+    return raw
 
 # ─── VALIDATION ──────────────────────────────────────────────────────────────
 
