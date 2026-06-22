@@ -35,8 +35,8 @@ SA_PATH = SCRIPT_DIR / "service_account.json"
 PROCESSED_LOG = SCRIPT_DIR / "processed_invoice_files.json"
 
 DRIVE_FOLDER_IDS = [
-    "14cxHSf8ubo3x9R07bz_fvUQsT2O2YO5o",  # SJ Distributors
-    "1SBQ3e3SjfQwiLyldozTOZoQWz5MtP50A",  # Taiwah Trading Corp
+    "11j_yA_xH0IFh9y3hJhPu9ShDWyf2uyVL",  # SJ Distributors (JPEG)
+    "1AP3jZVOVpta8X2ecLxIGNF5yrPxPe5E4",  # Taiwah Trading Corp (JPEG)
 ]
 ARCHIVE_FOLDER_ID = "1GPxZT-mG6rlYFRCIKmRiEgxIQj9Xuh31"
 SHEET_ID = "1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE"
