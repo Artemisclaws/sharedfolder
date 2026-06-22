@@ -1,19 +1,20 @@
 """
 invoice_processor.py — Aura Thai Invoice Photo Pipeline
-Session S45 | Author: Claude (Pinyo Empire Strategist)
+Session S45/S46 | Author: Claude (Pinyo Empire Strategist)
 
 Pulls invoice photos from Google Drive, converts HEIC → JPEG,
-sends to Haiku for OCR, appends extracted line items to Invoice Log.
+sends to Haiku for OCR, validates data, appends to Invoice Log,
+confirms write, then archives file to Archive folder.
 Uses service account auth — no browser/OAuth required.
 """
 
 import os
-import io
 import json
 import base64
 import subprocess
 import tempfile
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import anthropic
@@ -29,11 +30,12 @@ SA_PATH = SCRIPT_DIR / "service_account.json"
 PROCESSED_LOG = SCRIPT_DIR / "processed_invoice_files.json"
 
 DRIVE_FOLDER_ID = "1jOJaTcZ9g-_k4BKypme7B-IsU8ojwcr3"
+ARCHIVE_FOLDER_ID = "1GPxZT-mG6rlYFRCIKmRiEgxIQj9Xuh31"
 SHEET_ID = "1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE"
 SHEET_TAB = "Invoice Log"
 
 SCOPES = [
-    "https://www.googleapis.com/auth/drive.readonly",
+    "https://www.googleapis.com/auth/drive",
     "https://www.googleapis.com/auth/spreadsheets",
 ]
 
@@ -82,10 +84,20 @@ def download_file(drive_service, file_id, dest_path):
         while not done:
             _, done = downloader.next_chunk()
 
+
+def archive_file(drive_service, file_id, filename):
+    """Move file from invoice folder to archive folder."""
+    drive_service.files().update(
+        fileId=file_id,
+        addParents=ARCHIVE_FOLDER_ID,
+        removeParents=DRIVE_FOLDER_ID,
+        fields="id, parents",
+    ).execute()
+    print(f"  → Archived: {filename}")
+
 # ─── HEIC CONVERSION ─────────────────────────────────────────────────────────
 
 def convert_to_jpeg(src_path, dest_path):
-    """Convert any image (including HEIC) to JPEG using ImageMagick."""
     result = subprocess.run(
         ["convert", str(src_path), str(dest_path)],
         capture_output=True,
@@ -141,21 +153,62 @@ def ocr_invoice(image_path):
     )
     return message.content[0].text.strip()
 
+# ─── VALIDATION ──────────────────────────────────────────────────────────────
+
+def validate_line_items(line_items, filename):
+    """
+    Check 1: Validate extracted data before writing.
+    Returns (passed: bool, issues: list of str)
+    """
+    issues = []
+    if not line_items:
+        issues.append("No line items extracted")
+        return False, issues
+
+    for i, item in enumerate(line_items):
+        row_label = f"Row {i+1}"
+
+        # Required text fields
+        if not item.get("item_name", "").strip():
+            issues.append(f"{row_label}: missing item_name")
+        if not item.get("vendor", "").strip():
+            issues.append(f"{row_label}: missing vendor")
+
+        # Date parseable
+        date_val = item.get("date", "")
+        if date_val:
+            try:
+                datetime.strptime(date_val, "%Y-%m-%d")
+            except ValueError:
+                issues.append(f"{row_label}: bad date format '{date_val}' (expected YYYY-MM-DD)")
+        else:
+            issues.append(f"{row_label}: missing date")
+
+        # Numeric fields
+        for field in ("quantity", "unit_price", "total_price"):
+            val = item.get(field, 0)
+            try:
+                numeric = float(val)
+                if numeric < 0:
+                    issues.append(f"{row_label}: {field} is negative ({val})")
+            except (TypeError, ValueError):
+                issues.append(f"{row_label}: {field} is not a number ({val})")
+
+    passed = len(issues) == 0
+    return passed, issues
+
 # ─── SHEET WRITING ───────────────────────────────────────────────────────────
 
-EXPECTED_HEADERS = [
-    "date", "vendor", "item_name", "quantity", "unit",
-    "unit_price", "total_price", "notes",
-]
-
-
 def get_header_map(sheet):
-    """Return dict mapping header name → 0-based column index."""
     row1 = sheet.row_values(1)
     return {h.strip().lower(): i for i, h in enumerate(row1)}
 
 
-def append_rows_to_sheet(gc, line_items, filename):
+def append_and_confirm(gc, line_items, filename):
+    """
+    Write rows to sheet, then re-read to confirm count.
+    Returns (success: bool, rows_written: int)
+    """
     sh = gc.open_by_key(SHEET_ID)
     ws = sh.worksheet(SHEET_TAB)
     header_map = get_header_map(ws)
@@ -167,11 +220,26 @@ def append_rows_to_sheet(gc, line_items, filename):
             row[col_idx] = item.get(key, "")
         rows_to_append.append(row)
 
-    if rows_to_append:
-        ws.append_rows(rows_to_append, value_input_option="USER_ENTERED")
-        print(f"  → Appended {len(rows_to_append)} rows from {filename}")
+    if not rows_to_append:
+        return False, 0
+
+    # Get row count before write
+    all_before = ws.get_all_values()
+    rows_before = len([r for r in all_before if any(c.strip() for c in r)])
+
+    ws.append_rows(rows_to_append, value_input_option="USER_ENTERED")
+
+    # Check 2: Confirm rows actually landed
+    all_after = ws.get_all_values()
+    rows_after = len([r for r in all_after if any(c.strip() for c in r)])
+    rows_added = rows_after - rows_before
+
+    if rows_added >= len(rows_to_append):
+        print(f"  → Wrote {rows_added} rows | Confirmed in sheet ✓")
+        return True, rows_added
     else:
-        print(f"  → No rows to append from {filename}")
+        print(f"  → WRITE MISMATCH: expected {len(rows_to_append)}, confirmed {rows_added}")
+        return False, rows_added
 
 # ─── MAIN ────────────────────────────────────────────────────────────────────
 
@@ -198,6 +266,7 @@ def main():
     print(f"Found {len(new_files)} new file(s) to process.")
 
     newly_processed = set()
+    archived = []
     failed = []
 
     with tempfile.TemporaryDirectory() as tmpdir:
@@ -221,28 +290,48 @@ def main():
                 raw_json = ocr_invoice(str(jpeg_path))
                 line_items = json.loads(raw_json)
 
-                # 4. Write to sheet
-                append_rows_to_sheet(gc, line_items, name)
+                # 4. Validate (Check 1)
+                valid, issues = validate_line_items(line_items, name)
+                if not valid:
+                    print(f"  VALIDATION FAILED — file left in inbox:")
+                    for issue in issues:
+                        print(f"    • {issue}")
+                    failed.append(f"{name} (validation)")
+                    continue
 
+                # 5. Write + confirm (Check 2)
+                write_ok, rows_written = append_and_confirm(gc, line_items, name)
+                if not write_ok:
+                    print(f"  WRITE CONFIRMATION FAILED — file left in inbox")
+                    failed.append(f"{name} (write confirm)")
+                    continue
+
+                # 6. Both checks passed — archive
+                archive_file(drive_service, file_id, name)
                 newly_processed.add(file_id)
-                print(f"  ✓ Done")
+                archived.append(name)
+                print(f"  ✓ Complete")
 
             except json.JSONDecodeError as e:
                 print(f"  FAILED (JSON parse): {e}")
-                failed.append(name)
+                failed.append(f"{name} (JSON parse)")
             except Exception as e:
                 print(f"  FAILED: {e}")
-                failed.append(name)
+                failed.append(f"{name} ({type(e).__name__})")
 
-    # Save processed IDs
     save_processed_ids(processed_ids | newly_processed)
 
     print(f"\n── Summary ──")
-    print(f"Processed: {len(newly_processed)} file(s)")
+    print(f"Processed & archived: {len(archived)}")
+    if archived:
+        for a in archived:
+            print(f"  ✓ {a}")
     if failed:
-        print(f"Failed:    {len(failed)} file(s): {', '.join(failed)}")
+        print(f"Failed (left in inbox): {len(failed)}")
+        for f in failed:
+            print(f"  ✗ {f}")
     else:
-        print("Failed:    none")
+        print("Failed: none")
 
 
 if __name__ == "__main__":
