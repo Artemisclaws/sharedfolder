@@ -283,7 +283,7 @@ def main():
         for f in new_files:
             file_id = f["id"]
             name = f["name"]
-            actual_parent_id = f.get("parents", [DRIVE_FOLDER_ID])[0]
+            actual_parent_id = f.get("parents", [DRIVE_FOLDER_IDS[0]])[0]
             print(f"\nProcessing: {name}")
 
             raw_path = tmp / name
