@@ -1,41 +1,37 @@
-"""drive_diagnostic.py — Check what service account can see in Drive folder."""
+"""drive_diagnostic.py — Check what the service account can see in Drive (no folder filter)."""
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from pathlib import Path
-import json
 
 SA = Path("service_account.json")
-FOLDER = "1jOJaTcZ9g-_k4BKypme7B-IsU8ojwcr3"
+FOLDERS = [
+    "14cxHSf8ubo3x9R07bz_fvUQsT2O2YO5o",
+    "1SBQ3e3SjfQwiLyldozTOZoQWz5MtP50A",
+]
 
 creds = service_account.Credentials.from_service_account_file(
     str(SA), scopes=["https://www.googleapis.com/auth/drive"]
 )
 drive = build("drive", "v3", credentials=creds)
 
-folders = [FOLDER]
-all_files = []
-
-while folders:
-    fid = folders.pop(0)
-    r = drive.files().list(
-        q=f"'{fid}' in parents and trashed=false",
-        fields="files(id,name,mimeType)",
-    ).execute()
-    items = r.get("files", [])
-    print(f"Folder {fid} — {len(items)} item(s):")
-    for f in items:
-        if f["mimeType"] == "application/vnd.google-apps.folder":
-            print(f"  SUBFOLDER: {f['name']} ({f['id']})")
-            folders.append(f["id"])
-        else:
-            print(f"  FILE: {f['name']}")
-            all_files.append(f)
-
-print(f"\nTotal files visible to service account: {len(all_files)}")
-
-p = Path("processed_invoice_files.json")
-if p.exists():
-    ids = json.load(open(p))
-    print(f"processed_invoice_files.json: {len(ids)} IDs already logged")
+print("=== ALL files visible to service account (first 20) ===")
+r = drive.files().list(
+    fields="files(id,name,mimeType,parents)",
+    pageSize=20,
+).execute()
+items = r.get("files", [])
+if not items:
+    print("NONE — service account cannot see any Drive files at all")
 else:
-    print("processed_invoice_files.json: does not exist (no files processed yet)")
+    for f in items:
+        print(f"  {f['mimeType']} | {f['name']} | parents: {f.get('parents','?')}")
+
+print(f"\nTotal visible: {len(items)}")
+
+print("\n=== Folder metadata check ===")
+for fid in FOLDERS:
+    try:
+        meta = drive.files().get(fileId=fid, fields="id,name,mimeType,shared").execute()
+        print(f"  ACCESSIBLE: {meta['name']} (shared={meta.get('shared')})")
+    except Exception as e:
+        print(f"  ERROR on {fid}: {e}")
