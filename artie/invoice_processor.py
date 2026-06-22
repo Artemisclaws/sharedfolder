@@ -29,7 +29,10 @@ SCRIPT_DIR = Path(__file__).parent.resolve()
 SA_PATH = SCRIPT_DIR / "service_account.json"
 PROCESSED_LOG = SCRIPT_DIR / "processed_invoice_files.json"
 
-DRIVE_FOLDER_ID = "1jOJaTcZ9g-_k4BKypme7B-IsU8ojwcr3"
+DRIVE_FOLDER_IDS = [
+    "14cxHSf8ubo3x9R07bz_fvUQsT2O2YO5o",  # SJ Distributors
+    "1SBQ3e3SjfQwiLyldozTOZoQWz5MtP50A",  # Taiwah Trading Corp
+]
 ARCHIVE_FOLDER_ID = "1GPxZT-mG6rlYFRCIKmRiEgxIQj9Xuh31"
 SHEET_ID = "1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE"
 SHEET_TAB = "Invoice Log"
@@ -67,12 +70,9 @@ def save_processed_ids(ids):
 # ─── DRIVE ───────────────────────────────────────────────────────────────────
 
 def list_invoice_files(drive_service):
-    """Recursively list all files in DRIVE_FOLDER_ID and any subfolders."""
+    """List all files across all configured invoice folders."""
     all_files = []
-    folders_to_check = [DRIVE_FOLDER_ID]
-
-    while folders_to_check:
-        folder_id = folders_to_check.pop(0)
+    for folder_id in DRIVE_FOLDER_IDS:
         query = f"'{folder_id}' in parents and trashed=false"
         results = drive_service.files().list(
             q=query,
@@ -80,11 +80,8 @@ def list_invoice_files(drive_service):
             pageSize=500,
         ).execute()
         for f in results.get("files", []):
-            if f["mimeType"] == "application/vnd.google-apps.folder":
-                folders_to_check.append(f["id"])
-            else:
+            if f["mimeType"] != "application/vnd.google-apps.folder":
                 all_files.append(f)
-
     return all_files
 
 
