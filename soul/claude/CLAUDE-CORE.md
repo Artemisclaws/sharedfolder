@@ -72,7 +72,7 @@ If any mandatory file fails to load or appears stale — flag it before starting
 - Mark completed items ✅ with session number
 - Update statuses for in-progress items
 - Add any new items discovered this session
-- Add S32 to SESSION PRIORITY ORDER section
+- Add current session number to SESSION PRIORITY ORDER section
 
 ### Step 2 — Update EMPIRE_STATUS.md
 - Pull current file from GitHub
@@ -96,42 +96,23 @@ If any mandatory file fails to load or appears stale — flag it before starting
 
 ### Step 6 — Push all files to GitHub
 
-**⚠️ CRITICAL — PAT must come from Drive MCP every time. Never use hardcoded file paths — session paths change every session and will silently fail.**
+**PAT — Drive only. No file paths. No exceptions.**
 
-```
-# Step 6a — Fetch PAT fresh from Drive MCP (do this every handoff, no exceptions)
-Use Drive MCP tool: download_file_content
-File ID: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT
+Read the PAT fresh every session via Drive MCP connector:
+- Tool: `mcp__f942c9da-b87a-416f-b244-bf0c5ad2b8b2__read_file_content`
+- File ID: `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`
+- This file ID never changes. Drive is the only source of truth for the PAT.
 
-# Step 6b — Push each updated file via GitHub API using mcp__workspace__bash
-PAT="[value from Step 6a]"
-BASE="https://api.github.com/repos/Artemisclaws/sharedfolder/contents"
-# Files to push: MASTER_OPEN_ITEMS.md | EMPIRE_STATUS.md | SESSION_HISTORY.md | SPRINT.md | RPG_LEDGER.md
-# Use GitHub REST API PUT with base64-encoded content + current SHA for each file
-```
+**Why no file paths:** Local file paths and session IDs change every session. They cannot be trusted between sessions. Any PAT stored at a local path will be dead by the next session — this was the confirmed root cause of silent push failures across multiple sessions. Drive is permanent. Use it exclusively.
 
-**Root cause documented (S48):** The bash fallback `cat /sessions/gracious-cool-newton/mnt/outputs/github_pat.txt` was hardcoded to a dead session path. Session IDs change every session. This caused silent push failures for sessions S40–S47 even when Chris ran handoff correctly. Fix: always fetch PAT from Drive MCP at push time.
+**Push method:** GitHub Contents API
+1. GET `https://api.github.com/repos/Artemisclaws/sharedfolder/contents/{path}` → extract `sha`
+2. PUT same URL with base64-encoded updated content + sha + commit message
+3. Verify 200 response before moving to the next file — never assume success
 
-**PAT location — Drive (permanent, S36):**
-PAT is stored in Google Drive Soul folder. At session start, read it via Drive connector:
-- Drive File ID: `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`
-- Folder: Soul/ (17fK3GEn4plJBbBrSWTXybxESckqXk3ZQ)
+**Files to push at handoff:** MASTER_OPEN_ITEMS.md | EMPIRE_STATUS.md | SESSION_HISTORY.md | SPRINT.md | RPG_LEDGER.md
 
-**Session start sequence (do this before anything else):**
-```bash
-# 1. Read PAT from Drive via Drive connector (mcp__f942c9da...__read_file_content, fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT)
-# 2. Save to workspace
-echo "PAT_FROM_DRIVE" > /sessions/$(hostname -s)/mnt/outputs/github_pat.txt  # replace with actual PAT
-PAT="PAT_FROM_DRIVE"
-BASE="https://raw.githubusercontent.com/Artemisclaws/sharedfolder/main"
-# 3. Fetch all four soul files via curl
-curl -s -H "Authorization: token $PAT" "$BASE/soul/claude/CLAUDE-CORE.md" > CLAUDE-CORE.md
-curl -s -H "Authorization: token $PAT" "$BASE/soul/shared/SHARED-CORE.md" > SHARED-CORE.md
-curl -s -H "Authorization: token $PAT" "$BASE/empire-status/EMPIRE_STATUS.md" > EMPIRE_STATUS.md
-curl -s -H "Authorization: token $PAT" "$BASE/00-load-me/SPRINT.md" > SPRINT.md
-```
-
-**Chris never needs to upload or provide the PAT.** It lives in Drive permanently.
+**Chris never needs to provide the PAT.** It lives in Drive permanently.
 
 ### Step 7 — Deliver handoff summary to Chris
 One paragraph. What was completed. What's open. Where to start next session. XP earned (stated naturally, not as a number).
@@ -349,7 +330,37 @@ When Chris types "handoff" — execute the handoff protocol in CLAUDE-CORE.md au
 
 *V3 changes: Added SHARED-CORE.md to mandatory load sequence. Added handoff keyword protocol (auto-push to GitHub). Added boot-loader text. Updated file system reference for EMPIRE_RULES archive. Added RPG_LEDGER to indexes.*
 
+*V4 changes (S49): Step 6 fully rewritten — removed all bash blocks, all local paths. Drive MCP is now the only PAT source. Root cause of multi-session silent push failures eliminated. Fixed S32 hardcode in Step 1. Added CHANGE CONTROL section.*
+
 ---
+
+---
+
+## CHANGE CONTROL — THESE FILES ARE LOCKED
+
+Soul files (CLAUDE-CORE, SHARED-CORE, EMPIRE_STATUS, SPRINT) are locked. Edits without a confirmed reason compound errors across sessions.
+
+**A change is allowed only when:**
+1. A confirmed bug exists — behavior breaks, not just looks wrong
+2. A confirmed stale fact — verified against current state, not assumed
+3. Chris explicitly approves a new direction
+
+**Before any change:**
+- State the bug and reason explicitly
+- Confirm the fix introduces no new file paths, session IDs, or environment-specific references
+- Verify the logic end-to-end before pushing
+
+**After any change:**
+- Update the file header (version + date + session)
+- Log in `indexes/SOUL_CHANGELOG.md`: file | change | reason | session
+- Push the changed file alone — never batch unrelated changes into one push
+
+**What never triggers a change:**
+- A session running normally
+- Cosmetic rewording with no functional reason
+- Assumptions about what "should" be true
+- Preference or convenience without a confirmed problem
+
 
 ## 🔗 Graph Links
 [[HOME]] | [[SHARED-CORE]] | [[ARTIE-CORE]] | [[EMPIRE_STATUS]] | [[SPRINT]] | [[MASTER_OPEN_ITEMS]]
