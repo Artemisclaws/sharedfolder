@@ -71,3 +71,23 @@
 
 *S48: Property target markets → first DSCR deal evaluation. Trust/ILIT framework. Every session that closes an investment item moves LEVERAGE closer to 80. Every clean handoff moves DISCIPLINE toward 75.*
 
+## S49 — 2026-06-23
+
+**Session Theme:** Fix the Foundation
+
+**XP Earned:**
+- CLAUDE-CORE.md V4 (root cause eliminated, 8-session bug fixed): +50
+- Journal system designed + first entry written: +50
+- File org system designed + executed: +50
+- EMPIRE_STATUS + SPRINT updated (state current after 8-session gap): +15
+- Handoff protocol verified end-to-end: +15
+- One-way door decisions (Bedrock Standard named, CHANGE CONTROL locked): +25
+- **Session XP: +205**
+
+**Coaching note:** The constraint for 8 sessions was a single broken line in Step 6. Fixing infrastructure before building anything else — that's the Bedrock Standard in practice. The foundation now holds. Next session, we build on it.
+
+**Stat changes:**
+- SYSTEMS: +15 (handoff works, files organized, soul files locked)
+- MOMENTUM: +10 (8-session gap closed, journal live, direction clear)
+- CLARITY: +10 (Bedrock named, YouTube arc defined, what's open is honest)
+
