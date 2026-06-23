@@ -90,9 +90,41 @@
 
 1. **INV-07** — Define strategic buckets (aggressive $, property target, timeline) — BLOCKER
 2. **INV-05** — Auggie UTMA → ETF transition plan
-3. **INV-04** — Solo 401k / SEP-IRA evaluation
-4. **INV-06** — BTC building strategy for all three holders
-5. **B-01** — Pinyo Farms (still queued pending COGS)
 
-**Start S47 with:** Load soul files. Open `Pinyo_Portfolio_Tracker_v1.xlsx` (Investment Strategies folder). Step 2: Ask Chris the three bucket questions. Then build per-holder strategy.
 
+---
+
+## 💼 INVESTMENT STRATEGY
+
+| # | Item | Status | Owner | Notes |
+|---|------|--------|-------|-------|
+| INV-01 | Enable options trading on Fidelity Roth IRA (Level 1) | ❌ Open | Chris | Fidelity.com → Account Features → Brokerage & Trading → Options → Apply. 1-2 day approval. Unlocks covered calls on KO (1 contract) + SCHD (3 contracts) → ~$180/month tax-free. |
+| INV-02 | Identify property target markets (city/state/type) | ❌ Open | Chris | Required before S48 DSCR deal evaluation. Multi-unit preferred. Cash-flow positive / zero out-of-pocket. |
+| INV-03 | Kate ITIN application (Form W-7) | ❌ Queued | Kate/Chris | File W-7 with IRS. 6-11 week turnaround. Unlocks LLC membership for property equity. |
+| INV-04 | S48 — Family Trust + ILIT session | ❌ Queued | Claude + Chris | Family trust + irrevocable life insurance trust. Generational wealth structure. Mom asset protection once she's on loans. Needs attorney framework. |
+| INV-05 | Auggie UTMA reallocation | ❌ Open | Chris | Concentrated single stocks (META, MSFT, TSLA — all underwater). Reallocate to VTI/VXUS for 60-year compounding window. |
+| INV-06 | First DSCR deal evaluation | ❌ Queued | Claude + Chris | After INV-02 (markets identified). Run numbers on first candidate property. DSCR ≥ 1.25 target. |
+| INV-07 | Golfii cash deployment plan | ❌ Open | Chris + Golfii | $6,810 idle in joint account. 30+ year runway — needs to work harder. |
+
+---
+
+## 📋 SESSION 47 PRIORITY ORDER (Investment Strategy)
+
+**S47 Summary (2026-06-22):**
+- Full portfolio loaded: $114,836.59 across Chris ($87,475.43), Golfii ($23,727.26), Auggie ($3,633.90)
+- Three bucket framework: 🔴 Aggressive $1-2K | 🟡 Medium-term (profit rotation) | 🟢 Property war chest
+- Covered calls playbook: KO (1 contract) + SCHD (3 contracts) in Fidelity Roth → ~$180/month tax-free
+- Cash-secured puts: use Roth cash ($9,694) to generate premium while waiting for crash
+- Crash deployment ladder: −10% → 20%, −20% → 30%, −30% → 30%, −40%+ → 20%
+- DSCR loans = primary property vehicle (no income docs — based on rental cash flow)
+- Mom co-borrower: 800 FICO + $1,200/month SS + born 1959 → extends to 20-property capacity
+- Kate ITIN path confirmed: Form W-7 → LLC membership → property equity
+- Family Trust + ILIT → deferred to S48
+
+**S48 STARTS WITH:** Load `checkpoint_S47-investment-strategy_2026-06-22.md` from Investment Strategies project. First question: which property markets (city/state)? Unlocks first DSCR deal evaluation.
+
+---
+
+## 🔗 Graph Links
+[[HOME]] | [[SPRINT]] | [[EMPIRE_STATUS]] | [[SESSION_HISTORY]]
+[[aura-thai]] | [[vine-arbitrage]] | [[pinyo-farms]] | [[ai-ventures]] | [[roam]]
