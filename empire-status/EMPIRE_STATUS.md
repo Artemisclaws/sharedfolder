@@ -74,3 +74,24 @@
 | Artie set DRIVE_FOLDER_ID in invoice_processor.py | SOP 14 automation | One-time setup per SOP 14 |
 | I-23 artie_report_sync.py broken | GH/DD/UE pipeline | Needs dedicated debug session |
 
+
+---
+
+## INVESTMENT STRATEGY — STATUS (S47)
+
+| Item | Status | Notes |
+|------|--------|-------|
+| Portfolio tracker | ✅ LIVE | Pinyo_Portfolio_Tracker_v1. $114,836.59 total. 3 holders. |
+| Three bucket framework | ✅ SET | 🔴 Aggressive $1-2K | 🟡 Medium-term | 🟢 Property war chest |
+| Covered calls playbook | ✅ BUILT | KO (1 contract) + SCHD (3 contracts) in Fidelity Roth → ~$180/month tax-free |
+| Cash-secured puts | ✅ BUILT | $9,694 Roth cash deployed as premium engine during crash wait |
+| Crash deployment ladder | ✅ BUILT | 4 tranches: -10% / -20% / -30% / -40%+ |
+| Fidelity Roth options trading | ❌ PENDING | Chris applies for Level 1 at Fidelity.com |
+| DSCR property strategy | ✅ FRAMEWORK SET | Primary vehicle for 2030 acquisitions. No income docs needed. |
+| Mom co-borrower profile | ✅ CAPTURED | 800 FICO, $1,200/mo SS, born 1959. Extends capacity to 20 properties. |
+| Kate ITIN path | ✅ CONFIRMED | Form W-7 → LLC membership. Filed when ready. |
+| Property target markets | ❌ OPEN | Chris to name in S48 |
+| First DSCR deal evaluation | ❌ QUEUED | After markets identified |
+| Family Trust + ILIT | ❌ QUEUED | S48 dedicated session |
+| Auggie UTMA reallocation | ❌ OPEN | Concentrated stocks → VTI/VXUS index |
+
