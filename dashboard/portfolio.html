@@ -357,13 +357,19 @@ const CATALYSTS = [
 
 // Actions summary for top panel (with live price calculations)
 const ACTION_RULES = [
-  { sym:'PLTR',  label:'PLTR',  tp:140, sl:105, tpDesc:'Sell ALL',       slDesc:'Stop out' },
-  { sym:'NFLX',  label:'NFLX',  tp:95,  sl:60,  tpDesc:'Sell 50%',       slDesc:'Hard exit' },
-  { sym:'GOOGL', label:'GOOGL', tp:362.9,sl:null,tpDesc:'Sell 20% (Free Ride)', slDesc:null },
-  { sym:'COST',  label:'COST',  tp:980, entry:860,tpDesc:'Sell swing',    entryDesc:'Add shares' },
-  { sym:'AAPL',  label:'AAPL',  entry:270,       entryDesc:'Set limit buy', tp:null, sl:null },
-  { sym:'USO',   label:'USO',   tp:150, sl:90,   tpDesc:'Review XLE swap', slDesc:'Stop out' },
-  { sym:'STRC',  label:'STRC',  entry:85, entryDesc:'Buy (war chest built first)', tp:null, sl:null },
+  { sym:'PLTR',  label:'PLTR',  shares:62,   tp:140,   sl:105, tpDesc:'Sell ALL 62 shares',           slDesc:'Stop out — exit all 62' },
+  { sym:'NFLX',  label:'NFLX',  shares:50,   tp:95,    sl:60,  tpDesc:'Sell 25 shares (50%)',          slDesc:'Hard exit — all 50 shares' },
+  { sym:'GOOGL', label:'GOOGL', shares:15,   tp:362.9, sl:null,tpDesc:'Sell 3 shares (20% Free Ride)', slDesc:null },
+  { sym:'COST',  label:'COST',  shares:2,    tp:980,   entry:860, tpDesc:'Sell 2 swing shares',        entryDesc:'Add 1–2 shares' },
+  { sym:'AAPL',  label:'AAPL',  shares:0.23, entry:270,           entryDesc:'Buy 5–10 shares (limit)', tp:null, sl:null },
+  { sym:'USO',   label:'USO',   shares:15,   tp:150,   sl:90,  tpDesc:'Review XLE swap — 15 shares',  slDesc:'Stop out — exit 15' },
+  { sym:'STRC',  label:'STRC',  shares:0,    entry:85,            entryDesc:'Buy 3–5% of portfolio (war chest first)', tp:null, sl:null },
+];
+
+// Covered calls — Roth IRA, tax-free premium
+const COVERED_CALLS = [
+  { sym:'SCHD', contracts:3,  sharesUsed:300, otmlPct:3.5, income:120, acct:'Roth IRA', note:'3 contracts · 300 of 314 shares · OTM 3.5%' },
+  { sym:'KO',   contracts:1,  sharesUsed:100, otmlPct:4.0, income:60,  acct:'Roth IRA', note:'1 contract · 100 of 112 shares · OTM 4%' },
 ];
 
 // ===== HELPERS =====
@@ -411,10 +417,15 @@ async function fetchPrices() {
 // ===== RENDER NEXT ACTIONS =====
 function renderActions() {
   const body = $id('actions-body');
+
+  // --- Equity actions ---
   const rows = ACTION_RULES.map(r => {
     const q = prices[r.sym];
     const px = q?.price ?? null;
     const pxStr = px ? '$'+px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+
+    // Dollar value of action when price is known
+    const sharesLabel = r.shares && r.shares > 0 ? ` · ${r.shares} shares` : '';
 
     let lines = '';
 
@@ -422,14 +433,16 @@ function renderActions() {
     if (r.tp) {
       const pct = pctAway(px, r.tp);
       const pctStr = pct!=null ? `<span class="pct-away" style="${pctColor(pct)}">(${pct>=0?'+':''}${pct.toFixed(1)}%)</span>` : '';
-      const cls = r.sym==='GOOGL' ? 'at-ride' : (r.tp > (px||0) ? 'at-sell' : 'at-sell');
-      lines += `<div class="action-line"><span class="action-tag ${cls}">${r.tpDesc}</span> <span class="action-desc">@ $${r.tp}</span> ${pctStr}</div>`;
+      const cls = r.sym==='GOOGL' ? 'at-ride' : 'at-sell';
+      const dolVal = (px && r.tp && r.shares) ? ` <span class="muted" style="font-size:10px">≈ ${f$(r.tp * (r.sym==='NFLX'?r.shares/2 : r.sym==='GOOGL'?r.shares*0.2 : r.shares),0)}</span>` : '';
+      lines += `<div class="action-line"><span class="action-tag ${cls}">${r.tpDesc}</span> <span class="action-desc">@ $${r.tp}</span> ${pctStr}${dolVal}</div>`;
     }
     // Stop
     if (r.sl) {
       const pct = pctAway(px, r.sl);
       const pctStr = pct!=null ? `<span class="pct-away" style="${pctColor(pct)}">(${pct>=0?'+':''}${pct.toFixed(1)}%)</span>` : '';
-      lines += `<div class="action-line"><span class="action-tag at-stop">${r.slDesc}</span> <span class="action-desc">@ $${r.sl}</span> ${pctStr}</div>`;
+      const dolVal = (px && r.sl && r.shares) ? ` <span class="muted" style="font-size:10px">≈ ${f$(r.sl * r.shares,0)}</span>` : '';
+      lines += `<div class="action-line"><span class="action-tag at-stop">${r.slDesc}</span> <span class="action-desc">@ $${r.sl}</span> ${pctStr}${dolVal}</div>`;
     }
     // Entry
     if (r.entry) {
@@ -439,12 +452,42 @@ function renderActions() {
     }
 
     return `<div class="action-row">
-      <div class="action-sym">${r.label}</div>
+      <div class="action-sym">${r.label}<div style="font-size:9px;color:var(--muted);font-weight:400;margin-top:1px">${r.shares>0?r.shares+' sh':''}</div></div>
       <div class="action-px">${pxStr}</div>
       <div class="action-body">${lines}</div>
     </div>`;
   });
-  body.innerHTML = rows.join('');
+
+  // --- Covered calls section ---
+  const callRows = COVERED_CALLS.map(c => {
+    const q = prices[c.sym];
+    const px = q?.price ?? null;
+    const strike = px ? (px * (1 + c.otmlPct/100)) : null;
+    const strikeStr = strike ? '$'+strike.toFixed(2) : 'calc when live';
+    const pxStr = px ? '$'+px.toFixed(2) : '—';
+
+    return `<div class="action-row">
+      <div class="action-sym">${c.sym}<div style="font-size:9px;color:var(--muted);font-weight:400;margin-top:1px">${c.contracts}x call</div></div>
+      <div class="action-px">${pxStr}</div>
+      <div class="action-body">
+        <div class="action-line">
+          <span class="action-tag at-ride">Sell ${c.contracts} covered call${c.contracts>1?'s':''}</span>
+          <span class="action-desc">Strike ${strikeStr} (+${c.otmlPct}% OTM)</span>
+        </div>
+        <div class="action-line">
+          <span class="action-tag at-hold">~$${c.income}/mo tax-free · ${c.acct}</span>
+          <span class="action-desc" style="font-size:10px;color:var(--muted)">${c.note}</span>
+        </div>
+      </div>
+    </div>`;
+  });
+
+  const totalCallIncome = COVERED_CALLS.reduce((s,c) => s+c.income, 0);
+  const callHeader = `<div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:10px 0 4px;border-top:1px solid var(--border);margin-top:4px">
+    📞 Covered Calls — ~$${totalCallIncome}/mo tax-free (Roth IRA)
+  </div>`;
+
+  body.innerHTML = rows.join('') + callHeader + callRows.join('');
 }
 
 // ===== RENDER CATALYSTS =====
