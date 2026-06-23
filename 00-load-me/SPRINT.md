@@ -82,3 +82,22 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 - Apr 2026 vs 2025: **-11.3%** (worst month so far)
 - BOH Labor: ~$13,835/period | ~$494/day
 
+
+---
+
+## INVESTMENT STRATEGY — ACTIVE ITEMS (S47)
+
+| ID | Item | Status | Notes |
+|----|------|--------|-------|
+| INV-01 | Enable options on Fidelity Roth | ❌ Open | Chris action — Level 1 options. Unlocks KO + SCHD covered calls (~$180/mo tax-free). |
+| INV-02 | Property target markets | ❌ Open | Chris to name city/state/type. Gates S48 DSCR deal evaluation. |
+| INV-03 | Kate ITIN (Form W-7) | ❌ Queued | File with IRS. 6-11 weeks. Gates LLC membership + property equity. |
+| INV-04 | S48 Trust/ILIT session | ❌ Queued | Family trust + life insurance in trust. Mom asset protection. Needs attorney framework. |
+| INV-05 | Auggie UTMA reallocation | ❌ Open | Concentrated single stocks → VTI/VXUS index-heavy. 60-year window. |
+| INV-06 | First DSCR deal evaluation | ❌ Queued | After INV-02. Target DSCR ≥ 1.25. |
+| INV-07 | Golfii cash deployment | ❌ Open | $6,810 idle in joint account. Discuss deployment. |
+
+**Crash play status:** Cash-secured puts strategy active in Fidelity Roth. Crash deployment ladder set.
+**Mom co-borrower:** 800 FICO + $1,200/mo SS + born 1959. Up to 20 properties (Chris 10 + Mom 10).
+**Checkpoint:** `checkpoint_S47-investment-strategy_2026-06-22.md` in Investment Strategies project.
+
