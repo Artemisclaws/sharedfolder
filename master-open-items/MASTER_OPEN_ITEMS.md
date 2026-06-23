@@ -69,3 +69,30 @@
 
 **What Artie needs:** ARTIE-RUNBOOK.md → SOP 14 (artie-config/ARTIE-RUNBOOK.md on GitHub)
 **What Claude needs to run COGS:** Invoice Log + Sales by Period data for the same period
+
+---
+
+## 💼 INVESTMENT STRATEGY (Live — S46)
+
+| # | Item | Status | Owner | Notes |
+|---|------|--------|-------|-------|
+| INV-01 | Open 529 for Auggie | ❌ Open | Chris | Intent confirmed S46. Education savings — better tax treatment than UTMA. |
+| INV-02 | Open HSA for Chris + Wife | ❌ Open | Chris | Intent confirmed S46. Both self-employed — eligible. Triple tax advantage. |
+| INV-03 | Open Roth IRA for Wife (2026) | ❌ Open | Chris | Intent confirmed S46. Wife has no retirement account currently. |
+| INV-04 | Evaluate Solo 401k / SEP-IRA for both | ❌ Open | Claude + Chris | Self-employed = far higher limits than Roth alone. High priority S47. |
+| INV-05 | Transition Auggie UTMA → broad index ETFs | ❌ Open | Claude + Chris | Current: TSLA, MSFT, META, HOOD, GOOGL, GLD. Too concentrated for 60-year horizon. |
+| INV-06 | Build BTC positions for Wife + Auggie | ❌ Open | Claude + Chris | Chris wants BTC exposure for all three. Vehicle + size TBD after bucket definition. |
+| INV-07 | Define strategic buckets (aggressive $, property target, timeline) | ❌ Open | Chris (S47) | BLOCKER. Nothing else maps until this is answered. First agenda item. |
+| INV-08 | Move KuCoin holdings to cold storage (partial) | ❌ Open | Chris | $144K+ on KuCoin = custody risk. KuCoin hacked 2020. Hardware wallet recommended. |
+
+
+## 📋 SESSION 46 PRIORITY ORDER (Investment Strategy)
+
+1. **INV-07** — Define strategic buckets (aggressive $, property target, timeline) — BLOCKER
+2. **INV-05** — Auggie UTMA → ETF transition plan
+3. **INV-04** — Solo 401k / SEP-IRA evaluation
+4. **INV-06** — BTC building strategy for all three holders
+5. **B-01** — Pinyo Farms (still queued pending COGS)
+
+**Start S47 with:** Load soul files. Open `Pinyo_Portfolio_Tracker_v1.xlsx` (Investment Strategies folder). Step 2: Ask Chris the three bucket questions. Then build per-holder strategy.
+
