@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-06-23 | Session 46
-**Updated By:** Claude (Session 46)
+**Last Updated:** 2026-06-23 | Session S49
+**Updated By:** Claude (S49)
 
 ---
 
@@ -16,6 +16,9 @@
 | Old Cloudflare Tunnel | 🔄 DECOMMISSION PENDING | |
 | Daily digest cron (#general) | ❌ NOT BUILT | |
 | Build Philosophy | ✅ LOCKED S46 | Navy SEAL rules. Manual→automated phases. |
+| GitHub Handoff PAT | ✅ FIXED S49 | Drive MCP only (fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT). No local paths. |
+| CLAUDE-CORE.md | ✅ V4 S49 | Step 6 rewritten, CHANGE CONTROL added, S32 hardcode fixed. |
+| Core file bug audit | ✅ DONE S49 | All 4 files audited. Bugs documented and fixed. |
 
 ---
 
@@ -108,6 +111,9 @@ Suppliers: Taiwah Trading Corp (dry goods/produce) | SJ Distributors LLC (protei
 | S40 | 2026-06-19 | Apps Script invoice system built |
 | S45 | 2026-06-21 | Dish Map redesigned, ezCater menu plan |
 | S46 | 2026-06-23 | Build philosophy locked. setupInvoiceSystem BANNED. populatePriceTrackerDirect ready. GitHub brain re-established. |
+| S47 | 2026-06-23 | Price Tracker script delivered (aura_thai_price_tracker_script_v1.gs). |
+| S48 | 2026-06-23 | Handoff PAT root cause found: dead session path in Step 6. Partial CLAUDE-CORE fix. SESSION_HISTORY caught up S41-S48. |
+| S49 | 2026-06-23 | Full bug audit of all 4 core files. CLAUDE-CORE V4: Step 6 rewritten (Drive only), CHANGE CONTROL added. File org system designed. |
 
 ## 🔗 Graph Links
 [[HOME]] | [[SPRINT]] | [[MASTER_OPEN_ITEMS]] | [[SESSION_HISTORY]]
