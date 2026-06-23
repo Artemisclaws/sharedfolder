@@ -255,6 +255,20 @@
   </div>
 </div>
 
+<!-- CRYPTO -->
+<div class="acct-hdr">
+  <span class="acct-name">₿ Crypto</span>
+  <span class="acct-id">Cold Wallet · Chris only</span>
+  <span class="acct-total" id="tot-crypto"></span>
+</div>
+<div class="table-scroll"><table>
+  <thead><tr>
+    <th>Symbol</th><th>Status</th><th>Qty</th><th>Cost/unit</th>
+    <th>Price</th><th>Value</th><th>P&amp;L $</th><th>P&amp;L %</th><th>Notes</th>
+  </tr></thead>
+  <tbody id="tbody-crypto"></tbody>
+</table></div>
+
 <!-- FIDELITY WATCHLIST (STRC) -->
 <div class="sec-label">👁️ Fidelity Watchlist</div>
 <div style="padding:0 14px 10px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -381,6 +395,13 @@ const ROTH = [
 ];
 const ROTH_CASH = 9694.23;
 
+// Crypto — Chris's cold wallet (Golfii's is separate, excluded)
+const CRYPTO = [
+  { sym:'BTC-USD', label:'BTC', shares:0.5, cost:null, status:'core',
+    note:'Cold wallet · 0.5 BTC · Long-term hold' },
+];
+const CRYPTO_CASH = 0;
+
 // Covered calls
 const COVERED_CALLS = [
   { sym:'SCHD', contracts:3, sharesUsed:300, otmlPct:3.5, income:120, acct:'Roth IRA' },
@@ -421,38 +442,55 @@ function pctAway(cur,tgt) { return(!cur||!tgt)?null:((tgt-cur)/cur*100); }
 function pctColor(p) { if(p===null)return''; const a=Math.abs(p); return a<=5?'color:var(--red)':a<=15?'color:var(--yellow)':'color:var(--muted)'; }
 
 // ============================================================
-// PRICE FETCH — 4-endpoint fallback chain
+// PRICE FETCH — Yahoo chart endpoint (per-symbol, parallel) + CoinGecko BTC
 // ============================================================
 let prices = {};
 async function fetchPrices() {
-  const syms = ['PLTR','COST','UNH','SPXL','TSLA','SPYM','SPMD','QEFA','JPME','IEFA','GSLC','GLD','FNDA','EMGF','AGG',
-                 'USO','SCHD','NVDA','NFLX','MSFT','META','KO','GOOGL','STRC','GC=F','SI=F','BTC-USD'];
-  const joined = syms.join(',');
-  const yBase  = `https://query1.finance.yahoo.com/v8/finance/quote?symbols=${encodeURIComponent(joined)}&lang=en-US&region=US`;
-  const y2Base = `https://query2.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(joined)}&lang=en-US&region=US`;
-
-  const ENDPOINTS = [
-    yBase,
-    y2Base,
-    `https://corsproxy.io/?url=${encodeURIComponent(yBase)}`,
-    `https://api.allorigins.win/raw?url=${encodeURIComponent(yBase)}`,
+  const equities = [
+    'PLTR','COST','UNH','SPXL','TSLA','SPYM','SPMD','QEFA','JPME',
+    'IEFA','GSLC','GLD','FNDA','EMGF','AGG','USO','SCHD','NVDA',
+    'NFLX','MSFT','META','KO','GOOGL','STRC','GC=F','SI=F'
   ];
 
-  function parseResult(data) { return data?.quoteResponse?.result || []; }
+  // Individual chart endpoint — no crumb needed, more reliable than bulk quote
+  const fetchChart = sym =>
+    fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?interval=1d&range=1d`, {
+      headers:{'Accept':'application/json'},
+      signal: AbortSignal.timeout(7000)
+    })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const meta = data?.chart?.result?.[0]?.meta;
+      if (!meta?.regularMarketPrice) return null;
+      const price = meta.regularMarketPrice;
+      const prev  = meta.previousClose ?? meta.chartPreviousClose ?? price;
+      return { sym, price, chg: price - prev, chgPct: prev ? (price - prev) / prev * 100 : 0 };
+    })
+    .catch(() => null);
 
-  for (const url of ENDPOINTS) {
-    try {
-      const r = await fetch(url, { headers:{'Accept':'application/json'}, signal:AbortSignal.timeout(7000) });
-      if (!r.ok) continue;
-      const data = await r.json();
-      const results = parseResult(data);
-      if (!results.length) continue;
-      prices = {};
-      results.forEach(q => { prices[q.symbol] = { price:q.regularMarketPrice, chg:q.regularMarketChange??0, chgPct:q.regularMarketChangePercent??0 }; });
-      if (Object.keys(prices).length > 0) return true;
-    } catch(e) { /* try next */ }
-  }
-  return false;
+  // Run all equity fetches in parallel
+  const results = await Promise.allSettled(equities.map(fetchChart));
+  prices = {};
+  results.forEach(r => {
+    if (r.status === 'fulfilled' && r.value) {
+      const { sym, price, chg, chgPct } = r.value;
+      prices[sym] = { price, chg, chgPct };
+    }
+  });
+
+  // BTC via CoinGecko (CORS-friendly, no API key needed)
+  try {
+    const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true', {
+      signal: AbortSignal.timeout(6000)
+    });
+    if (r.ok) {
+      const d = await r.json();
+      const bp = d?.bitcoin?.usd, bc = d?.bitcoin?.usd_24h_change ?? 0;
+      if (bp) prices['BTC-USD'] = { price: bp, chg: bp * bc / 100, chgPct: bc };
+    }
+  } catch(e) {}
+
+  return Object.keys(prices).length > 0;
 }
 
 // ============================================================
@@ -733,13 +771,14 @@ async function loadAll() {
   renderActions();
   renderCatalysts();
 
-  const brokData = renderTable(BROKERAGE, BROKERAGE_CASH, 'tbody-brokerage', 'tot-brokerage');
-  const msData   = renderTable(MS,        MS_CASH,        'tbody-ms',        'tot-ms');
-  const rothData = renderTable(ROTH,      ROTH_CASH,      'tbody-roth',      'tot-roth');
+  const brokData   = renderTable(BROKERAGE, BROKERAGE_CASH, 'tbody-brokerage', 'tot-brokerage');
+  const msData     = renderTable(MS,        MS_CASH,        'tbody-ms',        'tot-ms');
+  const rothData   = renderTable(ROTH,      ROTH_CASH,      'tbody-roth',      'tot-roth');
+  const cryptoData = renderTable(CRYPTO,    CRYPTO_CASH,    'tbody-crypto',     'tot-crypto');
 
   $id('tot-cash').textContent = '$12,187.14';
 
-  renderSummary([brokData, msData, rothData], 12187.14);
+  renderSummary([brokData, msData, rothData, cryptoData], 12187.14);
   renderAlerts();
   renderWatchlist();
   renderHardAssets();
