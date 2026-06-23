@@ -397,21 +397,44 @@ function pctColor(pct) {
 let prices = {};
 
 async function fetchPrices() {
-  const syms = ['PLTR','NFLX','AMZN','GOOGL','COST','MSFT','NVO','USO','AAPL','DIS','SCHD','KO','GLD','BTC-USD','STRC','GC=F','SI=F'];
-  const url = 'https://query1.finance.yahoo.com/v7/finance/quote?symbols=' + encodeURIComponent(syms.join(',')) + '&lang=en-US&region=US';
-  async function tryFetch(u) {
-    const r = await fetch(u, {headers:{'Accept':'application/json'}}); if (!r.ok) throw new Error(r.status);
-    const d = await r.json(); return d?.quoteResponse?.result || [];
+  const syms = ['PLTR','NFLX','AMZN','GOOGL','COST','MSFT','NVO','USO','AAPL','DIS','SCHD','KO','GLD','STRC','GC=F','SI=F','BTC-USD'];
+  const base = syms.join('%2C');
+
+  // Parse Yahoo Finance v7 or v8 JSON
+  function parseYahoo(data) {
+    return data?.quoteResponse?.result || data?.chart?.result || [];
   }
-  let results = [];
-  try { results = await tryFetch(url); }
-  catch(e) {
-    try { results = await tryFetch('https://api.allorigins.win/raw?url='+encodeURIComponent(url)); }
-    catch(e2) { return false; }
+
+  const ENDPOINTS = [
+    // v8 query1
+    `https://query1.finance.yahoo.com/v8/finance/quote?symbols=${base}&lang=en-US&region=US`,
+    // v7 query2
+    `https://query2.finance.yahoo.com/v7/finance/quote?symbols=${base}&lang=en-US&region=US`,
+    // corsproxy.io → v8
+    `https://corsproxy.io/?url=${encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/quote?symbols='+syms.join(',')+'&lang=en-US&region=US')}`,
+    // allorigins → v8
+    `https://api.allorigins.win/raw?url=${encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/quote?symbols='+syms.join(',')+'&lang=en-US&region=US')}`,
+  ];
+
+  for (const url of ENDPOINTS) {
+    try {
+      const r = await fetch(url, { headers:{ 'Accept':'application/json' }, signal: AbortSignal.timeout(6000) });
+      if (!r.ok) continue;
+      const data = await r.json();
+      const results = parseYahoo(data);
+      if (!results.length) continue;
+      prices = {};
+      results.forEach(q => {
+        prices[q.symbol] = {
+          price:   q.regularMarketPrice,
+          chg:     q.regularMarketChange    ?? 0,
+          chgPct:  q.regularMarketChangePercent ?? 0,
+        };
+      });
+      if (Object.keys(prices).length > 0) return true;
+    } catch(e) { /* try next */ }
   }
-  prices = {};
-  results.forEach(q => { prices[q.symbol] = { price:q.regularMarketPrice, chg:q.regularMarketChange, chgPct:q.regularMarketChangePercent }; });
-  return Object.keys(prices).length > 0;
+  return false;
 }
 
 // ===== RENDER NEXT ACTIONS =====
@@ -631,10 +654,12 @@ function renderSummary(msData, rothData) {
   const totCost = msData.totCost + rothData.totCost;
   const totDay  = msData.totDay + rothData.totDay;
   const pnl     = totVal - totCost;
-  $id('sum-val').textContent = f$(totVal,0);
-  $id('sum-day').textContent = f$(totDay);
+  const hasPrices = Object.keys(prices).length > 0;
+
+  $id('sum-val').textContent = hasPrices && totVal>0 ? f$(totVal,0) : '—';
+  $id('sum-day').textContent = hasPrices ? f$(totDay) : '—';
   $id('sum-day').className   = 'stat-n '+(totDay>=0?'green':'red');
-  $id('sum-pnl').textContent = f$(pnl);
+  $id('sum-pnl').textContent = hasPrices && totCost>0 ? f$(pnl) : '—';
   $id('sum-pnl').className   = 'stat-n '+(pnl>=0?'green':'red');
 }
 
