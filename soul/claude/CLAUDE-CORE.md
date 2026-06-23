@@ -95,13 +95,22 @@ If any mandatory file fails to load or appears stale — flag it before starting
 - Push updated ledger
 
 ### Step 6 — Push all files to GitHub
-```bash
-# Read PAT from stored config
-PAT=$(cat ~/.pinyo_github_pat 2>/dev/null || cat /sessions/gracious-cool-newton/mnt/outputs/github_pat.txt 2>/dev/null)
 
-# Push each updated file via GitHub API
-# Files: MASTER_OPEN_ITEMS.md | EMPIRE_STATUS.md | SESSION_HISTORY.md | SPRINT.md | RPG_LEDGER.md
+**⚠️ CRITICAL — PAT must come from Drive MCP every time. Never use hardcoded file paths — session paths change every session and will silently fail.**
+
 ```
+# Step 6a — Fetch PAT fresh from Drive MCP (do this every handoff, no exceptions)
+Use Drive MCP tool: download_file_content
+File ID: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT
+
+# Step 6b — Push each updated file via GitHub API using mcp__workspace__bash
+PAT="[value from Step 6a]"
+BASE="https://api.github.com/repos/Artemisclaws/sharedfolder/contents"
+# Files to push: MASTER_OPEN_ITEMS.md | EMPIRE_STATUS.md | SESSION_HISTORY.md | SPRINT.md | RPG_LEDGER.md
+# Use GitHub REST API PUT with base64-encoded content + current SHA for each file
+```
+
+**Root cause documented (S48):** The bash fallback `cat /sessions/gracious-cool-newton/mnt/outputs/github_pat.txt` was hardcoded to a dead session path. Session IDs change every session. This caused silent push failures for sessions S40–S47 even when Chris ran handoff correctly. Fix: always fetch PAT from Drive MCP at push time.
 
 **PAT location — Drive (permanent, S36):**
 PAT is stored in Google Drive Soul folder. At session start, read it via Drive connector:
