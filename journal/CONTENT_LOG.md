@@ -42,4 +42,5 @@ Status: `unused` | `scripted` | `filmed` | `published`
 ## Channel Premise
 
 *The journey of learning to use AI to build a real business — from zero formal training, by someone who only learned through mistakes. Every failure is on camera. Every lesson is documented. The AI is the co-builder, the mentor, and sometimes the problem.*
+| S49 ⭐ | The session where the Bedrock Standard was born | honest-moment | "Session 49: The moment everything changed" | unused |
 
