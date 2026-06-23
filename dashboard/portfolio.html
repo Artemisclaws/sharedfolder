@@ -5,155 +5,143 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pinyo Empire — Portfolio</title>
 <style>
-  /* FORCE DARK — no exceptions */
   html, body { background: #0f1117 !important; color: #e8eaf6 !important; }
-
   :root {
-    --bg: #0f1117; --card: #1a1d27; --card2: #22263a; --border: #2e3250;
-    --text: #e8eaf6; --muted: #7c83a8; --green: #4caf7d; --yellow: #f5a623;
-    --red: #e05555; --blue: #5b8def; --purple: #9b6dff; --orange: #f0844c;
-    --radius: 10px;
+    --bg:#0f1117; --card:#1a1d27; --card2:#22263a; --border:#2e3250;
+    --text:#e8eaf6; --muted:#7c83a8; --green:#4caf7d; --yellow:#f5a623;
+    --red:#e05555; --blue:#5b8def; --purple:#9b6dff; --orange:#f0844c;
+    --radius:10px;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; min-height: 100vh; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:14px; line-height:1.5; min-height:100vh; }
 
-  /* NAV */
-  .nav { display: flex; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; background: var(--bg); }
-  .nav::-webkit-scrollbar { display: none; }
-  .nav a { color: var(--muted); text-decoration: none; padding: 10px 14px; font-size: 12px; white-space: nowrap; border-bottom: 2px solid transparent; }
-  .nav a.active { color: var(--purple); border-bottom-color: var(--purple); }
-  .nav a:hover { color: var(--text); }
+  .nav { display:flex; border-bottom:1px solid var(--border); overflow-x:auto; scrollbar-width:none; background:var(--bg); }
+  .nav::-webkit-scrollbar { display:none; }
+  .nav a { color:var(--muted); text-decoration:none; padding:10px 14px; font-size:12px; white-space:nowrap; border-bottom:2px solid transparent; }
+  .nav a.active { color:var(--purple); border-bottom-color:var(--purple); }
+  .nav a:hover { color:var(--text); }
 
-  /* HEADER */
-  .header { padding: 14px 14px 8px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; background: var(--bg); }
-  .header h1 { font-size: 17px; font-weight: 700; }
-  .header h1 span { color: var(--purple); }
-  .header-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
-  .hdr-right { display: flex; align-items: center; gap: 8px; }
-  .last-upd { font-size: 10px; color: var(--muted); text-align: right; }
-  .auto-badge { display: block; font-size: 9px; color: var(--blue); margin-top: 2px; }
-  .refresh-btn { background: none; border: 1px solid var(--border); color: var(--blue); border-radius: 6px; padding: 5px 10px; font-size: 11px; cursor: pointer; }
-  .refresh-btn:hover { background: var(--card2); }
-  .refresh-btn:disabled { color: var(--muted); cursor: wait; }
+  .header { padding:12px 14px 6px; display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; }
+  .header h1 { font-size:17px; font-weight:700; }
+  .header h1 span { color:var(--purple); }
+  .header-sub { font-size:10px; color:var(--muted); margin-top:2px; }
+  .hdr-right { display:flex; align-items:center; gap:8px; }
+  .last-upd { font-size:10px; color:var(--muted); text-align:right; }
+  .auto-badge { display:block; font-size:9px; color:var(--blue); margin-top:1px; }
+  .refresh-btn { background:none; border:1px solid var(--border); color:var(--blue); border-radius:6px; padding:4px 10px; font-size:11px; cursor:pointer; }
+  .refresh-btn:hover { background:var(--card2); }
+  .refresh-btn:disabled { color:var(--muted); cursor:wait; }
 
-  /* STAT CARDS */
-  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 8px 14px; }
-  @media (min-width: 580px) { .stats { grid-template-columns: repeat(4, 1fr); } }
-  .stat { background: var(--card2); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 12px; text-align: center; }
-  .stat-n { font-size: 19px; font-weight: 800; }
-  .stat-l { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: .7px; margin-top: 2px; }
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:8px 14px; }
+  @media (min-width:560px) { .stats { grid-template-columns:repeat(4,1fr); } }
+  .stat { background:var(--card2); border:1px solid var(--border); border-radius:var(--radius); padding:10px 12px; text-align:center; }
+  .stat-n { font-size:18px; font-weight:800; }
+  .stat-l { font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:.7px; margin-top:2px; }
 
-  /* SECTION LABEL */
-  .sec-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.4px; color: var(--muted); padding: 10px 14px 5px; }
+  .sec-label { font-size:10px; text-transform:uppercase; letter-spacing:1.4px; color:var(--muted); padding:10px 14px 5px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:12px 14px; margin:0 14px 10px; }
 
-  /* CARD */
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; margin: 0 14px 10px; }
-
-  /* ===== NEXT ACTIONS ===== */
-  .action-row {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 9px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap;
-  }
-  .action-row:last-child { border-bottom: none; }
-  .action-sym { font-weight: 800; font-size: 14px; min-width: 52px; }
-  .action-px  { font-size: 12px; color: var(--muted); min-width: 68px; }
-  .action-body { flex: 1; }
-  .action-line { font-size: 12px; display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
-  .action-line:last-child { margin-bottom: 0; }
-  .action-tag {
-    display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 6px;
-    border-radius: 3px; white-space: nowrap; flex-shrink: 0;
-  }
-  .at-sell  { background: rgba(224,85,85,0.2); color: var(--red); }
-  .at-stop  { background: rgba(224,85,85,0.15); color: #f08080; }
-  .at-buy   { background: rgba(76,175,125,0.2); color: var(--green); }
-  .at-trim  { background: rgba(245,166,35,0.2); color: var(--yellow); }
-  .at-hold  { background: rgba(124,131,168,0.12); color: var(--muted); }
-  .at-watch { background: rgba(91,141,239,0.15); color: var(--blue); }
-  .at-ride  { background: rgba(155,109,255,0.2); color: var(--purple); }
-  .action-desc { font-size: 12px; color: var(--text); }
-  .pct-away { font-size: 11px; font-weight: 600; }
+  /* NEXT ACTIONS */
+  .action-row { display:flex; align-items:flex-start; gap:10px; padding:9px 0; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+  .action-row:last-child { border-bottom:none; }
+  .action-sym { font-weight:800; font-size:14px; min-width:56px; }
+  .action-sub { font-size:9px; color:var(--muted); font-weight:400; margin-top:1px; }
+  .action-px  { font-size:12px; color:var(--muted); min-width:72px; }
+  .action-body { flex:1; }
+  .action-line { font-size:12px; display:flex; align-items:center; gap:6px; margin-bottom:3px; flex-wrap:wrap; }
+  .action-line:last-child { margin-bottom:0; }
+  .action-tag { display:inline-block; font-size:9px; font-weight:700; padding:2px 7px; border-radius:3px; white-space:nowrap; flex-shrink:0; }
+  .at-sell  { background:rgba(224,85,85,.2);   color:var(--red); }
+  .at-stop  { background:rgba(224,85,85,.13);  color:#f08080; }
+  .at-buy   { background:rgba(76,175,125,.2);  color:var(--green); }
+  .at-trim  { background:rgba(245,166,35,.2);  color:var(--yellow); }
+  .at-hold  { background:rgba(124,131,168,.12);color:var(--muted); }
+  .at-watch { background:rgba(91,141,239,.15); color:var(--blue); }
+  .at-ride  { background:rgba(155,109,255,.2); color:var(--purple); }
+  .at-call  { background:rgba(76,175,125,.15); color:#6ee7b7; }
+  .action-desc { font-size:12px; color:var(--text); }
+  .pct-away { font-size:11px; font-weight:600; }
+  .dol-val  { font-size:10px; color:var(--muted); }
 
   /* ALERTS */
-  .alert-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 7px; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
-  .al-red    { background: rgba(224,85,85,0.12); border-left: 3px solid var(--red); color: var(--red); }
-  .al-yellow { background: rgba(245,166,35,0.12); border-left: 3px solid var(--yellow); color: var(--yellow); }
-  .al-green  { background: rgba(76,175,125,0.12); border-left: 3px solid var(--green); color: var(--green); }
-  .al-none   { color: var(--muted); font-size: 11px; }
+  .alert-item { display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:7px; font-size:12px; font-weight:600; margin-bottom:6px; }
+  .al-red    { background:rgba(224,85,85,.12);  border-left:3px solid var(--red);    color:var(--red); }
+  .al-yellow { background:rgba(245,166,35,.12); border-left:3px solid var(--yellow); color:var(--yellow); }
+  .al-green  { background:rgba(76,175,125,.12); border-left:3px solid var(--green);  color:var(--green); }
+  .al-none   { color:var(--muted); font-size:11px; }
 
   /* CATALYST */
-  .cat-item { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); }
-  .cat-item:last-child { border-bottom: none; }
-  .days-badge { min-width: 42px; text-align: center; padding: 3px 6px; border-radius: 5px; font-weight: 700; font-size: 11px; flex-shrink: 0; }
-  .d-red    { background: rgba(224,85,85,0.18); color: var(--red); }
-  .d-orange { background: rgba(240,132,76,0.18); color: var(--orange); }
-  .d-blue   { background: rgba(91,141,239,0.18); color: var(--blue); }
-  .d-muted  { background: rgba(124,131,168,0.12); color: var(--muted); }
-  .cat-name { font-weight: 600; font-size: 12px; }
-  .cat-meta { font-size: 10px; color: var(--muted); margin-top: 1px; }
-  .imp-badge { display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; }
-  .i-high  { background: rgba(224,85,85,0.2); color: var(--red); }
-  .i-med   { background: rgba(245,166,35,0.2); color: var(--yellow); }
-  .i-strat { background: rgba(155,109,255,0.2); color: var(--purple); }
+  .cat-item { display:flex; align-items:center; gap:10px; padding:7px 0; border-bottom:1px solid var(--border); }
+  .cat-item:last-child { border-bottom:none; }
+  .days-badge { min-width:42px; text-align:center; padding:3px 6px; border-radius:5px; font-weight:700; font-size:11px; flex-shrink:0; }
+  .d-red    { background:rgba(224,85,85,.18);   color:var(--red); }
+  .d-orange { background:rgba(240,132,76,.18);  color:var(--orange); }
+  .d-blue   { background:rgba(91,141,239,.18);  color:var(--blue); }
+  .d-muted  { background:rgba(124,131,168,.12); color:var(--muted); }
+  .cat-name { font-weight:600; font-size:12px; }
+  .cat-meta { font-size:10px; color:var(--muted); margin-top:1px; }
+  .imp-badge { display:inline-block; font-size:9px; font-weight:700; padding:1px 5px; border-radius:3px; }
+  .i-high  { background:rgba(224,85,85,.2);   color:var(--red); }
+  .i-med   { background:rgba(245,166,35,.2);  color:var(--yellow); }
+  .i-strat { background:rgba(155,109,255,.2); color:var(--purple); }
 
-  /* POSITIONS TABLE */
-  .acct-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; padding: 6px 14px 4px; display: flex; align-items: center; gap: 8px; }
-  .acct-total { font-size: 11px; color: var(--text); font-weight: 600; margin-left: auto; padding-right: 14px; }
-  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 14px 10px; border: 1px solid var(--border); border-radius: var(--radius); }
-  table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 620px; }
-  thead { background: var(--card2); }
-  th { text-align: right; padding: 7px 8px; color: var(--muted); font-size: 9.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; border-bottom: 1px solid var(--border); white-space: nowrap; }
-  th:first-child { text-align: left; position: sticky; left: 0; background: var(--card2); z-index: 2; }
-  th:nth-child(2) { text-align: left; }
-  td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; background: var(--card); }
-  td:first-child { text-align: left; position: sticky; left: 0; background: var(--card); font-weight: 700; font-size: 13px; z-index: 1; }
-  td:nth-child(2) { text-align: left; }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td, tr:hover td:first-child { background: var(--card2); }
-  .tfoot td { background: var(--card2) !important; font-weight: 700; border-top: 1px solid var(--border); border-bottom: none; }
+  /* ACCOUNT + TABLE */
+  .acct-hdr { display:flex; align-items:center; padding:6px 14px 3px; flex-wrap:wrap; gap:4px; }
+  .acct-name { font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; }
+  .acct-id   { font-size:9px; color:var(--border); margin-left:6px; }
+  .acct-total { font-size:11px; color:var(--text); font-weight:700; margin-left:auto; }
+  .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 14px 12px; border:1px solid var(--border); border-radius:var(--radius); }
+  table { width:100%; border-collapse:collapse; font-size:12px; min-width:580px; }
+  thead { background:var(--card2); }
+  th { text-align:right; padding:7px 8px; color:var(--muted); font-size:9.5px; font-weight:600; text-transform:uppercase; letter-spacing:.5px; border-bottom:1px solid var(--border); white-space:nowrap; }
+  th:first-child { text-align:left; position:sticky; left:0; background:var(--card2); z-index:2; }
+  th:nth-child(2) { text-align:left; }
+  td { padding:7px 8px; border-bottom:1px solid var(--border); text-align:right; white-space:nowrap; background:var(--card); }
+  td:first-child { text-align:left; position:sticky; left:0; background:var(--card); font-weight:700; font-size:13px; z-index:1; }
+  td:nth-child(2) { text-align:left; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td, tr:hover td:first-child { background:var(--card2); }
+  .tfoot td { background:var(--card2) !important; font-weight:700; font-size:11px; border-top:1px solid var(--border); border-bottom:none; }
+  .cash-row td { color:var(--muted); font-style:italic; }
 
-  .pill { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 20px; }
-  .p-exit    { background: rgba(224,85,85,0.18); color: var(--red); }
-  .p-hold    { background: rgba(245,166,35,0.18); color: var(--yellow); }
-  .p-core    { background: rgba(76,175,125,0.18); color: var(--green); }
-  .p-swing   { background: rgba(155,109,255,0.18); color: var(--purple); }
-  .p-watch   { background: rgba(91,141,239,0.18); color: var(--blue); }
-  .p-inflate { background: rgba(91,200,200,0.15); color: #4ecdc4; }
-  .p-crypto  { background: rgba(245,166,35,0.18); color: var(--yellow); }
+  .pill { display:inline-block; font-size:9px; font-weight:700; padding:2px 7px; border-radius:20px; }
+  .p-core    { background:rgba(76,175,125,.18);   color:var(--green); }
+  .p-hold    { background:rgba(245,166,35,.18);   color:var(--yellow); }
+  .p-exit    { background:rgba(224,85,85,.18);    color:var(--red); }
+  .p-swing   { background:rgba(155,109,255,.18);  color:var(--purple); }
+  .p-watch   { background:rgba(91,141,239,.18);   color:var(--blue); }
+  .p-managed { background:rgba(124,131,168,.12);  color:var(--muted); }
+  .p-income  { background:rgba(76,230,150,.15);   color:#6ee7b7; }
 
-  .green { color: var(--green); font-weight: 700; }
-  .red   { color: var(--red);   font-weight: 700; }
-  .muted { color: var(--muted); }
-  .flag  { font-size: 10px; font-weight: 700; }
-
-  /* ACTION CELL */
-  .act-cell { font-size: 10px; color: var(--muted); max-width: 180px; white-space: normal; line-height: 1.4; }
-  .act-highlight { color: var(--yellow); font-weight: 600; }
+  .green { color:var(--green); font-weight:700; }
+  .red   { color:var(--red);   font-weight:700; }
+  .muted { color:var(--muted); }
 
   /* WAR CHEST */
-  .wc-bar  { background: var(--border); border-radius: 20px; height: 8px; overflow: hidden; margin: 8px 0; }
-  .wc-fill { background: linear-gradient(90deg, var(--green), #6ee7b7); height: 100%; border-radius: 20px; transition: width 1.5s ease; }
-  .wc-row  { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 8px; }
-  .wc-box  { background: var(--card2); border-radius: 6px; padding: 8px; text-align: center; }
-  .wc-val  { font-size: 14px; font-weight: 700; }
-  .wc-lbl  { font-size: 9px; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+  .wc-bar { background:var(--border); border-radius:20px; height:8px; overflow:hidden; margin:8px 0; }
+  .wc-fill { background:linear-gradient(90deg,var(--green),#6ee7b7); height:100%; border-radius:20px; transition:width 1.5s ease; }
+  .wc-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-top:8px; }
+  .wc-box { background:var(--card2); border-radius:6px; padding:8px; text-align:center; }
+  .wc-val { font-size:14px; font-weight:700; }
+  .wc-lbl { font-size:9px; color:var(--muted); text-transform:uppercase; margin-top:2px; }
 
-  /* HARD ASSETS */
-  .ha-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .ha-box { border-radius: 8px; padding: 10px 12px; }
-  .ha-gold   { background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.25); }
-  .ha-silver { background: rgba(124,131,168,0.1); border: 1px solid var(--border); }
-  .ha-val { font-size: 16px; font-weight: 700; }
-  .ha-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0 14px 10px; }
+  @media (max-width:480px) { .grid2 { grid-template-columns:1fr; } }
 
-  /* 2-col grid */
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 14px 10px; }
-  @media (max-width: 480px) { .grid2 { grid-template-columns: 1fr; } }
+  .ha-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .ha-box { border-radius:8px; padding:10px 12px; }
+  .ha-gold   { background:rgba(245,166,35,.1);   border:1px solid rgba(245,166,35,.25); }
+  .ha-silver { background:rgba(124,131,168,.1);  border:1px solid var(--border); }
+  .ha-val { font-size:16px; font-weight:700; }
+  .ha-sub { font-size:10px; color:var(--muted); margin-top:2px; }
 
-  /* FOOTER */
-  .footer { text-align: center; padding: 16px; color: var(--muted); font-size: 10px; border-top: 1px solid var(--border); margin-top: 4px; }
+  .footer { text-align:center; padding:14px; color:var(--muted); font-size:10px; border-top:1px solid var(--border); margin-top:4px; }
+  .loading { color:var(--muted); font-size:11px; font-style:italic; padding:8px 0; }
 
-  .loading { color: var(--muted); font-size: 11px; font-style: italic; padding: 8px 0; }
+  .watchlist-box { background:var(--card2); border-radius:8px; padding:10px 12px; }
+  .wl-sym { font-size:13px; font-weight:700; }
+  .wl-px  { font-size:16px; font-weight:800; margin:4px 0; }
+  .wl-note { font-size:10px; color:var(--muted); line-height:1.5; }
 </style>
 </head>
 <body>
@@ -169,7 +157,7 @@
 <div class="header">
   <div>
     <h1>📈 Pinyo <span>Portfolio</span></h1>
-    <div class="header-sub">Chris · MS Trading + Roth IRA</div>
+    <div class="header-sub">Chris · As of 2026-06-22 · 4 accounts · All Fidelity</div>
   </div>
   <div class="hdr-right">
     <div class="last-upd">
@@ -191,13 +179,13 @@
 <!-- NEXT ACTIONS -->
 <div class="sec-label">🎯 Next Actions — Know Exactly What to Do</div>
 <div class="card" style="padding:8px 14px">
-  <div id="actions-body"><div class="loading">Loading live prices to calculate actions...</div></div>
+  <div id="actions-body"><div class="loading">Loading live prices...</div></div>
 </div>
 
 <!-- ALERTS -->
 <div class="sec-label">⚡ Trigger Alerts</div>
 <div style="padding:0 14px 8px" id="alerts-wrap">
-  <div class="al-none">Load prices to check alerts</div>
+  <div class="al-none">Checking triggers...</div>
 </div>
 
 <!-- CATALYST -->
@@ -206,79 +194,89 @@
   <div id="catalyst-body"></div>
 </div>
 
-<!-- MS TRADING -->
-<div class="acct-label">
-  🏦 Morgan Stanley — Trading Account
-  <span class="acct-total" id="ms-total"></span>
+<!-- INDIVIDUAL BROKERAGE -->
+<div class="acct-hdr">
+  <span class="acct-name">🏦 Individual Brokerage</span>
+  <span class="acct-id">Z31836993</span>
+  <span class="acct-total" id="tot-brokerage"></span>
 </div>
-<div class="table-scroll">
-  <table>
-    <thead>
-      <tr>
-        <th>Symbol</th>
-        <th>Status</th>
-        <th>Shares</th>
-        <th>Cost</th>
-        <th>Price</th>
-        <th>Value</th>
-        <th>P&amp;L $</th>
-        <th>P&amp;L %</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="ms-tbody">
-      <tr><td colspan="9" class="loading">Fetching prices...</td></tr>
-    </tbody>
-  </table>
+<div class="table-scroll"><table>
+  <thead><tr>
+    <th>Symbol</th><th>Status</th><th>Shares</th><th>Cost/sh</th>
+    <th>Price</th><th>Value</th><th>P&amp;L $</th><th>P&amp;L %</th><th>Action</th>
+  </tr></thead>
+  <tbody id="tbody-brokerage"></tbody>
+</table></div>
+
+<!-- MORGAN STANLEY MANAGED -->
+<div class="acct-hdr">
+  <span class="acct-name">📊 Morgan Stanley Managed</span>
+  <span class="acct-id">Z39168352 · Advisor-managed ETF portfolio</span>
+  <span class="acct-total" id="tot-ms"></span>
 </div>
+<div class="table-scroll"><table>
+  <thead><tr>
+    <th>Symbol</th><th>Status</th><th>Shares</th><th>Cost/sh</th>
+    <th>Price</th><th>Value</th><th>P&amp;L $</th><th>P&amp;L %</th><th>Notes</th>
+  </tr></thead>
+  <tbody id="tbody-ms"></tbody>
+</table></div>
 
 <!-- ROTH IRA -->
-<div class="acct-label">
-  🟢 Fidelity — Roth IRA
-  <span class="acct-total" id="roth-total"></span>
+<div class="acct-hdr">
+  <span class="acct-name">🟢 Roth IRA</span>
+  <span class="acct-id">236231244 · Fidelity · Tax-free growth</span>
+  <span class="acct-total" id="tot-roth"></span>
 </div>
-<div class="table-scroll">
-  <table>
-    <thead>
-      <tr>
-        <th>Symbol</th>
-        <th>Status</th>
-        <th>Shares</th>
-        <th>Cost</th>
-        <th>Price</th>
-        <th>Value</th>
-        <th>P&amp;L $</th>
-        <th>P&amp;L %</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="roth-tbody">
-      <tr><td colspan="9" class="loading">Fetching prices...</td></tr>
-    </tbody>
-  </table>
+<div class="table-scroll"><table>
+  <thead><tr>
+    <th>Symbol</th><th>Status</th><th>Shares</th><th>Cost/sh</th>
+    <th>Price</th><th>Value</th><th>P&amp;L $</th><th>P&amp;L %</th><th>Action</th>
+  </tr></thead>
+  <tbody id="tbody-roth"></tbody>
+</table></div>
+
+<!-- CASH MGMT -->
+<div class="acct-hdr">
+  <span class="acct-name">💵 Cash Management TOD</span>
+  <span class="acct-id">Z28833138 · Fidelity</span>
+  <span class="acct-total" id="tot-cash"></span>
+</div>
+<div class="card" style="margin:0 14px 12px">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div>
+      <div style="font-size:22px;font-weight:800;color:var(--green)">$12,187.14</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:2px">Money Market · earning yield · TOD beneficiary</div>
+    </div>
+    <div style="text-align:right">
+      <div style="font-size:10px;color:var(--muted)">War Chest contribution</div>
+      <div style="font-size:13px;font-weight:700;color:var(--yellow);margin-top:2px">Earmarked → Property 2027</div>
+    </div>
+  </div>
 </div>
 
-<!-- CRYPTO -->
-<div class="acct-label">₿ Crypto &amp; Watchlist</div>
-<div class="table-scroll">
-  <table>
-    <thead>
-      <tr>
-        <th>Asset</th>
-        <th>Status</th>
-        <th>Units</th>
-        <th>Cost</th>
-        <th>Price</th>
-        <th>Value</th>
-        <th>P&amp;L $</th>
-        <th>P&amp;L %</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="crypto-tbody">
-      <tr><td colspan="9" class="loading">Fetching prices...</td></tr>
-    </tbody>
-  </table>
+<!-- FIDELITY WATCHLIST (STRC) -->
+<div class="sec-label">👁️ Fidelity Watchlist</div>
+<div style="padding:0 14px 10px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+  <div class="watchlist-box">
+    <div class="wl-sym">STRC <span style="font-size:9px;color:var(--muted)">· Strategy Preferred</span></div>
+    <div class="wl-px" id="strc-px">—</div>
+    <div class="wl-note">
+      Par $100 · 11.5% variable · BTC-backed<br>
+      <span id="strc-yield" style="color:var(--green);font-weight:600"></span><br>
+      🚦 Buy when: war chest at $150K + BTC stable 60 days<br>
+      Max 3–5% of Roth IRA
+    </div>
+  </div>
+  <div class="watchlist-box">
+    <div class="wl-sym">BTC-USD <span style="font-size:9px;color:var(--muted)">· STRC safety check</span></div>
+    <div class="wl-px" id="btc-px">—</div>
+    <div class="wl-note" id="btc-note">
+      &gt; $60K = STRC dividend safe<br>
+      &lt; $50K = STRC dividend at risk<br>
+      Monitor before any STRC buy
+    </div>
+  </div>
 </div>
 
 <!-- WAR CHEST + HARD ASSETS -->
@@ -289,13 +287,13 @@
     <div class="wc-row">
       <div class="wc-box"><div class="wc-val" style="color:var(--green)">$63K</div><div class="wc-lbl">Now</div></div>
       <div class="wc-box"><div class="wc-val">$150K</div><div class="wc-lbl">Target</div></div>
-      <div class="wc-box"><div class="wc-val" style="color:var(--yellow)">42%</div><div class="wc-lbl">Progress</div></div>
+      <div class="wc-box"><div class="wc-val" style="color:var(--yellow)">42%</div><div class="wc-lbl">Done</div></div>
     </div>
     <div style="margin-top:8px;font-size:11px;color:var(--muted);line-height:1.7">
-      2027 · DSCR · Long Beach / HB<br>Stop Aura Thai bleed → fast-track
+      2027 · DSCR · Long Beach / HB<br>
+      Cash Mgmt $12.2K earmarked
     </div>
   </div>
-
   <div class="card" style="margin:0">
     <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">🥇 Hard Assets (Off-Brokerage)</div>
     <div class="ha-row">
@@ -317,203 +315,335 @@
 </div>
 
 <div class="footer">
-  Live prices via Yahoo Finance · Auto-refresh every 5 min · ops.radrooster.co
+  Live prices via Yahoo Finance · Auto-refresh every 5 min · ops.radrooster.co · Data as of 2026-06-22
 </div>
 
 <script>
-// ===== DATA =====
-const MS_POS = [
-  { sym:'PLTR',  shares:62,   cost:136.54, status:'exit',    tp:140,  sl:105,  action:['🔴 Sell ALL @ $140','🛑 Stop OUT @ $105','📅 Deadline Sep 30'],  pills:['at-sell','at-stop','at-hold'] },
-  { sym:'NFLX',  shares:50,   cost:122.55, status:'hold',    tp:95,   sl:60,   action:['🟡 Sell 50% @ $95 (recovery)','🛑 Hard exit @ $60 (floor)'],     pills:['at-trim','at-stop'] },
-  { sym:'AMZN',  shares:22,   cost:217.00, status:'core',    tp:null, sl:null, action:['🟢 Hold — core AI play, no exit target'],                          pills:['at-hold'] },
-  { sym:'GOOGL', shares:15,   cost:302.42, status:'core',    tp:362.9,sl:null, action:['💜 Sell 20% @ $363 — Free Ride Rule (+20%)'],                      pills:['at-ride'] },
-  { sym:'COST',  shares:2,    cost:868.25, status:'swing',   tp:980,  sl:820,  action:['🔵 Buy more @ $850–880','✂️ Sell swing @ $960–980'],               pills:['at-buy','at-trim'] },
-  { sym:'MSFT',  shares:1,    cost:465.94, status:'hold',    tp:null, sl:null, action:['Hold — small position, monitor'],                                   pills:['at-hold'] },
-  { sym:'NVO',   shares:10,   cost:44.81,  status:'hold',    tp:null, sl:null, action:['Hold — pharma defensive play'],                                     pills:['at-hold'] },
-  { sym:'USO',   shares:15,   cost:130.00, status:'inflate', tp:150,  sl:90,   action:['Hold through oil cycle','⚠️ Review XLE swap at +15% recovery'],    pills:['at-hold','at-watch'] },
-  { sym:'AAPL',  shares:0.23, cost:223.79, status:'watch',   tp:null, sl:null, action:['🔵 Set LIMIT BUY @ $270 — do not chase above $280'],               pills:['at-buy'] },
-  { sym:'DIS',   shares:0.08, cost:169.85, status:'exit',    tp:null, sl:null, action:['Exit next rally — fractional, minimal impact'],                     pills:['at-sell'] },
-];
+// ============================================================
+// POSITION DATA — sourced from Pinyo_Portfolio_Tracker_v1
+// Last sync: 2026-06-22
+// ============================================================
 
-const ROTH_POS = [
-  { sym:'SCHD', shares:314,  cost:null, status:'core', tp:null, sl:null, action:['Sell covered calls: 3 contracts OTM 3.5% (~$120/mo tax-free)'], pills:['at-ride'] },
-  { sym:'KO',   shares:112,  cost:null, status:'core', tp:null, sl:null, action:['Sell covered calls: 1 contract OTM 4% (~$60/mo tax-free)'],     pills:['at-ride'] },
-  { sym:'GLD',  shares:null, cost:null, status:'core', tp:null, sl:null, action:['⚠️ Update share count + cost basis — needed for P&L calc'],       pills:['at-watch'] },
-];
+// Status pills
+const S = {
+  core:    { l:'Core',    c:'p-core'    },
+  hold:    { l:'Hold',    c:'p-hold'    },
+  exit:    { l:'Exit',    c:'p-exit'    },
+  swing:   { l:'Swing',   c:'p-swing'   },
+  watch:   { l:'Watch',   c:'p-watch'   },
+  managed: { l:'Managed', c:'p-managed' },
+  income:  { l:'Income',  c:'p-income'  },
+};
 
-const CRYPTO_POS = [
-  { sym:'BTC-USD', label:'Bitcoin',  units:null, cost:null, status:'crypto', action:['STRC safety threshold: BTC > $60K','Below $50K = dividend risk on STRC'], pills:['at-watch','at-stop'] },
-  { sym:'STRC',    label:'Strategy Preferred (11.5%)', units:null, cost:null, status:'watch', action:['🚦 BUY when: War chest built + BTC stable 60+ days','Max 3–5% of portfolio · Par $100'], pills:['at-buy','at-hold'] },
-];
+// Action tag HTML helper
+const tag = (cls, txt) => `<span class="action-tag ${cls}">${txt}</span>`;
 
-const CATALYSTS = [
-  { date:'2026-07-16', event:'NFLX Q2 Earnings',             tickers:'NFLX',      imp:'HIGH'  },
-  { date:'2026-07-29', event:'Fed FOMC Decision',             tickers:'ALL',       imp:'HIGH'  },
-  { date:'2026-08-03', event:'PLTR Q2 Earnings',              tickers:'PLTR',      imp:'HIGH'  },
-  { date:'2026-09-16', event:'Fed FOMC Decision',             tickers:'ALL',       imp:'MED'   },
-  { date:'2026-09-30', event:'PLTR / NFLX Mandatory Review',  tickers:'PLTR/NFLX', imp:'STRAT' },
-  { date:'2026-11-03', event:'Election Window — Exit Review',  tickers:'PLTR',      imp:'STRAT' },
+// Individual Brokerage — Z31836993
+const BROKERAGE = [
+  { sym:'PLTR', shares:32,    cost:133.50, status:'hold',  note:'Exit ALL 32 @ $140 | Stop $105 | Sep 30 review' },
+  { sym:'COST', shares:2.826, cost:935.79, status:'swing', note:'Sell 2.8 swing shares @ $960–980' },
+  { sym:'UNH',  shares:8.364, cost:282.33, status:'hold',  note:'Up 44% · Trim 4 shares at $450+' },
+  { sym:'SPXL', shares:0.035, cost:153.43, status:'hold',  note:'Fractional · Hold' },
 ];
+const BROKERAGE_CASH = 27.29;
 
-// Actions summary for top panel (with live price calculations)
-const ACTION_RULES = [
-  { sym:'PLTR',  label:'PLTR',  shares:62,   tp:140,   sl:105, tpDesc:'Sell ALL 62 shares',           slDesc:'Stop out — exit all 62' },
-  { sym:'NFLX',  label:'NFLX',  shares:50,   tp:95,    sl:60,  tpDesc:'Sell 25 shares (50%)',          slDesc:'Hard exit — all 50 shares' },
-  { sym:'GOOGL', label:'GOOGL', shares:15,   tp:362.9, sl:null,tpDesc:'Sell 3 shares (20% Free Ride)', slDesc:null },
-  { sym:'COST',  label:'COST',  shares:2,    tp:980,   entry:860, tpDesc:'Sell 2 swing shares',        entryDesc:'Add 1–2 shares' },
-  { sym:'AAPL',  label:'AAPL',  shares:0.23, entry:270,           entryDesc:'Buy 5–10 shares (limit)', tp:null, sl:null },
-  { sym:'USO',   label:'USO',   shares:15,   tp:150,   sl:90,  tpDesc:'Review XLE swap — 15 shares',  slDesc:'Stop out — exit 15' },
-  { sym:'STRC',  label:'STRC',  shares:0,    entry:85,            entryDesc:'Buy 3–5% of portfolio (war chest first)', tp:null, sl:null },
+// Morgan Stanley Managed — Z39168352
+const MS = [
+  { sym:'SPYM', shares:32,     cost:43.53,  status:'managed', note:'S&P 500 · +101% · Best performer' },
+  { sym:'GSLC', shares:19,     cost:94.30,  status:'managed', note:'US Large Cap · +50%' },
+  { sym:'EMGF', shares:12,     cost:41.68,  status:'managed', note:'Emerging Markets · +83%' },
+  { sym:'IEFA', shares:14,     cost:66.88,  status:'managed', note:'EAFE Intl · +46%' },
+  { sym:'FNDA', shares:17,     cost:25.07,  status:'managed', note:'Fundamental US · +47%' },
+  { sym:'SPMD', shares:9,      cost:40.80,  status:'managed', note:'S&P 400 Mid Cap · +63%' },
+  { sym:'TSLA', shares:2,      cost:415.00, status:'managed', note:'Tesla · -2.4% · Advisor hold' },
+  { sym:'GLD',  shares:3,      cost:464.68, status:'managed', note:'Gold ETF · -17% · Inflation hedge' },
+  { sym:'AGG',  shares:11.983, cost:100.99, status:'managed', note:'Bond ETF · -2.3% · Defensive' },
+  { sym:'JPME', shares:1,      cost:85.07,  status:'managed', note:'JP Morgan Diversified · +45%' },
+  { sym:'QEFA', shares:2,      cost:69.53,  status:'managed', note:'MSCI EAFE · +38%' },
 ];
+const MS_CASH = 521.40;
 
-// Covered calls — Roth IRA, tax-free premium
+// Roth IRA — 236231244
+const ROTH = [
+  { sym:'SCHD', shares:314.331, cost:25.89,  status:'income', note:'3x covered calls OTM 3.5% · ~$120/mo tax-free' },
+  { sym:'KO',   shares:112.347, cost:43.03,  status:'income', note:'1x covered call OTM 4% · ~$60/mo tax-free' },
+  { sym:'COST', shares:8.563,   cost:928.06, status:'core',   note:'Core hold · add on dips to $850–880' },
+  { sym:'GLD',  shares:10,      cost:350.50, status:'core',   note:'Gold ETF · inflation hedge · +10%' },
+  { sym:'NVDA', shares:17.013,  cost:117.02, status:'hold',   note:'Up 78% · Free Ride: sell 3 shares at $250+' },
+  { sym:'PLTR', shares:12.417,  cost:136.60, status:'hold',   note:'Exit ALL @ $140 | Stop $105 | Sep 30 review' },
+  { sym:'META', shares:4,       cost:603.80, status:'hold',   note:'Down 7% · Recovery play · Hold' },
+  { sym:'UNH',  shares:3.1,     cost:329.03, status:'hold',   note:'Up 23% · Hold · Watch $450' },
+  { sym:'USO',  shares:15,      cost:130.89, status:'hold',   note:'Down 14% · Hold | Review XLE swap at +15%' },
+  { sym:'TSLA', shares:2,       cost:398.00, status:'hold',   note:'Hold · AI/robotics long-term' },
+  { sym:'NFLX', shares:1,       cost:93.00,  status:'hold',   note:'1 share · Down 22% · Hold' },
+  { sym:'MSFT', shares:1.126,   cost:503.91, status:'hold',   note:'Down 27% · Recovery hold' },
+  { sym:'GOOGL', shares:0.5,    cost:307.58, status:'core',   note:'Fractional · Core AI play · Hold' },
+];
+const ROTH_CASH = 9694.23;
+
+// Covered calls
 const COVERED_CALLS = [
-  { sym:'SCHD', contracts:3,  sharesUsed:300, otmlPct:3.5, income:120, acct:'Roth IRA', note:'3 contracts · 300 of 314 shares · OTM 3.5%' },
-  { sym:'KO',   contracts:1,  sharesUsed:100, otmlPct:4.0, income:60,  acct:'Roth IRA', note:'1 contract · 100 of 112 shares · OTM 4%' },
+  { sym:'SCHD', contracts:3, sharesUsed:300, otmlPct:3.5, income:120, acct:'Roth IRA' },
+  { sym:'KO',   contracts:1, sharesUsed:100, otmlPct:4.0, income:60,  acct:'Roth IRA' },
 ];
 
-// ===== HELPERS =====
+// Next Actions (equity triggers)
+const ACTION_RULES = [
+  { sym:'PLTR',  label:'PLTR',  detail:'44.4 total',    tp:140,   sl:105, tpDesc:'Sell ALL 44.4 shares',       slDesc:'Stop out — exit all' },
+  { sym:'NVDA',  label:'NVDA',  detail:'17 shares',     tp:250,   sl:null,tpDesc:'Sell 3 shares (20% Free Ride)', slDesc:null },
+  { sym:'COST',  label:'COST',  detail:'11.4 total',    tp:980,   entry:860, tpDesc:'Sell 2.8 swing (brokerage)', entryDesc:'Add to Roth @ dip' },
+  { sym:'UNH',   label:'UNH',   detail:'11.5 total',    tp:450,   sl:null,tpDesc:'Trim 4 shares (brokerage) at $450', slDesc:null },
+  { sym:'USO',   label:'USO',   detail:'15 sh · Roth',  tp:130,   sl:90,  tpDesc:'Review XLE swap at +15%',    slDesc:'Stop out — 15 shares' },
+];
+
+// Catalyst calendar
+const CATALYSTS = [
+  { date:'2026-07-16', event:'NFLX Q2 Earnings',            tickers:'NFLX',      imp:'HIGH'  },
+  { date:'2026-07-29', event:'Fed FOMC Decision',            tickers:'ALL',       imp:'HIGH'  },
+  { date:'2026-07-30', event:'META Q2 Earnings',             tickers:'META',      imp:'HIGH'  },
+  { date:'2026-07-29', event:'COST Q3 Earnings',             tickers:'COST',      imp:'MED'   },
+  { date:'2026-08-03', event:'PLTR Q2 Earnings',             tickers:'PLTR',      imp:'HIGH'  },
+  { date:'2026-08-20', event:'NVDA Q2 Earnings',             tickers:'NVDA',      imp:'HIGH'  },
+  { date:'2026-09-16', event:'Fed FOMC Decision',            tickers:'ALL',       imp:'MED'   },
+  { date:'2026-09-30', event:'PLTR / Election Window Review',tickers:'PLTR',      imp:'STRAT' },
+  { date:'2026-11-03', event:'Midterm Election Window',      tickers:'PLTR/ALL',  imp:'STRAT' },
+];
+
+// ============================================================
+// HELPERS
+// ============================================================
 const $id = id => document.getElementById(id);
-const f$  = (n, d=2) => n==null ? '—' : (n<0?'-$':'$')+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
-const fpct = n => n==null ? '—' : (n>=0?'+':'')+n.toFixed(2)+'%';
-function daysTo(ds) {
-  const t=new Date(ds+'T00:00:00'), now=new Date(); now.setHours(0,0,0,0);
-  return Math.ceil((t-now)/86400000);
-}
+const f$  = (n,d=2) => n==null?'—':(n<0?'-$':'$')+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fpct = n => n==null?'—':(n>=0?'+':'')+n.toFixed(2)+'%';
+function daysTo(ds) { const t=new Date(ds+'T00:00:00'),now=new Date(); now.setHours(0,0,0,0); return Math.ceil((t-now)/86400000); }
 function nowStr() { return new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'}); }
-function pctAway(current, target) {
-  if (!current || !target) return null;
-  return ((target - current) / current * 100);
-}
-function pctColor(pct) {
-  if (pct === null) return '';
-  const abs = Math.abs(pct);
-  if (abs <= 5) return 'color:var(--red)';
-  if (abs <= 15) return 'color:var(--yellow)';
-  return 'color:var(--muted)';
-}
+function pctAway(cur,tgt) { return(!cur||!tgt)?null:((tgt-cur)/cur*100); }
+function pctColor(p) { if(p===null)return''; const a=Math.abs(p); return a<=5?'color:var(--red)':a<=15?'color:var(--yellow)':'color:var(--muted)'; }
 
-// ===== FETCH =====
+// ============================================================
+// PRICE FETCH — 4-endpoint fallback chain
+// ============================================================
 let prices = {};
-
 async function fetchPrices() {
-  const syms = ['PLTR','NFLX','AMZN','GOOGL','COST','MSFT','NVO','USO','AAPL','DIS','SCHD','KO','GLD','STRC','GC=F','SI=F','BTC-USD'];
-  const base = syms.join('%2C');
-
-  // Parse Yahoo Finance v7 or v8 JSON
-  function parseYahoo(data) {
-    return data?.quoteResponse?.result || data?.chart?.result || [];
-  }
+  const syms = ['PLTR','COST','UNH','SPXL','TSLA','SPYM','SPMD','QEFA','JPME','IEFA','GSLC','GLD','FNDA','EMGF','AGG',
+                 'USO','SCHD','NVDA','NFLX','MSFT','META','KO','GOOGL','STRC','GC=F','SI=F','BTC-USD'];
+  const joined = syms.join(',');
+  const yBase  = `https://query1.finance.yahoo.com/v8/finance/quote?symbols=${encodeURIComponent(joined)}&lang=en-US&region=US`;
+  const y2Base = `https://query2.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(joined)}&lang=en-US&region=US`;
 
   const ENDPOINTS = [
-    // v8 query1
-    `https://query1.finance.yahoo.com/v8/finance/quote?symbols=${base}&lang=en-US&region=US`,
-    // v7 query2
-    `https://query2.finance.yahoo.com/v7/finance/quote?symbols=${base}&lang=en-US&region=US`,
-    // corsproxy.io → v8
-    `https://corsproxy.io/?url=${encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/quote?symbols='+syms.join(',')+'&lang=en-US&region=US')}`,
-    // allorigins → v8
-    `https://api.allorigins.win/raw?url=${encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/quote?symbols='+syms.join(',')+'&lang=en-US&region=US')}`,
+    yBase,
+    y2Base,
+    `https://corsproxy.io/?url=${encodeURIComponent(yBase)}`,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(yBase)}`,
   ];
+
+  function parseResult(data) { return data?.quoteResponse?.result || []; }
 
   for (const url of ENDPOINTS) {
     try {
-      const r = await fetch(url, { headers:{ 'Accept':'application/json' }, signal: AbortSignal.timeout(6000) });
+      const r = await fetch(url, { headers:{'Accept':'application/json'}, signal:AbortSignal.timeout(7000) });
       if (!r.ok) continue;
       const data = await r.json();
-      const results = parseYahoo(data);
+      const results = parseResult(data);
       if (!results.length) continue;
       prices = {};
-      results.forEach(q => {
-        prices[q.symbol] = {
-          price:   q.regularMarketPrice,
-          chg:     q.regularMarketChange    ?? 0,
-          chgPct:  q.regularMarketChangePercent ?? 0,
-        };
-      });
+      results.forEach(q => { prices[q.symbol] = { price:q.regularMarketPrice, chg:q.regularMarketChange??0, chgPct:q.regularMarketChangePercent??0 }; });
       if (Object.keys(prices).length > 0) return true;
     } catch(e) { /* try next */ }
   }
   return false;
 }
 
-// ===== RENDER NEXT ACTIONS =====
+// ============================================================
+// RENDER NEXT ACTIONS
+// ============================================================
 function renderActions() {
   const body = $id('actions-body');
 
-  // --- Equity actions ---
+  // Equity triggers
   const rows = ACTION_RULES.map(r => {
-    const q = prices[r.sym];
-    const px = q?.price ?? null;
-    const pxStr = px ? '$'+px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
-
-    // Dollar value of action when price is known
-    const sharesLabel = r.shares && r.shares > 0 ? ` · ${r.shares} shares` : '';
-
+    const q   = prices[r.sym];
+    const px  = q?.price ?? null;
+    const pxS = px ? '$'+px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
     let lines = '';
 
-    // Target price
     if (r.tp) {
       const pct = pctAway(px, r.tp);
-      const pctStr = pct!=null ? `<span class="pct-away" style="${pctColor(pct)}">(${pct>=0?'+':''}${pct.toFixed(1)}%)</span>` : '';
-      const cls = r.sym==='GOOGL' ? 'at-ride' : 'at-sell';
-      const dolVal = (px && r.tp && r.shares) ? ` <span class="muted" style="font-size:10px">≈ ${f$(r.tp * (r.sym==='NFLX'?r.shares/2 : r.sym==='GOOGL'?r.shares*0.2 : r.shares),0)}</span>` : '';
-      lines += `<div class="action-line"><span class="action-tag ${cls}">${r.tpDesc}</span> <span class="action-desc">@ $${r.tp}</span> ${pctStr}${dolVal}</div>`;
+      const pctS = pct!=null ? `<span class="pct-away" style="${pctColor(pct)}">(${pct>=0?'+':''}${pct.toFixed(1)}%)</span>` : '';
+      const cls  = r.sym==='NVDA'||r.sym==='GOOGL' ? 'at-ride' : 'at-sell';
+      lines += `<div class="action-line">${tag(cls,r.tpDesc)} <span class="action-desc">@ $${r.tp}</span> ${pctS}</div>`;
     }
-    // Stop
     if (r.sl) {
       const pct = pctAway(px, r.sl);
-      const pctStr = pct!=null ? `<span class="pct-away" style="${pctColor(pct)}">(${pct>=0?'+':''}${pct.toFixed(1)}%)</span>` : '';
-      const dolVal = (px && r.sl && r.shares) ? ` <span class="muted" style="font-size:10px">≈ ${f$(r.sl * r.shares,0)}</span>` : '';
-      lines += `<div class="action-line"><span class="action-tag at-stop">${r.slDesc}</span> <span class="action-desc">@ $${r.sl}</span> ${pctStr}${dolVal}</div>`;
+      const pctS = pct!=null ? `<span class="pct-away" style="${pctColor(pct)}">(${pct>=0?'+':''}${pct.toFixed(1)}%)</span>` : '';
+      lines += `<div class="action-line">${tag('at-stop',r.slDesc)} <span class="action-desc">@ $${r.sl}</span> ${pctS}</div>`;
     }
-    // Entry
     if (r.entry) {
       const pct = pctAway(px, r.entry);
-      const pctStr = pct!=null ? `<span class="pct-away" style="${pctColor(pct)}">(${pct>=0?'+':''}${pct.toFixed(1)}%)</span>` : '';
-      lines += `<div class="action-line"><span class="action-tag at-buy">${r.entryDesc}</span> <span class="action-desc">@ $${r.entry}</span> ${pctStr}</div>`;
+      const pctS = pct!=null ? `<span class="pct-away" style="${pctColor(pct)}">(${pct>=0?'+':''}${pct.toFixed(1)}%)</span>` : '';
+      lines += `<div class="action-line">${tag('at-buy',r.entryDesc)} <span class="action-desc">@ $${r.entry}</span> ${pctS}</div>`;
     }
 
     return `<div class="action-row">
-      <div class="action-sym">${r.label}<div style="font-size:9px;color:var(--muted);font-weight:400;margin-top:1px">${r.shares>0?r.shares+' sh':''}</div></div>
-      <div class="action-px">${pxStr}</div>
+      <div class="action-sym">${r.label}<div class="action-sub">${r.detail||''}</div></div>
+      <div class="action-px">${pxS}</div>
       <div class="action-body">${lines}</div>
     </div>`;
   });
 
-  // --- Covered calls section ---
-  const callRows = COVERED_CALLS.map(c => {
-    const q = prices[c.sym];
+  // Covered calls
+  const ccRows = COVERED_CALLS.map(c => {
+    const q  = prices[c.sym];
     const px = q?.price ?? null;
-    const strike = px ? (px * (1 + c.otmlPct/100)) : null;
-    const strikeStr = strike ? '$'+strike.toFixed(2) : 'calc when live';
-    const pxStr = px ? '$'+px.toFixed(2) : '—';
-
+    const pxS = px ? '$'+px.toFixed(2) : '—';
+    const strike = px ? '$'+(px*(1+c.otmlPct/100)).toFixed(2) : 'calc when live';
     return `<div class="action-row">
-      <div class="action-sym">${c.sym}<div style="font-size:9px;color:var(--muted);font-weight:400;margin-top:1px">${c.contracts}x call</div></div>
-      <div class="action-px">${pxStr}</div>
+      <div class="action-sym">${c.sym}<div class="action-sub">${c.contracts}x call · Roth</div></div>
+      <div class="action-px">${pxS}</div>
       <div class="action-body">
-        <div class="action-line">
-          <span class="action-tag at-ride">Sell ${c.contracts} covered call${c.contracts>1?'s':''}</span>
-          <span class="action-desc">Strike ${strikeStr} (+${c.otmlPct}% OTM)</span>
-        </div>
-        <div class="action-line">
-          <span class="action-tag at-hold">~$${c.income}/mo tax-free · ${c.acct}</span>
-          <span class="action-desc" style="font-size:10px;color:var(--muted)">${c.note}</span>
-        </div>
+        <div class="action-line">${tag('at-call','Sell '+c.contracts+' covered call'+(c.contracts>1?'s':''))} <span class="action-desc">Strike ${strike} (+${c.otmlPct}% OTM)</span></div>
+        <div class="action-line">${tag('at-hold','~$'+c.income+'/mo tax-free · '+c.acct)} <span class="action-desc" style="font-size:10px;color:var(--muted)">${c.sharesUsed} of ${c.sym==='SCHD'?'314':'112'} shares locked</span></div>
       </div>
     </div>`;
   });
 
-  const totalCallIncome = COVERED_CALLS.reduce((s,c) => s+c.income, 0);
-  const callHeader = `<div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:10px 0 4px;border-top:1px solid var(--border);margin-top:4px">
-    📞 Covered Calls — ~$${totalCallIncome}/mo tax-free (Roth IRA)
+  const totalCC = COVERED_CALLS.reduce((s,c)=>s+c.income,0);
+  const ccHeader = `<div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:10px 0 4px;border-top:1px solid var(--border);margin-top:4px">
+    📞 Covered Calls — ~$${totalCC}/mo tax-free (Roth IRA)
   </div>`;
 
-  body.innerHTML = rows.join('') + callHeader + callRows.join('');
+  body.innerHTML = rows.join('') + ccHeader + ccRows.join('');
 }
 
-// ===== RENDER CATALYSTS =====
+// ============================================================
+// RENDER TABLE
+// ============================================================
+function renderTable(posArr, cash, tbodyId, totId) {
+  const tbody = $id(tbodyId);
+  const alerts = [];
+  let totVal=0, totCost=0, totDay=0;
+
+  const rows = posArr.map(p => {
+    const q   = prices[p.sym];
+    const px  = q?.price ?? null;
+    const val = px&&p.shares ? px*p.shares : null;
+    const cv  = p.cost&&p.shares ? p.cost*p.shares : null;
+    const pnl = val!=null&&cv!=null ? val-cv : null;
+    const pct = pnl!=null&&cv ? pnl/cv*100 : null;
+    const dP  = q&&p.shares ? q.chg*p.shares : 0;
+
+    if(val)  totVal  += val;
+    if(cv)   totCost += cv;
+    if(dP)   totDay  += dP;
+
+    // Alert check
+    if(px) {
+      if(p.status==='hold'||p.status==='exit'||p.status==='swing') {
+        const pos = posArr.find(x=>x.sym===p.sym);
+        // parse tp/sl from note field simply
+      }
+    }
+
+    const st   = S[p.status]||S.hold;
+    const sd   = p.shares<1 ? p.shares.toFixed(3) : p.shares.toFixed(p.shares%1===0?0:3);
+    const pxD  = px ? '$'+px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}) : '<span class="muted">—</span>';
+
+    // Action cell — show note as colored label
+    const noteHtml = p.note ? `<div style="font-size:10px;color:var(--muted);line-height:1.5;white-space:normal;max-width:200px">${p.note}</div>` : '';
+
+    return `<tr>
+      <td>${p.sym}</td>
+      <td><span class="pill ${st.c}">${st.l}</span></td>
+      <td>${sd}</td>
+      <td>${p.cost ? '$'+p.cost.toFixed(2) : '<span class="muted">—</span>'}</td>
+      <td><strong>${pxD}</strong></td>
+      <td>${val!=null?f$(val,0):'<span class="muted">—</span>'}</td>
+      <td class="${pnl==null?'':pnl>=0?'green':'red'}">${pnl!=null?f$(pnl):'<span class="muted">—</span>'}</td>
+      <td class="${pct==null?'':pct>=0?'green':'red'}">${pct!=null?fpct(pct):'<span class="muted">—</span>'}</td>
+      <td>${noteHtml}</td>
+    </tr>`;
+  });
+
+  // Cash row
+  if(cash>0) {
+    totVal += cash;
+    rows.push(`<tr class="cash-row">
+      <td>CASH</td><td><span class="pill p-hold">MM</span></td>
+      <td>—</td><td>—</td><td>—</td>
+      <td>${f$(cash,0)}</td><td>—</td><td>—</td><td></td>
+    </tr>`);
+  }
+
+  // Footer
+  const hasPx = Object.keys(prices).length > 0;
+  const totPnl = totVal - totCost;
+  rows.push(`<tr class="tfoot">
+    <td colspan="5">Account Total</td>
+    <td>${hasPx&&totVal>0?f$(totVal,0):'—'}</td>
+    <td class="${totPnl>=0?'green':'red'}">${hasPx&&totCost>0?f$(totPnl):'—'}</td>
+    <td class="${totPnl>=0?'green':'red'}">${hasPx&&totCost>0?fpct(totPnl/totCost*100):'—'}</td>
+    <td></td>
+  </tr>`);
+
+  tbody.innerHTML = rows.join('');
+  if(totId&&hasPx&&totVal>0) $id(totId).textContent = f$(totVal,0);
+  return { totVal, totCost, totDay, alerts };
+}
+
+// ============================================================
+// SUMMARY STATS
+// ============================================================
+function renderSummary(datasets, cashMgmt) {
+  const hasPx = Object.keys(prices).length > 0;
+  let totVal=cashMgmt, totCost=0, totDay=0;
+  datasets.forEach(d => { totVal+=d.totVal; totCost+=d.totCost; totDay+=d.totDay; });
+  const pnl = totVal - totCost;
+
+  $id('sum-val').textContent = hasPx&&totVal>0 ? f$(totVal,0) : '—';
+  $id('sum-day').textContent = hasPx ? f$(totDay) : '—';
+  $id('sum-day').className   = 'stat-n '+(totDay>=0?'green':'red');
+  $id('sum-pnl').textContent = hasPx&&totCost>0 ? f$(pnl) : '—';
+  $id('sum-pnl').className   = 'stat-n '+(pnl>=0?'green':'red');
+}
+
+// ============================================================
+// ALERTS
+// ============================================================
+function renderAlerts() {
+  const aw = $id('alerts-wrap');
+  const alerts = [];
+
+  // PLTR combined
+  const pltrPx = prices['PLTR']?.price;
+  if(pltrPx) {
+    if(pltrPx>=140)       alerts.push({cls:'al-green', msg:'PLTR HIT $140 — SELL ALL 44.4 SHARES NOW'});
+    else if(pltrPx<=105)  alerts.push({cls:'al-red',   msg:'PLTR HIT STOP $105 — EXIT ALL NOW'});
+    else if(pltrPx>=135)  alerts.push({cls:'al-yellow',msg:'PLTR within 4% of $140 target — prep sell order'});
+    else if(pltrPx<=110)  alerts.push({cls:'al-yellow',msg:'PLTR within 5% of $105 stop — watch closely'});
+  }
+
+  // NVDA free ride
+  const nvdaPx = prices['NVDA']?.price;
+  if(nvdaPx&&nvdaPx>=250) alerts.push({cls:'al-green', msg:'NVDA at $250+ — Sell 3 shares (Free Ride rule)'});
+
+  // UNH trim
+  const unhPx = prices['UNH']?.price;
+  if(unhPx&&unhPx>=450) alerts.push({cls:'al-yellow', msg:'UNH at $450+ — consider trimming 4 brokerage shares'});
+
+  // COST sell zone
+  const costPx = prices['COST']?.price;
+  if(costPx&&costPx>=960) alerts.push({cls:'al-yellow', msg:'COST in sell zone ($960+) — sell 2.8 swing shares'});
+  if(costPx&&costPx<=870) alerts.push({cls:'al-green',  msg:'COST in buy zone ($870–) — add to Roth position'});
+
+  aw.innerHTML = alerts.length===0
+    ? '<div class="al-none">✅ No triggers hit — all positions within bounds</div>'
+    : alerts.map(a=>`<div class="alert-item ${a.cls}">⚡ ${a.msg}</div>`).join('');
+}
+
+// ============================================================
+// CATALYST
+// ============================================================
 function renderCatalysts() {
   const body = $id('catalyst-body');
   const items = CATALYSTS.map(c=>({...c,days:daysTo(c.date)})).filter(c=>c.days>=0).sort((a,b)=>a.days-b.days);
@@ -528,166 +658,73 @@ function renderCatalysts() {
   }).join('');
 }
 
-// ===== RENDER TABLE =====
-function makeRows(posArr, tbodyId, totId) {
-  const tbody = $id(tbodyId);
-  const alerts = [];
-  let totVal=0, totCost=0, totDay=0;
+// ============================================================
+// WATCHLIST (STRC + BTC)
+// ============================================================
+function renderWatchlist() {
+  const strc = prices['STRC'];
+  const btc  = prices['BTC-USD'];
 
-  const rows = posArr.map(p => {
-    const q   = prices[p.sym];
-    const px  = q?.price ?? null;
-    const val = px && p.shares          ? px*p.shares      : null;
-    const cv  = p.cost && p.shares      ? p.cost*p.shares  : null;
-    const pnl = val!=null && cv!=null   ? val-cv           : null;
-    const pct = pnl!=null && cv         ? pnl/cv*100       : null;
-    const dP  = q && p.shares           ? q.chg*p.shares   : 0;
+  if(strc?.price) {
+    $id('strc-px').textContent = '$'+strc.price.toFixed(2);
+    const ey = (11.5/strc.price*100).toFixed(1);
+    $id('strc-yield').textContent = `Effective yield: ${ey}% · Discount: ${((100-strc.price)/100*100).toFixed(1)}% to par`;
+  }
 
-    if (val)  totVal  += val;
-    if (cv)   totCost += cv;
-    if (dP)   totDay  += dP;
-
-    // Alerts
-    if (px) {
-      if (p.tp && px>=p.tp)         alerts.push({cls:'al-green', msg:`${p.sym} HIT target $${p.tp} — ACTION NOW`});
-      else if (p.sl && px<=p.sl)    alerts.push({cls:'al-red',   msg:`${p.sym} HIT stop $${p.sl} — EXIT NOW`});
-      else if (p.tp && px>=p.tp*.96) alerts.push({cls:'al-yellow',msg:`${p.sym} within 4% of target $${p.tp}`});
-      else if (p.sl && px<=p.sl*1.05)alerts.push({cls:'al-yellow',msg:`${p.sym} within 5% of stop $${p.sl}`});
-    }
-
-    const PILLS = {exit:'p-exit',hold:'p-hold',core:'p-core',swing:'p-swing',watch:'p-watch',inflate:'p-inflate',crypto:'p-crypto'};
-    const STATUS_LABELS = {exit:'Exit',hold:'Hold',core:'Core',swing:'Swing',watch:'Watch',inflate:'Inflation',crypto:'Watch'};
-    const pc = PILLS[p.status]||'p-hold', sl = STATUS_LABELS[p.status]||p.status;
-
-    const sd = p.shares ? (p.shares<1 ? p.shares.toFixed(4) : p.shares) : '—';
-    const pxD = px ? '$'+px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}) : '<span class="muted">—</span>';
-
-    // Action cell
-    const actionHtml = (p.action||[]).map((a,i) => {
-      const cls = (p.pills||[])[i] || 'at-hold';
-      return `<div style="margin-bottom:2px"><span class="action-tag ${cls}" style="font-size:8.5px">${a}</span></div>`;
-    }).join('');
-
-    return `<tr>
-      <td>${p.sym}</td>
-      <td><span class="pill ${pc}">${sl}</span></td>
-      <td>${sd}</td>
-      <td>${p.cost ? '$'+p.cost.toFixed(2) : '<span class="muted">—</span>'}</td>
-      <td><strong>${pxD}</strong></td>
-      <td>${val!=null ? f$(val,0) : '<span class="muted">—</span>'}</td>
-      <td class="${pnl==null?'':pnl>=0?'green':'red'}">${pnl!=null ? f$(pnl) : '<span class="muted">—</span>'}</td>
-      <td class="${pct==null?'':pct>=0?'green':'red'}">${pct!=null ? fpct(pct) : '<span class="muted">—</span>'}</td>
-      <td><div class="act-cell">${actionHtml}</div></td>
-    </tr>`;
-  });
-
-  tbody.innerHTML = rows.join('');
-  if (totId) $id(totId).textContent = totVal ? 'Total: '+f$(totVal,0) : '';
-  return { alerts, totVal, totCost, totDay };
+  if(btc?.price) {
+    const bp = btc.price;
+    $id('btc-px').textContent = '$'+Math.round(bp).toLocaleString();
+    const safe = bp>=60000, risky = bp<50000;
+    $id('btc-px').style.color = safe?'var(--green)':risky?'var(--red)':'var(--yellow)';
+    $id('btc-note').innerHTML = safe
+      ? '✅ SAFE — BTC above $60K<br>STRC dividend secure<br>Monitor before any STRC buy'
+      : risky
+      ? '🔴 RISK — BTC below $50K<br>STRC dividend at risk<br>Do NOT buy STRC now'
+      : '⚠️ CAUTION — approaching risk zone<br>STRC dividend uncertain<br>Wait for stability';
+  }
 }
 
-// ===== RENDER CRYPTO TABLE =====
-function renderCrypto() {
-  const tbody = $id('crypto-tbody');
-  const rows = CRYPTO_POS.map(p => {
-    const q = prices[p.sym];
-    const px = q?.price ?? null;
-    const pxD = px ? (p.sym==='BTC-USD' ? '$'+Math.round(px).toLocaleString() : '$'+px.toFixed(2)) : '<span class="muted">—</span>';
-
-    // STRC yield
-    let extraNote = '';
-    if (p.sym==='STRC' && px) {
-      const ey = (11.5/px*100).toFixed(1);
-      const disc = ((100-px)/100*100).toFixed(1);
-      extraNote = `<div style="margin-bottom:2px"><span class="action-tag at-ride" style="font-size:8.5px">Yield: ${ey}% · Discount: ${disc}% to par</span></div>`;
-    }
-    if (p.sym==='BTC-USD' && px) {
-      const safeClass = px>=60000 ? 'at-buy' : px<50000 ? 'at-stop' : 'at-trim';
-      const safeLabel = px>=60000 ? '✅ SAFE — STRC dividend stable' : px<50000 ? '🔴 RISK — below STRC safety floor' : '⚠️ WATCH — approaching risk zone';
-      extraNote = `<div style="margin-bottom:2px"><span class="action-tag ${safeClass}" style="font-size:8.5px">${safeLabel}</span></div>`;
-    }
-
-    const actionHtml = extraNote + (p.action||[]).map((a,i) => {
-      const cls = (p.pills||[])[i]||'at-hold';
-      return `<div style="margin-bottom:2px"><span class="action-tag ${cls}" style="font-size:8.5px">${a}</span></div>`;
-    }).join('');
-
-    const PILLS = {watch:'p-watch',crypto:'p-crypto'};
-    const pc = PILLS[p.status]||'p-watch';
-
-    return `<tr>
-      <td>${p.sym}<div style="font-size:9px;color:var(--muted);font-weight:400">${p.label||''}</div></td>
-      <td><span class="pill ${pc}">Watchlist</span></td>
-      <td>—</td><td>—</td>
-      <td><strong>${pxD}</strong></td>
-      <td>—</td><td>—</td><td>—</td>
-      <td><div class="act-cell">${actionHtml}</div></td>
-    </tr>`;
-  });
-  tbody.innerHTML = rows.join('');
-}
-
-// ===== HARD ASSETS =====
+// ============================================================
+// HARD ASSETS
+// ============================================================
 function renderHardAssets() {
   const gq=prices['GC=F'], sq=prices['SI=F'];
-  const gp=gq?.price||4300, sp=sq?.price||34;
+  const gp=gq?.price??4300, sp=sq?.price??34;
   const gv=gp*5, sv=sp*60, gain=(gv+sv)-15470;
-  const gPct=(gain/15470*100).toFixed(1);
-  $id('gold-val').textContent=$id('gold-px').textContent='$'+gp.toFixed(0)+'/oz';
-  $id('gold-val').textContent=f$(gv,0);
-  $id('gold-px').textContent='$'+gp.toFixed(0)+'/oz';
-  $id('silver-val').textContent=f$(sv,0);
-  $id('silver-px').textContent='$'+sp.toFixed(2)+'/oz';
-  $id('ha-gain').textContent=f$(gain)+' ('+(gain>=0?'+':'')+gPct+'%)';
-  $id('ha-gain').style.color=gain>=0?'var(--green)':'var(--red)';
+  $id('gold-val').textContent  = f$(gv,0);
+  $id('gold-px').textContent   = '$'+gp.toFixed(0)+'/oz';
+  $id('silver-val').textContent= f$(sv,0);
+  $id('silver-px').textContent = '$'+sp.toFixed(2)+'/oz';
+  $id('ha-gain').textContent   = f$(gain)+'('+(gain>=0?'+':'')+((gain/15470)*100).toFixed(1)+'%)';
+  $id('ha-gain').style.color   = gain>=0?'var(--green)':'var(--red)';
 }
 
-// ===== WAR CHEST =====
+// ============================================================
+// WAR CHEST
+// ============================================================
 function renderWarChest() {
-  const p=Math.min(63/150*100,100);
-  setTimeout(()=>{ $id('wc-fill').style.width=p+'%'; },200);
+  setTimeout(()=>{ $id('wc-fill').style.width=Math.min(63/150*100,100)+'%'; },200);
 }
 
-// ===== SUMMARY CARDS =====
-function renderSummary(msData, rothData) {
-  const totVal  = msData.totVal + rothData.totVal;
-  const totCost = msData.totCost + rothData.totCost;
-  const totDay  = msData.totDay + rothData.totDay;
-  const pnl     = totVal - totCost;
-  const hasPrices = Object.keys(prices).length > 0;
-
-  $id('sum-val').textContent = hasPrices && totVal>0 ? f$(totVal,0) : '—';
-  $id('sum-day').textContent = hasPrices ? f$(totDay) : '—';
-  $id('sum-day').className   = 'stat-n '+(totDay>=0?'green':'red');
-  $id('sum-pnl').textContent = hasPrices && totCost>0 ? f$(pnl) : '—';
-  $id('sum-pnl').className   = 'stat-n '+(pnl>=0?'green':'red');
-}
-
-// ===== ALERTS =====
-function renderAlerts(allAlerts) {
-  const aw=$id('alerts-wrap');
-  const deduped=[...new Map(allAlerts.map(a=>[a.msg,a])).values()];
-  aw.innerHTML = deduped.length===0
-    ? '<div class="al-none">✅ No triggers hit — all positions within bounds</div>'
-    : deduped.map(a=>`<div class="alert-item ${a.cls}">⚡ ${a.msg}</div>`).join('');
-}
-
-// ===== COUNTDOWN =====
+// ============================================================
+// COUNTDOWN
+// ============================================================
 let sLeft=300, cdTimer=null;
 function startCountdown() {
-  if (cdTimer) clearInterval(cdTimer);
+  if(cdTimer) clearInterval(cdTimer);
   sLeft=300;
   cdTimer=setInterval(()=>{
-    sLeft--;
-    if (sLeft<=0){sLeft=300; loadAll();}
+    sLeft--; if(sLeft<=0){sLeft=300; loadAll();}
     const m=Math.floor(sLeft/60),s=sLeft%60;
     $id('countdown').textContent=`↻ auto in ${m}:${s.toString().padStart(2,'0')}`;
   },1000);
 }
 
-// ===== MAIN =====
+// ============================================================
+// MAIN LOAD
+// ============================================================
 async function loadAll() {
-  const btn=$id('refresh-btn');
+  const btn = $id('refresh-btn');
   btn.disabled=true; btn.textContent='⏳';
   $id('last-update').textContent='Fetching...';
 
@@ -695,15 +732,20 @@ async function loadAll() {
 
   renderActions();
   renderCatalysts();
-  const msData   = makeRows(MS_POS,   'ms-tbody',   'ms-total');
-  const rothData = makeRows(ROTH_POS, 'roth-tbody', 'roth-total');
-  renderCrypto();
-  renderSummary(msData, rothData);
-  renderAlerts([...msData.alerts, ...rothData.alerts]);
+
+  const brokData = renderTable(BROKERAGE, BROKERAGE_CASH, 'tbody-brokerage', 'tot-brokerage');
+  const msData   = renderTable(MS,        MS_CASH,        'tbody-ms',        'tot-ms');
+  const rothData = renderTable(ROTH,      ROTH_CASH,      'tbody-roth',      'tot-roth');
+
+  $id('tot-cash').textContent = '$12,187.14';
+
+  renderSummary([brokData, msData, rothData], 12187.14);
+  renderAlerts();
+  renderWatchlist();
   renderHardAssets();
   renderWarChest();
 
-  $id('last-update').textContent = ok ? '✅ Live · '+nowStr() : '⚠️ Stale · '+nowStr();
+  $id('last-update').textContent = ok ? '✅ Live · '+nowStr() : '⚠️ Prices unavailable · '+nowStr();
   btn.disabled=false; btn.textContent='↻';
   startCountdown();
 }
