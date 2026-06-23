@@ -1,12 +1,16 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S45 | 2026-06-21
+**Updated by:** Claude | Session S46 | 2026-06-22
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START COMMAND — S46
+## SESSION START COMMAND — S47
+```
+Load soul files.
+S46: Investment strategy foundation. Portfolio tracker built (Pinyo_Portfolio_Tracker_v1.xlsx — Investment Strategies folder). Empire snapshot: ~$296K.
+Priority: (1) INV-07: Define strategic buckets — Chris answers: aggressive $, property target + timeline. (2) INV-05: Auggie UTMA → ETF plan. (3) INV-04: Solo 401k / SEP-IRA eval. (4) Aura Thai: A-09b Dish Map col B still open.
 ```
 Load soul files.
 S45: SOP 14 pipeline built (invoice_processor.py). Dish Map synced — 53 ingredients, col B blank.
@@ -46,6 +50,9 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | SOP-14-deploy | Send invoice_processor.py + SOP_14 to Artie | OPEN — CHRIS | Files in outputs/. Uses service_account.json (no OAuth). Artie needs: SA file, ANTHROPIC_API_KEY from Chris, DRIVE_FOLDER_ID. |
 | A-08b | Finance tab: rebuild to Google Sheet | OPEN | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
 | A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
+| INV-07 | Define strategic buckets (aggressive $, property target, timeline) | OPEN — CHRIS (S47) | BLOCKER for all investment strategy. |
+| INV-05 | Auggie UTMA → broad ETF transition | OPEN — CLAUDE (S47) | Current: TSLA/MSFT/META/HOOD/GOOGL/GLD. Too concentrated. |
+| INV-04 | Solo 401k / SEP-IRA eval (both self-employed) | OPEN — S47 | High contribution limits vs Roth alone. |
 | AS-01 | Aura Sweet spinoff strategy | OPEN | Parked — address after COGS. |
 | B-01 | Pinyo Farms market validation | QUEUED | Parking lot until COGS done. |
 
