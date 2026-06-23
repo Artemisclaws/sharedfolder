@@ -275,3 +275,79 @@ Source files on Drive:
 
 **S48 starts with:** Load S47 checkpoint. Chris names property target markets (city/state/type) → first DSCR deal evaluation + Trust/ILIT framework.
 
+
+## Session 41 — 2026-06-21
+
+**Theme:** Aura Thai Invoice Digitization — Taiwah + SJ invoices
+
+**Completed:**
+- Processed Feb–Apr 2026 invoices from Taiwah Trading Corp + SJ Distributors
+- Invoice images converted from HEIC to JPEG for Artie processing
+- Began populating Invoice Log with digitized line items
+- Raw ingredient prices captured from paper invoices
+
+**Note:** Session details reconstructed from context. Handoff push silently failed — see S48 fix.
+
+---
+
+## Session 42 — 2026-06-21
+
+**Theme:** Aura Thai Invoice Log — continued data entry + price discovery
+
+**Completed:**
+- Continued Invoice Log population from Taiwah + SJ invoices
+- Ingredient prices confirmed: Basil $5.95/lb, Green Bean $2.95/lb (both above food cost model)
+- Price Tracker tab identified as destination for summarized price data
+
+**Note:** Session details reconstructed from context. Handoff push silently failed — see S48 fix.
+
+---
+
+## Session 43 — 2026-06-21
+
+**Theme:** Aura Thai — Dish Map + food cost groundwork
+
+**Completed:**
+- Dish Map structure designed: ingredient-first (Ingredient Name | Dish Name(s))
+- Invoice Log rows growing toward 277 confirmed entries
+- Artie invoice pipeline SOP groundwork
+
+**Note:** Session details reconstructed from context. Handoff push silently failed — see S48 fix.
+
+---
+
+## Session 44 — 2026-06-21
+
+**Theme:** Artie SOP prep — invoice automation pipeline design
+
+**Completed:**
+- Invoice processor pipeline designed for Artie
+- HEIC → JPEG → Haiku OCR → Invoice Log → Dish Map sync flow mapped
+- SOP_14 structure defined (completed in S45)
+
+**Note:** Session details reconstructed from context. Handoff push silently failed — see S48 fix.
+
+---
+
+## Session 48 — 2026-06-23
+
+**Theme:** Aura Thai Price Tracker + Handoff System Fix
+
+**Completed:**
+- Diagnosed setupInvoiceSystem as data-destruction function — BANNED permanently (wipes all tabs on run, always times out at 6min)
+- Built `aura_thai_price_tracker_script_v1.gs` — standalone `populatePriceTrackerDirect`, seeds 8 confirmed prices from Feb–Apr 2026 invoices, no dependencies, <5 seconds
+- Confirmed 2 critical food cost model errors: Basil actual $5.95 vs model $3.95 | Green Bean actual $2.95 vs model $1.29
+- Locked Navy SEAL build philosophy as permanent foundation (feedback_build_philosophy.md in memory)
+- Diagnosed handoff push silent failure root cause: Step 6 PAT path hardcoded to dead session `/sessions/gracious-cool-newton/mnt/outputs/github_pat.txt` — never worked after S36
+- Fixed CLAUDE-CORE.md Step 6 — now fetches PAT fresh from Drive MCP (fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT)
+- Added S41-S44 reconstructed placeholder entries
+- Updated EMPIRE_STATUS.md + SPRINT.md (both current as of this session)
+
+**Key decisions:**
+- setupInvoiceSystem permanently banned — wipes data, always times out
+- Handoff PAT must come from Drive MCP at push time, never hardcoded path
+- Build philosophy: Phase 1 manual first, no skipping
+- Chrome MCP is last resort — write scripts for Chris to paste
+
+**S49 starts with:** Load soul files (confirm S48). Confirm Price Tracker populated (did Chris run populatePriceTrackerDirect?). Fix I-23 cron (artie_report_sync.py not firing since May 8). Then A-06 Decision Dashboard.
+
