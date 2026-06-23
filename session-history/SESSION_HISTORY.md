@@ -1,6 +1,6 @@
 # SESSION_HISTORY.md
 **Chronological log of every Claude + Artie build session.**
-**Last Updated:** 2026-06-21 | Session 40
+**Last Updated:** 2026-06-22 | Session 46
 **Purpose:** YouTube content reference, pattern tracking, progress narrative
 
 ---
@@ -203,6 +203,29 @@ Source files on Drive:
 - Supplies (chopsticks, cleaning) → "Supply". Universal costs (oils, sugars) → "All Dishes"
 
 **Next session starts with:** Load soul files. A-09b: Chris fill Dish Map column B (Dish Name(s)) — ~35 dish-specific ingredients, then run COGS analysis. Also: A-06 Decision Dashboard, I-23 cron fix.
+
+
+## Session 46 — 2026-06-22
+
+**Theme:** Investment Strategy Foundation — Pinyo Empire Portfolio Inventory
+
+**Completed:**
+- Full portfolio inventory: Chris (4 accounts + crypto), Golfii/Wife (joint + crypto), Auggie (UTMA)
+- Built `Pinyo_Portfolio_Tracker_v1.xlsx` — 9 tabs: Summary, 4 Chris accounts, Golfii joint, Chris crypto, Golfii crypto, Dashboard
+- Dashboard: two allocation pie charts (asset class + by owner) + 20-year projection line chart with editable assumption inputs
+- Reviewed Auggie's rough investment strategy doc — flagged gaps (empty portfolio section, understated time horizon, crypto concern)
+- Identified major strategic gaps: Solo 401k / SEP-IRA opportunity (both self-employed), KuCoin custody risk ($144K+ on exchange), Auggie UTMA → ETF transition needed
+- Planned 2026 accounts confirmed: Wife Roth IRA, HSA (both Chris + Wife), Auggie 529
+- Golfii crypto captured: 0.032 BTC + 0.188 ETH (~$3.5K as of 12/4/25)
+- Empire total snapshot: ~$296K (Chris $265K, Golfii $27K, Auggie $3.6K)
+
+**Key decisions:**
+- Auggie UTMA will shift from individual stocks to broad ETFs (concentrated single stocks inappropriate for 60-year horizon)
+- 529 to be opened for Auggie this year; Roth IRA deferred until earned income
+- BTC positions to be built for all three holders — strategy TBD after bucket definition
+- KuCoin custody risk flagged — cold wallet migration recommended for portion of holdings
+
+**Next session starts with:** Load soul files. Load `Pinyo_Portfolio_Tracker_v1.xlsx`. Investment strategy Step 2: Chris answers (1) aggressive bucket size, (2) property target + timeline + market, (3) monthly contributions per holder. Then map bucket strategy for all three holders.
 
 
 ---
