@@ -350,4 +350,4 @@ Source files on Drive:
 - Chrome MCP is last resort — write scripts for Chris to paste
 
 **S49 starts with:** Load soul files (confirm S48). Confirm Price Tracker populated (did Chris run populatePriceTrackerDirect?). Fix I-23 cron (artie_report_sync.py not firing since May 8). Then A-06 Decision Dashboard.
-
+| S49 | 2026-06-23 | Bug audit all 4 core files. CLAUDE-CORE V4 (Step 6 fixed, CHANGE CONTROL added). File org system. Journal + CONTENT_LOG live. Bedrock Standard named. | S50: Artie simplification to Bedrock Standard. First functional tool. |
