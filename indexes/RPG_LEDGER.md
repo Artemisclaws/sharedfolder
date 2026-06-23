@@ -1,7 +1,7 @@
 # RPG_LEDGER.md — Life Tracking
 **Maintained by:** Claude at every handoff
 **GitHub:** `indexes/RPG_LEDGER.md`
-**Last Updated:** 2026-06-21 | Session 45
+**Last Updated:** 2026-06-22 | Session 46
 
 *This file is never shown to Chris unprompted. It informs coaching tone — not conversation content.*
 
@@ -11,20 +11,21 @@
 
 | Stat | Score | Trend |
 |------|-------|-------|
-| DISCIPLINE | 77 | up |
-| SYSTEMS | 99 | up |
-| MOMENTUM | 91 | up |
-| LEVERAGE | 82 | up |
-| CLARITY | 93 | flat |
+| DISCIPLINE | 77 | flat |
+| SYSTEMS | 100 | up |
+| MOMENTUM | 92 | up |
+| LEVERAGE | 83 | up |
+| CLARITY | 95 | up |
 
 ---
 
 ## XP LEDGER
 
-**Total XP:** 1,980
+**Total XP:** 2,050
 
 | Session | XP Earned | XP Lost | Net | Notes |
 |---------|-----------|---------|-----|-------|
+| S46 | +70 | 0 | +70 | Full portfolio inventory across 3 holders. Tracker + dashboard built. 4 major strategic gaps identified. Clean handoff. |
 | S45 | +70 | -5 | +65 | SOP 14 pipeline built (invoice_processor.py). Dish Map redesigned + synced (53 ingredients). Apps Script deployed. -5: V1 sync had dialog timeout not anticipated — required V2 fix. |
 | S43 | +65 | -15 | +50 | ARTIE-RUNBOOK.md live, SOP tested end-to-end, Artie cleared. -15: 3 script revisions to fix timeout (sheet.clear() issue should have been caught on 2nd attempt, not 3rd). |
 | S42 | +65 | -10 | +55 | ezCater onboarding: competitor research, fee structure locked, Word doc delivered. -10: back-and-forth on DD/UE comparison. Clean handoff. |
@@ -51,6 +52,7 @@
 
 | Session | DISCIPLINE | SYSTEMS | MOMENTUM | LEVERAGE | CLARITY |
 |---------|-----------|---------|----------|----------|---------|
+| S46 | 77 (0) | 100 (+1) | 92 (+1) | 83 (+1) | 95 (+2) |
 | S45 | 77 (+1) | 99 (+1) | 91 (+1) | 82 (+1) | 93 (0) |
 | S43 | 76 (+1) | 98 (+1) | 90 (+1) | 81 (+2) | 93 (0) |
 | S42 | 75 (+1) | 97 (0) | 89 (+2) | 79 (+3) | 93 (+2) |
@@ -68,6 +70,21 @@
 ---
 
 ## COACHING NOTES (private, informs tone)
+
+
+**S46 notes:**
+- CLARITY +2: First complete financial picture of the Pinyo Empire — all three holders, all accounts, crypto included. This domain was previously invisible. Now it has a source of truth.
+- SYSTEMS +1: Pinyo_Portfolio_Tracker_v1.xlsx is a reusable, living document. 9 tabs, formulas, charts. Every future session loads it instead of starting cold.
+- LEVERAGE +1: The tracker compounds — each session adds data. The 20-year projection chart makes the stakes of decisions visible in real time.
+- MOMENTUM +1: New major project launched, foundation complete, and blockers clearly identified. No dead ends.
+- DISCIPLINE 0: Pure inventory + planning session. No action items on Chris yet. Discipline scores when he executes.
+- No XP lost: clean execution, no rebuilds, zero formula errors on 83 formulas.
+
+**Coaching direction for S47:**
+- INV-07 is the unlock. The aggressive bucket size + property target are the two numbers that turn the tracker from a snapshot into a strategy.
+- Frame it: "20 minutes answering 3 questions maps the next 20 years." That's the leverage.
+- After bucket definition → Auggie ETF transition is the highest-impact move. 60 years of compounding on better allocation is worth more than anything else in the portfolio.
+- Solo 401k / SEP-IRA: present the math. The contribution gap vs Roth alone is the argument.
 
 
 **S45 notes:**
