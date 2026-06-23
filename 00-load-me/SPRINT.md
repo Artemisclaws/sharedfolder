@@ -1,103 +1,96 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S46 | 2026-06-22
+**Updated by:** Claude | Session S46 | 2026-06-23
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START COMMAND — S47
-```
-Load soul files.
-S46: Investment strategy foundation. Portfolio tracker built (Pinyo_Portfolio_Tracker_v1.xlsx — Investment Strategies folder). Empire snapshot: ~$296K.
-Priority: (1) INV-07: Define strategic buckets — Chris answers: aggressive $, property target + timeline. (2) INV-05: Auggie UTMA → ETF plan. (3) INV-04: Solo 401k / SEP-IRA eval. (4) Aura Thai: A-09b Dish Map col B still open.
-```
-Load soul files.
-S45: SOP 14 pipeline built (invoice_processor.py). Dish Map synced — 53 ingredients, col B blank.
-Priority: (1) A-09b: Chris fill Dish Map col B (Dish Name(s)) — unlocks COGS. (2) A-06: Decision Dashboard. (3) I-23: artie_report_sync.py cron fix. (4) Send invoice_processor.py + SOP_14 to Artie.
-```
+## ⚠️ LOAD NOTE — TOKEN EFFICIENCY
+Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
+Pull them only if SPRINT.md session number is behind the latest known session.
 
 ---
 
-## LOAD NOTE — TOKEN EFFICIENCY
-Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
-- If SPRINT.md session number is behind → pull those files from GitHub.
-- Otherwise: SPRINT.md is the only context file needed at session start.
+## BUILD PHILOSOPHY — LOCKED S46 (applies to everything)
+1. Simple first. Automate second. Scale third.
+2. One function, one job. No dependencies on things that can break.
+3. Manual before automated. Automation is always the end goal.
+4. Phase 1 (manual) → 2 (script) → 3 (AI assist) → 4 (full auto). Never skip.
+5. Design so AI can take it over later — manual is a placeholder, not a destination.
+
+---
+
+## ACTIVE ITEMS — S46 DIGEST
+
+| ID | Item | Status | Notes |
+|----|------|--------|-------|
+| A-07 | Price Tracker: run populatePriceTrackerDirect | 🔴 NEXT | Script ready in workspace. Paste into Apps Script, run once. Seeds 8 ingredients. |
+| A-08 | Invoice Log: establish manual entry process | 🔴 Phase 1 | Who enters data when delivery arrives? Define process before automating. |
+| A-06 | Aura Thai Decision Dashboard | 🔴 Priority | Data in Drive. Needs Lavu XLS conversion first. |
+| A-09 | ezCater menu upload | ⏳ Pending | Plan built (aura_thai_ezcater_menu_plan_v1.md). Needs upload to platform. |
+| A-10 | Food cost model: fix Basil + Green Bean | ⏳ Pending | Basil actual $5.95 vs model $3.95. Green Bean $2.95 vs $1.29. Both understated. |
+| A-02 | UberEats price impact — complete | ⏳ Partial | Only 5 days POST data. Easter confound. |
+| I-23 | artie_report_sync.py cron fix | ❌ Open | Not firing since May 8. |
+| A-04 | ARTIE SOP 13 — cron fix + monthly finance | ❌ Open | Write to ARTIE-RUNBOOK.md. |
+| I-06 | Daily digest cron for #general | ❌ Open | |
+| I-17 | Decommission old Cloudflare Tunnel | ❌ Open | |
+| B-01 | Pinyo Farms market validation | ❌ Queued | |
+
+---
+
+## AURA THAI — CURRENT SYSTEM STATE
+
+| System | Status |
+|--------|--------|
+| Invoice Log | ❌ EMPTY — wiped by setupInvoiceSystem S46 |
+| Price Tracker | 🔲 PENDING — run populatePriceTrackerDirect |
+| setupInvoiceSystem | 🚫 BANNED — wipes data every run |
+| updatePriceTracker | ⏸ On hold — needs Invoice Log data |
+| ezCater plan | ✅ Built — not yet uploaded |
+
+**We are in Phase 1.** Manual entry only until Invoice Log is stable.
 
 ---
 
 ## CORRECTED DATA MODEL (S39 — do not revert)
-- **Lavu = primary revenue source.** Captures ALL sales: dine-in + delivery + catering.
-- GH, DD, UE are sub-channels. They contribute TO Lavu totals.
-- Lavu XLS = UTF-16LE TSV — base64 decode → BOM strip → parse.
+- **Lavu = primary revenue source.** Lavu captures ALL sales.
+- GH/DD/UE contribute TO Lavu totals — not separate baselines.
+- May 2026 Lavu avg: ~$2,200/day net.
 
 ---
 
-## PERMANENT RULES
-> All dashboards live at ops.radrooster.co. No standalone URLs ever.
-> Finance tab hardcodes data — MUST rebuild to read from Google Sheet (DASHBOARD ARCHITECTURE RULE violation).
-> $5K/day focus filter: new ideas → parking lot unless they advance COGS → pipeline → unit economics → growth.
+## AURA THAI PIPELINE — KEY FACTS
+- Sheet ID: `1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE`
+- Apps Script ID: `1lNMZ_Hvwj-4ncLGy0nWN9rEr6xJYADZxM9OpOTTloNfGsAIA0DV-uDzr`
+- artie_report_sync.py: NOT firing since May 8 (I-23)
+- Rad Rooster: NOT launched
 
 ---
 
-## ACTIVE ITEMS — S45 DIGEST
+## BUSINESSES — CURRENT FOCUS
 
-| ID | Item | Status | Notes |
-|----|------|--------|-------|
-| A-09b | Chris fill Dish Map col B (Dish Name(s)) | OPEN — CHRIS | 53 ingredients loaded. Supplies → "Supply". Universal costs → "All Dishes". ~35 dish-specific to map. Unlocks COGS. |
-| A-06 | Decision Dashboard | OPEN — CLAUDE | Build next session. |
-| I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
-| SOP-14-deploy | Send invoice_processor.py + SOP_14 to Artie | OPEN — CHRIS | Files in outputs/. Uses service_account.json (no OAuth). Artie needs: SA file, ANTHROPIC_API_KEY from Chris, DRIVE_FOLDER_ID. |
-| A-08b | Finance tab: rebuild to Google Sheet | OPEN | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
-| A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
-| INV-07 | Define strategic buckets (aggressive $, property target, timeline) | OPEN — CHRIS (S47) | BLOCKER for all investment strategy. |
-| INV-05 | Auggie UTMA → broad ETF transition | OPEN — CLAUDE (S47) | Current: TSLA/MSFT/META/HOOD/GOOGL/GLD. Too concentrated. |
-| INV-04 | Solo 401k / SEP-IRA eval (both self-employed) | OPEN — S47 | High contribution limits vs Roth alone. |
-| AS-01 | Aura Sweet spinoff strategy | OPEN | Parked — address after COGS. |
-| B-01 | Pinyo Farms market validation | QUEUED | Parking lot until COGS done. |
+| Business | Status | Priority Action |
+|----------|--------|-----------------|
+| Aura Thai | 🔴 Active — urgent | Price Tracker (A-07) → Invoice Log process (A-08) → Dashboard (A-06) |
+| Vine Arbitrage | 🟢 Running | Artie handles |
+| Pinyo Farms | ⏳ Planning | Market validation — B-01 |
+| AI Ventures | ⏳ Planning | Not started |
+| Roam | ⏳ Planning | Not started |
 
 ---
 
-## AURA THAI INVOICE SYSTEM (S45 — FULLY OPERATIONAL)
-**Sheet:** aura_thai_finance | Script: aura_thai_invoice_system.gs (deployed)
-**Pipeline:** invoice_processor.py → send to Artie with SOP_14_invoice_processing.md
-
-| Tab | Status | Owner |
-|-----|--------|-------|
-| Invoice Log | ✅ 277 rows loaded (Feb–May 2026) | Artie — add new deliveries |
-| Price Tracker | READY | Auto — run updatePriceTracker() after invoices |
-| Dish Map | 53 ingredients loaded, col B BLANK | Chris — fill Dish Name(s) |
-| Sales by Period | READY | Artie — weekly from Lavu Sale by Item |
-| COGS by Dish | WAITING | Claude — analyze once Dish Map col B + Sales data overlap |
-
-**Dish Map guidance for Chris:**
-- Supplies (chopsticks, bags, cleaning): mark "Supply"
-- Universal costs (fry oils, sugar, vinegar, soy sauces): mark "All Dishes"
-- ~35 dish-specific ingredients: map to actual dish names or shorthand (All Stir Fry, All Curry, etc.)
+## INFRASTRUCTURE — KEY FACTS
+- GitHub PAT: Drive fileId `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`
+- Cloudflare Pages: auto-deploys on push → ops.radrooster.co
 
 ---
 
-## KEY REVENUE NUMBERS (S40 verified)
-- YTD 2026: $381,011 | YTD 2025: $412,036 | **YoY: -7.5%**
-- Apr 2026 vs 2025: **-11.3%** (worst month so far)
-- BOH Labor: ~$13,835/period | ~$494/day
+## BLOCKED — DO NOT TOUCH
+| Item | Blocker |
+|------|---------|
+| Lavu as live data source | Lavu API setup incomplete (Chris) |
+| O-04 Shift Close integration | Chris needs to complete setup |
 
-
----
-
-## INVESTMENT STRATEGY — ACTIVE ITEMS (S47)
-
-| ID | Item | Status | Notes |
-|----|------|--------|-------|
-| INV-01 | Enable options on Fidelity Roth | ❌ Open | Chris action — Level 1 options. Unlocks KO + SCHD covered calls (~$180/mo tax-free). |
-| INV-02 | Property target markets | ❌ Open | Chris to name city/state/type. Gates S48 DSCR deal evaluation. |
-| INV-03 | Kate ITIN (Form W-7) | ❌ Queued | File with IRS. 6-11 weeks. Gates LLC membership + property equity. |
-| INV-04 | S48 Trust/ILIT session | ❌ Queued | Family trust + life insurance in trust. Mom asset protection. Needs attorney framework. |
-| INV-05 | Auggie UTMA reallocation | ❌ Open | Concentrated single stocks → VTI/VXUS index-heavy. 60-year window. |
-| INV-06 | First DSCR deal evaluation | ❌ Queued | After INV-02. Target DSCR ≥ 1.25. |
-| INV-07 | Golfii cash deployment | ❌ Open | $6,810 idle in joint account. Discuss deployment. |
-
-**Crash play status:** Cash-secured puts strategy active in Fidelity Roth. Crash deployment ladder set.
-**Mom co-borrower:** 800 FICO + $1,200/mo SS + born 1959. Up to 20 properties (Chris 10 + Mom 10).
-**Checkpoint:** `checkpoint_S47-investment-strategy_2026-06-22.md` in Investment Strategies project.
-
+## 🔗 Graph Links
+[[HOME]] | [[EMPIRE_STATUS]] | [[MASTER_OPEN_ITEMS]]
