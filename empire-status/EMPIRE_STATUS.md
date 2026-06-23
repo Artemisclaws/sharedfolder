@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-06-21 | Session 45
-**Updated By:** Claude (Session 45)
+**Last Updated:** 2026-06-23 | Session 46
+**Updated By:** Claude (Session 46)
 
 ---
 
@@ -8,90 +8,106 @@
 
 | Area | Status | Notes |
 |------|--------|-------|
-| OpenClaw | 2026.5.7 | Updated S33. Services: openclaw-gateway + openclaw-node (systemd --user). Paths confirmed. |
 | GitHub setup | ✅ LIVE | `github.com/Artemisclaws/sharedfolder` |
-| Discord setup | ✅ LIVE | All 8 channels wired, Artie responding |
-| Morning briefing → Discord | ✅ CONFIRMED | Verified by Chris, Session 27 |
-| 9 cron jobs disabled | ✅ CONFIRMED | Verified by Chris, Session 27 |
-| ops.radrooster.co | ✅ LIVE — CLOUDFLARE PAGES | Migrated from Artie's PC tunnel → GitHub auto-deploy. No Artie dependency. |
-| Dashboard — open items at top | ✅ DONE | Pushed S27. Infrastructure + Operations items appear first. |
-| MASTER_OPEN_ITEMS.md | ✅ LIVE | GitHub: `master-open-items/MASTER_OPEN_ITEMS.md` |
-| SESSION_HISTORY.md | ✅ LIVE | GitHub: `session-history/SESSION_HISTORY.md` |
-| Handoff system | ✅ REFORMED | 5-line handoffs + GitHub as living task tracker |
-| Cowork → Discord bot (2nd bot) | ✅ LIVE | S28 — Bot ID 1501667305518530711, posting in #general |
-| Daily digest cron (#general) | ❌ NOT BUILT | S28+ |
-| Telegram → Discord migration | 🔄 IN PROGRESS | Cron redirect done; backends pending |
-| Naming convention | ✅ LOCKED | FB Arbitrage → Vine Arbitrage S31 |
-| Old Cloudflare Tunnel (Artie) | 🔄 DECOMMISSION PENDING | ops.radrooster.co now on Pages — tunnel no longer needed |
-| Playwright downloader | ❌ DEFERRED | Dedicated session — DD/UE auth wall |
-| 9 cron job backends | ❌ NOT BUILT | Dedicated session needed |
-| Drive folder reorganization | ❌ DEFERRED | S28 — I-02 |
-| Live market data | ❌ NOT SET UP | Future session |
-| Obsidian Second Brain | ✅ LIVE | S34 — vault synced, graph live, HOME as hub, auto-pull every 5min |
-| Aura Thai Finance Dashboard | 🟡 IN PROGRESS | S34–S40 — HIGH priority data gaps resolved. Ready to build next session. |
-| Aura Thai Price Increase Monitoring | ✅ ACTIVE | S35 — DD +20% went live Apr 9. Revenue -5.1%, monitoring weekly (Mon 9am scheduled task). |
-| Aura Thai Invoice System | ✅ LIVE | S40/S43/S45 — 5-tab system deployed. 277 rows in Invoice Log. Dish Map synced (53 ingredients). |
-| SOP 14 — Invoice Photo Pipeline | ✅ BUILT S45 | invoice_processor.py uses service_account.json (no OAuth). Artie needs: SA file + DRIVE_FOLDER_ID + ANTHROPIC_API_KEY from Chris. |
-| Dish Map | 🟡 AWAITING CHRIS | 53 ingredients synced from Invoice Log. Column B (Dish Name(s)) blank — Chris fills. |
-| artie_report_sync.py cron | ❌ BROKEN | Not firing since May 8 — I-23. |
+| Discord setup | ✅ LIVE | All 8 channels wired |
+| ops.radrooster.co | ✅ LIVE — CLOUDFLARE PAGES | Auto-deploy from GitHub. |
+| Obsidian Second Brain | ✅ LIVE | S34 — vault synced, graph live |
+| artie_report_sync.py cron | ❌ NOT FIRING | Broken since ~May 8 (I-23) |
+| Old Cloudflare Tunnel | 🔄 DECOMMISSION PENDING | |
+| Daily digest cron (#general) | ❌ NOT BUILT | |
+| Build Philosophy | ✅ LOCKED S46 | Navy SEAL rules. Manual→automated phases. |
 
 ---
 
 ## AURA THAI — KEY FACTS (do not ask Chris again)
 
-### Revenue Model — CORRECTED S39
-- **Lavu = primary revenue source.** Captures ALL sales (dine-in + delivery + catering).
-- GH/DD/UE are delivery sub-channels — they contribute TO Lavu totals, not separate from them.
-- Lavu XLS = UTF-16LE TSV — base64 decode → BOM strip → parse.
+### Revenue Model
+- **Lavu = primary revenue source.** Captures ALL sales.
+- GH/DD/UE are sub-channels — contribute TO Lavu totals.
+- Sheet ID: `1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE`
+- Rad Rooster: NOT launched.
+- May 2026 avg: ~$2,200/day net (31 days in sheet)
 
-### Invoice System — S45 STATUS
-- **Invoice Log:** 277 rows (Feb–May 2026), Taiwah + SJ Distributors
-- **Dish Map:** 53 unique ingredients, alphabetically sorted. Column B (Dish Name(s)) = BLANK — Chris fills next.
-- **SOP 14 script:** `invoice_processor.py` in outputs — send to Artie with SOP_14_invoice_processing.md
-- **DRIVE_FOLDER_ID:** Still needs to be filled in by Artie before first run
-- **Apps Script:** Updated `aura_thai_invoice_system.gs` deployed. `syncIngredientsToDishMapV2()` is the working sync function.
-
-### Dish Map Notes
-- Non-food supplies (chopsticks, cleaning supplies, bags): mark "Supply"
-- Universal cost items (oils, sugar, vinegar, soy sauces): mark "All Dishes"
-- ~35 dish-specific ingredients for Chris to map
-
-### Labor (S39 confirmed)
-- BOH Fixed: ~$13,835/period (~$6,917/biweekly) | Daily: ~$494
-- FOH: Lavu Time Cards, $16/hr
-
-### Key Revenue (S40 verified)
-- YTD 2026: $381,011 | YTD 2025: $412,036 | YoY: -7.5%
-- Apr 2026 vs 2025: -11.3% (worst month)
+### BOH Labor
+| Name | Role | $/day | Days/period | Total/period |
+|------|------|-------|-------------|--------------|
+| Miguel | Head Chef | $175 | 12 | $2,100 |
+| P Sang | 2nd Head Chef | $155 | 12 | $1,860 |
+| Eliseo | Chef | $130 | 10.5 | $1,365 |
+| Rambo | Dishwasher | $125 | 10.5 | $1,312.50 |
+| Erick | Chef | $140 | 2 | $280 |
+| **Total** | | | | **$6,917.50/period (~$494/day)** |
 
 ---
 
-## BLOCKERS — ACTIVE
+## AURA THAI — SYSTEM STATE (S46)
 
-| Blocker | Blocks | Resolution |
-|---------|--------|-----------|
-| Chris fill Dish Map col B | COGS analysis | A-09b — ~20 min task |
-| Artie set DRIVE_FOLDER_ID in invoice_processor.py | SOP 14 automation | One-time setup per SOP 14 |
-| I-23 artie_report_sync.py broken | GH/DD/UE pipeline | Needs dedicated debug session |
+| System | Status | Notes |
+|--------|--------|-------|
+| Invoice Log tab | ❌ EMPTY | Wiped by setupInvoiceSystem. NEVER run setupInvoiceSystem again. |
+| Price Tracker tab | 🔲 PENDING | Run `populatePriceTrackerDirect` — script ready |
+| populatePriceTrackerDirect | ✅ READY | `aura_thai_price_tracker_script_v1.gs` in Investment Strategies folder |
+| setupInvoiceSystem | 🚫 BANNED | Wipes all data. Never run again. |
+| updatePriceTracker | ⏸ ON HOLD | Needs Invoice Log data first |
+| ezCater menu plan | ✅ BUILT | `aura_thai_ezcater_menu_plan_v1.md` — 47→28 items, 3 packages. Not yet uploaded. |
+| DD price impact | ✅ DONE | +20% Apr 9: ticket +13.1%, orders -16.2%, revenue -5.1% |
+| UE price impact | ⏳ PARTIAL | Only 5 days POST, Easter confound |
+| Artie invoice pipeline | ❌ ABANDONED | Not a dependency. Design without Artie. |
 
+### Real Ingredient Prices (Taiwah + SJ, Feb–Apr 2026)
+| Ingredient | Actual | Model | Flag |
+|---|---|---|---|
+| Chicken Breast | $2.08/lb | $2.49/lb | OK |
+| Long Grain Rice | $0.64/lb | $1.06/lb | OK |
+| Basil | $5.95/lb | $3.95/lb | 🚨 Model LOW |
+| Green Bean | $2.95/lb | $1.29/lb | 🚨 Model 2.3x LOW |
+| Shrimp 21/25 | $5.25/lb | $5.85/lb | OK |
+| Eggs Jumbo | $0.13/ea | $0.19/ea | OK |
+
+Suppliers: Taiwah Trading Corp (dry goods/produce) | SJ Distributors LLC (protein)
 
 ---
 
-## INVESTMENT STRATEGY — STATUS (S47)
+## BUILD PHILOSOPHY — LOCKED S46
+1. Simple first. Automate second. Scale third. Never out of order.
+2. One function, one job. No dependencies on things that can break.
+3. Manual before automated. Automation is always the end goal.
+4. Phase 1→2→3→4. Never skip. Never build on unproven foundation.
 
-| Item | Status | Notes |
-|------|--------|-------|
-| Portfolio tracker | ✅ LIVE | Pinyo_Portfolio_Tracker_v1. $114,836.59 total. 3 holders. |
-| Three bucket framework | ✅ SET | 🔴 Aggressive $1-2K | 🟡 Medium-term | 🟢 Property war chest |
-| Covered calls playbook | ✅ BUILT | KO (1 contract) + SCHD (3 contracts) in Fidelity Roth → ~$180/month tax-free |
-| Cash-secured puts | ✅ BUILT | $9,694 Roth cash deployed as premium engine during crash wait |
-| Crash deployment ladder | ✅ BUILT | 4 tranches: -10% / -20% / -30% / -40%+ |
-| Fidelity Roth options trading | ❌ PENDING | Chris applies for Level 1 at Fidelity.com |
-| DSCR property strategy | ✅ FRAMEWORK SET | Primary vehicle for 2030 acquisitions. No income docs needed. |
-| Mom co-borrower profile | ✅ CAPTURED | 800 FICO, $1,200/mo SS, born 1959. Extends capacity to 20 properties. |
-| Kate ITIN path | ✅ CONFIRMED | Form W-7 → LLC membership. Filed when ready. |
-| Property target markets | ❌ OPEN | Chris to name in S48 |
-| First DSCR deal evaluation | ❌ QUEUED | After markets identified |
-| Family Trust + ILIT | ❌ QUEUED | S48 dedicated session |
-| Auggie UTMA reallocation | ❌ OPEN | Concentrated stocks → VTI/VXUS index |
+---
 
+## ARTIE STATUS
+- Machine: DESKTOP-R7E8H6E
+- ⚠️ Not completing tasks reliably. NOT a dependency in any Phase 1 build.
+
+---
+
+## DISCORD CHANNELS
+| Channel | ID |
+|---------|----|
+| #general | 1493421633359315089 |
+| #finance | 1501467891474759770 |
+| #operations | 1501468053672689834 |
+| #escalations | 1501468242739204097 |
+
+---
+
+## KEY FILE IDs
+| File | Location/ID |
+|------|-------------|
+| GitHub PAT | Drive: `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT` |
+| aura_thai_finance sheet | `1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE` |
+| Apps Script | `1lNMZ_Hvwj-4ncLGy0nWN9rEr6xJYADZxM9OpOTTloNfGsAIA0DV-uDzr` |
+
+---
+
+## SESSION LOG
+| Session | Date | Key Work |
+|---------|------|----------|
+| S39 | 2026-05-27 | Decision Dashboard checklist, BOH labor, Lavu as primary source |
+| S40 | 2026-06-19 | Apps Script invoice system built |
+| S45 | 2026-06-21 | Dish Map redesigned, ezCater menu plan |
+| S46 | 2026-06-23 | Build philosophy locked. setupInvoiceSystem BANNED. populatePriceTrackerDirect ready. GitHub brain re-established. |
+
+## 🔗 Graph Links
+[[HOME]] | [[SPRINT]] | [[MASTER_OPEN_ITEMS]] | [[SESSION_HISTORY]]
