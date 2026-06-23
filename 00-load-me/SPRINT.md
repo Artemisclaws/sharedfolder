@@ -1,5 +1,5 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S46 | 2026-06-23
+**Updated by:** Claude | Session S49 | 2026-06-23
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
@@ -36,6 +36,8 @@ Pull them only if SPRINT.md session number is behind the latest known session.
 | I-06 | Daily digest cron for #general | ❌ Open | |
 | I-17 | Decommission old Cloudflare Tunnel | ❌ Open | |
 | B-01 | Pinyo Farms market validation | ❌ Queued | |
+| S49 | Mac file organization system | 🔴 S49 | Checkpoints scattered. No system for what goes where. Design this session. |
+| S49 | Core file bug audit | ✅ DONE S49 | All 4 files audited. CLAUDE-CORE V4 pushed. EMPIRE_STATUS + SPRINT updated. |
 
 ---
 
@@ -81,7 +83,8 @@ Pull them only if SPRINT.md session number is behind the latest known session.
 ---
 
 ## INFRASTRUCTURE — KEY FACTS
-- GitHub PAT: Drive fileId `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`
+- GitHub PAT: Drive fileId `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT` — Drive MCP only, no local file paths
+- CLAUDE-CORE.md: V4 (S49) — Step 6 rewritten, CHANGE CONTROL added, soul files locked
 - Cloudflare Pages: auto-deploys on push → ops.radrooster.co
 
 ---
@@ -91,6 +94,7 @@ Pull them only if SPRINT.md session number is behind the latest known session.
 |------|---------|
 | Lavu as live data source | Lavu API setup incomplete (Chris) |
 | O-04 Shift Close integration | Chris needs to complete setup |
+| setupInvoiceSystem | 🚫 PERMANENTLY BANNED — wipes all data every run, always times out |
 
 ## 🔗 Graph Links
 [[HOME]] | [[EMPIRE_STATUS]] | [[MASTER_OPEN_ITEMS]]
