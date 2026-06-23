@@ -246,3 +246,32 @@ Source files on Drive:
 ---
 
 *This file is append-only. Add a new session block at the bottom each session. Never delete history.*
+
+## Session 47 — 2026-06-22
+
+**Type:** Investment Strategy — Full Portfolio Session
+**Project:** Pinyo Empire — Investment Strategies (Cowork)
+**Theme:** Map wealth-building strategy across all three holders + 2030 property acquisition plan
+
+**Completed:**
+- Loaded full portfolio (Pinyo_Portfolio_Tracker_v1): $114,836.59 total — Chris $87,475.43 | Golfii $23,727.26 | Auggie $3,633.90
+- Identified $28.7K idle cash — confirmed intentional crash preparation dry powder (Roth de-risking = no tax event)
+- Three bucket framework locked for all holders: 🔴 Aggressive $1-2K | 🟡 Medium-term (profit rotation) | 🟢 Property war chest
+- Covered calls playbook built: KO (1 contract) + SCHD (3 contracts) via Fidelity Roth → ~$180/month tax-free premium
+- Cash-secured puts strategy: use $9,694 Roth cash to collect premium while waiting for market correction
+- Crash deployment ladder: 4 tranches at −10/−20/−30/−40% (never deploy all at once)
+- Buy/sell triggers + hard guardrails defined for all positions
+- DSCR loans identified as primary vehicle for 2030 property acquisition (no W2/income docs — based on rental cash flow)
+- Mom co-borrower profile captured: 800 FICO, $1,200/month SS, born 1959 → extends to 20-property capacity (Chris 10 + Mom 10)
+- Kate (Golfii's sister): ITIN path confirmed (Form W-7, 6-11 weeks) → LLC membership for property equity
+- Family Trust + ILIT generational wealth strategy → deferred to S48
+- Checkpoint saved: `checkpoint_S47-investment-strategy_2026-06-22.md`
+
+**Key decisions:**
+- DSCR loans solve the Aura Thai income problem — property qualifies on its own rental cash flow
+- Roth IRA cash is intentional de-risking, not negligence — crash preparation strategy
+- Kate needs ITIN via Form W-7 — no SSN workaround, clean legitimate path
+- Mom's 800 FICO is the credit multiplier for scaling property portfolio past 10 units
+
+**S48 starts with:** Load S47 checkpoint. Chris names property target markets (city/state/type) → first DSCR deal evaluation + Trust/ILIT framework.
+
