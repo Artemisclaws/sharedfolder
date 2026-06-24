@@ -1,5 +1,5 @@
 # ARTIE-RUNBOOK.md — V2 (Bedrock Standard)
-**Updated:** S50 / 2026-06-23 | Rewritten by Claude
+**Updated:** S50 / 2026-06-23 | Rewritten by Claude — V2.1 adds SOP 04 Session Handoff
 **Previous version:** V1 (S30, 2026-05-07) — retired. Too complex. Artie never completed a task.
 
 ---
@@ -153,6 +153,58 @@ Log: [clean / errors — paste if errors]
 
 ---
 
+
+### SOP 04 — SESSION HANDOFF
+
+**When to run:**
+- END of every session (before Artie goes idle or restarts)
+- START of every session if a prior checkpoint exists
+
+---
+
+**WRITE (session end) — COMMAND:**
+```bash
+python3 ~/.openclaw/workspace/artie_handoff.py write "COMPLETED: [what ran] | FAILED: [what didn't] | NEXT: [resume point]"
+```
+
+**Example:**
+```bash
+python3 ~/.openclaw/workspace/artie_handoff.py write "COMPLETED: soul sync, cron restore | FAILED: none | NEXT: morning report when script built"
+```
+
+**EXPECTED OUTPUT:** `Handoff written. Done.` + checkpoint preview printed.
+
+**REPORT TO DISCORD (#general):**
+```
+✅ HANDOFF WRITTEN — [DATE TIME]
+Completed: [X]
+Next: [Y]
+```
+
+---
+
+**READ (session start / cold start) — COMMAND:**
+```bash
+python3 ~/.openclaw/workspace/artie_handoff.py read
+```
+
+**EXPECTED OUTPUT:** Last checkpoint content — read it before doing anything else.
+
+**If no checkpoint found:** Output says "No checkpoint found. Starting cold." → run SOP 01 Soul Sync → ask Chris for today's priority.
+
+---
+
+**INSTALL (one-time setup — only needed once):**
+```bash
+cp ~/.openclaw/workspace/artie_handoff.py ~/.openclaw/workspace/artie_handoff.py
+# Script is at: soul/artie/artie_handoff.py in GitHub
+# Pull it with soul sync or copy manually
+```
+
+**PAT for GitHub push:** Script looks for `GITHUB_PAT` environment variable first, then `~/.openclaw/workspace/github_pat.txt`. If neither exists, checkpoint saves locally only (still useful for cold-start recovery).
+
+---
+
 ## PENDING SOPs (Script not built — DO NOT RUN)
 
 These tasks exist but Artie cannot run them yet. Claude must build the script first.  
@@ -161,6 +213,7 @@ When Chris assigns one of these, Artie replies: `🔴 [Task name] — script not
 | SOP | Task | Script Needed | Status |
 |-----|------|--------------|--------|
 | P-01 | Morning startup report | `morning_report.py` | ❌ Not built |
+| — | Session handoff | `artie_handoff.py` | ✅ Built — see SOP 04 |
 | P-02 | Evening wrap report | `evening_wrap.py` | ❌ Not built |
 | P-03 | Platform report pull (GH/DD/UE) | `platform_pull.py` | ❌ Not built |
 | P-04 | Amazon Vine review draft | `vine_review.py` | ❌ Not built |
