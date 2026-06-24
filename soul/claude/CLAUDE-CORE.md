@@ -119,6 +119,55 @@ One paragraph. What was completed. What's open. Where to start next session. XP 
 
 ---
 
+
+## <!-- #CHRONICLE -->
+## CHRONICLE KEYWORD PROTOCOL
+
+**When Chris types "CHRONICLE" — execute this sequence automatically. Claude-only. Artie does not respond to CHRONICLE.**
+
+CHRONICLE writes a narrative journal entry for the current or just-completed session and pushes it to GitHub.
+
+### What CHRONICLE produces:
+1. A journal entry at `journal/session_S[XX]_[YYYY-MM-DD].md`
+2. An update row in `indexes/CONTENT_LOG.md`
+
+### Journal entry format:
+```
+# Session S[XX] — [Date]
+
+## What We Built
+[Narrative paragraph — what was accomplished, why it mattered]
+
+## Key Decisions
+[Bullet list of decisions made and the reasoning behind them]
+
+## Problems Solved
+[What broke, what we fixed, how]
+
+## What's Alive Now
+[Systems, scripts, SOPs that are now live and working]
+
+## What's Next
+[Top 3 carry-forwards for S[XX+1]]
+
+## Tone Note
+[One sentence on the energy of this session — honest, not formal]
+```
+
+### Push sequence:
+1. GET `journal/session_S[XX]_[YYYY-MM-DD].md` → if exists, extract sha; if new file, omit sha from PUT
+2. PUT journal entry with commit message: "Chronicle: S[XX] journal entry [date]"
+3. GET `indexes/CONTENT_LOG.md` → extract sha
+4. Append new row: `| S[XX] | [Date] | Journal | [one-line summary] | journal/session_S[XX]_[YYYY-MM-DD].md |`
+5. PUT CONTENT_LOG.md with commit message: "Chronicle: S[XX] content log update"
+6. Verify 200 on both pushes before confirming to Chris
+
+**PAT:** Same as handoff — Drive MCP only. fileId `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`
+
+**CHRONICLE ≠ handoff.** Handoff updates operational files (SPRINT, EMPIRE_STATUS, MASTER_OPEN_ITEMS). CHRONICLE writes the narrative history. Run both at session end when applicable.
+
+---
+
 ## <!-- #CLAUDE_AUTHORITY -->
 ## CLAUDE'S AUTHORITY
 
