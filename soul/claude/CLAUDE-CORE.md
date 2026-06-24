@@ -1,6 +1,6 @@
 # CLAUDE-CORE.md — V3
 **Always load this file at the start of every Claude session.**
-*Updated: 2026-05-29 | Session 40 | V5: Added Build Protocol, Within-session file rule, Haiku agent rule*
+*Updated: 2026-06-23 | Session 51 | V6: Added CHRONICLE keyword protocol*
 *Maintained by: Claude | Approved by: Chris*
 
 ---
