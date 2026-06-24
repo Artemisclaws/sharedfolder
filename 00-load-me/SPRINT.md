@@ -34,6 +34,7 @@ Pull them only if SPRINT.md session number is behind the latest known session.
 | A-10 | Food cost model: fix Basil + Green Bean | ⏳ Pending | Basil actual $5.95 vs model $3.95. Green Bean $2.95 vs $1.29. Both understated. |
 | A-02 | UberEats price impact — complete | ⏳ Partial | Only 5 days POST data. Easter confound. |
 | I-23 | artie_report_sync.py cron fix | ⏸ DEPRIORITIZED | Not S50 priority. Fix Artie runbook first. |
+| NEW | Amazon Vine — reinstatement | 🔴 BLOCKED | Kicked off for late reviews. Goal: get back on Vine. No active Artie tasks until reinstated. Remove vine_review_writer.py cron from Artie machine. |
 | A-04 | ARTIE SOP 13 — cron fix + monthly finance | ❌ Open | Write to ARTIE-RUNBOOK.md. |
 | I-06 | Daily digest cron for #general | ❌ Open | |
 | I-17 | Decommission old Cloudflare Tunnel | ❌ Open | |
