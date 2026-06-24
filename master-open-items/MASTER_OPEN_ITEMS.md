@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Living task tracker for the Pinyo Empire.**
-**Last Updated:** 2026-06-20 | Session 43
+**Last Updated:** 2026-06-24 | Session 52
 **GitHub:** `master-open-items/MASTER_OPEN_ITEMS.md`
 
 ---
@@ -128,3 +128,18 @@
 ## 🔗 Graph Links
 [[HOME]] | [[SPRINT]] | [[EMPIRE_STATUS]] | [[SESSION_HISTORY]]
 [[aura-thai]] | [[vine-arbitrage]] | [[pinyo-farms]] | [[ai-ventures]] | [[roam]]
+
+## AURA SWEET ITEMS
+
+| ID | Item | Status | Priority | Notes |
+|----|------|--------|----------|-------|
+| AS-01 | Finalize sizes, prices, strategy, launch action steps | OPEN | TOP | S53 primary task |
+| AS-02 | Competitive analysis: Somisomi vs Aura Sweet | OPEN | High | Before finalizing strategy — Somisomi is direct competitor on ice cream/gelato |
+| AS-03 | Walk the block: verify Somisomi + Ding Tea menus/pricing | OPEN - CHRIS | High | Physical walkthrough before launch. Both next to Ramen Hub. |
+| AS-04 | Confirm brand name final ("Aura Sweet" vs alternatives) | OPEN - CHRIS | High | Blocks packaging and social setup |
+| AS-05 | Confirm packaging budget | OPEN - CHRIS | High | Blocks packaging sourcing |
+| AS-06 | Decide: ice cream/gelato in-house vs sourced | OPEN - CHRIS | High | Changes cost structure and sizing options |
+| AS-07 | Check permits for second brand under same kitchen | OPEN - CHRIS | High | Local health department — required before launch |
+| AS-08 | First Fridays pop-up plan — August 2026 | OPEN | Medium | July skipped. August = first opportunity. Plan event format, signage, products. |
+| AS-09 | Register Aura Sweet on DoorDash | OPEN | High | Launch step 1 per business plan |
+| AS-10 | Create Aura Sweet Instagram account | OPEN - CHRIS | High | Chris is content creator. Reels primary channel. |
