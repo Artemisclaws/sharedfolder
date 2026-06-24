@@ -125,46 +125,57 @@ One paragraph. What was completed. What's open. Where to start next session. XP 
 
 **When Chris types "CHRONICLE" — execute this sequence automatically. Claude-only. Artie does not respond to CHRONICLE.**
 
-CHRONICLE writes a narrative journal entry for the current or just-completed session and pushes it to GitHub.
+Chris types one word. Claude does everything else — determines session number, infers topic, writes the entry, pushes it. Zero input required from Chris.
 
-### What CHRONICLE produces:
-1. A journal entry at `journal/session_S[XX]_[YYYY-MM-DD].md`
-2. An update row in `indexes/CONTENT_LOG.md`
+### Step 1 — Determine session number automatically
+- **New sessions (post S51):** Read session number from SPRINT.md START HERE block — already in context.
+- **Old sessions (stale files):** Fetch `session-history/SESSION_HISTORY.md` from GitHub API. Match by date and topics discussed to identify the correct S-number. Never invent a new number.
 
-### Journal entry format:
+### Step 2 — Infer topic tag from conversation
+Read the conversation. Assign one hyphenated tag from this list (or create a new one if needed):
+`artie-system` | `aura-thai` | `infrastructure` | `vine` | `pinyo-farms` | `ai-ventures` | `roam` | `finance` | `chronicle-system`
+
+### Step 3 — Write journal entry
 ```
-# Session S[XX] — [Date]
+# Session S[XX] — [YYYY-MM-DD]
+**Topic:** [topic-tag]
+
+## The Problem
+[What was broken, unclear, or unknown when this session started. The reason this session existed.]
+
+## Questions We Were Trying to Solve
+[Bullet list — the actual questions asked, debates had, things that needed figuring out mid-session]
+
+## What We Tried That Didn't Work
+[Failed attempts, dead ends, wrong turns. Skip if none. This is important — prevents repeating mistakes and makes the story human.]
 
 ## What We Built
 [Narrative paragraph — what was accomplished, why it mattered]
 
 ## Key Decisions
-[Bullet list of decisions made and the reasoning behind them]
-
-## Problems Solved
-[What broke, what we fixed, how]
+[Bullet list — decisions made and reasoning behind them]
 
 ## What's Alive Now
-[Systems, scripts, SOPs that are now live and working]
+[Systems, scripts, SOPs now live and working]
 
 ## What's Next
-[Top 3 carry-forwards for S[XX+1]]
+[Top 3 carry-forwards for next session on this topic]
 
 ## Tone Note
-[One sentence on the energy of this session — honest, not formal]
+[One honest sentence on the energy of this session]
 ```
 
-### Push sequence:
-1. GET `journal/session_S[XX]_[YYYY-MM-DD].md` → if exists, extract sha; if new file, omit sha from PUT
-2. PUT journal entry with commit message: "Chronicle: S[XX] journal entry [date]"
+### Step 4 — Push both files
+**PAT:** Drive MCP only — `mcp__f942c9da-b87a-416f-b244-bf0c5ad2b8b2__read_file_content`, fileId `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`
+
+1. GET `journal/session_S[XX]_[YYYY-MM-DD].md` → extract sha if exists; omit sha if new
+2. PUT journal entry — commit: `"Chronicle: S[XX] [topic-tag] journal entry"`
 3. GET `indexes/CONTENT_LOG.md` → extract sha
-4. Append new row: `| S[XX] | [Date] | Journal | [one-line summary] | journal/session_S[XX]_[YYYY-MM-DD].md |`
-5. PUT CONTENT_LOG.md with commit message: "Chronicle: S[XX] content log update"
-6. Verify 200 on both pushes before confirming to Chris
+4. Append row: `| S[XX] | [YYYY-MM-DD] | [topic-tag] | [one-line summary] | journal/session_S[XX]_[YYYY-MM-DD].md |`
+5. PUT CONTENT_LOG.md — commit: `"Chronicle: S[XX] content log update"`
+6. Verify 200 on both. Report to Chris: session number used, topic tag assigned, both files pushed.
 
-**PAT:** Same as handoff — Drive MCP only. fileId `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT`
-
-**CHRONICLE ≠ handoff.** Handoff updates operational files (SPRINT, EMPIRE_STATUS, MASTER_OPEN_ITEMS). CHRONICLE writes the narrative history. Run both at session end when applicable.
+**CHRONICLE ≠ handoff.** Handoff = operational files (SPRINT, EMPIRE_STATUS). CHRONICLE = narrative history. Run both at session end.
 
 ---
 
