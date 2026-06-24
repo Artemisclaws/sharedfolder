@@ -351,3 +351,5 @@ Source files on Drive:
 
 **S49 starts with:** Load soul files (confirm S48). Confirm Price Tracker populated (did Chris run populatePriceTrackerDirect?). Fix I-23 cron (artie_report_sync.py not firing since May 8). Then A-06 Decision Dashboard.
 | S49 ⭐ PIVOTAL | 2026-06-23 | Bug audit all 4 core files. CLAUDE-CORE V4 (Step 6 fixed, CHANGE CONTROL added). File org system. Journal + CONTENT_LOG live. Bedrock Standard named. | S50: Artie simplification to Bedrock Standard. First functional tool. |
+
+| S51 | 2026-06-23 | CHRONICLE + project instructions fix | CHRONICLE added to CLAUDE-CORE.md V6. Project instructions updated to GitHub API (no stale cache). CHRONICLE tested — S48 journal + CONTENT_LOG.md live. | S52: TeamViewer — Artie cron (6hr sync + remove Vine), run sync_soul.sh, verify artie_handoff.py |
