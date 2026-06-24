@@ -1,112 +1,70 @@
 # SPRINT.md — Active Work Digest
-**Updated by:** Claude | Session S50 | 2026-06-23
-**Current session:** S50 (increment by 1 each new session — do not confuse data model labels like 'S39' with session numbers)
+**Updated:** S50 | 2026-06-23
 
 ---
 
-## ⚡ START HERE — READ THIS FIRST
+## ⚡ START HERE — THIS OVERRIDES EVERYTHING BELOW
+
+> **YOU ARE CLAUDE. YOU ARE STARTING SESSION S51.**
+> Do not reference S39. S39 is a data model label, not a session number.
+> Sessions run continuously. Last real session = S50 (2026-06-23).
 
 | Field | Value |
 |-------|-------|
-| **Current session** | S51 (you are Claude, starting fresh) |
-| **Last session** | S50 — rewrote ARTIE-RUNBOOK.md to Bedrock Standard, built artie_handoff.py, fixed ARTIE-CORE.md V6, removed conflicting handoff protocols from ARTIE-STANDARDS.md, updated Vine status to suspended |
-| **First thing to do this session** | Add CHRONICLE command to CLAUDE-CORE.md, then add 6-hour soul sync cron to Artie's machine |
-| **Do NOT do** | Re-explain what's in these files. Do not recap. Ask Chris one question if unclear, then execute. |
+| **You are in** | Session S51 |
+| **Last session** | S50 — 2026-06-23 |
+| **What S50 completed** | ARTIE-RUNBOOK.md V2 (Bedrock), artie_handoff.py, ARTIE-CORE.md V6, Vine status updated to suspended, SPRINT.md START HERE block added |
+| **First task S51** | Add CHRONICLE command to CLAUDE-CORE.md |
+| **Second task S51** | Add 6-hour soul sync cron to Artie's machine |
+| **Do NOT start with** | A-06 dashboard, I-23 cron, UE price analysis — those are old queue items, not current priority |
 
-**How to update this block each session:** Replace Current session +1, move current to Last session, update First thing to do, push before handoff.
-
----
-## ⚠️ LOAD NOTE — TOKEN EFFICIENCY
-Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
-Pull them only if SPRINT.md session number is behind the latest known session.
+**Each session: update this table before handoff. Increment session number. Replace last session summary. Set next task.**
 
 ---
 
-## BUILD PHILOSOPHY — LOCKED S46 (applies to everything)
-1. Simple first. Automate second. Scale third.
-2. One function, one job. No dependencies on things that can break.
-3. Manual before automated. Automation is always the end goal.
-4. Phase 1 (manual) → 2 (script) → 3 (AI assist) → 4 (full auto). Never skip.
-5. Design so AI can take it over later — manual is a placeholder, not a destination.
+## ACTIVE ITEMS
 
----
-
-## ACTIVE ITEMS — S46 DIGEST
-
-| ID | Item | Status | Notes |
+| ID | Task | Status | Notes |
 |----|------|--------|-------|
-| **S50** | **ARTIE-RUNBOOK.md — rewrite to Bedrock Standard** | ✅ **COMPLETE S50** | V2 pushed. 3 working SOPs (Soul Sync, Recovery, Cron Restore). 8 pending SOPs marked DO NOT RUN until scripts built. Commit 3846b498. |
-| A-07 | Price Tracker: run populatePriceTrackerDirect | 🔴 NEXT | Script ready in workspace. Paste into Apps Script, run once. Seeds 8 ingredients. |
-| A-08 | Invoice Log: establish manual entry process | 🔴 Phase 1 | Who enters data when delivery arrives? Define process before automating. |
-| A-06 | Aura Thai Decision Dashboard | 🔴 Priority | Data in Drive. Needs Lavu XLS conversion first. |
-| A-09 | ezCater menu upload | ⏳ Pending | Plan built (aura_thai_ezcater_menu_plan_v1.md). Needs upload to platform. |
-| A-10 | Food cost model: fix Basil + Green Bean | ⏳ Pending | Basil actual $5.95 vs model $3.95. Green Bean $2.95 vs $1.29. Both understated. |
-| A-02 | UberEats price impact — complete | ⏳ Partial | Only 5 days POST data. Easter confound. |
-| I-23 | artie_report_sync.py cron fix | ⏸ DEPRIORITIZED | Not S50 priority. Fix Artie runbook first. |
-| NEW | Amazon Vine — reinstatement | 🔴 BLOCKED | Kicked off for late reviews. Goal: get back on Vine. No active Artie tasks until reinstated. Remove vine_review_writer.py cron from Artie machine. |
-| A-04 | ARTIE SOP 13 — cron fix + monthly finance | ❌ Open | Write to ARTIE-RUNBOOK.md. |
-| I-06 | Daily digest cron for #general | ❌ Open | |
-| I-17 | Decommission old Cloudflare Tunnel | ❌ Open | |
-| B-01 | Pinyo Farms market validation | ❌ Queued | |
-| S49 | Mac file organization system | 🔴 S49 | Checkpoints scattered. No system for what goes where. Design this session. |
-| S49 | Core file bug audit | ✅ DONE S49 | All 4 files audited. CLAUDE-CORE V4 pushed. EMPIRE_STATUS + SPRINT updated. |
+| S51-1 | Add CHRONICLE to CLAUDE-CORE.md | 🔴 Open | Trigger: Chris types CHRONICLE in old Cowork session → Claude writes journal entry → pushes to journal/session_SXX.md + CONTENT_LOG.md |
+| S51-2 | Add 6-hour sync cron to Artie's machine | 🔴 Open | `0 */6 * * * nohup bash /home/artemis/.openclaw/workspace/sync_soul.sh > /home/artemis/.openclaw/workspace/sync_last.log 2>&1` |
+| A-07 | Price Tracker: run populatePriceTrackerDirect | 🔴 Open | Chris runs in Apps Script → Investment Strategies folder |
+| VINE | Amazon Vine reinstatement | 🔴 Blocked | Kicked off for late reviews. No Artie tasks until reinstated. vine_review_writer.py cron must be removed from Artie's machine. |
 
 ---
 
-## AURA THAI — CURRENT SYSTEM STATE
+## BLOCKED / DEPRIORITIZED
 
-| System | Status |
-|--------|--------|
-| Invoice Log | ❌ EMPTY — wiped by setupInvoiceSystem S46 |
-| Price Tracker | 🔲 PENDING — run populatePriceTrackerDirect |
-| setupInvoiceSystem | 🚫 BANNED — wipes data every run |
-| updatePriceTracker | ⏸ On hold — needs Invoice Log data |
-| ezCater plan | ✅ Built — not yet uploaded |
-
-**We are in Phase 1.** Manual entry only until Invoice Log is stable.
+| ID | Item | Why |
+|----|------|-----|
+| A-06 | Aura Thai Decision Dashboard | Deprioritized — Artie system takes priority |
+| I-23 | artie_report_sync.py cron | Cron exists on Artie's machine — may already be working. Verify before fixing. |
+| A-02 | UE price analysis | Partial — pick up when A-06 resumes |
 
 ---
 
-## CORRECTED DATA MODEL (S39 — do not revert)
-- **Lavu = primary revenue source.** Lavu captures ALL sales.
-- GH/DD/UE contribute TO Lavu totals — not separate baselines.
-- May 2026 Lavu avg: ~$2,200/day net.
+## PERMANENTLY BANNED
+
+| Item | Reason |
+|------|--------|
+| setupInvoiceSystem | Wipes all data + always times out. Never run again. |
 
 ---
 
-## AURA THAI PIPELINE — KEY FACTS
-- Sheet ID: `1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE`
-- Apps Script ID: `1lNMZ_Hvwj-4ncLGy0nWN9rEr6xJYADZxM9OpOTTloNfGsAIA0DV-uDzr`
-- artie_report_sync.py: NOT firing since May 8 (I-23)
-- Rad Rooster: NOT launched
+## INFRASTRUCTURE STATE (as of S50)
+
+| Item | Status |
+|------|--------|
+| CLAUDE-CORE.md | V4 — Drive MCP only for PAT |
+| ARTIE-CORE.md | V6 — Session start/end protocol added |
+| ARTIE-RUNBOOK.md | V2 Bedrock — 3 working SOPs, 8 pending scripts |
+| artie_handoff.py | ✅ Live on GitHub — soul sync will pull to Artie |
+| ARTIE-STANDARDS.md | Cleaned S50 — old handoff protocol removed |
+| Vine | ⚠️ SUSPENDED — kicked for late reviews |
+| Amazon Vine cron | Remove vine_review_writer.py from Artie crontab |
+| Soul sync cron | @reboot only — 6hr cron NOT yet added |
+| S39 label | Data model label only — NOT a session number |
 
 ---
 
-## BUSINESSES — CURRENT FOCUS
-
-| Business | Status | Priority Action |
-|----------|--------|-----------------|
-| Aura Thai | 🔴 Active — urgent | Price Tracker (A-07) → Invoice Log process (A-08) → Dashboard (A-06) |
-| Vine Arbitrage | 🟢 Running | Artie handles |
-| Pinyo Farms | ⏳ Planning | Market validation — B-01 |
-| AI Ventures | ⏳ Planning | Not started |
-| Roam | ⏳ Planning | Not started |
-
----
-
-## INFRASTRUCTURE — KEY FACTS
-- GitHub PAT: Drive fileId `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT` — Drive MCP only, no local file paths
-- CLAUDE-CORE.md: V4 (S49) — Step 6 rewritten, CHANGE CONTROL added, soul files locked
-- Cloudflare Pages: auto-deploys on push → ops.radrooster.co
-
----
-
-## BLOCKED — DO NOT TOUCH
-| Item | Blocker |
-|------|---------|
-| Lavu as live data source | Lavu API setup incomplete (Chris) |
-| O-04 Shift Close integration | Chris needs to complete setup |
-| setupInvoiceSystem | 🚫 PERMANENTLY BANNED — wipes all data every run, always times out |
-
-## 🔗 Graph Links
-[[HOME]] | [[EMPIRE_STATUS]] | [[MASTER_OPEN_ITEMS]]
+*S39 appears in this file as a DATA MODEL LABEL only. It is not the last session. Last session = S50.*
