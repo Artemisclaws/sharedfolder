@@ -113,6 +113,7 @@ Suppliers: Taiwah Trading Corp (dry goods/produce) | SJ Distributors LLC (protei
 | S46 | 2026-06-23 | Build philosophy locked. setupInvoiceSystem BANNED. populatePriceTrackerDirect ready. GitHub brain re-established. |
 | S47 | 2026-06-23 | Price Tracker script delivered (aura_thai_price_tracker_script_v1.gs). |
 | S48 | 2026-06-23 | Handoff PAT root cause found: dead session path in Step 6. Partial CLAUDE-CORE fix. SESSION_HISTORY caught up S41-S48. |
+| S50 | 2026-06-23 | Artie runbook V2 — Bedrock Standard. 3 working SOPs, 8 pending scripts queued. Root cause fixed: SOPs were instructions, not commands. |
 | S49 | 2026-06-23 | Full bug audit of all 4 core files. CLAUDE-CORE V4: Step 6 rewritten (Drive only), CHANGE CONTROL added. File org system designed. |
 
 ## 🔗 Graph Links
