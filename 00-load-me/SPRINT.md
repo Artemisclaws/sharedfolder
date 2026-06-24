@@ -1,100 +1,85 @@
-# SPRINT.md — Active Work Digest
-**Updated:** S52 | 2026-06-24
+# SPRINT.md — Current Sprint Priorities
+**Updated by:** Claude | Session S53 | 2026-06-24
+**GitHub:** `00-load-me/SPRINT.md`
+
+Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## START HERE — THIS OVERRIDES EVERYTHING BELOW
-
-> **YOU ARE CLAUDE. YOU ARE STARTING SESSION S53.**
-> Last real session = S52 (2026-06-24).
-
-| Field | Value |
-|-------|-------|
-| **You are in** | Session S53 |
-| **Last session** | S52 — 2026-06-24 |
-| **What S52 completed** | Aura Sweet customer avatar built. Demographic research (Bixby Knolls + DoorDash). BIXBY_KNOLLS_MARKET.md created. Sizing standardized (8oz cup / 16oz pint). Competitors confirmed: Somisomi + Ding Tea next to Ramen Hub. EMPIRE_STATUS updated with full Aura Sweet section. |
-| **First task S53** | Aura Sweet: Competitive analysis (Somisomi vs Aura Sweet) → finalize sizes, prices, strategy, launch action steps |
-| **Also pending** | Artie cron tasks below — TeamViewer paste still ready, not yet executed |
-
-**Each session: update this table before handoff. Increment session number. Replace last session summary. Set next task.**
-
----
-
-## TEAMVIEWER PASTE — READY TO RUN (pending from S52)
-
-Paste in Artie's terminal in order:
-
-```bash
-# 1 — Remove dead Vine cron
-crontab -l | grep -v vine_review_writer | crontab -
-
-# 2 — Add 6-hour sync cron with nohup
-(crontab -l 2>/dev/null; echo "0 */6 * * * nohup bash /home/artemis/.openclaw/workspace/sync_soul.sh > /home/artemis/.openclaw/workspace/sync_last.log 2>&1 &") | crontab -
-
-# 3 — Verify
-crontab -l
+## SESSION START COMMAND — S54
 ```
-
-Then run sync to pull artie_handoff.py:
-```bash
-bash /home/artemis/.openclaw/workspace/sync_soul.sh
-```
-
-Then confirm handoff script loaded:
-```bash
-python3 /home/artemis/.openclaw/workspace/artie_handoff.py read
+Load soul files + BIXBY_KNOLLS_MARKET.md.
+S53: Aura Sweet naming locked, poster done, 3-move campaign ready to execute.
+Priority: (1) Aura Sweet spinoff strategy — "How should we approach Aura Sweet as a spinoff?" (2) Competitive analysis: Somisomi vs Aura Sweet (carried from S52). (3) Check if Artie has Invoice Log + Sales by Period data → run COGS if yes. (4) Remind Chris: Dish Map column D still blank.
 ```
 
 ---
 
-## ACTIVE ITEMS
+## LOAD NOTE — TOKEN EFFICIENCY
+Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
+- If SPRINT.md session number is behind → pull those files from GitHub.
+- Otherwise: SPRINT.md is the only context file needed at session start.
 
-| ID | Task | Status | Notes |
+---
+
+## CORRECTED DATA MODEL (S39 — do not revert)
+- **Lavu = primary revenue source.** Captures ALL sales: dine-in + delivery + catering.
+- GH, DD, UE are sub-channels. They contribute TO Lavu totals.
+- Lavu XLS = UTF-16LE TSV — base64 decode → BOM strip → parse.
+
+---
+
+## PERMANENT RULES
+> All dashboards live at ops.radrooster.co. No standalone URLs ever.
+> Finance tab hardcodes data — MUST rebuild to read from Google Sheet (DASHBOARD ARCHITECTURE RULE violation).
+> $5K/day focus filter: new ideas → parking lot unless they advance COGS → pipeline → unit economics → growth.
+
+---
+
+## ACTIVE ITEMS — S53 DIGEST
+
+| ID | Item | Status | Notes |
 |----|------|--------|-------|
-| AS-01 | Aura Sweet: finalize sizes, prices, strategy, action steps | OPEN | S53 primary task |
-| AS-02 | Competitive analysis: Somisomi vs Aura Sweet | OPEN | Do before finalizing strategy |
-| AS-03 | Walk the block: verify Somisomi + Ding Tea menus/pricing | OPEN - CHRIS | Physical walkthrough before launch |
-| AS-04 | Confirm 4 open questions (brand name, packaging budget, in-house vs sourced, permits) | OPEN - CHRIS | Blocks launch planning |
-| AS-05 | First Fridays pop-up planning — August 2026 | OPEN | July skipped — August is first opportunity |
-| S52-1 | Artie cron: remove Vine, add 6hr sync | OPEN | TeamViewer paste ready above |
-| S52-2 | Run sync_soul.sh + verify artie_handoff.py | OPEN | After cron confirmed |
-| A-07 | Price Tracker: run populatePriceTrackerDirect | OPEN - CHRIS | Apps Script → Investment Strategies folder |
-| VINE | Amazon Vine reinstatement | BLOCKED | Kicked off for late reviews. Plan needed. |
+| AS-01 | Aura Sweet spinoff strategy | OPEN — S54 | "How should we approach Aura Sweet as a spinoff?" |
+| AS-02 | Somisomi competitive analysis | OPEN — S54 | Carried from S52 — Chris to walk the block first |
+| AS-03 | Execute 3-move campaign | READY — CHRIS | Move 1: proof post today. Move 2: BKBA collab. Move 3: Chef's Secret video. |
+| AS-04 | Finalize poster in Canva | IN PROGRESS — CHRIS | Mockup complete. Copy locked. |
+| A-09 | COGS — Artie data entry | IN PROGRESS | Invoice system live. Artie entering backlog. |
+| A-09b | Chris fill Dish Map column D | OPEN — CHRIS | 31 ingredients loaded. Enter dish names per ingredient. Unlocks COGS by Dish. |
+| A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
+| A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
+| I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
 
 ---
 
-## BLOCKED / DEPRIORITIZED
+## AURA SWEET — S53 STATUS
+**Flavor names locked:**
+- The Brew (Thai Tea)
+- Chef's Secret (Fish Sauce Caramel) — viral hook, never reveal early
+- Island Cream (Coconut)
+- Sweet Grain (Mango Sticky Rice)
 
-| ID | Item | Why |
-|----|------|-----|
-| A-06 | Aura Thai Decision Dashboard | Deprioritized |
-| I-23 | artie_report_sync.py cron | Cron exists on Artie's machine — verify before fixing |
-| A-02 | UE price analysis | Partial — pick up when A-06 resumes |
-
----
-
-## PERMANENTLY BANNED
-
-| Item | Reason |
-|------|--------|
-| setupInvoiceSystem | Wipes all data + always times out. Never run again. |
+**Sizing (S52 locked):** 8oz cup + 16oz pint. Two formats only.
+**Poster:** Menu poster mockup complete. One poster only. Copy locked. Ready for Canva.
+**Campaign:** 3-move local launch playbook ready. BKBA is the reach move.
+**Proof:** 100 Thai Tea + 40 Chef's Secret scoops sold by poster alone.
+**Market intel:** BIXBY_KNOLLS_MARKET.md — load this at session start for any Aura Sweet work.
+**Next:** Spinoff strategy + Somisomi competitive analysis.
 
 ---
 
-## INFRASTRUCTURE STATE (as of S52)
-
-| Item | Status |
-|------|--------|
-| CLAUDE-CORE.md | V6 S51 — CHRONICLE protocol added |
-| BIXBY_KNOLLS_MARKET.md | LIVE S52 — bixby-knolls/BIXBY_KNOLLS_MARKET.md |
-| EMPIRE_STATUS.md | Updated S52 — Aura Sweet section + Bixby Knolls ref |
-| CHRONICLE | LIVE — journal/ + CONTENT_LOG.md |
-| ARTIE-CORE.md | V6 — Session start/end protocol |
-| ARTIE-RUNBOOK.md | V2 Bedrock — 3 working SOPs |
-| artie_handoff.py | On GitHub — needs sync to pull to Artie |
-| Soul sync cron (6hr) | PENDING — TeamViewer paste ready |
-| Vine cron (dead) | PENDING removal — TeamViewer paste ready |
+## AURA THAI INVOICE SYSTEM (S40/S43 — FOUNDATION COMPLETE)
+| Tab | Status | Owner |
+|-----|--------|-------|
+| Invoice Log | READY | Artie — enter every delivery |
+| Price Tracker | READY | Auto |
+| Dish Map | READY (col D blank) | Chris — fill Used In Dishes column |
+| Sales by Period | READY | Artie — weekly from Lavu Sale by Item |
+| COGS by Dish | WAITING FOR DATA | Claude — analyze once Invoice Log + Sales by Period overlap |
 
 ---
 
-*Load bixby-knolls/BIXBY_KNOLLS_MARKET.md for any Aura Sweet or Atlantic Ave session.*
+## KEY REVENUE NUMBERS (S40 verified)
+- YTD 2026: $381,011 | YTD 2025: $412,036 | **YoY: -7.5%**
+- Apr 2026 vs 2025: **-11.3%** (worst month so far)
+- BOH Labor: ~$15,000/month | ~$494/day
