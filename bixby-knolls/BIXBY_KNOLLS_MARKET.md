@@ -116,8 +116,8 @@ Bixby Knolls is a family-friendly, middle-to-upper-middle-class neighborhood in 
 |----------|------|-----------|--------|-------|
 | Thunderbolt Pizza | Pizza | 10 ft | Not a competitor | Foot traffic source |
 | Ramen Hub | Ramen | Down the street | Not a competitor | Dessert demand source |
-| [Dessert place next to Ramen Hub] | Dessert | Near Ramen Hub | Direct competitor | Name TBD - verify before launch |
-| [Tea place next to Ramen Hub] | Tea/Drinks | Near Ramen Hub | Partial competitor | Name TBD - verify before launch |
+| Somisomi | Soft serve / Taiyaki | Next to Ramen Hub | Direct competitor | Chain. Fish-shaped taiyaki cones + soft serve. Instagram-friendly. Asian dessert brand. Strong with kids. |
+| Ding Tea | Bubble tea | Next to Ramen Hub | Partial competitor | Taiwanese chain. Competes for beverage side of Aura Sweet menu. |
 
 **Action needed:** Walk the block. Confirm names, menus, and pricing of dessert + tea places near Ramen Hub before launch.
 
