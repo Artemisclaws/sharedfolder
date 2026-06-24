@@ -23,6 +23,7 @@ def get_pat():
     if pat:
         return pat
     for path in [
+        os.path.expanduser("~/.pinyo_github_pat"),
         os.path.expanduser("~/.openclaw/workspace/github_pat.txt"),
         os.path.expanduser("~/.openclaw/github_pat.txt"),
     ]:
