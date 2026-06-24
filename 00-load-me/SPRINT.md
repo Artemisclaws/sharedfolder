@@ -1,12 +1,21 @@
-# SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S49 | 2026-06-23
+# SPRINT.md — Active Work Digest
+**Updated by:** Claude | Session S50 | 2026-06-23
 **Current session:** S50 (increment by 1 each new session — do not confuse data model labels like 'S39' with session numbers)
-**GitHub:** `00-load-me/SPRINT.md`
-
-Both agents load this file. It answers: what matters most right now?
 
 ---
 
+## ⚡ START HERE — READ THIS FIRST
+
+| Field | Value |
+|-------|-------|
+| **Current session** | S51 (you are Claude, starting fresh) |
+| **Last session** | S50 — rewrote ARTIE-RUNBOOK.md to Bedrock Standard, built artie_handoff.py, fixed ARTIE-CORE.md V6, removed conflicting handoff protocols from ARTIE-STANDARDS.md, updated Vine status to suspended |
+| **First thing to do this session** | Add CHRONICLE command to CLAUDE-CORE.md, then add 6-hour soul sync cron to Artie's machine |
+| **Do NOT do** | Re-explain what's in these files. Do not recap. Ask Chris one question if unclear, then execute. |
+
+**How to update this block each session:** Replace Current session +1, move current to Last session, update First thing to do, push before handoff.
+
+---
 ## ⚠️ LOAD NOTE — TOKEN EFFICIENCY
 Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 Pull them only if SPRINT.md session number is behind the latest known session.
