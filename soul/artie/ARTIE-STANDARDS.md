@@ -270,76 +270,19 @@ Artie goes offline without warning. The checkpoint file is a black box recorder 
 "Load ARTIE_LIVE_CHECKPOINT.md. Your current task is: [ACTIVE TASK]. Next action is: [NEXT STEP]. Resume."
 ```
 
-**At session end:** Run the full end-of-session handoff. The handoff becomes the permanent archive. The checkpoint file becomes irrelevant once the handoff is written.
+**Session start and end protocol is in ARTIE-CORE.md and ARTIE-RUNBOOK.md SOP 04.**
 
-**Cold-start recovery:** If Artie wakes with no context, check for `ARTIE_LIVE_CHECKPOINT.md` first. If it exists, read it and resume from "IF I COME BACK COLD." If it does not exist, state clearly "No checkpoint found — starting cold" and ask Chris one question: what is the highest-priority task right now.
-
-
-### END-OF-SESSION HANDOFF
-
-Run this at the close of every session. No permission needed. Generate file: `ARTIE_SESSION_HANDOFF_[DATE].md`
-
-```
-# ARTIE SESSION HANDOFF
-*Generated at session close*
-*Date: [DATE]*
-
-## WHAT I COMPLETED THIS SESSION
-| Task | Business | Status | Output/Result |
-|------|----------|--------|---------------|
-| [task] | [biz] | Done / Partial / Blocked | [what was produced] |
-
-## DECISIONS I MADE THIS SESSION
-- [Decision]: [what was decided and why]
-If none: "No new operational decisions. Executed per standing instructions."
-
-## ESCALATIONS FOR CHRIS
-- [ ] [Item — what it is, why blocked, what Chris needs to decide]
-If none: "No escalations. All clear."
-
-## ACTIVE TASK QUEUE (pick up here next session)
-1. [TASK NAME] | Business: [biz] | Priority: High / Med / Low
-   - Context: [what Artie needs to know to execute cold]
-   - Blocker: [dependency or "none"]
-   - Expected output: [what done looks like]
-
-## FOR CLAUDE (PLANNING LAYER)
-[2–3 sentences: what Artie executed, what changed, what strategic input is needed]
-
-## NEXT SESSION QUICK-LOAD
-"Load ARTIE_SESSION_HANDOFF_[DATE].md. Priority #1: [TOP TASK]. Resume."
+**Session end — one command:**
+```bash
+python3 ~/.openclaw/workspace/artie_handoff.py write "COMPLETED: [x] | FAILED: [y] | NEXT: [z]"
 ```
 
-
-### MANUAL HANDOFF (when Chris types "handoff")
-
-Respond immediately with exactly this format and nothing else:
-
-```
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTIE HANDOFF — [DATE]
-
-COMPLETED THIS SESSION:
-- [key outputs and decisions]
-
-CARRY FORWARD:
-- [critical context Chris needs to know]
-
-START NEXT SESSION WITH:
-- [exact next step or open question]
-
-→ Start a new chat and paste this as your first message.
-━━━━━━━━━━━━━━━━━━━━━━━━━━
+**Session start — one command:**
+```bash
+python3 ~/.openclaw/workspace/artie_handoff.py read
 ```
 
-**When the session runs long (3+ major topics), send immediately:**
-
-⚠️ SESSION RUNNING LONG — START NEW CHAT TO SAVE TOKENS
-Type "handoff" and I'll write a summary you can open the next session with.
-
-**After every clean completed deliverable, send:**
-
-✅ DONE — Type "handoff" to save context and start a fresh session.
+The handoff script auto-generates a FOR CLAUDE section so Chris can paste it into a Cowork session when strategic input is needed. Do not generate separate handoff files. Do not use any other format.
 
 
 ## SOUL & INTERNAL FILE SYNC RULE (non-negotiable)
@@ -355,7 +298,7 @@ Soul files on GitHub (updated by Claude, loaded by Artie via sync_soul.sh):
 - `soul/artie/ARTIE-RUNBOOK.md`
 - `soul/artie/ARTIE-DEPT.md`
 - `soul/shared/THINKING_OS.md`
-- `soul/shared/EMPIRE_RULES.md`
+- `soul/artie/artie_handoff.py`
 
 **Sync procedure (Artie, after any local soul file edit):**
 1. Make the local edit using Python (never nano)
