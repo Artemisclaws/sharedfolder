@@ -1,5 +1,6 @@
 # SPRINT.md — Current Sprint Priorities
 **Updated by:** Claude | Session S49 | 2026-06-23
+**Current session:** S50 (increment by 1 each new session — do not confuse data model labels like 'S39' with session numbers)
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
@@ -25,13 +26,14 @@ Pull them only if SPRINT.md session number is behind the latest known session.
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
+| **S50** | **ARTIE-RUNBOOK.md — rewrite to Bedrock Standard** | 🔴 **S50 PRIORITY** | Artie has NEVER completed a task. Root cause: SOPs too complex. Strip every SOP to: one command, one expected output, zero judgment calls. Read ARTIE-RUNBOOK.md first, then rewrite. |
 | A-07 | Price Tracker: run populatePriceTrackerDirect | 🔴 NEXT | Script ready in workspace. Paste into Apps Script, run once. Seeds 8 ingredients. |
 | A-08 | Invoice Log: establish manual entry process | 🔴 Phase 1 | Who enters data when delivery arrives? Define process before automating. |
 | A-06 | Aura Thai Decision Dashboard | 🔴 Priority | Data in Drive. Needs Lavu XLS conversion first. |
 | A-09 | ezCater menu upload | ⏳ Pending | Plan built (aura_thai_ezcater_menu_plan_v1.md). Needs upload to platform. |
 | A-10 | Food cost model: fix Basil + Green Bean | ⏳ Pending | Basil actual $5.95 vs model $3.95. Green Bean $2.95 vs $1.29. Both understated. |
 | A-02 | UberEats price impact — complete | ⏳ Partial | Only 5 days POST data. Easter confound. |
-| I-23 | artie_report_sync.py cron fix | ❌ Open | Not firing since May 8. |
+| I-23 | artie_report_sync.py cron fix | ⏸ DEPRIORITIZED | Not S50 priority. Fix Artie runbook first. |
 | A-04 | ARTIE SOP 13 — cron fix + monthly finance | ❌ Open | Write to ARTIE-RUNBOOK.md. |
 | I-06 | Daily digest cron for #general | ❌ Open | |
 | I-17 | Decommission old Cloudflare Tunnel | ❌ Open | |
