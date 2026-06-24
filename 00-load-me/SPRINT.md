@@ -26,7 +26,7 @@ Pull them only if SPRINT.md session number is behind the latest known session.
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
-| **S50** | **ARTIE-RUNBOOK.md — rewrite to Bedrock Standard** | 🔴 **S50 PRIORITY** | Artie has NEVER completed a task. Root cause: SOPs too complex. Strip every SOP to: one command, one expected output, zero judgment calls. Read ARTIE-RUNBOOK.md first, then rewrite. |
+| **S50** | **ARTIE-RUNBOOK.md — rewrite to Bedrock Standard** | ✅ **COMPLETE S50** | V2 pushed. 3 working SOPs (Soul Sync, Recovery, Cron Restore). 8 pending SOPs marked DO NOT RUN until scripts built. Commit 3846b498. |
 | A-07 | Price Tracker: run populatePriceTrackerDirect | 🔴 NEXT | Script ready in workspace. Paste into Apps Script, run once. Seeds 8 ingredients. |
 | A-08 | Invoice Log: establish manual entry process | 🔴 Phase 1 | Who enters data when delivery arrives? Define process before automating. |
 | A-06 | Aura Thai Decision Dashboard | 🔴 Priority | Data in Drive. Needs Lavu XLS conversion first. |
