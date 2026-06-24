@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-06-23 | Session S49
-**Updated By:** Claude (S49)
+**Last Updated:** 2026-06-23 | Session S51
+**Updated By:** Claude (S51)
 
 ---
 
@@ -17,8 +17,14 @@
 | Daily digest cron (#general) | ❌ NOT BUILT | |
 | Build Philosophy | ✅ LOCKED S46 | Navy SEAL rules. Manual→automated phases. |
 | GitHub Handoff PAT | ✅ FIXED S49 | Drive MCP only (fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT). No local paths. |
-| CLAUDE-CORE.md | ✅ V4 S49 | Step 6 rewritten, CHANGE CONTROL added, S32 hardcode fixed. |
-| Core file bug audit | ✅ DONE S49 | All 4 files audited. Bugs documented and fixed. |
+| CLAUDE-CORE.md | ✅ V6 S51 | CHRONICLE keyword protocol added. Runs on Sonnet for best narrative quality. |
+| Cowork project instructions | ✅ FIXED S51 | Now uses GitHub API via bash — no more stale web_fetch cache. |
+| CHRONICLE protocol | ✅ LIVE S51 | journal/session_SXX_date.md + indexes/CONTENT_LOG.md. S48 entry tested ✅. |
+| ARTIE-CORE.md | ✅ V6 S50 | Session start/end protocol added |
+| ARTIE-RUNBOOK.md | ✅ V2 Bedrock S50 | 3 working SOPs. 8 pending scripts queued. |
+| artie_handoff.py | ✅ On GitHub | Pulls to Artie via sync_soul.sh |
+| Soul sync cron (6hr) | 🔲 PENDING | TeamViewer paste ready — waiting for Chris to execute |
+| Vine | ⚠️ SUSPENDED | Kicked for late reviews. vine_review_writer.py cron must be removed. |
 
 ---
 
@@ -82,6 +88,8 @@ Suppliers: Taiwah Trading Corp (dry goods/produce) | SJ Distributors LLC (protei
 ## ARTIE STATUS
 - Machine: DESKTOP-R7E8H6E
 - ⚠️ Not completing tasks reliably. NOT a dependency in any Phase 1 build.
+- PAT location: `~/.pinyo_github_pat`
+- Handoff script: `~/.openclaw/workspace/artie_handoff.py`
 
 ---
 
@@ -113,8 +121,9 @@ Suppliers: Taiwah Trading Corp (dry goods/produce) | SJ Distributors LLC (protei
 | S46 | 2026-06-23 | Build philosophy locked. setupInvoiceSystem BANNED. populatePriceTrackerDirect ready. GitHub brain re-established. |
 | S47 | 2026-06-23 | Price Tracker script delivered (aura_thai_price_tracker_script_v1.gs). |
 | S48 | 2026-06-23 | Handoff PAT root cause found: dead session path in Step 6. Partial CLAUDE-CORE fix. SESSION_HISTORY caught up S41-S48. |
-| S50 | 2026-06-23 | Artie runbook V2 — Bedrock Standard. 3 working SOPs, 8 pending scripts queued. Root cause fixed: SOPs were instructions, not commands. |
 | S49 | 2026-06-23 | Full bug audit of all 4 core files. CLAUDE-CORE V4: Step 6 rewritten (Drive only), CHANGE CONTROL added. File org system designed. |
+| S50 | 2026-06-23 | Artie runbook V2 — Bedrock Standard. 3 working SOPs, 8 pending scripts queued. artie_handoff.py built. ARTIE-CORE V6, ARTIE-STANDARDS cleaned. |
+| S51 | 2026-06-23 | CHRONICLE added to CLAUDE-CORE.md V6. Project instructions fixed (GitHub API). CHRONICLE tested — S48 journal + CONTENT_LOG.md live. |
 
 ## 🔗 Graph Links
 [[HOME]] | [[SPRINT]] | [[MASTER_OPEN_ITEMS]] | [[SESSION_HISTORY]]
