@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Living task tracker for the Pinyo Empire.**
-**Last Updated:** 2026-07-01 | Session 54
+**Last Updated:** 2026-07-01 | Session 55
 **GitHub:** `master-open-items/MASTER_OPEN_ITEMS.md`
 
 ---
@@ -25,6 +25,7 @@
 | A-09b | Chris fill Dish Map col B (Dish Name(s)) | OPEN — CHRIS | High | 53 ingredients synced S45. Column B blank. Supplies → "Supply". Universal → "All Dishes". ~35 dish-specific. Unlocks COGS. |
 | A-08b | Finance tab: rebuild to Google Sheet | OPEN | High | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
 | A-06b | Revenue tab: live data connection | Pending | Medium | Master Google Sheet → revenue.html reads on load. |
+| A-11 | Aura Thai PATH-TO-BLACK plan | ❌ NEXT BUILD | TOP | Chris S55: Priority #1 over property/investing. Dedicated session, load P&L/Lavu data first. YTD −7.5%, Apr −11.3%. |
 | A-10 | ezCater onboarding — complete paperwork | IN PROGRESS | High | Fee strategy + quick-ref doc delivered S42. Chris to complete platform setup. |
 | A-07 | Decision Dashboard ops.radrooster.co | DONE S41 | — | Live at ops.radrooster.co/aura-thai. |
 | A-08 | Aura Thai Finance tab | DONE S40 | — | Live at ops.radrooster.co. |
@@ -94,7 +95,7 @@
 | INV-05 | Transition Auggie UTMA → broad index ETFs | ❌ Open | Claude + Chris | Current: TSLA, MSFT, META, HOOD, GOOGL, GLD. Too concentrated for 60-year horizon. |
 | INV-06 | Build BTC positions for Wife + Auggie | ❌ Open | Claude + Chris | Chris wants BTC exposure for all three. Vehicle + size TBD after bucket definition. |
 | INV-07 | Define strategic buckets (aggressive $, property target, timeline) | ❌ Open | Chris (S47) | BLOCKER. Nothing else maps until this is answered. First agenda item. |
-| INV-08 | Move KuCoin holdings to cold storage (partial) | ❌ Open | Chris | $144K+ on KuCoin = custody risk. KuCoin hacked 2020. Hardware wallet recommended. |
+| INV-08 | Move KuCoin holdings to cold storage | ❌ Open | Chris | Chris committed S55: 1.7 BTC → cold wallet. Execute before Sept BTC window. |
 
 
 ## 📋 SESSION 46 PRIORITY ORDER (Investment Strategy)
@@ -109,13 +110,17 @@
 
 | # | Item | Status | Owner | Notes |
 |---|------|--------|-------|-------|
-| INV-01 | Enable options trading on Fidelity Roth IRA (Level 1) | ❌ Open | Chris | Fidelity.com → Account Features → Brokerage & Trading → Options → Apply. 1-2 day approval. Unlocks covered calls on KO (1 contract) + SCHD (3 contracts) → ~$180/month tax-free. |
-| INV-02 | Identify property target markets (city/state/type) | ❌ Open | Chris | Required before S48 DSCR deal evaluation. Multi-unit preferred. Cash-flow positive / zero out-of-pocket. |
+| INV-01 | Enable options trading on Fidelity Roth IRA (Tier 1) + verify ≥100 KO / ≥300 SCHD | ❌ Open | Chris | Playbook v1 built S55 (outputs/pinyo-empire_options-income-playbook_v1.md). Realistic income $105–195/mo tax-free at current IV. Apply → verify holdings → deploy Trades 1-2. |
+| INV-02 | Property target markets | ✅ ANSWERED S55 — track DEFERRED | Chris | LA/OC/Long Beach, STR-friendly, multi-unit house-hack + ADU (Pasadena model, ref 606 Palisade St 91103). Window 2027–2032. CA insurance = known risk; backup = similar-climate state. WHOLE PROPERTY TRACK DEFERRED — Priority #1 = Aura Thai to black (Chris, S55). |
 | INV-03 | Kate ITIN application (Form W-7) | ❌ Queued | Kate/Chris | File W-7 with IRS. 6-11 week turnaround. Unlocks LLC membership for property equity. |
-| INV-04 | S48 — Family Trust + ILIT session | ❌ Queued | Claude + Chris | Family trust + irrevocable life insurance trust. Generational wealth structure. Mom asset protection once she's on loans. Needs attorney framework. |
+| INV-04 | Family Trust + ILIT + insurance-based generational wealth education | ❌ Queued | Claude + Chris | Chris confirmed S55: wants full education/plan incl. how the wealthy use insurance. Attorney framework needed for execution. |
 | INV-05 | Auggie UTMA reallocation | ❌ Open | Chris | Concentrated single stocks (META, MSFT, TSLA — all underwater). Reallocate to VTI/VXUS for 60-year compounding window. |
 | INV-06 | First DSCR deal evaluation | ❌ Queued | Claude + Chris | After INV-02 (markets identified). Run numbers on first candidate property. DSCR ≥ 1.25 target. |
 | INV-07 | Golfii cash deployment plan | ❌ Open | Chris + Golfii | $6,810 idle in joint account. 30+ year runway — needs to work harder. |
+| INV-09 | Roth cash allocation: KO CSP vs BTC window (Sept 15–Oct 31) | ❌ DECISION | Chris | $9,694 cannot fund both. One-way door. Decide before Trade 3. |
+| INV-10 | MCD entry decision | ❌ DECISION | Chris | $270 = −20% off ATH, near 52-wk low (7/1). CSP impossible ($26K lock) → direct share tranches. Name trigger + tranche 1 size. |
+| INV-11 | Crypto exit plan at BTC $120K+ | ❌ Queued | Claude | Chris S55: hold to $120K+, cash out, restructure properly. Build: sell order, tax exposure, proceeds allocation. |
+| INV-12 | Correction battle plan | ❌ Queued | Claude | Formalize +20% trim rule, quality watchlist with buy ladders, refresh 4-tranche crash deployment. |
 
 ---
 
@@ -133,6 +138,16 @@
 - Family Trust + ILIT → deferred to S48
 
 **S48 STARTS WITH:** Load `checkpoint_S47-investment-strategy_2026-06-22.md` from Investment Strategies project. First question: which property markets (city/state)? Unlocks first DSCR deal evaluation.
+
+---
+
+## 📋 SESSION 55 PRIORITY ORDER
+
+1. **A-11** — Aura Thai path-to-black plan (Priority #1 per Chris)
+2. **INV-01** — Fidelity Tier 1 approval + verify holdings (Chris) → deploy covered calls
+3. **INV-09 / INV-10** — Roth cash + MCD trigger decisions (Chris)
+4. **INV-08** — 1.7 BTC → cold wallet (Chris, before Sept 15)
+5. **RWC-04** — Story Index build (blocked on Chris: trip count + sheet location)
 
 ---
 
