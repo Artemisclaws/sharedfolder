@@ -29,6 +29,8 @@
 | RoamWithChris Story Protocol | LIVE S53, TESTED S54 | Story Bible required before any script. Signature opener locked. Series format established. S54: protocol test passed — script written in one clean pass, zero rewrites. |
 | RoamWithChris Story Bible Protocol | V2 S54 | Added Compass (4.5), false-belief line, Why Auggie Needs This Story (7.5). Locked, provisional bedrock pending a second differently-shaped story. |
 | RoamWithChris Content System | DESIGNED S54 | Full pipeline locked: Footage → Story Index → Story Bible → Script → Edit → Post. Story Index not yet built — blocked on trip count + sheet location. |
+| Soul files audit | DONE S55 | 5 HIGH / 7 MEDIUM / 6 LOW findings. Fixes pending Chris approval (I-25). Report in outputs: soul-files_audit_S55. |
+| Aura Thai Apps Script | V2 DELIVERED S55 | Timeout root cause fixed: blocking ui.alert → non-blocking toast. setupInvoiceSystem disarmed + removed from menu. Chris installing. |
 
 ---
 
@@ -116,9 +118,9 @@ Pipeline: **Footage → Story Index → Story Bible → Script → Edit → Post
 | System | Status | Notes |
 |--------|--------|-------|
 | Invoice Log tab | EMPTY | Wiped by setupInvoiceSystem. NEVER run setupInvoiceSystem again. |
-| Price Tracker tab | PENDING | Run `populatePriceTrackerDirect` - script ready |
-| populatePriceTrackerDirect | READY | `aura_thai_price_tracker_script_v1.gs` in Investment Strategies folder |
-| setupInvoiceSystem | BANNED | Wipes all data. Never run again. |
+| Price Tracker tab | PENDING | Run updatePriceTracker from 🍜 menu once Apps Script V2 installed |
+| populatePriceTrackerDirect | NEVER INSTALLED | S55 finding: sheet still ran S45 script. Superseded by Apps Script V2. |
+| setupInvoiceSystem | BANNED + DISARMED S55 | V2 version refuses to run. Removed from menu. |
 | updatePriceTracker | ON HOLD | Needs Invoice Log data first |
 | ezCater menu plan | BUILT | `aura_thai_ezcater_menu_plan_v1.md` - 47 to 28 items, 3 packages. Not yet uploaded. |
 | DD price impact | DONE | +20% Apr 9: ticket +13.1%, orders -16.2%, revenue -5.1% |
@@ -212,6 +214,7 @@ Thai dessert spin-off of Aura Thai. Products modeled after Kanomwann Thai gelato
 | S52 | 2026-06-24 | Aura Sweet customer avatar + demographic research. BIXBY_KNOLLS_MARKET.md created. Sizing standardized. |
 | S53 | 2026-07-01 | RoamWithChris Story Protocol established. Auggie backpacking reel Story Bible locked. Series signature opener locked. "You won't remember this. So let me tell you." Series tagline locked. Lesson format established. |
 | S54 | 2026-07-01 | Auggie backpacking reel script written in one clean pass — protocol test passed. Story Bible Protocol v2 built (Compass, false-belief line, Why Auggie Needs This Story). Full content archive system designed end to end (Footage → Story Index → Story Bible → Script → Edit → Post). Budget-conscious storage/AI editing plan staged in 3 phases. Story Index schema locked (20 fields) — build blocked on trip count + sheet location. |
+| S55 | 2026-07-01 | Soul-file audit: 5H/7M/6L, report in outputs, fixes pending approval (I-25). Apps Script timeout root-caused (blocking ui.alert + popup block); V2 delivered — toasts, setupInvoiceSystem disarmed, V1 sync removed. Found populatePriceTrackerDirect never installed. Ground truth: Dish Map dish names = column B. |
 
 | S55 | 2026-07-01 | Investment strategy unblocked: all S47/S48 deferred questions answered. Options income playbook v1 (covered calls + CSPs, KO/SCHD, Fidelity Roth) built + math verified. Six decisions: crypto hold to $120K then exit/restructure; 1.7 BTC to cold wallet; property window 2027-2032 LA/OC STR house-hack profile (DEFERRED); +20% trim rule; Roth=active/taxable=long-term verified; PRIORITY #1 = AURA THAI TO BLACK. Roth cash conflict named: CSP vs BTC window. MCD at 52-wk low = buy-on-sale branch live. |
 
