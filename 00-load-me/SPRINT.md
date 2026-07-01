@@ -1,5 +1,5 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S53 | 2026-06-24
+**Updated by:** Claude | Session S54 | 2026-07-01
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
@@ -9,8 +9,8 @@ Both agents load this file. It answers: what matters most right now?
 ## SESSION START COMMAND — S54
 ```
 Load soul files + BIXBY_KNOLLS_MARKET.md.
-S53: Aura Sweet naming locked, poster done, 3-move campaign ready to execute.
-Priority: (1) Aura Sweet spinoff strategy — "How should we approach Aura Sweet as a spinoff?" (2) Competitive analysis: Somisomi vs Aura Sweet (carried from S52). (3) Check if Artie has Invoice Log + Sales by Period data → run COGS if yes. (4) Remind Chris: Dish Map column D still blank.
+S53: Aura Sweet naming locked, poster done, 3-move campaign ready to execute. RoamWithChris — Auggie backpacking reel Story Bible locked. Story Protocol established. Series signature locked.
+Priority: (1) Aura Sweet spinoff strategy — "How should we approach Aura Sweet as a spinoff?" (2) Competitive analysis: Somisomi vs Aura Sweet (carried from S52). (3) RoamWithChris — write final Auggie backpacking reel script (Story Bible already locked in memory). (4) Check if Artie has Invoice Log + Sales by Period data → run COGS if yes. (5) Remind Chris: Dish Map column D still blank.
 ```
 
 ---
@@ -44,11 +44,22 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | AS-02 | Somisomi competitive analysis | OPEN — S54 | Carried from S52 — Chris to walk the block first |
 | AS-03 | Execute 3-move campaign | READY — CHRIS | Move 1: proof post today. Move 2: BKBA collab. Move 3: Chef's Secret video. |
 | AS-04 | Finalize poster in Canva | IN PROGRESS — CHRIS | Mockup complete. Copy locked. |
+| RWC-01 | Auggie backpacking reel — write final script | READY — S54 | Story Bible locked. Story Protocol active. Signature opener locked. DO NOT skip Bible confirmation. |
 | A-09 | COGS — Artie data entry | IN PROGRESS | Invoice system live. Artie entering backlog. |
 | A-09b | Chris fill Dish Map column D | OPEN — CHRIS | 31 ingredients loaded. Enter dish names per ingredient. Unlocks COGS by Dish. |
 | A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
 | A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
 | I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
+
+---
+
+## ROAMWITHCHRIS — S53 STATUS
+**Story Protocol:** LOCKED — Bible before script. Always confirmed out loud.
+**Series signature opener:** "You won't remember this. So let me tell you."
+**Series tagline (bio/channel):** "This is one of the stories I kept for you."
+**Hook format:** Auggie hero visual → AI baby text "Daddy tell me a story" → signature opener → story
+**Lesson format:** One line woven in voiceover + pinned comment breakdown + future compilation reel
+**Auggie backpacking reel:** Story Bible complete. Ready to write final script S54. Load memory item #7 first.
 
 ---
 
