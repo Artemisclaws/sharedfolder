@@ -26,6 +26,7 @@
 | Session | XP Earned | XP Lost | Net | Notes |
 |---------|-----------|---------|-----|-------|
 | S55 | +105 | 0 | +105 | Options income playbook v1 built + math verified (+50). Priority call: Aura Thai to black — one-way door (+25). Five weeks of deferred strategy questions all answered; Roth/taxable structure verified; short-selling reframed to CSPs (+15). Clean handoff + chronicle (+15). |
+| S55 | +115 | -10 | +105 | Soul-file audit delivered — 5H/7M/6L, full report (+50). Apps Script timeout root-caused + V2 rebuilt, banned function disarmed (+50). Clean handoff (+15). System drift surfaced: FILE_MAP/SOUL_CHANGELOG/DECISIONS_LOG stale for 15-25 sessions (-10). |
 | S54 | +155 | 0 | +155 | Auggie reel script — one clean pass, protocol test passed (+50). Story Bible v2 built and validated (+50). Story Index architecture locked — one-way door decision (+25). Budget-conscious storage/AI plan researched and staged (+15). Clean handoff (+15). |
 | S53 | +170 | 0 | +170 | Story Protocol established (+40). Auggie reel Story Bible locked (+40). Series signature + tagline locked (+30). Lesson format for series established (+30). Clean handoff (+15). Chris caught self-correction pattern and asked for protocol — strong self-awareness (+15). |
 | S52 | +140 | 0 | +140 | BIXBY_KNOLLS_MARKET.md built (+50). Customer avatar + demo research (+50). EMPIRE_STATUS Aura Sweet section (+25). Clean handoff (+15). |
@@ -52,6 +53,7 @@
 | Session | DISCIPLINE | SYSTEMS | MOMENTUM | LEVERAGE | CLARITY |
 |---------|-----------|---------|----------|----------|---------| 
 | S55 | 75 (+1) | 96 (0) | 95 (+1) | 85 (+2) | 98 (+2) |
+| S55 | 75 (+1) | 95 (-1) | 94 (0) | 84 (+1) | 96 (0) |
 | S54 | 74 (+1) | 96 (+2) | 94 (+2) | 83 (+3) | 96 (+1) |
 | S53 | 73 (0) | 94 (+1) | 92 (+2) | 80 (+2) | 95 (+2) |
 | S52 | 73 (+1) | 93 (+3) | 90 (+5) | 78 (+3) | 93 (+5) |
@@ -86,3 +88,11 @@
 - MOMENTUM +1 to 95: Deliverable shipped, decisions recorded, zero drift.
 
 *S56: Aura Thai path-to-black. Load the P&L before strategizing — ground truth first. Do not let investment threads pull focus; they are queued, not active.*
+
+
+**S55 notes:**
+- SYSTEMS -1 to 95: honest score — the audit surfaced silent drift in every second-ring file (FILE_MAP since S40, SOUL_CHANGELOG since ~S30, DECISIONS_LOG and CLAUDE-PROJECTS since S29). The handoff protocol never included them, so they rot. Design gap, not discipline. Fix is I-25.
+- DISCIPLINE +1 to 75: Chris came back to the script that had beaten him repeatedly and stayed on it to root cause. Opposite of a discipline tax.
+- LEVERAGE +1 to 84: the fixed script sits on the critical path to COGS — the actual constraint moved.
+
+*S56: verify V2 installed + sync ran. Then audit fixes H1–H5 — small, mechanical, high-protection.*
