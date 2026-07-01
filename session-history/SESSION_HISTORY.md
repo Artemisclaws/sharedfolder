@@ -423,3 +423,26 @@ Source files on Drive:
 - `outputs/checkpoint_options-income-playbook_2026-07-01.md`
 
 **Next session starts with:** Load soul files. AURA THAI PATH-TO-BLACK — load P&L/Lavu data before strategizing. Chris pending: Tier 1 options approval, verify ≥100 KO / ≥300 SCHD, cold wallet move, Roth cash decision (CSP vs BTC window), MCD trigger.
+
+
+---
+
+## SESSION S55 — 2026-07-01
+**Goals:** Audit soul files + empire files. Fix the Apps Script that timed out every run.
+
+**What happened:**
+- Full read-only audit of soul files, EMPIRE_STATUS, SPRINT, trackers, indexes, file map, Artie files. Verdict: the 4 mandatory-load files are healthy; drift is concentrated in second-ring files the protocols say update every handoff but don't — MASTER_FILE_MAP stale since S40, SOUL_CHANGELOG since ~S30, DECISIONS_LOG since S29, CLAUDE-PROJECTS since S29
+- Findings: 5 HIGH (duplicate ARTIE-RUNBOOK with MASTER_OPEN_ITEMS pointing Artie at the retired artie-config/ copy; Dish Map column instruction conflict; item-ID collisions between SPRINT and MASTER_OPEN_ITEMS incl. a duplicated INV section; EMPIRE_RULES archived S32 but header still claims active; CLAUDE-CORE title says V3, is V6), 7 MEDIUM, 6 LOW. Report: outputs/soul-files_audit_S55_2026-07-01.md. All fixes pending Chris approval per CHANGE CONTROL (tracked as I-25)
+- Diagnosed the recurring Apps Script timeout: root cause = blocking SpreadsheetApp.getUi().alert() dialogs render in the sheet window (Chris has popup block on) while Chris ran from the editor — script waited on a click nobody saw until the 6-minute kill. Sonnet's silent V2 sync existed in the file but was never wired into the menu
+- Found populatePriceTrackerDirect (S47 deliverable) was never installed — the sheet still ran S45 code
+- Built Apps Script V2 (S55): all alerts → non-blocking toasts + Execution Log output; setupInvoiceSystem disarmed (BANNED S46 — now refuses to run) and removed from menu; silent sync is the only sync. Delivered with install steps and direct links. Chris began install
+- Ground truth confirmed from the live script: Dish Map is 2 columns, dish names = column B. SPRINT's "column D" reference corrected at this handoff
+
+**Key decisions:** None one-way. Audit fix order awaits Chris.
+
+**Files created:**
+- outputs/soul-files_audit_S55_2026-07-01.md
+- outputs/checkpoint_soul-audit_2026-07-01.md
+- outputs/aura-thai_invoice-system_apps-script_v2.gs
+
+**Next session starts with:** Verify Apps Script V2 installed and syncIngredientsToDishMap ran clean (check Execution Log). Then execute audit fixes H1–H5 with Chris approval.
