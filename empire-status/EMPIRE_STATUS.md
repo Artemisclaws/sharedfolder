@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-06-24 | Session S52
-**Updated By:** Claude (S52)
+**Last Updated:** 2026-07-01 | Session S53
+**Updated By:** Claude (S53)
 
 ---
 
@@ -26,6 +26,7 @@
 | Soul sync cron (6hr) | PENDING | TeamViewer paste ready - waiting for Chris to execute |
 | Vine | SUSPENDED | Kicked for late reviews. vine_review_writer.py cron must be removed. |
 | BIXBY_KNOLLS_MARKET.md | LIVE S52 | bixby-knolls/BIXBY_KNOLLS_MARKET.md - shared intel for all Atlantic Ave businesses |
+| RoamWithChris Story Protocol | LIVE S53 | Story Bible required before any script. Signature opener locked. Series format established. |
 
 ---
 
@@ -44,6 +45,29 @@
 
 ---
 
+## ROAMWITHCHRIS — KEY FACTS
+
+### Story Protocol (S53 — LOCKED)
+- **Bible before script.** No exceptions. Claude confirms protocol out loud at session start.
+- **Series signature opener:** "You won't remember this. So let me tell you."
+- **Series tagline (bio/channel):** "This is one of the stories I kept for you."
+- **Hook format:** Auggie hero visual → AI baby text "Daddy tell me a story" → signature opener → story
+- **Lesson format:** One line in voiceover + pinned comment breakdown + future compilation reel
+- **Voice:** Chris speaking TO Auggie — always "you," never third person
+
+### Active Content
+| Item | Status | Notes |
+|------|--------|-------|
+| Auggie backpacking reel | BIBLE LOCKED — script S54 | Story Bible in memory item #7. Load before writing. |
+
+### Content Inventory
+- 1.85TB footage: Japan, Korea, London, Vietnam, Thailand, Hawaii, US outdoors
+- @RoamWithChris Instagram + YouTube
+- Series: "The Layover," "Out There," "Rooted"
+- Brand truth: "Everything Will Be Okay"
+
+---
+
 ## AURA THAI — KEY FACTS (do not ask Chris again)
 
 ### Revenue Model
@@ -56,7 +80,7 @@
 
 ### Proven DoorDash Dessert Sales
 | Item | April 2026 | May 2026 | Channel |
-|------|-----------|---------|---------|
+|------|-----------|---------|---------| 
 | Mango Sticky Rice | 203 orders | 224 orders | Mostly DoorDash |
 
 ### BOH Labor
@@ -85,18 +109,6 @@
 | UE price impact | PARTIAL | Only 5 days POST, Easter confound |
 | Artie invoice pipeline | ABANDONED | Not a dependency. Design without Artie. |
 
-### Real Ingredient Prices (Taiwah + SJ, Feb-Apr 2026)
-| Ingredient | Actual | Model | Flag |
-|---|---|---|---|
-| Chicken Breast | $2.08/lb | $2.49/lb | OK |
-| Long Grain Rice | $0.64/lb | $1.06/lb | OK |
-| Basil | $5.95/lb | $3.95/lb | Model LOW |
-| Green Bean | $2.95/lb | $1.29/lb | Model 2.3x LOW |
-| Shrimp 21/25 | $5.25/lb | $5.85/lb | OK |
-| Eggs Jumbo | $0.13/ea | $0.19/ea | OK |
-
-Suppliers: Taiwah Trading Corp (dry goods/produce) | SJ Distributors LLC (protein)
-
 ---
 
 ## AURA SWEET — KEY FACTS (do not ask Chris again)
@@ -104,56 +116,32 @@ Suppliers: Taiwah Trading Corp (dry goods/produce) | SJ Distributors LLC (protei
 ### Concept
 Thai dessert spin-off of Aura Thai. Products modeled after Kanomwann Thai gelato style — ice cream, gelato, and broader Thai dessert formats. Delivery-native brand with nightly events (Fri-Sat). Runs from Aura Thai kitchen. Zero additional kitchen overhead.
 
-### Location
-4085 Atlantic Ave, Bixby Knolls, Long Beach (same kitchen as Aura Thai)
+### Flavor Names (LOCKED S53)
+- **The Brew** (Thai Tea)
+- **Chef's Secret** (Fish Sauce Caramel) — viral hook, NEVER reveal ingredient early
+- **Island Cream** (Coconut)
+- **Sweet Grain** (Mango Sticky Rice)
 
-### Positioning
-"Thai sweets. Real flavors. No compromise." | Premium craft Thai dessert meets street food authenticity.
-
-### Current Products and Proven Sales (pre-launch)
-| Product | Size | Price | Units Sold | Channel |
-|---------|------|-------|-----------|---------|
-| Thai Tea Ice Cream | 3.5 oz | $5 | ~100 | Walk-in (poster) |
-| Fish Sauce Caramel Ice Cream | 3.5 oz | $5 | ~35 | Walk-in (poster) |
-| Coconut Ice Cream | 3.5 oz | TBD | Ongoing | Walk-in |
-| Mango Sticky Rice Ice Cream | 5 oz | $8 | Not yet marketed | - |
-
-**All sales to date were impulse purchases driven by a poster. No active marketing yet.**
-
-### Standardized Sizing (S52 Decision)
+### Sizing (S52 locked)
 | Format | Size | Delivery Price | In-Person Price |
 |--------|------|---------------|-----------------|
 | Cup (single) | 8 oz | $8-9 | $7-8 |
 | Pint (take-home) | 16 oz | $16-18 | $14-16 |
 
-### Market Intelligence
-Full demographic research: `bixby-knolls/BIXBY_KNOLLS_MARKET.md`
-Business plan: `AuraSweet_BusinessPlan_v1.md` (Drive uploads)
+### Campaign — 3 Moves Ready
+| Move | Action | Owner |
+|------|--------|-------|
+| 1 | Proof post — show the scoops, real customers, real reactions | Chris |
+| 2 | BKBA collab — community reach, newsletter + IG | Chris |
+| 3 | Chef's Secret video — tease the mystery ingredient | Chris |
 
 ### Key Opportunities
 | Opportunity | Details |
 |------------|---------|
-| First Fridays pop-up | August 2026 (July skipped) - highest foot traffic night on Atlantic Ave |
-| Thunderbolt Pizza spillover | Lines 10 ft away - A-frame sign captures impulse buyers |
-| Ramen Hub dessert traffic | Families leaving Ramen Hub are pre-qualified dessert customers |
-| Mango sticky rice bridge | 427 Aura Thai DD dessert customers = existing Aura Sweet audience |
-| BKBA leverage | Business association IG + newsletter for community reach |
-
-### Platform Strategy
-| Platform | Priority | Timeline |
-|----------|----------|---------|
-| DoorDash | First | Launch week |
-| Uber Eats | Second | +30-60 days |
-| GrubHub | Third | +90 days |
-
-### Content Creator
-Chris (Instagram Reels primary - not TikTok yet)
-
-### Open Questions (not yet decided)
-1. Brand name final? ("Aura Sweet" vs. Wan Aura / Khanom Aura)
-2. Packaging budget confirmed?
-3. Ice cream / gelato made in-house or sourced?
-4. Licensing/permits for second brand under same kitchen?
+| First Fridays pop-up | August 2026 (July skipped) |
+| Thunderbolt Pizza spillover | Lines 10 ft away |
+| Ramen Hub dessert traffic | Families = pre-qualified dessert customers |
+| Mango sticky rice bridge | 427 DD customers = existing audience |
 
 ---
 
@@ -175,7 +163,7 @@ Chris (Instagram Reels primary - not TikTok yet)
 
 ## DISCORD CHANNELS
 | Channel | ID |
-|---------|----|
+|---------|-----|
 | #general | 1493421633359315089 |
 | #finance | 1501467891474759770 |
 | #operations | 1501468053672689834 |
@@ -205,7 +193,8 @@ Chris (Instagram Reels primary - not TikTok yet)
 | S49 | 2026-06-23 | Full bug audit. CLAUDE-CORE V4 rewritten. CHANGE CONTROL added. |
 | S50 | 2026-06-23 | Artie runbook V2 Bedrock. 3 working SOPs. artie_handoff.py built. |
 | S51 | 2026-06-23 | CHRONICLE added to CLAUDE-CORE V6. Project instructions fixed. |
-| S52 | 2026-06-24 | Aura Sweet customer avatar + demographic research. BIXBY_KNOLLS_MARKET.md created. Aura Sweet section added to EMPIRE_STATUS. Sizing standardized (8oz cup / 16oz pint). |
+| S52 | 2026-06-24 | Aura Sweet customer avatar + demographic research. BIXBY_KNOLLS_MARKET.md created. Sizing standardized. |
+| S53 | 2026-07-01 | RoamWithChris Story Protocol established. Auggie backpacking reel Story Bible locked. Series signature opener locked. "You won't remember this. So let me tell you." Series tagline locked. Lesson format established. |
 
 ## Graph Links
 HOME | SPRINT | MASTER_OPEN_ITEMS | SESSION_HISTORY
