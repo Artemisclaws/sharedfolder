@@ -21,6 +21,7 @@
 | ID | Item | Status | Priority | Notes |
 |----|------|--------|----------|-------|
 | SOP-14-deploy | Deploy invoice_processor.py to Artie | OPEN — CHRIS | High | Files in outputs/. Artie does one-time setup (credentials, DRIVE_FOLDER_ID). Replaces manual invoice entry. |
+| A-12 | Install Apps Script V2 (timeout fix) | IN PROGRESS — CHRIS | High | S55: paste outputs/aura-thai_invoice-system_apps-script_v2.gs into Apps Script editor, run syncIngredientsToDishMap. Root cause of every timeout: blocking ui.alert dialogs (+ Chris's popup block) — replaced with toasts. setupInvoiceSystem disarmed. |
 | A-09 | COGS — Artie enter invoice backlog + weekly Sales by Period | IN PROGRESS | TOP | Foundation complete S43. Artie cleared to run. Waiting on data for first COGS analysis. |
 | A-09b | Chris fill Dish Map col B (Dish Name(s)) | OPEN — CHRIS | High | 53 ingredients synced S45. Column B blank. Supplies → "Supply". Universal → "All Dishes". ~35 dish-specific. Unlocks COGS. |
 | A-08b | Finance tab: rebuild to Google Sheet | OPEN | High | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
@@ -36,6 +37,7 @@
 | ID | Item | Status | Priority | Notes |
 |----|------|--------|----------|-------|
 | I-23 | artie_report_sync.py cron fix | OPEN | High | Not firing since May 8. GH/DD/UE pipeline broken. |
+| I-25 | Execute soul-file audit fixes (S55) | OPEN | High | 5 HIGH: dup ARTIE-RUNBOOK pointer (artie-config/ is retired), tracker ID collisions (RWC/AS/INV), EMPIRE_RULES needs ARCHIVED banner, CLAUDE-CORE header says V3 is V6. Dish Map col conflict RESOLVED S55: column B. 7 MEDIUM: stale FILE_MAP/SOUL_CHANGELOG/DECISIONS_LOG/CLAUDE-PROJECTS, dual CONTENT_LOGs, S53 collision, BOOT vs CORE load protocol. Report: soul-files_audit_S55 (outputs). Chris approves fix order. |
 | I-06 | Daily digest cron #general | OPEN | Low | Deferred many sessions. |
 | I-02 | Drive folder reorg | DEFERRED | Low | Parked. |
 | B-01 | Pinyo Farms market validation | QUEUED | — | Parking lot until COGS done. |
