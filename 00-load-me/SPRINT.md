@@ -1,16 +1,16 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S55 | 2026-07-01
+**Updated by:** Claude | Session S56 | 2026-07-01
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START COMMAND — S55
+## SESSION START COMMAND — S56
 ```
 Load soul files.
-S54: Auggie backpacking reel script DONE — one clean pass, protocol test passed. Story Bible Protocol v2 locked (Compass, false-belief line, Why Auggie Needs This Story). Full content archive system designed: Footage → Story Index → Story Bible → Script → Edit → Post.
-Priority: (1) RoamWithChris — get trip count + sheet location from Chris, then build the Story Index master Google Sheet (20 fields, 6 groups, Theme as first-class). (2) Aura Sweet spinoff strategy — "How should we approach Aura Sweet as a spinoff?" (3) Competitive analysis: Somisomi vs Aura Sweet (carried from S52). (4) Check if Artie has Invoice Log + Sales by Period data → run COGS if yes. (5) Remind Chris: Dish Map column D still blank.
+S55: Investment strategy UNBLOCKED — all S47/S48 deferred questions answered by Chris. Options income playbook v1 built (covered calls + CSPs, KO/SCHD, Fidelity Roth — outputs/pinyo-empire_options-income-playbook_v1.md + checkpoint). Six decisions locked: crypto hold to BTC $120K+ then exit/restructure; property window 2027–2032, LA/OC/LB STR house-hack profile (DEFERRED — not priority); +20% trim rule; PRIORITY #1 = AURA THAI TO BLACK; trust/ILIT education queued; 1.7 BTC → cold wallet.
+Priority: (1) AURA THAI PATH-TO-BLACK PLAN — dedicated session, load P&L/Lavu data first (YTD -7.5%, Apr -11.3%). (2) Chris decisions pending: Roth cash → KO CSP vs BTC window Sept 15–Oct 31 ($9,694 can't fund both — one-way door); MCD trigger (at $270, −20% off ATH, near 52-wk low NOW). (3) RoamWithChris Story Index build (needs trip count + sheet location from Chris). (4) Aura Sweet spinoff strategy (AS-01) + Somisomi analysis (AS-02). (5) Queued Claude builds: crypto exit plan at $120K+, correction battle plan, trust/ILIT/insurance education.
 ```
 
 ---
@@ -33,26 +33,41 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 > All dashboards live at ops.radrooster.co. No standalone URLs ever.
 > Finance tab hardcodes data — MUST rebuild to read from Google Sheet (DASHBOARD ARCHITECTURE RULE violation).
 > $5K/day focus filter: new ideas → parking lot unless they advance COGS → pipeline → unit economics → growth.
+> PRIORITY #1 (Chris, S55): Aura Thai to black. Property and heavy investing moves are deferred behind it.
 
 ---
 
-## ACTIVE ITEMS — S53 DIGEST
+## ACTIVE ITEMS — S55 DIGEST
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
-| AS-01 | Aura Sweet spinoff strategy | OPEN — S54 | "How should we approach Aura Sweet as a spinoff?" |
-| AS-02 | Somisomi competitive analysis | OPEN — S54 | Carried from S52 — Chris to walk the block first |
-| AS-03 | Execute 3-move campaign | READY — CHRIS | Move 1: proof post today. Move 2: BKBA collab. Move 3: Chef's Secret video. |
+| AT-11 | Aura Thai path-to-black plan | NEXT BUILD — CLAUDE | Priority #1 per Chris S55. Dedicated session with P&L data. |
+| INV-A | Fidelity Tier 1 options approval + verify ≥100 KO / ≥300 SCHD in Roth | OPEN — CHRIS | Unlocks covered calls + CSPs → $105–195/mo tax-free (playbook v1 in outputs). |
+| INV-B | Roth cash allocation: KO CSP vs BTC window (Sept 15–Oct 31) | DECISION — CHRIS | $9,694 cannot fund both. One-way door. |
+| INV-C | MCD entry decision | DECISION — CHRIS | $270, −20% off ATH, near 52-wk low. Name trigger + tranche 1 size (direct shares, not CSP — CSP needs $26K). |
+| INV-D | 1.7 BTC → cold wallet | OPEN — CHRIS | Committed S55. KuCoin custody risk closes when done. |
+| AS-01 | Aura Sweet spinoff strategy | OPEN | "How should we approach Aura Sweet as a spinoff?" |
+| AS-02 | Somisomi competitive analysis | OPEN | Carried from S52 — Chris to walk the block first |
+| AS-03 | Execute 3-move campaign | READY — CHRIS | Move 1: proof post. Move 2: BKBA collab. Move 3: Chef's Secret video. |
 | AS-04 | Finalize poster in Canva | IN PROGRESS — CHRIS | Mockup complete. Copy locked. |
-| RWC-01 | Auggie backpacking reel — final script | DONE — S54 | roamwithchris_auggie-backpacking-reel_script_v1.md — ready for CapCut. Protocol test passed. |
-| RWC-05 | Story Index master sheet — build | BLOCKED — CHRIS | Schema locked (20 fields). Need trip count + sheet location before build. |
-| RWC-06 | Footage consolidation onto external HD | OPEN — CHRIS | Single source of truth. microSDs + cameras + Google Photos → one drive. |
-| RWC-07 | DaVinci Resolve tagging pass | OPEN — CHRIS | After RWC-06. Free — Keywords + Smart Bins. |
+| RWC-05 | Story Index master sheet — build | BLOCKED — CHRIS | Schema locked (20 fields). Need trip count + sheet location. |
+| RWC-06 | Footage consolidation onto external HD | OPEN — CHRIS | Single source of truth. |
+| RWC-07 | DaVinci Resolve tagging pass | OPEN — CHRIS | After RWC-06. |
 | A-09 | COGS — Artie data entry | IN PROGRESS | Invoice system live. Artie entering backlog. |
-| A-09b | Chris fill Dish Map column D | OPEN — CHRIS | 31 ingredients loaded. Enter dish names per ingredient. Unlocks COGS by Dish. |
-| A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
-| A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
+| A-09b | Chris fill Dish Map column D | OPEN — CHRIS | Unlocks COGS by Dish. |
+| A-08b | Finance tab: rebuild to Google Sheet | Next build | DASHBOARD ARCHITECTURE RULE violation. |
+| A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Chris completing paperwork. |
 | I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
+
+---
+
+## INVESTMENT — S55 STATUS
+**Playbook:** `outputs/pinyo-empire_options-income-playbook_v1.md` — covered calls + cash-secured puts from zero, exact KO/SCHD deployment, Fidelity click-by-click, guardrails. Math verified.
+**Market snapshot (7/1):** KO $81.32 (near ATH) | SCHD $31.80 | MCD $270 (−20% off ATH, near 52-wk low).
+**Account structure (verified S55):** Roth = active trading + options income (tax-free). Taxable = long-term holds (LTCG rates, step-up basis). Caveats: Roth losses irreplaceable ($7K/yr limit) — defined playbook only, no speculation; wash-sale trap across taxable↔IRA on same names.
+**"Sell short positions" reframed:** Chris confirmed he meant cash-secured puts. Shorting is off the table.
+**Crypto:** Hold to BTC $120K+, cash out, restructure. 1.7 BTC → cold wallet (Chris). BTC accumulation window Sept 15–Oct 31 draws from Roth cash IF Chris allocates it there (see INV-B).
+**Property (deferred):** Window 2027–2032. Profile: LA/OC/Long Beach, STR-friendly, multi-unit on one lot, house-hack + future ADU (Pasadena model, ref 606 Palisade St 91103). CA insurance = known risk. Backup: similar-climate state. Metals held: 5oz gold, 60oz silver.
 
 ---
 
