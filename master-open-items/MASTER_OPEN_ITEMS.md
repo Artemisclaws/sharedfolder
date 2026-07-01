@@ -1,9 +1,20 @@
 # MASTER_OPEN_ITEMS.md
 **Living task tracker for the Pinyo Empire.**
-**Last Updated:** 2026-06-24 | Session 52
+**Last Updated:** 2026-07-01 | Session 54
 **GitHub:** `master-open-items/MASTER_OPEN_ITEMS.md`
 
 ---
+
+## ROAMWITHCHRIS ITEMS
+
+| ID | Item | Status | Priority | Notes |
+|----|------|--------|----------|-------|
+| RWC-01 | Story Bible Protocol template | DONE S54 | — | v2 — added Compass (4.5), false-belief line, Why Auggie Needs This Story (7.5). Locked, pending second-story stress test before true bedrock. |
+| RWC-02 | Auggie backpacking reel — final script | DONE S54 | — | One clean pass, 37 cuts. roamwithchris_auggie-backpacking-reel_script_v1.md in outputs. Ready for CapCut. Protocol test passed — no rewrites needed. |
+| RWC-03 | Footage consolidation onto external HD | OPEN — CHRIS | High | Single source of truth. microSDs + GoPro/Insta360/iPhone originals + Google Photos → `/Trip_Name_YYYY-MM/Camera_Source/`. |
+| RWC-04 | Story Index master sheet | BLOCKED — CHRIS | High | Schema designed (20 fields, 6 groups: Identity/Story/Theme/Production/Triage/Tags). Need: rough trip count + standalone sheet vs. existing tab before build. |
+| RWC-05 | DaVinci Resolve tagging pass (Keywords + Smart Bins) | OPEN — CHRIS | Medium | After RWC-03. Free. Ties footage location pointers in Story Index to actual clips. |
+| RWC-06 | Artie footage-organizing SOP | QUEUED | Low | Design-ready but not deployed — Artie not reliable enough to be a Phase 1 dependency (see I-23). Draft once Artie reliability proven. |
 
 ## AURA THAI ITEMS
 
