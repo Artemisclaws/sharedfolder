@@ -1,16 +1,16 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S54 | 2026-07-01
+**Updated by:** Claude | Session S55 | 2026-07-01
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START COMMAND — S54
+## SESSION START COMMAND — S55
 ```
-Load soul files + BIXBY_KNOLLS_MARKET.md.
-S53: Aura Sweet naming locked, poster done, 3-move campaign ready to execute. RoamWithChris — Auggie backpacking reel Story Bible locked. Story Protocol established. Series signature locked.
-Priority: (1) Aura Sweet spinoff strategy — "How should we approach Aura Sweet as a spinoff?" (2) Competitive analysis: Somisomi vs Aura Sweet (carried from S52). (3) RoamWithChris — write final Auggie backpacking reel script (Story Bible already locked in memory). (4) Check if Artie has Invoice Log + Sales by Period data → run COGS if yes. (5) Remind Chris: Dish Map column D still blank.
+Load soul files.
+S54: Auggie backpacking reel script DONE — one clean pass, protocol test passed. Story Bible Protocol v2 locked (Compass, false-belief line, Why Auggie Needs This Story). Full content archive system designed: Footage → Story Index → Story Bible → Script → Edit → Post.
+Priority: (1) RoamWithChris — get trip count + sheet location from Chris, then build the Story Index master Google Sheet (20 fields, 6 groups, Theme as first-class). (2) Aura Sweet spinoff strategy — "How should we approach Aura Sweet as a spinoff?" (3) Competitive analysis: Somisomi vs Aura Sweet (carried from S52). (4) Check if Artie has Invoice Log + Sales by Period data → run COGS if yes. (5) Remind Chris: Dish Map column D still blank.
 ```
 
 ---
@@ -44,7 +44,10 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | AS-02 | Somisomi competitive analysis | OPEN — S54 | Carried from S52 — Chris to walk the block first |
 | AS-03 | Execute 3-move campaign | READY — CHRIS | Move 1: proof post today. Move 2: BKBA collab. Move 3: Chef's Secret video. |
 | AS-04 | Finalize poster in Canva | IN PROGRESS — CHRIS | Mockup complete. Copy locked. |
-| RWC-01 | Auggie backpacking reel — write final script | READY — S54 | Story Bible locked. Story Protocol active. Signature opener locked. DO NOT skip Bible confirmation. |
+| RWC-01 | Auggie backpacking reel — final script | DONE — S54 | roamwithchris_auggie-backpacking-reel_script_v1.md — ready for CapCut. Protocol test passed. |
+| RWC-05 | Story Index master sheet — build | BLOCKED — CHRIS | Schema locked (20 fields). Need trip count + sheet location before build. |
+| RWC-06 | Footage consolidation onto external HD | OPEN — CHRIS | Single source of truth. microSDs + cameras + Google Photos → one drive. |
+| RWC-07 | DaVinci Resolve tagging pass | OPEN — CHRIS | After RWC-06. Free — Keywords + Smart Bins. |
 | A-09 | COGS — Artie data entry | IN PROGRESS | Invoice system live. Artie entering backlog. |
 | A-09b | Chris fill Dish Map column D | OPEN — CHRIS | 31 ingredients loaded. Enter dish names per ingredient. Unlocks COGS by Dish. |
 | A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
@@ -53,13 +56,17 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 ---
 
-## ROAMWITHCHRIS — S53 STATUS
-**Story Protocol:** LOCKED — Bible before script. Always confirmed out loud.
+## ROAMWITHCHRIS — S54 STATUS
+**Story Protocol:** LOCKED, TESTED S54 — script written in one clean pass, zero rewrites.
 **Series signature opener:** "You won't remember this. So let me tell you."
 **Series tagline (bio/channel):** "This is one of the stories I kept for you."
 **Hook format:** Auggie hero visual → AI baby text "Daddy tell me a story" → signature opener → story
 **Lesson format:** One line woven in voiceover + pinned comment breakdown + future compilation reel
-**Auggie backpacking reel:** Story Bible complete. Ready to write final script S54. Load memory item #7 first.
+**Auggie backpacking reel:** Script DONE — ready for CapCut.
+**Story Bible Protocol:** V2 locked — Compass (4.5), false-belief line, Why Auggie Needs This Story (7.5) added.
+**Content system:** Footage → Story Index → Story Bible → Script → Edit → Post — fully designed. Story Index (20-field Google Sheet) is next build, blocked on trip count + sheet location from Chris.
+**Storage plan:** External HD = source of truth (not Google Photos — cost trap). DaVinci Resolve (free) for tagging. Descript if it earns its keep. Wideframe/NAS deferred — not worth it at current volume.
+**Note:** Full Story Bible content must come from Chris directly each time — "memory item #7" references are not accessible cross-session in this environment. Always ask, never fabricate.
 
 ---
 
