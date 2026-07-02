@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Living task tracker for the Pinyo Empire.**
-**Last Updated:** 2026-07-01 | Session 56
+**Last Updated:** 2026-07-01 | Session 57
 **GitHub:** `master-open-items/MASTER_OPEN_ITEMS.md`
 
 ---
@@ -115,7 +115,7 @@
 | INV-01 | Enable options trading on Fidelity Roth IRA (Tier 1) + verify ≥100 KO / ≥300 SCHD | ❌ Open | Chris | Playbook v1 built S55 (outputs/pinyo-empire_options-income-playbook_v1.md). Realistic income $105–195/mo tax-free at current IV. Apply → verify holdings → deploy Trades 1-2. |
 | INV-02 | Property target markets | ✅ ANSWERED S55 — track DEFERRED | Chris | LA/OC/Long Beach, STR-friendly, multi-unit house-hack + ADU (Pasadena model, ref 606 Palisade St 91103). Window 2027–2032. CA insurance = known risk; backup = similar-climate state. WHOLE PROPERTY TRACK DEFERRED — Priority #1 = Aura Thai to black (Chris, S55). |
 | INV-03 | Kate ITIN application (Form W-7) | ❌ Queued | Kate/Chris | File W-7 with IRS. 6-11 week turnaround. Unlocks LLC membership for property equity. |
-| INV-04 | Family Trust + ILIT + insurance-based generational wealth education | ❌ Queued | Claude + Chris | Chris confirmed S55: wants full education/plan incl. how the wealthy use insurance. Attorney framework needed for execution. |
+| INV-04 | Family Trust + ILIT + insurance education | ✅ RESOLVED S57 | — | D8/D9 done, playbook v2.2 §9: ILIT unnecessary at estate size; term-only verdict; mom's trust structure designed (QSST trap flagged). Execution = EST-01..05. |
 | INV-05 | Auggie UTMA reallocation | ❌ Open | Chris | Concentrated single stocks (META, MSFT, TSLA — all underwater). Reallocate to VTI/VXUS for 60-year compounding window. |
 | INV-06 | First DSCR deal evaluation | ❌ Queued | Claude + Chris | After INV-02 (markets identified). Run numbers on first candidate property. DSCR ≥ 1.25 target. |
 | INV-07 | Golfii cash deployment plan | ❌ Open | Chris + Golfii | $6,810 idle in joint account. 30+ year runway — needs to work harder. |
@@ -123,9 +123,9 @@
 | INV-10 | MCD entry decision | ❌ DECISION | Chris | $270 = −20% off ATH, near 52-wk low (7/1). CSP impossible ($26K lock) → direct share tranches. Name trigger + tranche 1 size. |
 | INV-11 | Crypto exit plan at BTC $120K+ | ❌ Queued | Claude | Chris S55: hold to $120K+, cash out, restructure properly. Build: sell order, tax exposure, proceeds allocation. |
 | INV-12 | Correction battle plan | ❌ Queued | Claude | Formalize +20% trim rule, quality watchlist with buy ladders, refresh 4-tranche crash deployment. |
-| INV-13 | Park $5K USDT on KuCoin + set ladder limit orders $50/45/40K | ❌ Open | Chris | APPROVED S56: $2,000 @ $50K / $1,500 @ $45K / $1,500 @ $40K (~0.1108 BTC, ~$45.1K avg if all fill). |
+| INV-13 | Park $5K USDT on KuCoin + set ladder limit orders $50/45/40K | ❌ Open | Chris | APPROVED S56: $2K/$1.5K/$1.5K. S57 FLAG: re-confirm $5K is surplus — cash tight (Buffett rule). |
 | INV-14 | Open Auggie 529 this month — $300/mo auto-draft, 100% equity | ❌ Open | Chris | Starts 15-yr 529→Roth clock (eligible 2041). Dip-adds APPROVED S56. Vehicle pends INV-15 SB 529 answer. |
-| INV-15 | Tax preparer meeting — 5 questions (playbook §7) | ❌ Open | Chris | MFS vs MFJ, CA community property MAGI, SB 529, pro-rata, Form 8606. Blocks INV-14 vehicle + INV-16. |
+| INV-15 | Tax preparer meeting — 8 questions (playbook §7) | ❌ Open | Chris | MFS vs MFJ, CA community property MAGI, SB 529, pro-rata, Form 8606. Blocks INV-14 vehicle + INV-16. |
 | INV-16 | Golfii backdoor Roth — Trad+Roth IRA, 70/30 growth/dividend | ❌ BLOCKED | Chris + Golfii | On INV-15. Allocation APPROVED S56. Cap: min($7,500, her W-2). |
 
 ---
@@ -160,6 +160,24 @@
 ## 📋 SESSION 56 PRIORITY ORDER (executed)
 
 S56 (2026-07-01): Family Investment Playbook v2 LOCKED — all three PROPOSED items approved + $5K ladder cash committed. Playbook updated on GitHub (sessions/S55/). Chris's physical queue: INV-13 (USDT + limit orders), INV-08/cold wallet, INV-15 (tax meeting), INV-14 (529). INV-16 blocked on INV-15.
+
+---
+
+## 🏛 ESTATE & INSURANCE ITEMS (S57 — playbook v2.2 §9)
+
+| ID | Item | Status | Owner | Notes |
+|----|------|--------|-------|-------|
+| EST-01 | Pull term life policy — benefit, remaining term, insured, beneficiary | ❌ Open | Chris | Feeds sizing check + EST-05 |
+| EST-02 | WillMaker (~$110): Chris will + Auggie guardianship nomination | ❌ Open | Chris | DIY tier — no dependencies |
+| EST-03 | Mom's revocable trust — 2–3 flat-fee attorney quotes | ❌ Open | Chris | Scope: trust + SBA change-of-ownership consent + QSST/ESBT language ONLY (~$1.5–2.5K). She signs at US Embassy Bangkok if needed. |
+| EST-04 | Crypto access letter — template | ❌ Open | Claude | Sealed instructions: cold-wallet seed + KuCoin. Chris stores. |
+| EST-05 | Beneficiary alignment: Roth, 529 successor, UTMA successor custodian, term policy | ❌ Open | Chris | After EST-01 |
+
+---
+
+## 📋 SESSION 57 PRIORITY ORDER (executed)
+
+S57 (2026-07-01): D8/D9 resolved → playbook v2.2 §9. Ground truth surfaced: Aura Thai = S-corp 100% under mom's name (post-lawsuit shelter); SBA EIDL $350K @3%/30yr, corp borrower, mom guarantor; no estate docs existed. Structure approved: mom's trust (QSST/ESBT mandatory) + DIY will/guardianship + crypto access plan. Parent policies + IUL rejected (Buffett/Bogleheads). EST-01..05 created. Cash-flow warning logged. **S58 opens with A-11 PATH-TO-BLACK.**
 
 ---
 
