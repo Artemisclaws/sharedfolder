@@ -1,5 +1,6 @@
-# PINYO FAMILY INVESTMENT PLAYBOOK — v2.1
+# PINYO FAMILY INVESTMENT PLAYBOOK — v2.2
 **Session:** S55 continuation | **Date:** 2026-07-01
+**v2.2 (S57, 2026-07-01):** D8/D9 resolved — Section 9 added (insurance verdicts, estate stack, S-corp trap, legal-spend tiers). Preparer list now 8 questions. Aura Thai confirmed S-corp.
 **Operating principle (Chris, locked):** Use great people's proven strategies and tax law to our advantage. Business ownership is the edge — most tax-code advantages (hiring family, Solo 401(k), deductions, entity design) only open up for owners.
 **Extends:** Options Income Playbook v1 (covered calls + CSPs, KO/SCHD, Fidelity Roth)
 **Purpose:** Every trigger pre-written. When markets move, Chris executes — he does not deliberate.
@@ -32,6 +33,8 @@
 | CSP → assignment → covered call | The wheel — standard pro income-desk mechanic | v1 on KO/SCHD; MCD entry at 52-wk low |
 | 100% equity young → glide down | Lifecycle investing (Vanguard/TIAA target-date logic) — youngest money takes most risk | Auggie 100% equity, Golfii 70/30, Chris income-tilted |
 | Pre-written triggers, zero mid-game decisions | Dalio — principles decided calmly, executed mechanically | Section 6 table: when X happens, do Y. No deliberation while it moves. |
+| Term life only; no permanent/IUL; no policies on parents | Buffett/Bogleheads — insurance is protection, never investment | Term stays; parent policies rejected (negative-EV at 67/75); this playbook IS "invest the difference" |
+| DIY commodity docs, buy bespoke judgment | Family-office legal-spend doctrine + Munger inversion | WillMaker for will/guardianship (~$110); attorney only for mom's trust (S-corp + SBA complexity) |
 
 ---
 
@@ -43,6 +46,7 @@
 4. **+20% trim rule** (S55) stands on individual positions.
 5. **1.7 BTC → cold wallet** (S55 decision). Only the buy-zone cash stays on KuCoin.
 6. **No mid-zone decisions.** Between BTC $50K and $120K: do nothing. That's the design.
+7. **SBA loan (~$350K @ 3%/30yr): the corporation pays it on schedule. Never prepay, never assume, never accelerate.** (S57) Cheap money is a feature; the risk it created is fixed by structure (Section 9), not repayment.
 
 ---
 
@@ -161,15 +165,16 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 
 ---
 
-## 7 · TAX STRATEGY FLAGS — take to tax preparer (one meeting, seven questions)
+## 7 · TAX STRATEGY FLAGS — take to tax preparer (one meeting, eight questions)
 
 1. **MFS vs MFJ:** MFJ would unlock direct Roth for Golfii (spousal contribution, ~$242K MAGI phase-out), better brackets, and the full $10K CA 529 deduction. What does the whole-picture math say? (There's usually a specific reason to file MFS — income-driven loans, liability separation. Whatever it is, price it against what MFS costs the family plan.)
 2. **CA community property under MFS:** how does W-2/income splitting land on each return, and what is Golfii's actual MAGI?
 3. **SB 529 (new for 2026, VERIFY enacted):** CA state deduction for ScholarShare — up to $5K (single/MFS) with ~$75K income limit, $10K (MFJ) with ~$150K limit. Do we qualify under current filing status?
 4. **Pro-rata check:** any pre-tax IRA balances in Golfii's name anywhere?
 5. **Backdoor Roth mechanics:** confirm preparer files Form 8606 correctly.
-6. **Auggie on payroll (modeling):** Aura Thai entity type — sole prop/parent partnership = FICA-exempt wages for under-18 child; S-corp = FICA applies (family-management-company structure is the workaround — preparer's call). Confirm reasonable comp documentation standard.
+6. **Auggie on payroll (modeling):** Aura Thai CONFIRMED S-corp (S57) → child wages paid directly are NOT FICA-exempt. Is a family-management-company structure (sole-prop FMC pays Auggie, bills the S-corp) worth it at ~$2.5K/yr? Confirm reasonable-comp documentation standard.
 7. **Solo 401(k) for Chris:** eligibility from self-employment income, contribution room, and the loan feature (50% of balance / $50K max) as the borrowing bucket the family plan currently lacks.
+8. **Mom's trust + S-corp shares + SBA (NEW S57):** shares moving into her revocable trust — confirm no SBA change-of-ownership consent trigger; coordinate with her personal guarantee; trust MUST contain QSST/ESBT election language (S-corp eligibility at her death); any gift/valuation filings when funding the trust.
 
 ---
 
@@ -211,8 +216,8 @@ Every playbook account is a locked box: 529 / Roth / UTMA cannot be borrowed aga
 | D5 | Ops privacy | OPEN | Sanitized page (rules + triggers, no position sizes/balances/names) vs password-protect (Cloudflare Access) vs full |
 | D6 | Auggie W-2 + baby Roth | PENDING PREPARER | Section 7.5 — entity type gate (preparer Q6) |
 | D7 | Collateral bucket / Solo 401(k) | PENDING PREPARER | Section 7.6 — preparer Q7 |
-| D8 | **Insurance as investment** | NEXT DISCUSSION | Scope: term vs whole life/IUL (sector-leader view: "buy term, invest the difference" — Bogleheads/Buffett; permanent policies mostly enrich the seller), where insurance IS the right tool for a business owner: umbrella liability, key-person, buy-sell funding, and estate liquidity. Ground truth needed: current coverage, who depends on whose income, Aura Thai entity/ownership. |
-| D9 | **Trust & estate plan** | NEXT DISCUSSION | Scope: CA revocable living trust (CA probate is slow + fee-heavy; near-standard for anyone with a house or business), guardianship designation for Auggie, beneficiary alignment across every account in this playbook (Roths/529/UTMA/life insurance), business succession for Aura Thai. Ground truth needed: what exists today (will? trust? beneficiaries named?), property ownership, entity docs. |
+| D8 | **Insurance as investment** | ✅ **RESOLVED 2026-07-01 (S57)** | Term stays (pull policy = EST-01); permanent/IUL + parent policies REJECTED; umbrella deferred until Aura Thai black; key-person skipped. See Section 9. |
+| D9 | **Trust & estate plan** | ✅ **STRUCTURE APPROVED 2026-07-01 (S57)** | Mom's revocable trust holds the S-corp shares (QSST/ESBT language mandatory); Chris will + Auggie guardianship via WillMaker; Chris's own trust deferred to property purchase. Execution = EST-01..05. See Section 9. |
 
 **Rule for D8/D9:** these follow the PROVEN-MODEL STANDARD — established estate/insurance frameworks applied to our facts, and nothing gets bought or signed without naming whose model it is and why it fits. Insurance sold as investment gets extra skepticism by default; insurance as *protection and estate tool* is where owners get real leverage.
 
@@ -227,6 +232,55 @@ Every playbook account is a locked box: 529 / Roth / UTMA cannot be borrowed aga
 - [ ] 5. Book tax preparer meeting — Section 7 list
 - [ ] 6. After preparer clears it: open Golfii's Traditional + Roth IRA, run the backdoor
 - [ ] 7. Continue v1 in Chris's Roth at full size (cash conflict resolved)
+- [ ] 8. Pull term life policy — benefit, remaining term, insured, beneficiary (EST-01)
+- [ ] 9. WillMaker (~$110): Chris's will + Auggie guardianship nomination (EST-02)
+- [ ] 10. Get 2–3 flat-fee attorney quotes — scope: mom's trust + SBA consent + QSST/ESBT only (EST-03)
+- [ ] 11. Crypto access letter — Claude drafts template, Chris seals + stores (EST-04)
+- [ ] 12. Beneficiary alignment: Roth, 529 successor owner, UTMA successor custodian, term policy (EST-05, after #8)
+
+---
+
+## 9 · D8/D9 — INSURANCE & ESTATE (RESOLVED 2026-07-01, S57)
+
+### Ground truth captured (S57)
+- Chris: term policy exists — details unknown (EST-01 pulls it)
+- No will, no trust, no guardianship nomination for Auggie
+- No real property (renting)
+- **Aura Thai = S-CORP. 100% of shares held by mom** — deliberate liability shelter after a lawsuit (sale Chris → mom). Mom 67, retired, lives in Thailand, on Social Security.
+- **SBA EIDL ~$350K @ 3% / 30 yr — corporation is borrower, mom is personal guarantor**
+- Dad: Thai citizen, 75. $300/mo support stopped (cash flow).
+
+### D8 — Insurance verdicts
+| Question | Call |
+|----------|------|
+| Chris's term policy | KEEP — pull for sizing + beneficiary check (EST-01) |
+| Permanent / whole life / IUL | REJECTED — estate nowhere near exemption; negative-EV as investment |
+| Policies on parents | REJECTED — negative-EV at 67/75; dad likely uninsurable (75, Thai citizen abroad); the real risk (shares in mom's estate) is fixed by structure, not premiums |
+| Personal umbrella | DEFERRED until Aura Thai is black (~$200–400/yr per $1M when it fires) |
+| Key-person on Chris | SKIP — sole operator; family is already the term beneficiary |
+
+### D9 — Estate stack (approved)
+| # | Item | Owner |
+|---|------|-------|
+| 1 | **Mom's revocable living trust holds the Aura Thai shares**; Chris = successor trustee + beneficiary. Solves death (no probate, no SBA-vs-estate standoff) AND incapacity (trustee signs corporate docs). She can execute at US Embassy Bangkok. | Attorney (EST-03) |
+| 2 | Chris's will + Auggie guardianship nomination — WillMaker (~$110) | Chris (EST-02) |
+| 3 | Beneficiary alignment: Fidelity Roth, 529 successor owner, UTMA successor custodian, term policy | Chris (EST-05) |
+| 4 | Crypto access plan — sealed instructions: cold-wallet seed + KuCoin (no beneficiary mechanism exists; without this, 1.7 BTC is lost at death) | Claude template → Chris (EST-04) |
+| 5 | SBA loan: pay on schedule forever. Never prepay, never assume (Wall #7) | Standing rule |
+| 6 | Chris's own living trust — DEFERRED, fires at property purchase (2027–2032 window) | Trigger |
+
+### ⚠️ THE S-CORP TRAP — attorney must draft for this
+Only certain trusts may hold S-corp shares. Mom's revocable grantor trust is fine **during her life**. At her death the trust has a limited window to qualify via a **QSST or ESBT election** — miss it and the S-election terminates → C-corp double taxation on the restaurant. Non-negotiable drafting requirement. Attorney also reads the SBA loan docs for change-of-ownership consent before shares move in (revocable grantor trusts typically don't trip it — verify, never assume).
+
+### Legal spend — 3 tiers (pay for judgment, not paperwork)
+| Tier | What | Cost |
+|------|------|------|
+| 1 — DIY | WillMaker: will + guardianship. Free: beneficiary forms, crypto letter | ~$110 |
+| 2 — Claude prep | Attorney intake package: asset inventory, decisions pre-made, SBA facts, this section | $0 |
+| 3 — Attorney | Mom's trust ONLY — flat fee, 2–3 quotes, scope: trust + SBA consent + QSST/ESBT language | ~$1,500–2,500 |
+
+### ⚠️ Cash-flow warning (Buffett: never risk what you have and need for what you don't have and don't need)
+Every deployment in this playbook assumes surplus cash. S57 ground truth: household cash is tight enough that $300/mo to dad stopped. **Aura Thai to black outranks every trigger in this document.** Re-confirm the $5K ladder cash (INV-13) is truly surplus before parking it.
 
 ---
 
