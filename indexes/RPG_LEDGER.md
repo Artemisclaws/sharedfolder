@@ -1,7 +1,7 @@
 # RPG_LEDGER.md — Life Tracking
 **Maintained by:** Claude at every handoff
 **GitHub:** `indexes/RPG_LEDGER.md`
-**Last Updated:** 2026-07-01 | Session 56
+**Last Updated:** 2026-07-01 | Session 57
 
 *This file is never shown to Chris unprompted. It informs coaching tone — not conversation content.*
 
@@ -21,10 +21,11 @@
 
 ## XP LEDGER
 
-**Total XP:** 2,285
+**Total XP:** 2,375
 
 | Session | XP Earned | XP Lost | Net | Notes |
 |---------|-----------|---------|-----|-------|
+| S57 | +90 | 0 | +90 | D8/D9 resolved — playbook v2.2 §9 (+50). One-way door: estate structure approved — mom's trust holds S-corp shares, QSST trap caught before it could cost six figures (+25). Clean handoff (+15). Biggest single-point-of-failure in the empire (largest asset in someone else's unpapered estate) surfaced and structured. |
 | S56 | +40 | 0 | +40 | Family Playbook v2 locked — three approvals + $5K ladder capital commitment (+25). Playbook updated + pushed, clean handoff (+15). Investment thread fully handed to Chris's physical execution. |
 | S55 | +105 | 0 | +105 | Options income playbook v1 built + math verified (+50). Priority call: Aura Thai to black — one-way door (+25). Five weeks of deferred strategy questions all answered; Roth/taxable structure verified; short-selling reframed to CSPs (+15). Clean handoff + chronicle (+15). |
 | S55 | +115 | -10 | +105 | Soul-file audit delivered — 5H/7M/6L, full report (+50). Apps Script timeout root-caused + V2 rebuilt, banned function disarmed (+50). Clean handoff (+15). System drift surfaced: FILE_MAP/SOUL_CHANGELOG/DECISIONS_LOG stale for 15-25 sessions (-10). |
@@ -53,6 +54,7 @@
 
 | Session | DISCIPLINE | SYSTEMS | MOMENTUM | LEVERAGE | CLARITY |
 |---------|-----------|---------|----------|----------|---------| 
+| S57 | 75 (0) | 96 (0) | 97 (+1) | 85 (0) | 99 (+1) |
 | S56 | 75 (0) | 96 (0) | 96 (+1) | 85 (0) | 98 (0) |
 | S55 | 75 (+1) | 96 (0) | 95 (+1) | 85 (+2) | 98 (+2) |
 | S55 | 75 (+1) | 95 (-1) | 94 (0) | 84 (+1) | 96 (0) |
@@ -104,3 +106,12 @@
 - Watch: INV-08 (cold wallet) is now a two-session-old commitment. If still open when the first ladder rung fires or at the Sept window — name the discipline tax.
 
 *S57: Apps Script V2 verify → H1–H5 → path-to-black. Investment threads queued, not active — don't let them pull focus.*
+
+
+**S57 notes:**
+- CLARITY +1 to 99: Chris said "I'm running out of money" out loud — the most honest data point in weeks. It validates the S55 priority call and hardens it: every investment trigger now sits explicitly behind Aura Thai cash flow. D8/D9 also closed the last open strategic thread from the playbook agenda.
+- MOMENTUM +1 to 97: fourth consecutive session shipping locked decisions with zero drift.
+- LEVERAGE held 85: real risk closed (mom's estate SPOF), but the actual constraint — Aura Thai P&L — didn't move this session. By design; S58 goes there first.
+- Watch: INV-08 cold wallet still open (3rd session). INV-13 now carries a surplus re-confirm flag — if the household needs that $5K, parking it is a discipline tax in reverse (false discipline).
+
+*S58: PATH-TO-BLACK. Ground truth first — full fixed-cost picture before any lever gets proposed. Do not let estate/investment threads pull focus; they are queued behind the restaurant.*
