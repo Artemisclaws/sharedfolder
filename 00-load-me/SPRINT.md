@@ -1,16 +1,16 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S56 | 2026-07-01
+**Updated by:** Claude | Session S57 | 2026-07-01
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START COMMAND — S56
+## SESSION START COMMAND — S57
 ```
 Load soul files.
-S55: Soul-file audit DONE — 5 HIGH / 7 MEDIUM / 6 LOW findings, fixes pending Chris approval (I-25; report: soul-files_audit_S55 in outputs). Apps Script timeout root-caused (blocking ui.alert + popup block) — V2 delivered, setupInvoiceSystem disarmed, Chris was mid-install.
-Priority: (1) Verify Apps Script V2 installed + syncIngredientsToDishMap ran clean (Execution Log). (2) Execute audit fixes H1–H5 with Chris approval: repoint/archive artie-config runbook, reconcile tracker IDs, EMPIRE_RULES archive banner, CLAUDE-CORE header V3→V6. (3) RoamWithChris — get trip count + sheet location from Chris → build Story Index master sheet. (4) Aura Sweet spinoff strategy. (5) Somisomi competitive analysis (carried from S52).
+S56: Family Investment Playbook v2 LOCKED — BTC ladder 40/30/30, 529 dip-adds, Golfii 70/30 all approved; $5K ladder cash committed ($2K@$50K/$1.5K@$45K/$1.5K@$40K). Playbook updated on GitHub (sessions/S55/). Investment execution is now 100% Chris physical actions (INV-13/08/15/14) — queued, not active.
+Priority: (1) Verify Apps Script V2 installed + syncIngredientsToDishMap ran clean (Execution Log). (2) Execute audit fixes H1–H5 with Chris approval (I-25): repoint/archive artie-config runbook, reconcile tracker IDs, EMPIRE_RULES archive banner, CLAUDE-CORE header version. (3) A-11 Aura Thai PATH-TO-BLACK — Priority #1 per Chris; load P&L/Lavu data first. (4) RoamWithChris — trip count + sheet location → build Story Index. (5) Aura Sweet spinoff strategy + Somisomi analysis.
 ```
 
 ---
@@ -36,7 +36,7 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 ---
 
-## ACTIVE ITEMS — S55 DIGEST
+## ACTIVE ITEMS — S56 DIGEST
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
@@ -54,6 +54,11 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
 | A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
 | I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
+| INV-13 | Park $5K USDT on KuCoin + set ladder limit orders $50/45/40K | OPEN — CHRIS | Approved S56: $2,000/$1,500/$1,500. BTC ~$58K — first rung ~14% away. |
+| INV-08 | Move 1.7 BTC → cold wallet | OPEN — CHRIS | S55 decision. Only ladder cash stays on KuCoin. |
+| INV-15 | Tax preparer meeting — 5 questions (playbook §7) | OPEN — CHRIS | Blocks Golfii backdoor + 529 vehicle choice (SB 529 check). |
+| INV-14 | Open Auggie 529 this month — $300/mo, 100% equity | OPEN — CHRIS | Starts 15-yr 529→Roth clock. Vehicle pends INV-15. |
+| INV-16 | Golfii backdoor Roth — Trad+Roth IRA, Form 8606 | BLOCKED | On INV-15 (MAGI + pro-rata). 70/30 approved S56. |
 
 ---
 
