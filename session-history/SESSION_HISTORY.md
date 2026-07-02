@@ -464,3 +464,23 @@ Source files on Drive:
 **Chris's physical queue:** INV-13 park USDT + set limit orders · INV-08 1.7 BTC → cold wallet · INV-15 tax preparer meeting (5 questions, playbook §7) · INV-14 open Auggie 529 this month. INV-16 (Golfii backdoor) blocked on INV-15.
 
 **Next session starts with:** Verify Apps Script V2 installed + sync ran clean → audit fixes H1–H5 (I-25) → A-11 Aura Thai path-to-black (load P&L/Lavu first).
+
+
+---
+
+## S57 — 2026-07-01 — D8/D9: Insurance & Estate
+
+**Goals:** Close D8 (insurance as investment) and D9 (trust & estate) from playbook Section 8 agenda.
+
+**Ground truth captured:**
+- Aura Thai = S-CORP, 100% shares under mom's name — deliberate post-lawsuit liability shelter (sale Chris → mom)
+- SBA EIDL ~$350K @ 3%/30yr: corporation borrows, mom personally guarantees
+- Mom 67, retired, Thailand, Social Security. Dad 75, Thai citizen. $300/mo support to dad stopped — cash tight.
+- Chris: term policy exists (details TBD). No will, no trust, no guardianship for Auggie. No real property.
+
+**Deliverables:**
+- Playbook v2.2 pushed: Section 9 (insurance verdicts, estate stack, S-corp QSST/ESBT trap, 3-tier legal spend), Wall #7 (never prepay/assume SBA), preparer list → 8 questions, EST-01..05 execution items
+- Decisions: mom's revocable trust holds shares (succession + incapacity, no probate); parent policies REJECTED; IUL REJECTED; term stays; Chris's own trust deferred to property purchase
+- Cash-flow warning logged: path-to-black outranks every trigger; INV-13 $5K surplus re-confirm flagged
+
+**Next session (S58):** A-11 AURA THAI PATH-TO-BLACK — plan build across next few sessions. Ground truth first: Lavu + rent, SBA payment, utilities, FOH labor, COGS from Chris. Deliverable: break-even number + 3-lever plan with weekly targets.
