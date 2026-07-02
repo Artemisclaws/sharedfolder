@@ -1,8 +1,9 @@
-# PINYO FAMILY INVESTMENT PLAYBOOK — v2
+# PINYO FAMILY INVESTMENT PLAYBOOK — v2.1
 **Session:** S55 continuation | **Date:** 2026-07-01
+**Operating principle (Chris, locked):** Use great people's proven strategies and tax law to our advantage. Business ownership is the edge — most tax-code advantages (hiring family, Solo 401(k), deductions, entity design) only open up for owners.
 **Extends:** Options Income Playbook v1 (covered calls + CSPs, KO/SCHD, Fidelity Roth)
 **Purpose:** Every trigger pre-written. When markets move, Chris executes — he does not deliberate.
-**Status:** All PROPOSED items APPROVED by Chris 2026-07-01 (S56). Ladder cash locked: $5,000.
+**Status of levels marked PROPOSED:** Claude's proposal — Chris approves or edits, then they're locked.
 
 > Not financial advice. This is a decision framework built from Chris's own decisions (S55) + verified 2026 rules. Final calls are Chris's. Tax items flagged below go to the tax preparer before acting.
 
@@ -47,16 +48,14 @@
 
 ## 2 · CRYPTO GAME PLAN (KuCoin only)
 
-### Buy ladder — fires in the $40–50K zone (APPROVED S56 — $5,000 committed)
-Park the $5,000 as USDT on KuCoin now so orders can be placed the day a level hits.
+### Buy ladder — fires in the $40–50K zone (zone: Chris, split: PROPOSED)
+Park buy-zone cash in USDT on KuCoin now so orders can be placed the day a level hits.
 
-| Trigger | Action | BTC bought |
-|---------|--------|-----------|
-| BTC ≤ $50,000 | Deploy **$2,000** (40%) | ~0.0400 |
-| BTC ≤ $45,000 | Deploy **$1,500** (30%) | ~0.0333 |
-| BTC ≤ $40,000 | Deploy **$1,500** (30% — final tranche; if it goes lower, you're done buying) | ~0.0375 |
-
-**If all three fill:** ~0.1108 BTC added at ~$45.1K average cost → position ~1.81 BTC.
+| Trigger | Action |
+|---------|--------|
+| BTC ≤ $50,000 | Deploy **40%** of KuCoin cash |
+| BTC ≤ $45,000 | Deploy **30%** |
+| BTC ≤ $40,000 | Deploy **30%** (final tranche — if it goes lower, you're done buying; position stays maxed) |
 
 *Optional: set limit orders at all three levels today and forget them.*
 
@@ -65,7 +64,7 @@ BTC reaches $120K → execute exit/restructure per S55 decision. At $120K, 1.7 B
 
 ### Risk notes
 - Exchange risk: only ladder cash lives on KuCoin; coins to cold wallet (Rule 5).
-- Ladder cash: **$5,000** (locked S56). Position maxed beyond this.
+- Open item: **Chris defines the KuCoin cash amount** — the ladder needs a number.
 
 ---
 
@@ -82,7 +81,7 @@ BTC reaches $120K → execute exit/restructure per S55 decision. At $120K, 1.7 B
 ### "Buy when the market is low" — how it actually works here
 $300/mo DCA **is** the low-buying machine — it buys more shares automatically when prices drop. Waiting in cash for a dip while the market sits at ATH is the one behavior that historically loses. So: start now, and buy *extra* on dips instead:
 
-**Dip-add rules (APPROVED S56):**
+**Dip-add rules (PROPOSED):**
 | Trigger | Action |
 |---------|--------|
 | S&P 500 −10% from ATH | One-time extra $300 that month |
@@ -113,7 +112,7 @@ $300/mo DCA **is** the low-buying machine — it buys more shares automatically 
 
 **Pre-check (blocking):** she must have **no existing pre-tax IRA balances** (Traditional/SEP/SIMPLE/old 401k rolled to IRA), or the pro-rata rule taxes the conversion. Confirm before step 2.
 
-### Allocation at 32 (30+ yr horizon) — APPROVED S56
+### Allocation at 32 (30+ yr horizon) — PROPOSED
 | Slice | % | Candidates |
 |-------|---|-----------|
 | Growth ETF | 70% | SCHG / VUG / QQQM — pick one, don't stack all three |
@@ -149,9 +148,9 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 
 | # | Trigger | Account | Action |
 |---|---------|---------|--------|
-| 1 | BTC ≤ $50K | KuCoin | Buy with $2,000 (40% of ladder) |
-| 2 | BTC ≤ $45K | KuCoin | Buy with $1,500 (30%) |
-| 3 | BTC ≤ $40K | KuCoin | Buy with $1,500 (30%) — ladder complete |
+| 1 | BTC ≤ $50K | KuCoin | Buy with 40% of ladder cash |
+| 2 | BTC ≤ $45K | KuCoin | Buy with 30% |
+| 3 | BTC ≤ $40K | KuCoin | Buy with 30% — ladder complete |
 | 4 | BTC ≥ $120K | KuCoin | Execute S55 exit/restructure ladder |
 | 5 | S&P −10% from ATH | 529 | Extra $300 that month |
 | 6 | S&P −10% from ATH | Golfii Roth | Deploy any undeployed annual funding now |
@@ -162,21 +161,68 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 
 ---
 
-## 7 · TAX STRATEGY FLAGS — take to tax preparer (one meeting, five questions)
+## 7 · TAX STRATEGY FLAGS — take to tax preparer (one meeting, seven questions)
 
 1. **MFS vs MFJ:** MFJ would unlock direct Roth for Golfii (spousal contribution, ~$242K MAGI phase-out), better brackets, and the full $10K CA 529 deduction. What does the whole-picture math say? (There's usually a specific reason to file MFS — income-driven loans, liability separation. Whatever it is, price it against what MFS costs the family plan.)
 2. **CA community property under MFS:** how does W-2/income splitting land on each return, and what is Golfii's actual MAGI?
 3. **SB 529 (new for 2026, VERIFY enacted):** CA state deduction for ScholarShare — up to $5K (single/MFS) with ~$75K income limit, $10K (MFJ) with ~$150K limit. Do we qualify under current filing status?
 4. **Pro-rata check:** any pre-tax IRA balances in Golfii's name anywhere?
 5. **Backdoor Roth mechanics:** confirm preparer files Form 8606 correctly.
+6. **Auggie on payroll (modeling):** Aura Thai entity type — sole prop/parent partnership = FICA-exempt wages for under-18 child; S-corp = FICA applies (family-management-company structure is the workaround — preparer's call). Confirm reasonable comp documentation standard.
+7. **Solo 401(k) for Chris:** eligibility from self-employment income, contribution room, and the loan feature (50% of balance / $50K max) as the borrowing bucket the family plan currently lacks.
 
 ---
 
-## 8 · EXECUTION CHECKLIST — Chris, in order
+## 7.5 · AUGGIE PAYROLL → BABY ROTH (discussed 2026-07-01, pending preparer)
+
+**The move:** pay Auggie a W-2 wage for modeling in Aura Thai marketing (menus, ads, social). 2026: up to $16,100 earned = $0 federal income tax; FICA-exempt if entity type qualifies (Q6 above); restaurant deducts the wage. Roth cap = lesser of earnings or $7,500.
+
+**The math (verified):** $2,500/yr at ages 1–5 = $12,500 in → **~$833K at 65 @7%.** Same $12,500 starting at age 25 → ~$164K. The first 25 years of compounding are worth 5x.
+
+**Guardrails:** work must be real (usage log of every photo/video used), pay must be market-rate defensible ($1,500–2,500/yr easy to defend; $16K for an infant is an audit invitation), real payroll + W-2.
+
+**UTMA note:** his $3,800 UTMA is irrevocably his — never collateral, never parent-use. Once he has W-2 income, Roth deposits can be funded from any cash up to his earnings. Later option: UTMA → custodial 529 (aid treatment: ~20% student asset vs ~5.6% parent asset).
+
+---
+
+## 7.6 · BORROWING MAP (discussed 2026-07-01)
+
+Every playbook account is a locked box: 529 / Roth / UTMA cannot be borrowed against (Roth contributions can be *withdrawn* tax-free — escape hatch, not a loan). BTC-backed loans exist but violate the walls.
+
+**If borrowing capacity is wanted (business seed, property rehab), build a separate collateral bucket:**
+| Tool | Capacity | Notes |
+|------|----------|-------|
+| Taxable brokerage + margin/pledged-asset line | ~50% of holdings | No sale, no tax event |
+| HELOC on property | Varies | The real "hard money" alternative |
+| Solo 401(k) loan | 50% of balance, $50K max | Roth IRAs never allow loans; Solo 401(k)s do — preparer Q7 |
+
+**Principle (family office):** compounding money stays untouchable; borrowing runs against assets built for that job.
+
+---
+
+## 8 · OPEN DECISIONS — DISCUSS & FINALIZE (agenda, in order)
+
+| # | Item | State | What's needed |
+|---|------|-------|---------------|
+| D1 | BTC ladder split 40/30/30 | ✅ **APPROVED 2026-07-01** | Only the KuCoin cash amount (D2) |
+| D2 | KuCoin ladder cash amount | OPEN — CHRIS | A dollar figure; park as USDT |
+| D3 | 529 dip reserve size | OPEN — math done | Decomposition showed +$25K = extra savings, +$5K = timing. Design: pre-funded HYSA reserve deployed by trigger (no cash-flow demand during bears, when Aura Thai is squeezed). Pick reserve size or go flat DCA. |
+| D4 | Golfii allocation | OPEN — discussion | Drawdown tolerance question: 2022-style hit was −33% (100% growth) / −24% (70/30) / −18% (S&P) / −16% (Buffett 90/10). Which does she sleep through? |
+| D5 | Ops privacy | OPEN | Sanitized page (rules + triggers, no position sizes/balances/names) vs password-protect (Cloudflare Access) vs full |
+| D6 | Auggie W-2 + baby Roth | PENDING PREPARER | Section 7.5 — entity type gate (preparer Q6) |
+| D7 | Collateral bucket / Solo 401(k) | PENDING PREPARER | Section 7.6 — preparer Q7 |
+| D8 | **Insurance as investment** | NEXT DISCUSSION | Scope: term vs whole life/IUL (sector-leader view: "buy term, invest the difference" — Bogleheads/Buffett; permanent policies mostly enrich the seller), where insurance IS the right tool for a business owner: umbrella liability, key-person, buy-sell funding, and estate liquidity. Ground truth needed: current coverage, who depends on whose income, Aura Thai entity/ownership. |
+| D9 | **Trust & estate plan** | NEXT DISCUSSION | Scope: CA revocable living trust (CA probate is slow + fee-heavy; near-standard for anyone with a house or business), guardianship designation for Auggie, beneficiary alignment across every account in this playbook (Roths/529/UTMA/life insurance), business succession for Aura Thai. Ground truth needed: what exists today (will? trust? beneficiaries named?), property ownership, entity docs. |
+
+**Rule for D8/D9:** these follow the PROVEN-MODEL STANDARD — established estate/insurance frameworks applied to our facts, and nothing gets bought or signed without naming whose model it is and why it fits. Insurance sold as investment gets extra skepticism by default; insurance as *protection and estate tool* is where owners get real leverage.
+
+---
+
+## 8.5 · EXECUTION CHECKLIST — Chris, in order
 
 - [ ] 1. Move 1.7 BTC to cold wallet (S55 decision, still open)
-- [x] 2. Ladder cash = $5,000 (S56). Park as USDT; optionally set limit orders at $50K/$45K/$40K
-- [x] 3. APPROVED S56: BTC ladder split · 529 dip-adds · Golfii 70/30 allocation
+- [ ] 2. Decide KuCoin ladder cash amount; park as USDT; optionally set limit orders at $50K/$45K/$40K
+- [ ] 3. Approve or edit PROPOSED items: BTC ladder split · 529 dip-adds · Golfii 70/30 allocation
 - [ ] 4. Open Auggie's 529 this month (starts the 15-yr Roth-rollover clock) — $300/mo auto-draft, 100% equity index portfolio
 - [ ] 5. Book tax preparer meeting — Section 7 list
 - [ ] 6. After preparer clears it: open Golfii's Traditional + Roth IRA, run the backdoor
