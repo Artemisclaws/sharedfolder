@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-07-01 | Session S55
-**Updated By:** Claude (S55)
+**Last Updated:** 2026-07-01 | Session S56
+**Updated By:** Claude (S56)
 
 ---
 
@@ -31,6 +31,7 @@
 | RoamWithChris Content System | DESIGNED S54 | Full pipeline locked: Footage → Story Index → Story Bible → Script → Edit → Post. Story Index not yet built — blocked on trip count + sheet location. |
 | Soul files audit | DONE S55 | 5 HIGH / 7 MEDIUM / 6 LOW findings. Fixes pending Chris approval (I-25). Report in outputs: soul-files_audit_S55. |
 | Aura Thai Apps Script | V2 DELIVERED S55 | Timeout root cause fixed: blocking ui.alert → non-blocking toast. setupInvoiceSystem disarmed + removed from menu. Chris installing. |
+| Family Investment Playbook v2 | LOCKED S56 | sessions/S55/pinyo-family_investment-playbook_v2.md — all PROPOSED approved. $5K BTC ladder: $2K@$50K/$1.5K@$45K/$1.5K@$40K. Chris executing INV-13/08/15/14. |
 
 ---
 
@@ -217,6 +218,7 @@ Thai dessert spin-off of Aura Thai. Products modeled after Kanomwann Thai gelato
 | S55 | 2026-07-01 | Soul-file audit: 5H/7M/6L, report in outputs, fixes pending approval (I-25). Apps Script timeout root-caused (blocking ui.alert + popup block); V2 delivered — toasts, setupInvoiceSystem disarmed, V1 sync removed. Found populatePriceTrackerDirect never installed. Ground truth: Dish Map dish names = column B. |
 
 | S55 | 2026-07-01 | Investment strategy unblocked: all S47/S48 deferred questions answered. Options income playbook v1 (covered calls + CSPs, KO/SCHD, Fidelity Roth) built + math verified. Six decisions: crypto hold to $120K then exit/restructure; 1.7 BTC to cold wallet; property window 2027-2032 LA/OC STR house-hack profile (DEFERRED); +20% trim rule; Roth=active/taxable=long-term verified; PRIORITY #1 = AURA THAI TO BLACK. Roth cash conflict named: CSP vs BTC window. MCD at 52-wk low = buy-on-sale branch live. |
+| S56 | 2026-07-01 | Family Playbook v2 LOCKED: BTC ladder 40/30/30, 529 dip-adds, Golfii 70/30 all approved; $5K ladder cash committed. Playbook updated on GitHub, math verified. INV to-dos added to SPRINT → live on ops dashboard. |
 
 ## Graph Links
 HOME | SPRINT | MASTER_OPEN_ITEMS | SESSION_HISTORY
