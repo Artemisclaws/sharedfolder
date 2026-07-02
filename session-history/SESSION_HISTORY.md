@@ -1,6 +1,6 @@
 # SESSION_HISTORY.md
 **Chronological log of every Claude + Artie build session.**
-**Last Updated:** 2026-07-01 | Session 55
+**Last Updated:** 2026-07-01 | Session 56
 **Purpose:** YouTube content reference, pattern tracking, progress narrative
 
 ---
@@ -446,3 +446,21 @@ Source files on Drive:
 - outputs/aura-thai_invoice-system_apps-script_v2.gs
 
 **Next session starts with:** Verify Apps Script V2 installed and syncIngredientsToDishMap ran clean (check Execution Log). Then execute audit fixes H1–H5 with Chris approval.
+
+---
+
+## Session 56 — 2026-07-01
+
+**Type:** Investment — Family Playbook v2 locked
+**Theme:** Approvals + ladder cash → execution handed to Chris
+
+**Completed:**
+- Loaded soul files + S55 checkpoint (sessions/S55/). Session numbering verified: S55-continuation handoff was never run; this session is S56.
+- Chris approved all three PROPOSED items: BTC ladder 40/30/30, 529 dip-adds (−10%/−20% S&P), Golfii 70/30 allocation
+- KuCoin ladder cash locked at $5,000 → $2,000 @ $50K / $1,500 @ $45K / $1,500 @ $40K (~0.1108 BTC at ~$45.1K avg if all three fill → position ~1.81 BTC)
+- Playbook v2 updated on GitHub with locked numbers (PUT 200, math verified in Python)
+- Investment to-dos added to SPRINT ACTIVE ITEMS → live on ops.radrooster.co (dashboard reads SPRINT table — no dashboard edit needed, architecture rule held)
+
+**Chris's physical queue:** INV-13 park USDT + set limit orders · INV-08 1.7 BTC → cold wallet · INV-15 tax preparer meeting (5 questions, playbook §7) · INV-14 open Auggie 529 this month. INV-16 (Golfii backdoor) blocked on INV-15.
+
+**Next session starts with:** Verify Apps Script V2 installed + sync ran clean → audit fixes H1–H5 (I-25) → A-11 Aura Thai path-to-black (load P&L/Lavu first).
