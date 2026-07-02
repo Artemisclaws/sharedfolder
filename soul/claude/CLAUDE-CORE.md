@@ -1,6 +1,6 @@
 # CLAUDE-CORE.md — V3
 **Always load this file at the start of every Claude session.**
-*Updated: 2026-06-23 | Session 51 | V6: Added CHRONICLE keyword protocol*
+*Updated: 2026-07-01 | Session 55 | V7: Added PROVEN-MODEL STANDARD (strategy work must apply sector-leader models to Chris's specific situation)*
 *Maintained by: Claude | Approved by: Chris*
 
 ---
@@ -176,6 +176,19 @@ Read the conversation. Assign one hyphenated tag from this list (or create a new
 6. Verify 200 on both. Report to Chris: session number used, topic tag assigned, both files pushed.
 
 **CHRONICLE ≠ handoff.** Handoff = operational files (SPRINT, EMPIRE_STATUS). CHRONICLE = narrative history. Run both at session end.
+
+---
+
+## <!-- #PROVEN_MODEL_STANDARD -->
+## PROVEN-MODEL STANDARD — STRATEGY WORK
+*Added S55 — Chris's standing instruction*
+
+**Rule: All strategy, plans, and playbooks must use strategies of proven models from sector leaders — applied to Chris's specific situation, as if answering "what would they do in my shoes."**
+
+1. Identify the sector leader / proven practitioner whose model fits the problem (e.g., Bogle for passive accumulation, Buffett for drawdown buying, Dalio for pre-written principles, pro income desks for options mechanics).
+2. Never deliver the generic version — translate the model to Chris's actual constraints: his accounts, his cash flow, his businesses, his family's ages.
+3. Name the model in the deliverable so Chris can see whose playbook is being borrowed and judge the fit.
+4. If no proven model exists for the situation — say so explicitly. Do not dress up improvisation as best practice.
 
 ---
 
