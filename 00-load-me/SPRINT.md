@@ -1,16 +1,16 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S57 | 2026-07-01
+**Updated by:** Claude | Session S58 | 2026-07-01
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START COMMAND — S57
+## SESSION START COMMAND — S58
 ```
 Load soul files.
-S56: Family Investment Playbook v2 LOCKED — BTC ladder 40/30/30, 529 dip-adds, Golfii 70/30 all approved; $5K ladder cash committed ($2K@$50K/$1.5K@$45K/$1.5K@$40K). Playbook updated on GitHub (sessions/S55/). Investment execution is now 100% Chris physical actions (INV-13/08/15/14) — queued, not active.
-Priority: (1) Verify Apps Script V2 installed + syncIngredientsToDishMap ran clean (Execution Log). (2) Execute audit fixes H1–H5 with Chris approval (I-25): repoint/archive artie-config runbook, reconcile tracker IDs, EMPIRE_RULES archive banner, CLAUDE-CORE header version. (3) A-11 Aura Thai PATH-TO-BLACK — Priority #1 per Chris; load P&L/Lavu data first. (4) RoamWithChris — trip count + sheet location → build Story Index. (5) Aura Sweet spinoff strategy + Somisomi analysis.
+S57: D8/D9 RESOLVED — Playbook v2.2 (sessions/S55/): mom's revocable trust holds the Aura Thai S-corp shares (QSST/ESBT language mandatory; SBA change-of-ownership consent check), Chris will + Auggie guardianship via WillMaker, parent policies + IUL rejected, term stays. EST-01..05 queued (Chris). Preparer list now 8 questions. Ground truth: Aura Thai = S-corp under mom's name (shelter), SBA EIDL $350K @3%/30yr mom-guaranteed, cash tight ($300/mo to dad stopped).
+Priority: (1) A-11 AURA THAI PATH-TO-BLACK — build the plan over the next few sessions. Ground truth first: load Lavu sheet + get from Chris: rent, SBA monthly payment, utilities/insurance/other fixed costs, FOH labor, COGS estimate. Known: BOH ~$494/day (~$15K/mo), May avg ~$2,200/day net, YTD −7.5%. Deliverable: true break-even number + 3-lever plan (revenue / COGS / labor) with weekly targets. (2) Verify Apps Script V2 installed + sync ran (A-12). (3) I-25 audit fixes H1–H5. (4) RWC Story Index (trip count + sheet location). (5) Aura Sweet strategy.
 ```
 
 ---
@@ -36,10 +36,11 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 ---
 
-## ACTIVE ITEMS — S56 DIGEST
+## ACTIVE ITEMS — S57 DIGEST
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
+| A-11 | Aura Thai PATH-TO-BLACK plan | NEXT — PRIORITY #1 | S58 opens here. Chris brings fixed costs: rent, SBA payment, utilities, FOH labor, COGS. Deliverable: break-even + 3-lever plan. |
 | A-12 | Install Apps Script V2 (timeout fix) | IN PROGRESS — CHRIS | Paste outputs/aura-thai_invoice-system_apps-script_v2.gs → run syncIngredientsToDishMap. Alerts→toasts, setupInvoiceSystem disarmed. |
 | I-25 | Soul-file audit fixes | OPEN | 5H/7M/6L. H1–H5 first. Report: soul-files_audit_S55 (outputs). Chris approves order. |
 | AS-01 | Aura Sweet spinoff strategy | OPEN — S56 | "How should we approach Aura Sweet as a spinoff?" |
@@ -54,11 +55,16 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
 | A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
 | I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
-| INV-13 | Park $5K USDT on KuCoin + set ladder limit orders $50/45/40K | OPEN — CHRIS | Approved S56: $2,000/$1,500/$1,500. BTC ~$58K — first rung ~14% away. |
+| INV-13 | Park $5K USDT on KuCoin + set ladder limit orders $50/45/40K | OPEN — CHRIS | Approved S56. S57 FLAG: re-confirm $5K is surplus — cash tight (Buffett rule, playbook §9). |
 | INV-08 | Move 1.7 BTC → cold wallet | OPEN — CHRIS | S55 decision. Only ladder cash stays on KuCoin. |
-| INV-15 | Tax preparer meeting — 5 questions (playbook §7) | OPEN — CHRIS | Blocks Golfii backdoor + 529 vehicle choice (SB 529 check). |
+| INV-15 | Tax preparer meeting — 8 questions (playbook §7) | OPEN — CHRIS | Blocks Golfii backdoor + 529 vehicle choice (SB 529 check). |
 | INV-14 | Open Auggie 529 this month — $300/mo, 100% equity | OPEN — CHRIS | Starts 15-yr 529→Roth clock. Vehicle pends INV-15. |
 | INV-16 | Golfii backdoor Roth — Trad+Roth IRA, Form 8606 | BLOCKED | On INV-15 (MAGI + pro-rata). 70/30 approved S56. |
+| EST-01 | Pull term life policy (benefit, term left, beneficiary) | OPEN — CHRIS | Feeds sizing check + EST-05. |
+| EST-02 | WillMaker (~$110): Chris will + Auggie guardianship | OPEN — CHRIS | DIY tier. No dependencies. |
+| EST-03 | Mom's revocable trust — 2–3 flat-fee attorney quotes | OPEN — CHRIS | Scope: trust + SBA consent + QSST/ESBT only (~$1.5–2.5K). Playbook v2.2 §9. |
+| EST-04 | Crypto access letter template | OPEN — CLAUDE | Then Chris seals + stores. Without it, 1.7 BTC dies with him. |
+| EST-05 | Beneficiary alignment (Roth/529/UTMA/term) | OPEN — CHRIS | After EST-01. |
 
 ---
 
