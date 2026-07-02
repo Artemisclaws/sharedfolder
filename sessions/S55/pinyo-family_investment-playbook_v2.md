@@ -2,7 +2,7 @@
 **Session:** S55 continuation | **Date:** 2026-07-01
 **Extends:** Options Income Playbook v1 (covered calls + CSPs, KO/SCHD, Fidelity Roth)
 **Purpose:** Every trigger pre-written. When markets move, Chris executes — he does not deliberate.
-**Status of levels marked PROPOSED:** Claude's proposal — Chris approves or edits, then they're locked.
+**Status:** All PROPOSED items APPROVED by Chris 2026-07-01 (S56). Ladder cash locked: $5,000.
 
 > Not financial advice. This is a decision framework built from Chris's own decisions (S55) + verified 2026 rules. Final calls are Chris's. Tax items flagged below go to the tax preparer before acting.
 
@@ -47,14 +47,16 @@
 
 ## 2 · CRYPTO GAME PLAN (KuCoin only)
 
-### Buy ladder — fires in the $40–50K zone (zone: Chris, split: PROPOSED)
-Park buy-zone cash in USDT on KuCoin now so orders can be placed the day a level hits.
+### Buy ladder — fires in the $40–50K zone (APPROVED S56 — $5,000 committed)
+Park the $5,000 as USDT on KuCoin now so orders can be placed the day a level hits.
 
-| Trigger | Action |
-|---------|--------|
-| BTC ≤ $50,000 | Deploy **40%** of KuCoin cash |
-| BTC ≤ $45,000 | Deploy **30%** |
-| BTC ≤ $40,000 | Deploy **30%** (final tranche — if it goes lower, you're done buying; position stays maxed) |
+| Trigger | Action | BTC bought |
+|---------|--------|-----------|
+| BTC ≤ $50,000 | Deploy **$2,000** (40%) | ~0.0400 |
+| BTC ≤ $45,000 | Deploy **$1,500** (30%) | ~0.0333 |
+| BTC ≤ $40,000 | Deploy **$1,500** (30% — final tranche; if it goes lower, you're done buying) | ~0.0375 |
+
+**If all three fill:** ~0.1108 BTC added at ~$45.1K average cost → position ~1.81 BTC.
 
 *Optional: set limit orders at all three levels today and forget them.*
 
@@ -63,7 +65,7 @@ BTC reaches $120K → execute exit/restructure per S55 decision. At $120K, 1.7 B
 
 ### Risk notes
 - Exchange risk: only ladder cash lives on KuCoin; coins to cold wallet (Rule 5).
-- Open item: **Chris defines the KuCoin cash amount** — the ladder needs a number.
+- Ladder cash: **$5,000** (locked S56). Position maxed beyond this.
 
 ---
 
@@ -80,7 +82,7 @@ BTC reaches $120K → execute exit/restructure per S55 decision. At $120K, 1.7 B
 ### "Buy when the market is low" — how it actually works here
 $300/mo DCA **is** the low-buying machine — it buys more shares automatically when prices drop. Waiting in cash for a dip while the market sits at ATH is the one behavior that historically loses. So: start now, and buy *extra* on dips instead:
 
-**Dip-add rules (PROPOSED):**
+**Dip-add rules (APPROVED S56):**
 | Trigger | Action |
 |---------|--------|
 | S&P 500 −10% from ATH | One-time extra $300 that month |
@@ -111,7 +113,7 @@ $300/mo DCA **is** the low-buying machine — it buys more shares automatically 
 
 **Pre-check (blocking):** she must have **no existing pre-tax IRA balances** (Traditional/SEP/SIMPLE/old 401k rolled to IRA), or the pro-rata rule taxes the conversion. Confirm before step 2.
 
-### Allocation at 32 (30+ yr horizon) — PROPOSED
+### Allocation at 32 (30+ yr horizon) — APPROVED S56
 | Slice | % | Candidates |
 |-------|---|-----------|
 | Growth ETF | 70% | SCHG / VUG / QQQM — pick one, don't stack all three |
@@ -147,9 +149,9 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 
 | # | Trigger | Account | Action |
 |---|---------|---------|--------|
-| 1 | BTC ≤ $50K | KuCoin | Buy with 40% of ladder cash |
-| 2 | BTC ≤ $45K | KuCoin | Buy with 30% |
-| 3 | BTC ≤ $40K | KuCoin | Buy with 30% — ladder complete |
+| 1 | BTC ≤ $50K | KuCoin | Buy with $2,000 (40% of ladder) |
+| 2 | BTC ≤ $45K | KuCoin | Buy with $1,500 (30%) |
+| 3 | BTC ≤ $40K | KuCoin | Buy with $1,500 (30%) — ladder complete |
 | 4 | BTC ≥ $120K | KuCoin | Execute S55 exit/restructure ladder |
 | 5 | S&P −10% from ATH | 529 | Extra $300 that month |
 | 6 | S&P −10% from ATH | Golfii Roth | Deploy any undeployed annual funding now |
@@ -173,8 +175,8 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 ## 8 · EXECUTION CHECKLIST — Chris, in order
 
 - [ ] 1. Move 1.7 BTC to cold wallet (S55 decision, still open)
-- [ ] 2. Decide KuCoin ladder cash amount; park as USDT; optionally set limit orders at $50K/$45K/$40K
-- [ ] 3. Approve or edit PROPOSED items: BTC ladder split · 529 dip-adds · Golfii 70/30 allocation
+- [x] 2. Ladder cash = $5,000 (S56). Park as USDT; optionally set limit orders at $50K/$45K/$40K
+- [x] 3. APPROVED S56: BTC ladder split · 529 dip-adds · Golfii 70/30 allocation
 - [ ] 4. Open Auggie's 529 this month (starts the 15-yr Roth-rollover clock) — $300/mo auto-draft, 100% equity index portfolio
 - [ ] 5. Book tax preparer meeting — Section 7 list
 - [ ] 6. After preparer clears it: open Golfii's Traditional + Roth IRA, run the backdoor
