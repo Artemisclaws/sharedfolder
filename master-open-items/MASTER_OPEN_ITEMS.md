@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Living task tracker for the Pinyo Empire.**
-**Last Updated:** 2026-07-01 | Session 55
+**Last Updated:** 2026-07-01 | Session 56
 **GitHub:** `master-open-items/MASTER_OPEN_ITEMS.md`
 
 ---
@@ -119,10 +119,14 @@
 | INV-05 | Auggie UTMA reallocation | ❌ Open | Chris | Concentrated single stocks (META, MSFT, TSLA — all underwater). Reallocate to VTI/VXUS for 60-year compounding window. |
 | INV-06 | First DSCR deal evaluation | ❌ Queued | Claude + Chris | After INV-02 (markets identified). Run numbers on first candidate property. DSCR ≥ 1.25 target. |
 | INV-07 | Golfii cash deployment plan | ❌ Open | Chris + Golfii | $6,810 idle in joint account. 30+ year runway — needs to work harder. |
-| INV-09 | Roth cash allocation: KO CSP vs BTC window (Sept 15–Oct 31) | ❌ DECISION | Chris | $9,694 cannot fund both. One-way door. Decide before Trade 3. |
+| INV-09 | Roth cash allocation: KO CSP vs BTC window (Sept 15–Oct 31) | ✅ RESOLVED S55-cont | — | Fidelity-crypto wall (Rule 1) frees all Roth cash for CSPs; BTC window = KuCoin only. |
 | INV-10 | MCD entry decision | ❌ DECISION | Chris | $270 = −20% off ATH, near 52-wk low (7/1). CSP impossible ($26K lock) → direct share tranches. Name trigger + tranche 1 size. |
 | INV-11 | Crypto exit plan at BTC $120K+ | ❌ Queued | Claude | Chris S55: hold to $120K+, cash out, restructure properly. Build: sell order, tax exposure, proceeds allocation. |
 | INV-12 | Correction battle plan | ❌ Queued | Claude | Formalize +20% trim rule, quality watchlist with buy ladders, refresh 4-tranche crash deployment. |
+| INV-13 | Park $5K USDT on KuCoin + set ladder limit orders $50/45/40K | ❌ Open | Chris | APPROVED S56: $2,000 @ $50K / $1,500 @ $45K / $1,500 @ $40K (~0.1108 BTC, ~$45.1K avg if all fill). |
+| INV-14 | Open Auggie 529 this month — $300/mo auto-draft, 100% equity | ❌ Open | Chris | Starts 15-yr 529→Roth clock (eligible 2041). Dip-adds APPROVED S56. Vehicle pends INV-15 SB 529 answer. |
+| INV-15 | Tax preparer meeting — 5 questions (playbook §7) | ❌ Open | Chris | MFS vs MFJ, CA community property MAGI, SB 529, pro-rata, Form 8606. Blocks INV-14 vehicle + INV-16. |
+| INV-16 | Golfii backdoor Roth — Trad+Roth IRA, 70/30 growth/dividend | ❌ BLOCKED | Chris + Golfii | On INV-15. Allocation APPROVED S56. Cap: min($7,500, her W-2). |
 
 ---
 
@@ -150,6 +154,12 @@
 3. **INV-09 / INV-10** — Roth cash + MCD trigger decisions (Chris)
 4. **INV-08** — 1.7 BTC → cold wallet (Chris, before Sept 15)
 5. **RWC-04** — Story Index build (blocked on Chris: trip count + sheet location)
+
+---
+
+## 📋 SESSION 56 PRIORITY ORDER (executed)
+
+S56 (2026-07-01): Family Investment Playbook v2 LOCKED — all three PROPOSED items approved + $5K ladder cash committed. Playbook updated on GitHub (sessions/S55/). Chris's physical queue: INV-13 (USDT + limit orders), INV-08/cold wallet, INV-15 (tax meeting), INV-14 (529). INV-16 blocked on INV-15.
 
 ---
 
