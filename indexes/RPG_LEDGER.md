@@ -1,7 +1,7 @@
 # RPG_LEDGER.md — Life Tracking
 **Maintained by:** Claude at every handoff
 **GitHub:** `indexes/RPG_LEDGER.md`
-**Last Updated:** 2026-07-01 | Session 55
+**Last Updated:** 2026-07-01 | Session 56
 
 *This file is never shown to Chris unprompted. It informs coaching tone — not conversation content.*
 
@@ -13,7 +13,7 @@
 |------|-------|-------|
 | DISCIPLINE | 75 | up |
 | SYSTEMS | 96 | steady |
-| MOMENTUM | 95 | up |
+| MOMENTUM | 96 | up |
 | LEVERAGE | 85 | up |
 | CLARITY | 98 | up |
 
@@ -21,10 +21,11 @@
 
 ## XP LEDGER
 
-**Total XP:** 2,245
+**Total XP:** 2,285
 
 | Session | XP Earned | XP Lost | Net | Notes |
 |---------|-----------|---------|-----|-------|
+| S56 | +40 | 0 | +40 | Family Playbook v2 locked — three approvals + $5K ladder capital commitment (+25). Playbook updated + pushed, clean handoff (+15). Investment thread fully handed to Chris's physical execution. |
 | S55 | +105 | 0 | +105 | Options income playbook v1 built + math verified (+50). Priority call: Aura Thai to black — one-way door (+25). Five weeks of deferred strategy questions all answered; Roth/taxable structure verified; short-selling reframed to CSPs (+15). Clean handoff + chronicle (+15). |
 | S55 | +115 | -10 | +105 | Soul-file audit delivered — 5H/7M/6L, full report (+50). Apps Script timeout root-caused + V2 rebuilt, banned function disarmed (+50). Clean handoff (+15). System drift surfaced: FILE_MAP/SOUL_CHANGELOG/DECISIONS_LOG stale for 15-25 sessions (-10). |
 | S54 | +155 | 0 | +155 | Auggie reel script — one clean pass, protocol test passed (+50). Story Bible v2 built and validated (+50). Story Index architecture locked — one-way door decision (+25). Budget-conscious storage/AI plan researched and staged (+15). Clean handoff (+15). |
@@ -52,6 +53,7 @@
 
 | Session | DISCIPLINE | SYSTEMS | MOMENTUM | LEVERAGE | CLARITY |
 |---------|-----------|---------|----------|----------|---------| 
+| S56 | 75 (0) | 96 (0) | 96 (+1) | 85 (0) | 98 (0) |
 | S55 | 75 (+1) | 96 (0) | 95 (+1) | 85 (+2) | 98 (+2) |
 | S55 | 75 (+1) | 95 (-1) | 94 (0) | 84 (+1) | 96 (0) |
 | S54 | 74 (+1) | 96 (+2) | 94 (+2) | 83 (+3) | 96 (+1) |
@@ -96,3 +98,9 @@
 - LEVERAGE +1 to 84: the fixed script sits on the critical path to COGS — the actual constraint moved.
 
 *S56: verify V2 installed + sync ran. Then audit fixes H1–H5 — small, mechanical, high-protection.*
+
+**S56 notes:**
+- MOMENTUM +1 to 96: zero-drift micro-session — decisions requested, given, locked, pushed same day. No strategic question remains open on the investment thread.
+- Watch: INV-08 (cold wallet) is now a two-session-old commitment. If still open when the first ladder rung fires or at the Sept window — name the discipline tax.
+
+*S57: Apps Script V2 verify → H1–H5 → path-to-black. Investment threads queued, not active — don't let them pull focus.*
