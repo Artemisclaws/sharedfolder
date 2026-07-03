@@ -484,3 +484,33 @@ Source files on Drive:
 - Cash-flow warning logged: path-to-black outranks every trigger; INV-13 $5K surplus re-confirm flagged
 
 **Next session (S58):** A-11 AURA THAI PATH-TO-BLACK — plan build across next few sessions. Ground truth first: Lavu + rent, SBA payment, utilities, FOH labor, COGS from Chris. Deliverable: break-even number + 3-lever plan with weekly targets.
+
+---
+
+## S58 — 2026-07-03 — RoamWithChris Footage Organization
+
+**Type:** RoamWithChris — footage drive cleanup + manifest
+**Theme:** roam
+
+**Completed:**
+- External HD (Crucial 2TB) connected. 2,055 macOS junk files (`._*`) deleted.
+- Full-depth inventory without lumping repeat visits (e.g. two separate Bangkok river-tour days a week apart; two separate Havasupai/Japan visits).
+- "Havasupai, Japan, Thailand,  2025" combined folder investigated — contained zero master footage, only orphaned Insta360 proxies (.lrv/.bmp). 429/506 re-matched by ID+timestamp to real masters elsewhere on drive; folder removed once empty.
+- Full-drive Insta360 pairing audit: 32 pairs confirmed genuinely missing their other lens (cross-checked whole drive, not just misplaced) — flagged, left alone. 6 files with Finder collision-suffix naming (`-001`/`-002` etc.) restored to standard camera-original names (2 pairs); 2 verified-duplicate files removed. ~26 files in "Vegas Trip with P Boo" / "Mammoth Trip with Erick" manually renamed to descriptive names by Chris, losing ID/lens signature — root cause of his "files won't open" issue. Cannot be auto-paired; left untouched.
+- Policy locked: raw `.insv` camera-original files are never renamed going forward. Framing happens in Insta360 Studio; only the exported flat clip (going to "Edited Shots") gets a descriptive name.
+- Built `RoamWithChris_Footage-Manifest_v1.xlsx` (3,505 rows, 2 sheets) — mechanical Phase 1 of the Story Index (RWC-05), unblocking it. Story/Theme/Tags fields deferred — require Chris's judgment.
+
+**Key decisions:**
+- Did not guess pairings for renamed Vegas/Mammoth files — risk of wrong pairing outweighs benefit.
+- Did not merge "Thailand trip Nov 2024" and "Bangkok Nov 2024" — unconfirmed same event.
+- Built manifest (mechanical data layer) instead of full 20-field Story Index — per locked Build Philosophy (simple first, manual before automated); narrative fields can't be mechanically generated.
+
+**Files created (on Crucial 2TB drive):**
+- checkpoint_footage-organization_2026-07-03.md
+- RoamWithChris_Footage-Manifest_v1.xlsx
+- `_NEEDS REVIEW - Ambiguous Match (Chris decide)/` (2 files)
+- `_NEEDS REVIEW - Orphaned Proxies (no master found)/` (77 files)
+
+**Open items for Chris:** RWC-08 (ambiguous Miami/Key West file), RWC-09 (Thailand Nov 2024 duplicate question), RWC-10 (77 orphans), RWC-11/12 (broken/unpairable raw clips — review in Insta360 Studio).
+
+**Next session starts with:** Chris resolves RWC-08/09/10 first (fast), then pilot the full pipeline (Story Bible → Script) on one trip from the manifest before extending Story/Theme columns drive-wide. A-11 AURA THAI PATH-TO-BLACK remains separately queued as the #1 priority thread — not superseded by this session.
