@@ -115,3 +115,11 @@
 - Watch: INV-08 cold wallet still open (3rd session). INV-13 now carries a surplus re-confirm flag — if the household needs that $5K, parking it is a discipline tax in reverse (false discipline).
 
 *S58: PATH-TO-BLACK. Ground truth first — full fixed-cost picture before any lever gets proposed. Do not let estate/investment threads pull focus; they are queued behind the restaurant.*
+
+**S58 notes:**
+- SYSTEMS +1: root-caused Chris's recurring "renamed 360 files won't open" problem (broke Insta360 lens-pair naming) and locked a policy that makes it structurally impossible going forward — design fix, not a one-time patch.
+- MOMENTUM +1: RWC-05 (Story Index) was blocked since S54. Unblocked this session with real data instead of another planning pass.
+- DISCIPLINE: neutral — mechanical cleanup session, no avoidance either direction.
+- Watch: A-11 PATH-TO-BLACK (the #1 priority thread) did not move this session. By choice — Chris redirected to RoamWithChris. Not a discipline tax, but worth naming so it doesn't quietly slide two sessions running.
+
+*S59: Chris resolves RWC-08/09/10 fast, then either pilots Story Bible → Script on one trip, or returns to A-11 PATH-TO-BLACK — the still-unmoved #1 constraint.*
