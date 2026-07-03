@@ -41,7 +41,7 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
 | A-11 | Aura Thai PATH-TO-BLACK plan | NEXT — PRIORITY #1 | S58 opens here. Chris brings fixed costs: rent, SBA payment, utilities, FOH labor, COGS. Deliverable: break-even + 3-lever plan. |
-| A-12 | Install Apps Script V2 (timeout fix) | IN PROGRESS — CHRIS | Paste outputs/aura-thai_invoice-system_apps-script_v2.gs → run syncIngredientsToDishMap. Alerts→toasts, setupInvoiceSystem disarmed. |
+| A-12 | Install Apps Script V2 (timeout fix) | ✅ COMPLETE — S58 | Alerts→toasts, setupInvoiceSystem disarmed. |
 | I-25 | Soul-file audit fixes | OPEN | 5H/7M/6L. H1–H5 first. Report: soul-files_audit_S55 (outputs). Chris approves order. |
 | AS-01 | Aura Sweet spinoff strategy | OPEN — S56 | "How should we approach Aura Sweet as a spinoff?" |
 | AS-02 | Somisomi competitive analysis | OPEN — S56 | Carried from S52 — Chris to walk the block first |
@@ -53,14 +53,14 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | A-09 | COGS — Artie data entry | IN PROGRESS | Invoice system live. Artie entering backlog. |
 | A-09b | Chris fill Dish Map column B (dish names) | OPEN — CHRIS | CORRECTED S55: column B, not D (ground truth from live script — 2-col Dish Map). Unlocks COGS by Dish. |
 | A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
-| A-10 | ezCater onboarding | IN PROGRESS — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
+| A-10 | ezCater onboarding | PRIORITY — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
 | I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
 | INV-13 | Park $5K USDT on KuCoin + set ladder limit orders $50/45/40K | OPEN — CHRIS | Approved S56. S57 FLAG: re-confirm $5K is surplus — cash tight (Buffett rule, playbook §9). |
-| INV-08 | Move 1.7 BTC → cold wallet | OPEN — CHRIS | S55 decision. Only ladder cash stays on KuCoin. |
+| INV-08 | Move 1.7 BTC → cold wallet | PRIORITY — CHRIS | S55 decision. Only ladder cash stays on KuCoin. |
 | INV-15 | Tax preparer meeting — 8 questions (playbook §7) | OPEN — CHRIS | Blocks Golfii backdoor + 529 vehicle choice (SB 529 check). |
-| INV-14 | Open Auggie 529 this month — $300/mo, 100% equity | OPEN — CHRIS | Starts 15-yr 529→Roth clock. Vehicle pends INV-15. |
+| INV-14 | Open Auggie 529 this month — $300/mo, 100% equity | PRIORITY — CHRIS | Starts 15-yr 529→Roth clock. Vehicle pends INV-15. |
 | INV-16 | Golfii backdoor Roth — Trad+Roth IRA, Form 8606 | BLOCKED | On INV-15 (MAGI + pro-rata). 70/30 approved S56. |
-| EST-01 | Pull term life policy (benefit, term left, beneficiary) | OPEN — CHRIS | Feeds sizing check + EST-05. |
+| EST-01 | Pull term life policy (benefit, term left, beneficiary) | PRIORITY — CHRIS | Feeds sizing check + EST-05. |
 | EST-02 | WillMaker (~$110): Chris will + Auggie guardianship | OPEN — CHRIS | DIY tier. No dependencies. |
 | EST-03 | Mom's revocable trust — 2–3 flat-fee attorney quotes | OPEN — CHRIS | Scope: trust + SBA consent + QSST/ESBT only (~$1.5–2.5K). Playbook v2.2 §9. |
 | EST-04 | Crypto access letter template | OPEN — CLAUDE | Then Chris seals + stores. Without it, 1.7 BTC dies with him. |
