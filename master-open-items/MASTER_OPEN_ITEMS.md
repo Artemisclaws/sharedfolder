@@ -199,3 +199,23 @@ S57 (2026-07-01): D8/D9 resolved → playbook v2.2 §9. Ground truth surfaced: A
 | AS-08 | First Fridays pop-up plan — August 2026 | OPEN | Medium | July skipped. August = first opportunity. Plan event format, signage, products. |
 | AS-09 | Register Aura Sweet on DoorDash | OPEN | High | Launch step 1 per business plan |
 | AS-10 | Create Aura Sweet Instagram account | OPEN - CHRIS | High | Chris is content creator. Reels primary channel. |
+
+
+---
+
+## 🎬 ROAMWITHCHRIS — FOOTAGE ORGANIZATION (S58)
+
+| ID | Item | Status | Owner | Notes |
+|----|------|--------|-------|-------|
+| RWC-06 | Footage consolidation onto external HD | ✅ PARTIAL — S58 | Chris | Drive connected (Crucial 2TB). 2,055 junk files (`._*`) deleted. Contains Thailand/USA/Vietnam/Manila Layover/Japan — NOT Korea, London, Hawaii (still elsewhere, not yet consolidated). |
+| RWC-05 | Story Index master sheet | 🟡 UNBLOCKED, Phase 1 built | Claude | Trip count now real (not guessed). Built `RoamWithChris_Footage-Manifest_v1.xlsx` — 3,505 rows, mechanical fields only (trip/date/type/status). Story/Theme/Tags columns deferred — need Chris's judgment, not mechanically generated. |
+| RWC-08 | Resolve ambiguous file match — Aug 10 2024, Miami vs Key West | ❌ Open | Chris | 2 files sitting in `_NEEDS REVIEW - Ambiguous Match` on drive. |
+| RWC-09 | Confirm "Thailand trip Nov 2024" vs "Bangkok Nov 2024" — same event? | ❌ Open | Chris | Same-month files, not confirmed same event. Left separate, not merged. |
+| RWC-10 | Decide fate of 77 orphaned proxy files (no master found anywhere on drive) | ❌ Open | Chris | Sitting in `_NEEDS REVIEW - Orphaned Proxies`. Possible incomplete transfers. |
+| RWC-11 | 32 raw Insta360 pairs confirmed missing their other lens drive-wide | ❌ Open | Chris | Verified via full-drive cross-check, not just misplaced — genuinely gone. Flagged only, not moved. |
+| RWC-12 | ~26 files in "Vegas Trip with P Boo" / "Mammoth Trip with Erick" renamed to descriptive names, lost ID/lens pairing | ❌ Open | Chris | Cannot auto-pair — renaming broke the Insta360 00/10 lens signature. Root cause of Chris's "files won't open" issue. |
+| RWC-13 | LOCKED POLICY: never rename raw .insv camera-original files | ✅ Locked S58 | Both | Framing happens in Insta360 Studio; renaming only happens on exported flat clip, which goes to "Edited Shots." Prevents RWC-11/12 recurring. |
+
+**Pipeline status (S54 design, S58 update):** Footage [ORGANIZED — S58] → Story Index [PHASE 1 BUILT — S58, manifest only] → Story Bible → Script → Edit → Post.
+
+---
