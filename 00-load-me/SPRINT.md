@@ -1,5 +1,5 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S58 | 2026-07-01
+**Updated by:** Claude | Session S58 (closed) | 2026-07-03
 **GitHub:** `00-load-me/SPRINT.md`
 
 Both agents load this file. It answers: what matters most right now?
@@ -47,9 +47,14 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | AS-02 | Somisomi competitive analysis | OPEN — S56 | Carried from S52 — Chris to walk the block first |
 | AS-03 | Execute 3-move campaign | READY — CHRIS | Move 1: proof post. Move 2: BKBA collab. Move 3: Chef's Secret video. |
 | AS-04 | Finalize poster in Canva | IN PROGRESS — CHRIS | Mockup complete. Copy locked. |
-| RWC-05 | Story Index master sheet — build | BLOCKED — CHRIS | Schema locked (20 fields). Need trip count + sheet location before build. |
-| RWC-06 | Footage consolidation onto external HD | OPEN — CHRIS | Single source of truth. microSDs + cameras + Google Photos → one drive. |
-| RWC-07 | DaVinci Resolve tagging pass | OPEN — CHRIS | After RWC-06. Free — Keywords + Smart Bins. |
+| RWC-05 | Story Index master sheet — build | 🟡 PHASE 1 DONE — S58 | Manifest built (3,505 rows, mechanical fields) on Crucial 2TB: `RoamWithChris_Footage-Manifest_v1.xlsx`. Story/Theme/Tags columns still need Chris. |
+| RWC-06 | Footage consolidation onto external HD | 🟡 PARTIAL — S58 | Crucial 2TB connected + cleaned (2,055 junk files removed). Has Thailand/USA/Vietnam/Manila Layover/Japan. Still missing: Korea, London, Hawaii. |
+| RWC-07 | DaVinci Resolve tagging pass | OPEN — CHRIS | After RWC-06 fully complete (Korea/London/Hawaii still need consolidating). |
+| RWC-08 | Resolve ambiguous file — Aug 10 2024 Miami vs Key West | OPEN — CHRIS | 2 files in `_NEEDS REVIEW - Ambiguous Match` on drive. |
+| RWC-09 | Confirm Thailand trip Nov 2024 == Bangkok Nov 2024? | OPEN — CHRIS | Same month, not confirmed same event. |
+| RWC-10 | Decide fate of 77 orphaned proxy files (no master anywhere) | OPEN — CHRIS | In `_NEEDS REVIEW - Orphaned Proxies` on drive. |
+| RWC-11 | 32 raw pairs confirmed missing other lens | OPEN — CHRIS | Review in Insta360 Studio — may be unusable. |
+| RWC-12 | ~26 renamed Vegas/Mammoth files lost ID pairing | OPEN — CHRIS | Cannot auto-pair. Root cause of "won't open" files. Manual review needed. |
 | A-09 | COGS — Artie data entry | IN PROGRESS | Invoice system live. Artie entering backlog. |
 | A-09b | Chris fill Dish Map column B (dish names) | OPEN — CHRIS | CORRECTED S55: column B, not D (ground truth from live script — 2-col Dish Map). Unlocks COGS by Dish. |
 | A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
