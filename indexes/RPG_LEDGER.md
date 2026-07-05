@@ -1,9 +1,14 @@
 # RPG_LEDGER.md — Life Tracking
 **Maintained by:** Claude at every handoff
 **GitHub:** `indexes/RPG_LEDGER.md`
-**Last Updated:** 2026-07-01 | Session 57
+**Last Updated:** 2026-07-05 | Session 60
 
-*This file is never shown to Chris unprompted. It informs coaching tone — not conversation content.*
+## RETIRED — S60
+Chris, directly: "It gets mentioned how many points tasks are worth at the end of the session. It doesn't have any effect on me." Evidence agrees — S58 already skipped updating this file and nobody noticed until S60's audit. No further XP will be calculated here; this file is frozen at its S57 state below for reference only. Full one-way archive-move (out of `indexes/`) is queued for S61's migration.
+
+Replacement: named commitments to teammates, walked out loud at each Fireteam Sprint debrief. See EMPIRE_STATUS.md TEAM section and outputs/BEDROCK_SYSTEM_DESIGN_v2.md §9.
+
+*This file is never shown to Chris unprompted. It informed coaching tone — not conversation content. That practice ends with this retirement.*
 
 ---
 
