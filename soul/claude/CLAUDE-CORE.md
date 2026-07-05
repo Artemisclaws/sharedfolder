@@ -1,6 +1,6 @@
 # CLAUDE-CORE.md — V3
 **Always load this file at the start of every Claude session.**
-*Updated: 2026-07-01 | Session 55 | V7: Added PROVEN-MODEL STANDARD (strategy work must apply sector-leader models to Chris's specific situation)*
+*Updated: 2026-07-04 | Session 59 | V8: Added WORKING DOCUMENTS rule — all working docs edited via Cowork-connected synced local folder (Drive connector cannot edit files)*
 *Maintained by: Claude | Approved by: Chris*
 
 ---
@@ -303,6 +303,18 @@ DATA/                    doordash/ · ubereats/ · grubhub/ · lavu/ · 1099s/
 JOURNAL/                 one Google Doc per session
 _ARCHIVE/                everything superseded
 ```
+
+### WORKING DOCUMENTS — COWORK + DRIVE SYNC (MANDATORY, S59)
+
+**All working documents Claude edits go through the synced local folder. This is the only editing method.**
+
+- **Folder:** `~/Documents/G Drive with Claude` on Chris's Mac — synced to Google Drive by Drive for Desktop (Drive web -> Computers > My MacBook Pro > Documents > G Drive with Claude).
+- **Why:** The Drive MCP connector is read/search/create only — it CANNOT edit files. Cowork file tools have full read/write on a connected local folder; Drive for Desktop syncs every change to the cloud automatically, both directions.
+- **Protocol:** At session start, Chris connects "G Drive with Claude" to the Cowork session. Claude reads/writes/edits files there directly. Never attempt file edits through the Drive connector.
+- **Formats:** Regular files only (.md, .docx, .xlsx, .pdf, .csv). Native Google Docs/Sheets cannot be edited this way — keep working docs in these formats.
+- **Conflict rule:** Don't edit the same file from Drive web/phone while Claude is editing locally — Drive creates conflict copies.
+- **Scope:** Governs working documents (deliverables, drafts, data files). Soul files stay on GitHub — unchanged.
+- **Troubleshooting:** No Drive icon in Mac menu bar = not syncing. "macOS File Provider error" -> restart the Mac (confirmed fix, S59).
 
 ---
 
