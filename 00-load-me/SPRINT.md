@@ -1,16 +1,39 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S58 (closed) | 2026-07-03
+**Updated by:** Claude | Session S60 (closed) | 2026-07-05
 **GitHub:** `00-load-me/SPRINT.md`
+
+**Counter note (S60):** Session numbering forked — this SPRINT lineage was at S58 (closed 2026-07-03). A same-day session on 2026-07-04 (Google Drive Desktop sync repair; added CLAUDE-CORE's WORKING DOCUMENTS rule, V8) ran as "S59" but never updated this counter. This session (S60) declares the SPRINT lineage canonical going forward. **SPRINT.md line item below is now the sole home of the session counter — no other file may originate a session number.**
+**COUNTER: S60 | closed 2026-07-05 by handoff**
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START COMMAND — S58
+## SESSION START COMMAND — S60
 ```
 Load soul files.
-S57: D8/D9 RESOLVED — Playbook v2.2 (sessions/S55/): mom's revocable trust holds the Aura Thai S-corp shares (QSST/ESBT language mandatory; SBA change-of-ownership consent check), Chris will + Auggie guardianship via WillMaker, parent policies + IUL rejected, term stays. EST-01..05 queued (Chris). Preparer list now 8 questions. Ground truth: Aura Thai = S-corp under mom's name (shelter), SBA EIDL $350K @3%/30yr mom-guaranteed, cash tight ($300/mo to dad stopped).
-Priority: (1) A-11 AURA THAI PATH-TO-BLACK — build the plan over the next few sessions. Ground truth first: load Lavu sheet + get from Chris: rent, SBA monthly payment, utilities/insurance/other fixed costs, FOH labor, COGS estimate. Known: BOH ~$494/day (~$15K/mo), May avg ~$2,200/day net, YTD −7.5%. Deliverable: true break-even number + 3-lever plan (revenue / COGS / labor) with weekly targets. (2) Verify Apps Script V2 installed + sync ran (A-12). (3) I-25 audit fixes H1–H5. (4) RWC Story Index (trip count + sheet location). (5) Aura Sweet strategy.
+S60 = BEDROCK SYSTEM REDESIGN session. Two Fable-5-authored design docs produced and verified this session (outputs/BEDROCK_SYSTEM_DESIGN_v1.md, v2.md) — v2 supersedes v1. Also produced: outputs/BOOT_LOADER_v2.md (ready for Chris to paste into Claude project custom instructions).
+
+CORE DECISIONS MADE (Chris-approved, not yet executed):
+1. Session counter: SPRINT.md is sole home, resolved S41/S58 fork (see counter note above).
+2. RPG_LEDGER.md: retired. Zero effect on Chris ("doesn't have any effect on me"). See indexes/RPG_LEDGER.md banner.
+3. Master file map: discontinued entirely (not replaced by another map) — GitHub copy, Drive copy, and Mac FILE_INDEX table all get archived. Replaced by a small REGISTRY (durable IDs only) living inside EMPIRE_STATUS.md + live tool lookups (Drive search, Glob, GitHub API) for everything else.
+4. New team/motivation layer: the "Fireteam Sprint" loop — GOAL -> HUDDLE (3 questions, plan before executing) -> RUN -> DEBRIEF (Braintrust-style, blameless, no boardroom/elimination). Team = Chris + Claude today; Golfii (Chris's wife) + Kate (Golfii's sister) join for Aura Sweet sprints; scales later to Aura Thai staff as more instances of the same small loop, never a bigger loop. See EMPIRE_STATUS TEAM section.
+5. Idea capture: revives the dormant _inbox/ + Obsidian vault (already built S34, abandoned since) instead of building anything new. PARK (2 min, default) or RIDE (~15 min, if Chris asks) then escort back to task.
+
+MIGRATION STEP 5 (one-way doors) — Chris confirmed all five, NOT YET EXECUTED:
+- Archive GitHub master-file-map/MASTER_FILE_MAP.md (port S41 findings into EMPIRE_STATUS first)
+- Delete/archive Drive copy of the map (fileId 1wA_k8r5pZ7NcN7UHP2iejp1cOWDSCZGO)
+- Retire Mac Aura Thai/FILE_INDEX.md hand-written table
+- Mark Mac FILE_ORG_PLAN_S49.md executed -> archive/
+- RPG_LEDGER.md — banner added this session (see above); full archive-move still pending
+
+NEXT SESSION (S61) STARTS HERE:
+1. Chris pastes outputs/BOOT_LOADER_v2.md into Claude project custom instructions (his action, not done yet as of S60 close).
+2. Execute migration steps 2-4 (rewrite CLAUDE-CORE session-start/handoff sections per BEDROCK_SYSTEM_DESIGN_v2.md section 5 and 9; add full REGISTRY block with LIVE/FROZEN classes to EMPIRE_STATUS; add CACHE headers to Drive Soul/ copies).
+3. Execute migration step 5 (the five one-way archive actions above).
+4. Also unresolved from this session: Lavu daily-sales export pipeline stalled since 2026-05-26 (no June/July data) -- cause undiagnosed, blocks A-11 PATH-TO-BLACK; aura_thai_finance was edited 2026-07-03 with no new data added, cause unknown; Obsidian vault (~/Documents/pinyo-empire per the S34 note in _inbox/) sync status on the Mac unverified.
+5. A-11 AURA THAI PATH-TO-BLACK still the #1 standing priority thread underneath all of the above -- has not moved in two sessions (S58, S60 both redirected elsewhere). Do not let a third session pass without naming that explicitly to Chris.
 ```
 
 ---
@@ -60,6 +83,7 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
 | A-10 | ezCater onboarding | PRIORITY — CHRIS | Fee strategy + quick-ref doc delivered S42. Chris completing paperwork. |
 | I-23 | artie_report_sync.py cron fix | OPEN | Not firing since May 8. |
+| SYS-01 | Bedrock System Redesign (v1+v2) | DESIGNED, Chris-approved, migration pending | S61 executes migration steps 2-5. Docs: outputs/BEDROCK_SYSTEM_DESIGN_v2.md, BOOT_LOADER_v2.md. |
 | INV-13 | Park $5K USDT on KuCoin + set ladder limit orders $50/45/40K | OPEN — CHRIS | Approved S56. S57 FLAG: re-confirm $5K is surplus — cash tight (Buffett rule, playbook §9). |
 | INV-08 | Move 1.7 BTC → cold wallet | PRIORITY — CHRIS | S55 decision. Only ladder cash stays on KuCoin. |
 | INV-15 | Tax preparer meeting — 8 questions (playbook §7) | OPEN — CHRIS | Blocks Golfii backdoor + 529 vehicle choice (SB 529 check). |
