@@ -1,9 +1,15 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S60 (closed) | 2026-07-05
+**Updated by:** Claude | Session S61 (in progress) | 2026-07-05
 **GitHub:** `00-load-me/SPRINT.md`
 
 **Counter note (S60):** Session numbering forked — this SPRINT lineage was at S58 (closed 2026-07-03). A same-day session on 2026-07-04 (Google Drive Desktop sync repair; added CLAUDE-CORE's WORKING DOCUMENTS rule, V8) ran as "S59" but never updated this counter. This session (S60) declares the SPRINT lineage canonical going forward. **SPRINT.md line item below is now the sole home of the session counter — no other file may originate a session number.**
-**COUNTER: S60 | closed 2026-07-05 by handoff**
+**COUNTER: S61 | in progress**
+
+**GOAL (S61):** Execute Bedrock System migration steps 2-4 live — REGISTRY + TEAM consolidated in EMPIRE_STATUS, CLAUDE-CORE rewritten (diff reviewed before push), CACHE headers added to Drive Soul copies. Step 5 (one-way archive actions) held for a separate go/no-go.
+
+**COMMITMENTS (huddle, S61):**
+- Claude: build REGISTRY, dedupe SPRINT/EMPIRE_STATUS business-status blocks, rewrite CLAUDE-CORE and show Chris the diff before pushing, add CACHE headers to Drive Soul copies.
+- Chris: review the CLAUDE-CORE diff before it goes live; give explicit go/no-go on migration step 5 separately.
 
 Both agents load this file. It answers: what matters most right now?
 
@@ -97,33 +103,13 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 ---
 
-## ROAMWITHCHRIS — S54 STATUS
-**Story Protocol:** LOCKED, TESTED S54 — script written in one clean pass, zero rewrites.
-**Series signature opener:** "You won't remember this. So let me tell you."
-**Series tagline (bio/channel):** "This is one of the stories I kept for you."
-**Hook format:** Auggie hero visual → AI baby text "Daddy tell me a story" → signature opener → story
-**Lesson format:** One line woven in voiceover + pinned comment breakdown + future compilation reel
-**Auggie backpacking reel:** Script DONE — ready for CapCut.
-**Story Bible Protocol:** V2 locked — Compass (4.5), false-belief line, Why Auggie Needs This Story (7.5) added.
-**Content system:** Footage → Story Index → Story Bible → Script → Edit → Post — fully designed. Story Index (20-field Google Sheet) is next build, blocked on trip count + sheet location from Chris.
-**Storage plan:** External HD = source of truth (not Google Photos — cost trap). DaVinci Resolve (free) for tagging. Descript if it earns its keep. Wideframe/NAS deferred — not worth it at current volume.
-**Note:** Full Story Bible content must come from Chris directly each time — "memory item #7" references are not accessible cross-session in this environment. Always ask, never fabricate.
+## ROAMWITHCHRIS
+See EMPIRE_STATUS.md → ROAMWITHCHRIS KEY FACTS (canonical — deduped S61).
 
 ---
 
-## AURA SWEET — S53 STATUS
-**Flavor names locked:**
-- The Brew (Thai Tea)
-- Chef's Secret (Fish Sauce Caramel) — viral hook, never reveal early
-- Island Cream (Coconut)
-- Sweet Grain (Mango Sticky Rice)
-
-**Sizing (S52 locked):** 8oz cup + 16oz pint. Two formats only.
-**Poster:** Menu poster mockup complete. One poster only. Copy locked. Ready for Canva.
-**Campaign:** 3-move local launch playbook ready. BKBA is the reach move.
-**Proof:** 100 Thai Tea + 40 Chef's Secret scoops sold by poster alone.
-**Market intel:** BIXBY_KNOLLS_MARKET.md — load this at session start for any Aura Sweet work.
-**Next:** Spinoff strategy + Somisomi competitive analysis.
+## AURA SWEET
+See EMPIRE_STATUS.md → AURA SWEET KEY FACTS (canonical — deduped S61; proof stat ported over).
 
 ---
 
