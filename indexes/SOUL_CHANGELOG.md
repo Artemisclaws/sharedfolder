@@ -57,3 +57,4 @@ Format: `YYYY-MM-DD | Version | File | What changed | Why | Session`
 *This file is append-only. Never delete entries — they are the history.*
 | CLAUDE-CORE.md | V3→V4 | S49 | 2026-06-23 | Step 6 fully rewritten — removed all bash blocks, Drive MCP only. Fixed S32 hardcode in Step 1. Added CHANGE CONTROL section. Root cause of S40–S48 silent push failures eliminated. |
 | CLAUDE-CORE.md | V7: Added PROVEN-MODEL STANDARD section (sector-leader models applied to Chris's specific situation, named in deliverables) | Chris standing instruction | S55 |
+| CLAUDE-CORE.md | V7→V8: Added WORKING DOCUMENTS — COWORK + DRIVE SYNC section under FILE SYSTEM REFERENCE (all working docs edited via ~/Documents/G Drive with Claude; Drive connector cannot edit files) | Chris explicit approval — permanent workflow | S59 |
