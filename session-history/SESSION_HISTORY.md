@@ -522,7 +522,7 @@ Source files on Drive:
 **Type:** Infrastructure — Drive sync fix
 **Theme:** infrastructure
 
-**Note:** This entry is reconstructed at S60 from a session_summary.md found in the newly-synced Drive folder — it was not written to SESSION_HISTORY at the time, and the SPRINT.md counter was never advanced to reflect it. This gap is what caused the S41/S58 counter fork discovered and resolved in S60.
+**Note:** Correction from S60 — this session WAS properly chronicled at the time (`journal/session_S59_2026-07-04.md`, logged in CONTENT_LOG). What never ran was the HANDOFF protocol: SPRINT's counter was never advanced and this SESSION_HISTORY row was never written. This is CHRONICLE and handoff drifting apart from each other — the two rituals are separate and one can silently run without the other. That gap is what caused the S41/S58 counter fork discovered and resolved in S60. S59's own chronicle ended with "move active working documents (and clean up Drive duplicates) into the folder" — the exact task Chris opened this S60 session with, before it grew into the full redesign.
 
 **Completed:**
 - Solved "Claude can't edit files in Google Drive": the Drive connector (cloud API) can read/search/create but not edit; Google Drive for Desktop was installed but crashing with a macOS File Provider error, so nothing was syncing.
