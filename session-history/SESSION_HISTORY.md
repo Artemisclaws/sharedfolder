@@ -514,3 +514,63 @@ Source files on Drive:
 **Open items for Chris:** RWC-08 (ambiguous Miami/Key West file), RWC-09 (Thailand Nov 2024 duplicate question), RWC-10 (77 orphans), RWC-11/12 (broken/unpairable raw clips — review in Insta360 Studio).
 
 **Next session starts with:** Chris resolves RWC-08/09/10 first (fast), then pilot the full pipeline (Story Bible → Script) on one trip from the manifest before extending Story/Theme columns drive-wide. A-11 AURA THAI PATH-TO-BLACK remains separately queued as the #1 priority thread — not superseded by this session.
+
+---
+
+## S59 — 2026-07-04 — Google Drive Desktop Sync Repair (backfilled S60)
+
+**Type:** Infrastructure — Drive sync fix
+**Theme:** infrastructure
+
+**Note:** This entry is reconstructed at S60 from a session_summary.md found in the newly-synced Drive folder — it was not written to SESSION_HISTORY at the time, and the SPRINT.md counter was never advanced to reflect it. This gap is what caused the S41/S58 counter fork discovered and resolved in S60.
+
+**Completed:**
+- Solved "Claude can't edit files in Google Drive": the Drive connector (cloud API) can read/search/create but not edit; Google Drive for Desktop was installed but crashing with a macOS File Provider error, so nothing was syncing.
+- Restarted Mac — Drive for Desktop now runs and syncs.
+- Created `~/Documents/G Drive with Claude` and connected it to Cowork.
+- Claude can now edit files locally with full read/write; Drive for Desktop syncs changes to the cloud automatically.
+- CLAUDE-CORE.md updated to V8 (WORKING DOCUMENTS rule: working docs now edited via the Cowork-connected synced local folder).
+
+**What's next:** Going-forward workflow: put files Chris wants Claude to edit in the synced folder; connect it each session; avoid editing the same file simultaneously on both sides (creates Drive conflict copies).
+
+---
+
+## S60 — 2026-07-05 — Bedrock System Redesign
+
+**Type:** Infrastructure — full system redesign
+**Theme:** infrastructure
+
+**The Problem:** Files scattered and duplicated across Mac/Drive/GitHub since Claude couldn't edit Drive directly until S59. Chris asked for consolidation; scanning surfaced a much bigger issue — the master file map was 37+ days stale and had missed a real 40-day Lavu data outage entirely. Chris named the deeper pattern: "everything is over-engineered before bedrock," and that he was tired of Claude asking for information the system already had somewhere.
+
+**Questions We Were Trying to Solve:**
+- Where do files actually live, and how do we stop re-discovering that every session?
+- Why did the existing "update the map every handoff" rule fail for 37+ days?
+- Which real leader/system model fits Chris's actual working style, rather than generic best practice?
+- How does a system account for Chris's own personality (works best with a teammate, gets derailing-but-valuable ideas mid-task, needs Golfii and Kate taught to plan before executing)?
+- Is Artie an agent that can just be told things, or does he need code/schedule changes? (Answer: the latter — he's OpenClaw automation on his own machine, DESKTOP-R7E8H6E.)
+
+**What We Tried That Didn't Work:**
+- A Haiku-model scan assumed the Drive-side file map should be scanned locally on the Mac — had to redirect to a Drive-API-based scan once Chris clarified he isn't syncing everything locally.
+- The first Fable-5 design (v1) was purely mechanical — files, freshness, boot protocol — and left out the human/team layer entirely. Chris's feedback made clear that was incomplete.
+- v1 cited five leaders/systems as roughly equal decoration; the two verified logic gaps (frozen files given a freshness budget; a touched-but-empty file that would show "fresh") also needed fixing before it could be trusted.
+- The RPG/XP ledger (built S34-ish, maintained every handoff since) was confirmed dead in practice — "it doesn't have any effect on me" — and was already silently skipped at S58 before anyone noticed.
+
+**What We Built:**
+Two design docs (BEDROCK_SYSTEM_DESIGN_v1.md, then v2.md superseding it), both independently fact-checked against live GitHub/Drive/Mac data rather than trusted at face value. v2's core moves: Lean/Toyota as the explicit spine (muda = Chris's "over-engineered" problem, verbatim), GTD added for idea capture, the master file map killed entirely in favor of a small REGISTRY + live tool lookups, two named freshness-check fixes (LIVE vs FROZEN classes; CONTENT vs MTIME checks), and a new team layer — the Fireteam Sprint (GOAL -> HUDDLE -> RUN -> DEBRIEF, Braintrust-style blameless reflection instead of an Apprentice-style boardroom) sized to work identically for Chris+Claude today, Golfii+Kate on Aura Sweet next, and Aura Thai staff later — more instances of the same small loop, never a bigger one. Idea capture revives a dormant S34 Obsidian second-brain setup and an empty `_inbox/` folder instead of building anything new — the note announcing that system was itself found sitting untriaged in the inbox it was supposed to serve. A boot-loader file (BOOT_LOADER_v2.md) was produced for Chris to paste into his Claude project's custom instructions.
+
+**Key Decisions:**
+- SPRINT.md declared the sole home of the session counter, resolving a real fork (a Drive map copy called itself "S41" — a session number that had already happened weeks earlier in the real S58 lineage).
+- RPG_LEDGER.md retired — replaced by named commitments to teammates, walked at each debrief, since that's what Chris said actually moves him.
+- Master file map (all copies: GitHub, Drive, Mac FILE_INDEX) discontinued entirely — one-way door, Chris approved, execution queued for S61.
+- Team roster (Golfii = Chris's wife, Kate = Golfii's sister, both on Aura Sweet) recorded in EMPIRE_STATUS as core fact — the fact that this had to be stated out loud at all was itself named as a symptom of the problem being fixed.
+- Claude and Artie are full teammates in the Fireteam Sprint, not backstage support — Chris's explicit call.
+
+**What's Alive Now:**
+Nothing has been migrated yet — this was a design + handoff session. SPRINT, EMPIRE_STATUS, and MASTER_OPEN_ITEMS were updated with the plan and next steps. RPG_LEDGER got a retirement banner (no new XP calculated). The design docs and boot-loader file exist in outputs, verified but not yet acted on beyond that.
+
+**What's Next:**
+1. Chris pastes BOOT_LOADER_v2.md into his Claude project's custom instructions.
+2. S61 executes migration steps 2-5: rewrite CLAUDE-CORE's session-start/handoff sections, add the full REGISTRY to EMPIRE_STATUS, add CACHE headers to Drive Soul/ copies, and execute the five one-way archive actions (GitHub map, Drive map copy, Mac FILE_INDEX table, FILE_ORG_PLAN_S49, RPG_LEDGER full archive-move).
+3. A-11 PATH-TO-BLACK is still the #1 standing priority and has now not moved in two sessions running (S58, S60) — worth naming plainly if a third session passes it by again.
+
+**Tone Note:** Chris named this one a "breakthrough session" himself before it closed — the energy was collaborative and a little cathartic (surfacing the counter fork, the abandoned second-brain note, and the dead RPG ledger all landed as validating rather than discouraging, because each one proved the diagnosis rather than contradicting it).
