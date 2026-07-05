@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-07-03 | Session S58
-**Updated By:** Claude (S58)
+**Last Updated:** 2026-07-05 | Session S60
+**Updated By:** Claude (S60)
 
 ---
 
@@ -13,6 +13,10 @@
 | ops.radrooster.co | LIVE - CLOUDFLARE PAGES | Auto-deploy from GitHub. |
 | Obsidian Second Brain | LIVE | S34 - vault synced, graph live |
 | artie_report_sync.py cron | NOT FIRING | Broken since ~May 8 (I-23) |
+| Bedrock System Redesign | DESIGNED S60, migration pending | v1+v2 docs in outputs (Fable-5-authored, verified). Kills the hand-maintained master file map (all copies), adds REGISTRY + freshness gate, adds Fireteam Sprint team loop. See SPRINT S60 block for exact next steps. |
+| Lavu daily-sales export pipeline | STALLED | No exports since 2026-05-26 (37+ days as of S60). Cause undiagnosed — script broken vs. paused collection vs. unprocessed backlog. Blocks A-11 PATH-TO-BLACK (needs current revenue). |
+| Master file map (GitHub + Drive copies) | DISCONTINUING | Replaced by REGISTRY (below) once S61 migration executes. Do not update the old map further. |
+| RPG_LEDGER.md | RETIRED S60 | Confirmed zero effect on Chris. Banner added to file. Replaced by named commitments to teammates in the Fireteam Sprint loop (see TEAM section). |
 | Old Cloudflare Tunnel | DECOMMISSION PENDING | |
 | Daily digest cron (#general) | NOT BUILT | |
 | Build Philosophy | LOCKED S46 | Navy SEAL rules. Manual to automated phases. |
@@ -34,6 +38,20 @@
 | RoamWithChris footage drive organized | DONE S58 | External HD (Crucial 2TB) cleaned (2,055 junk files removed), 429 orphaned proxies re-matched to masters, 6 renamed/collision files restored to playable pairs. Footage Manifest v1 built (3,505 rows) — Phase 1 of Story Index. Policy locked: never rename raw .insv. |
 | Family Investment Playbook v2 | LOCKED S56 | sessions/S55/pinyo-family_investment-playbook_v2.md — all PROPOSED approved. $5K BTC ladder: $2K@$50K/$1.5K@$45K/$1.5K@$40K. Chris executing INV-13/08/15/14. |
 | Playbook v2.2 — D8/D9 estate + insurance | RESOLVED S57 | §9 added. Mom's trust holds S-corp shares (QSST trap flagged), will+guardianship DIY, parent policies/IUL rejected. EST-01..05 queued. Aura Thai = S-CORP, shares under mom (shelter), SBA $350K @3% mom-guaranteed. |
+
+---
+
+## TEAM (added S60 — do not ask Chris again)
+
+| Who | Relationship | Role | Notes |
+|-----|--------------|------|-------|
+| Chris | Chairman | Direction, decisions, approvals | Thinks process-first; flows best working with a teammate. |
+| Golfii | Chris's wife | Manager/partner — Aura Sweet | Ready to help with anything asked; currently fully directive-dependent. Goal: teach her to think/plan before executing (see Fireteam Sprint, BEDROCK_SYSTEM_DESIGN_v2.md §9). Highly effective — does first, thinks second (opposite of Chris). |
+| Kate | Golfii's sister | Manager/partner — Aura Sweet | Same profile and goal as Golfii. |
+| Claude | AI — Strategist/Architect | Planning-partner teammate, all ventures | Right now Chris's main team member day-to-day. No persistent memory between sessions — this file + SPRINT are how continuity works. |
+| Artie | AI — Executor (OpenClaw, own machine DESKTOP-R7E8H6E) | Automation/execution teammate | NOT an agent session — cron jobs + scripts, changes require code/TeamViewer, never "just told." Goes dark during `sync_soul.sh` — expected, not a failure. |
+
+**The loop they all run (Fireteam Sprint):** GOAL (one sentence) -> HUDDLE (3 questions, plan before executing) -> RUN -> DEBRIEF (blameless, peer-level, no boardroom). Full detail: outputs/BEDROCK_SYSTEM_DESIGN_v2.md §9.
 
 ---
 
@@ -223,6 +241,8 @@ Thai dessert spin-off of Aura Thai. Products modeled after Kanomwann Thai gelato
 | S57 | 2026-07-01 | D8/D9 resolved → Playbook v2.2. Ground truth: Aura Thai S-corp 100% under mom (post-lawsuit shelter); SBA EIDL $350K @3%/30yr, corp borrower + mom guarantor; no will/trust/guardianship existed; no real property; term policy exists (details TBD). Estate stack approved: mom's revocable trust w/ QSST/ESBT language, WillMaker will+guardianship, beneficiary alignment, crypto access plan, own trust deferred to property. Insurance: term stays, parent policies + IUL rejected. Legal spend 3-tier (~$110 DIY + $1.5–2.5K attorney). Cash-flow warning logged — path-to-black outranks all triggers; INV-13 surplus re-confirm flagged. Next: A-11 PATH-TO-BLACK. |
 | S56 | 2026-07-01 | Family Playbook v2 LOCKED: BTC ladder 40/30/30, 529 dip-adds, Golfii 70/30 all approved; $5K ladder cash committed. Playbook updated on GitHub, math verified. INV to-dos added to SPRINT → live on ops dashboard. |
 | S58 | 2026-07-03 | RoamWithChris: Crucial 2TB HD connected, cleaned (2,055 junk files), inventoried without lumping repeat trips. "Havasupai/Japan/Thailand 2025" dump folder found to be orphaned proxies only — 429 re-matched to real masters. Insta360 pairing audit: 32 pairs confirmed truly broken, 6 collision-renamed files restored, ~26 Vegas/Mammoth files unpairable (manually renamed, lost ID). Policy locked: never rename raw .insv. Footage Manifest v1 (3,505 rows) built as Phase 1 of Story Index — RWC-05 unblocked. |
+| S59 | 2026-07-04 | (Backfilled S60 — not documented at the time.) Google Drive Desktop sync repaired (was crashing, nothing syncing). `~/Documents/G Drive with Claude` folder created and connected to Cowork — Claude can now edit Drive files directly. CLAUDE-CORE updated to V8 (WORKING DOCUMENTS rule) but SPRINT counter was never advanced to match — root cause of the S41/S58 counter fork resolved in S60. |
+| S60 | 2026-07-05 | BEDROCK SYSTEM REDESIGN. Discovered: session counter forked (a Drive-based file-map copy called itself "S41," which had already happened weeks earlier in the real S58 lineage); master file map 37+ days stale and missed the Lavu export stall entirely; FILE_ORG_PLAN_S49 executed but status never flipped; RPG_LEDGER already decaying (S58 skipped it). Two Fable-5-authored design docs produced and independently verified (v1, then v2 after Chris's feedback that the system also needed to fit how he works — team, ideas, motivation). v2: Lean/Toyota as the spine, GTD for idea capture, kills the file map for a small REGISTRY + live lookups, fixes two logic gaps (frozen files falsely flagged stale; touched-but-empty files falsely flagged fresh), adds the Fireteam Sprint team loop (GOAL->HUDDLE->RUN->DEBRIEF) covering Chris, Golfii, Kate, Claude, Artie, retires RPG_LEDGER for named teammate commitments, revives the dormant S34 Obsidian second-brain + `_inbox/` for idea capture instead of building anything new. Boot-loader v2 delivered for Chris to paste into custom instructions. Migration steps 2-5 approved but not yet executed — queued for S61. |
 
 ## Graph Links
 HOME | SPRINT | MASTER_OPEN_ITEMS | SESSION_HISTORY
