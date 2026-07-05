@@ -1,6 +1,6 @@
 # MASTER_OPEN_ITEMS.md
 **Living task tracker for the Pinyo Empire.**
-**Last Updated:** 2026-07-01 | Session 57
+**Last Updated:** 2026-07-05 | Session 60
 **GitHub:** `master-open-items/MASTER_OPEN_ITEMS.md`
 
 ---
@@ -178,6 +178,18 @@ S56 (2026-07-01): Family Investment Playbook v2 LOCKED — all three PROPOSED it
 ## 📋 SESSION 57 PRIORITY ORDER (executed)
 
 S57 (2026-07-01): D8/D9 resolved → playbook v2.2 §9. Ground truth surfaced: Aura Thai = S-corp 100% under mom's name (post-lawsuit shelter); SBA EIDL $350K @3%/30yr, corp borrower, mom guarantor; no estate docs existed. Structure approved: mom's trust (QSST/ESBT mandatory) + DIY will/guardianship + crypto access plan. Parent policies + IUL rejected (Buffett/Bogleheads). EST-01..05 created. Cash-flow warning logged. **S58 opens with A-11 PATH-TO-BLACK.**
+
+---
+
+## SYSTEM REDESIGN + DRIFT ITEMS (S60)
+
+| ID | Item | Status | Priority | Notes |
+|----|------|--------|----------|-------|
+| SYS-01 | Bedrock System Redesign (v1+v2) | DESIGNED, Chris-approved, migration pending | TOP | Two Fable-5 design docs (outputs/BEDROCK_SYSTEM_DESIGN_v1.md superseded by v2.md), independently verified. Kills the hand-maintained master file map (GitHub+Drive+Mac copies) for a small REGISTRY + live tool lookups; fixes 2 logic gaps in freshness checking; adds the Fireteam Sprint team loop (GOAL->HUDDLE->RUN->DEBRIEF) for Chris/Golfii/Kate/Claude/Artie; retires RPG_LEDGER. Boot-loader ready (outputs/BOOT_LOADER_v2.md). S61 executes migration steps 2-5. |
+| I-26 | Lavu daily-sales export pipeline stalled | OPEN | High | No exports since 2026-05-26 (37+ days). Cause undiagnosed. Blocks A-11 PATH-TO-BLACK, which needs current revenue data. |
+| I-27 | Session counter integrity | RESOLVED S60 | — | S41/S58 lineage fork found and resolved — SPRINT.md is now the sole home of the counter. Root cause: an undocumented S59 session (2026-07-04, Drive sync repair) never advanced the SPRINT counter. |
+| I-28 | aura_thai_finance edited with no new data | OPEN | Medium | Modified 2026-07-03, no June+ rows added. Cause unknown. Now the canonical example for the new CONTENT-based freshness check (file-touch time alone isn't proof of fresh data). |
+| I-29 | HOME.md (Obsidian homepage) drifted | OPEN | Low | Hand-written tables list retired ventures (Vine Arbitrage, Pinyo Farms, AI Ventures) — not current reality. Fix: replace with dataview queries per Bedrock redesign (no more hand-maintained indexes). |
 
 ---
 
