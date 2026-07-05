@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-07-05 | Session S60
-**Updated By:** Claude (S60)
+**Last Updated:** 2026-07-05 | Session S61
+**Updated By:** Claude (S61) — Bedrock migration steps 2-4
 
 ---
 
@@ -174,6 +174,8 @@ Thai dessert spin-off of Aura Thai. Products modeled after Kanomwann Thai gelato
 | 2 | BKBA collab — community reach, newsletter + IG | Chris |
 | 3 | Chef's Secret video — tease the mystery ingredient | Chris |
 
+**Proof (ported from SPRINT S61 dedupe):** 100 Thai Tea + 40 Chef's Secret scoops sold by poster alone, no paid campaign yet.
+
 ### Key Opportunities
 | Opportunity | Details |
 |------------|---------|
@@ -210,13 +212,33 @@ Thai dessert spin-off of Aura Thai. Products modeled after Kanomwann Thai gelato
 
 ---
 
-## KEY FILE IDs
-| File | Location/ID |
-|------|-------------|
-| GitHub PAT | Drive: `1528C9LxOxjxQvS5iUM8vFjE50clNM1NT` |
-| aura_thai_finance sheet | `1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE` |
-| Apps Script | `1lNMZ_Hvwj-4ncLGy0nWN9rEr6xJYADZxM9OpOTTloNfGsAIA0DV-uDzr` |
-| Bixby Knolls Market Intel | `bixby-knolls/BIXBY_KNOLLS_MARKET.md` (GitHub) |
+## REGISTRY — durable IDs (added S61, replaces old KEY FILE IDs table)
+*Per BEDROCK_SYSTEM_DESIGN_v2.md §4. LIVE entries checked at boot per their method; FROZEN entries never flagged. No new hand-maintained index files beyond this one, ever — everything else is a live tool lookup (Drive search, Glob, GitHub contents API).*
+
+```
+GitHub repo:            Artemisclaws/sharedfolder (API via curl, never web_fetch)
+GitHub PAT:             Drive fileId 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT (Drive only, no local paths)
+--- LIVE data (budget + check method) ---
+Tiller (expenses):      1NCnzbY9LZXB5HYaZQ5bppEBL_19qweF2xQCdoXmaSP4  [3d | CONTENT: newest transaction date]
+aura_thai_finance:      1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE  [7d | CONTENT: newest data-row date -- mtime lies here, proven 2026-07-03]
+Lavu Drive folder:      1_5WYvoliZ46w4mRuIayLm8uoMBeHb-mZ             [35d | MTIME: newest file in folder]
+--- FROZEN (immutable -- never flag stale; flag only if unexpectedly modified) ---
+Lavu Daily Sale 2025:   1_MCQ3VeivrefxEf16e9pHidPrrZDIOJf6Ou78P9Qofc  [FROZEN -- full-year 2025, complete]
+--- No freshness semantics (reference pointers) ---
+Menu Price Chart:       1NH9jSLoUaRxGQksqB4Wyh_7eWj4Hju6FiBSuTxTVmuU
+"G Drive with Claude":  folder 1yYWUZmU__ldcvIWeTqh2wsT1ZDL30FhW (synced: ~/Documents/G Drive with Claude)
+Apps Script:            1lNMZ_Hvwj-4ncLGy0nWN9rEr6xJYADZxM9OpOTTloNfGsAIA0DV-uDzr
+Discord: #general 1493421633359315089 | #finance 1501467891474759770 |
+         #operations 1501468053672689834 | #escalations 1501468242739204097
+Artie machine:          DESKTOP-R7E8H6E | PAT ~/.pinyo_github_pat | sync: ~/.openclaw/workspace/sync_soul.sh
+Mac projects:           /Users/macbook/Documents/Claude/Projects/ (convention: checkpoints/scripts/docs/data/archive)
+Dashboards:             ops.radrooster.co (Cloudflare Pages, auto-deploy from repo)
+Bixby Knolls Market Intel: bixby-knolls/BIXBY_KNOLLS_MARKET.md (GitHub)
+```
+
+**Rule:** every LIVE entry must name its check method; an entry with a budget but no method is visibly incomplete. When a year ends, freezing last year's sheet is a one-line edit (LIVE -> FROZEN), not a project.
+
+**Not yet done (blocked on migration step 5, separate go/no-go):** archiving MASTER_FILE_MAP.md (GitHub) and the Drive map copy (fileId `1wA_k8r5pZ7NcN7UHP2iejp1cOWDSCZGO`) that this REGISTRY replaces.
 
 ---
 
