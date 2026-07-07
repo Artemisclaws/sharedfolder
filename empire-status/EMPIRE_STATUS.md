@@ -13,15 +13,15 @@
 | ops.radrooster.co | LIVE - CLOUDFLARE PAGES | Auto-deploy from GitHub. |
 | Obsidian Second Brain | LIVE | S34 - vault synced, graph live |
 | artie_report_sync.py cron | NOT FIRING | Broken since ~May 8 (I-23) |
-| Bedrock System Redesign | DESIGNED S60, migration pending | v1+v2 docs in outputs (Fable-5-authored, verified). Kills the hand-maintained master file map (all copies), adds REGISTRY + freshness gate, adds Fireteam Sprint team loop. See SPRINT S60 block for exact next steps. |
+| Bedrock System Redesign | MIGRATED S62 — LIVE | v1+v2 docs in outputs (Fable-5-authored, verified). Kills the hand-maintained master file map (all copies), adds REGISTRY + freshness gate, adds Fireteam Sprint team loop. See SPRINT S60 block for exact next steps. |
 | Lavu daily-sales export pipeline | STALLED — CONFIRMED S61 | No exports since 2026-05-26 (41+ days as of S61 close). Direct content check on aura_thai_finance confirms data still ends 2026-05-31 despite modifiedTime of 2026-07-03 — this is the exact "touched-but-empty falsely flagged fresh" trap the v2 design named. Cause still undiagnosed. Blocks A-11 PATH-TO-BLACK (needs current revenue). Diagnostic requires Mac. |
-| Master file map (GitHub + Drive copies) | DISCONTINUING | Replaced by REGISTRY (below) once S61 migration executes. Do not update the old map further. |
+| Master file map (GitHub + Drive copies) | ARCHIVED S62 | Replaced by REGISTRY (below) once S61 migration executes. Do not update the old map further. |
 | RPG_LEDGER.md | RETIRED S60 | Confirmed zero effect on Chris. Banner added to file. Replaced by named commitments to teammates in the Fireteam Sprint loop (see TEAM section). |
 | Old Cloudflare Tunnel | DECOMMISSION PENDING | |
 | Daily digest cron (#general) | NOT BUILT | |
 | Build Philosophy | LOCKED S46 | Navy SEAL rules. Manual to automated phases. |
 | GitHub Handoff PAT | FIXED S49 | Drive MCP only (fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT). No local paths. |
-| CLAUDE-CORE.md | V6 S51 | CHRONICLE keyword protocol added. |
+| CLAUDE-CORE.md | V9 S62 | Boot/freshness gate, 3-write handoff w/ debrief, huddle, PARK/RIDE. |
 | Cowork project instructions | FIXED S51 | Now uses GitHub API via bash - no more stale web_fetch cache. |
 | CHRONICLE protocol | LIVE S51 | journal/session_SXX_date.md + indexes/CONTENT_LOG.md. S48 entry tested. |
 | ARTIE-CORE.md | V6 S50 | Session start/end protocol added |
@@ -259,6 +259,7 @@ Lavu Daily Sale 2025:   1_MCQ3VeivrefxEf16e9pHidPrrZDIOJf6Ou78P9Qofc  [FROZEN --
 --- No freshness semantics (reference pointers) ---
 Menu Price Chart:       1NH9jSLoUaRxGQksqB4Wyh_7eWj4Hju6FiBSuTxTVmuU
 "G Drive with Claude":  folder 1yYWUZmU__ldcvIWeTqh2wsT1ZDL30FhW (synced: ~/Documents/G Drive with Claude)
+NOTE (S62): github_pat.txt currently sits in Drive _ARCHIVE root — fileId valid regardless; Chris to relocate.
 Apps Script:            1lNMZ_Hvwj-4ncLGy0nWN9rEr6xJYADZxM9OpOTTloNfGsAIA0DV-uDzr
 Discord: #general 1493421633359315089 | #finance 1501467891474759770 |
          #operations 1501468053672689834 | #escalations 1501468242739204097
@@ -279,6 +280,7 @@ Bixby Knolls Market Intel: bixby-knolls/BIXBY_KNOLLS_MARKET.md (GitHub)
 ## SESSION LOG
 | Session | Date | Key Work |
 |---------|------|----------|
+| S62 | 2026-07-07 | Bedrock migration executed end-to-end: CLAUDE-CORE V9 (boot gate, 3-write handoff, huddle/debrief, PARK/RIDE), business blocks ported SPRINT→EMPIRE_STATUS, MASTER_FILE_MAP + RPG_LEDGER archived to _archive/, Drive Soul/ copies + map copy archived by Chris, ARTIE-CORE map row removed, Tiller IMPORTRANGE note ported, I-26 cleanup item added. SYS-01 closed. Boot gate's first live run correctly flagged 2 RED (aura_thai_finance, Lavu folder). |
 | S39 | 2026-05-27 | Decision Dashboard checklist, BOH labor, Lavu as primary source |
 | S40 | 2026-06-19 | Apps Script invoice system built |
 | S45 | 2026-06-21 | Dish Map redesigned, ezCater menu plan |
