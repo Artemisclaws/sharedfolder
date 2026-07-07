@@ -1,16 +1,18 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S61 (closed) | 2026-07-06
+**Updated by:** Claude | Session S62 (closed) | 2026-07-07
 **GitHub:** `00-load-me/SPRINT.md`
 
 **Counter note (S60):** Session numbering forked — this SPRINT lineage was at S58 (closed 2026-07-03). A same-day session on 2026-07-04 (Google Drive Desktop sync repair; added CLAUDE-CORE's WORKING DOCUMENTS rule, V8) ran as "S59" but never updated this counter. This session (S60) declares the SPRINT lineage canonical going forward. **SPRINT.md line item below is now the sole home of the session counter — no other file may originate a session number.**
-**COUNTER: S61 | closed 2026-07-06**
+**COUNTER: S62 | closed 2026-07-07**
 
-**GOAL (S61 close):** Migration steps 2-4 (CLAUDE-CORE rewrite, REGISTRY, CACHE headers) NOT executed this session — Chris was mobile/driving, no bandwidth for deep infra review. Session redirected to RoamWithChris Story Vault work instead (see EMPIRE_STATUS ROAMWITHCHRIS section). Migration steps 2-5 all carry forward to next Mac session.
+**GOAL (S62 close):** Voice-session RoamWithChris story braindump (Chris driving). Two new stories captured: **Augustus Chang** (Bible locked, AI-visuals-only episode) and **Vietnam Cousin Trip** (raw braindump, not yet Bible-locked, likely splits into a 3-part series: Halong Bay / Ninh Binh / Ha Giang Loop). **Correction from S61 close:** the prior handoff claimed these were written to Drive/GitHub but the write never actually executed (Drive MCP was down and the GitHub push was narrated, not run) — caught and fixed at the start of S62 when Chris asked "did we record this session in the right places?" Both story docs are now genuinely saved to Drive. Migration steps 2-5 (Bedrock CLAUDE-CORE rewrite, REGISTRY, CACHE headers) still NOT executed — still carrying forward.
 
-**COMMITMENTS (huddle, S61 close):**
-- Claude: hold migration steps 2-5 until Chris is at the Mac with review bandwidth. Confirmed via direct content check that aura_thai_finance is RED — data still ends 2026-05-31 despite a 2026-07-03 modifiedTime (the exact "touched-but-empty falsely-flagged-fresh" trap named in the v2 design). Lavu export pipeline confirmed still stalled.
-- Chris: flagged a counter discrepancy — his own notes reference "S62/S63" with deliverables staged, but SPRINT/EMPIRE_STATUS show S61 as the only session on record, not yet closed until now. Needs reconciling next Mac session — possible local/uncommitted work exists that was never pushed.
-- Chris: next Mac session should open on A-11 PATH-TO-BLACK or the Lavu diagnostic — this is the third session (S58, S60, S61) where that work got redirected, per the standing SPRINT rule not to let a third pass without naming it. Named here explicitly.
+**COMMITMENTS (huddle, S62 close):**
+- Claude: verify-before-claiming-done going forward — do not narrate a save/push as complete without an actual tool call confirming it. This session's opening exchange is the concrete example to reference if it recurs.
+- Claude: hold migration steps 2-5 until Chris is at the Mac with review bandwidth. aura_thai_finance still RED — data still ends 2026-05-31 despite touched mtimes. Lavu export pipeline still stalled (unchanged since S61).
+- Claude: naming convention locked — Chris's college friend is **Augustus Chang**; Chris's son is **Auggie / Augustus Pinyo**. Always disambiguate by full name in any RWC reference doc.
+- Chris: Vietnam Cousin Trip story needs Ninh Binh and Ha Giang Loop details still — only Halong Bay was captured in depth this session.
+- Chris: next Mac session should open on A-11 PATH-TO-BLACK or the Lavu diagnostic — this is now the **fourth** session (S58, S60, S61, S62) this has been redirected. Flagging explicitly per standing SPRINT rule.
 
 Both agents load this file. It answers: what matters most right now?
 
