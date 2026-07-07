@@ -178,7 +178,6 @@ ls -la $WORKSPACE/ARTIE-*.md $WORKSPACE/SHARED-CORE.md $WORKSPACE/THINKING_OS.md
 |------|-------------|-------|
 | EMPIRE_STATUS.md | empire-status/EMPIRE_STATUS.md | Source of truth — not Drive |
 | MASTER_OPEN_ITEMS.md | master-open-items/MASTER_OPEN_ITEMS.md | Task tracker |
-| Master File Map | master-file-map/MASTER_FILE_MAP.md | Updated by Claude or Artie |
 | Session handoffs | sessions/ | Archived each session close |
 
 **Rule:** GitHub is authoritative for all living documents. Drive is file cabinet for static/written-once docs only.
