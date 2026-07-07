@@ -268,9 +268,11 @@ Dashboards:             ops.radrooster.co (Cloudflare Pages, auto-deploy from re
 Bixby Knolls Market Intel: bixby-knolls/BIXBY_KNOLLS_MARKET.md (GitHub)
 ```
 
+**Ported from MASTER_FILE_MAP (S62):** Tiller sheet owner = aurathailb@gmail.com — IMPORTRANGE access must be granted manually before any master P&L sheet can pull expense data.
+
 **Rule:** every LIVE entry must name its check method; an entry with a budget but no method is visibly incomplete. When a year ends, freezing last year's sheet is a one-line edit (LIVE -> FROZEN), not a project.
 
-**Not yet done (blocked on migration step 5, separate go/no-go):** archiving MASTER_FILE_MAP.md (GitHub) and the Drive map copy (fileId `1wA_k8r5pZ7NcN7UHP2iejp1cOWDSCZGO`) that this REGISTRY replaces.
+**Done S62:** GitHub MASTER_FILE_MAP archived to `_archive/MASTER_FILE_MAP_S40.md`. Drive map copy (fileId `1wA_k8r5pZ7NcN7UHP2iejp1cOWDSCZGO`) — Chris moving to _ARCHIVE.
 
 ---
 
