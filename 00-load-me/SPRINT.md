@@ -87,6 +87,7 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 | RWC-10 | Decide fate of 77 orphaned proxy files (no master anywhere) | OPEN — CHRIS | In `_NEEDS REVIEW - Orphaned Proxies` on drive. |
 | RWC-11 | 32 raw pairs confirmed missing other lens | OPEN — CHRIS | Review in Insta360 Studio — may be unusable. |
 | RWC-12 | ~26 renamed Vegas/Mammoth files lost ID pairing | OPEN — CHRIS | Cannot auto-pair. Root cause of "won't open" files. Manual review needed. |
+| I-26 | Map cleanup items (5, from S23 scan) | OPEN — CHRIS | Dupes to delete/archive: financial_ops_daily.py x3, MASTER_LIVE_HANDOFF.md x3, old artie_playwright_downloader.py, Aura_Thai_Finance_Dashboard.xlsx x4 (Drive), Drive/00_Temp_Dump_Folder script copies. Full detail: _archive/MASTER_FILE_MAP_S40.md |
 | A-09 | COGS — Artie data entry | IN PROGRESS | Invoice system live. Artie entering backlog. |
 | A-09b | Chris fill Dish Map column B (dish names) | OPEN — CHRIS | CORRECTED S55: column B, not D (ground truth from live script — 2-col Dish Map). Unlocks COGS by Dish. |
 | A-08b | Finance tab: rebuild to Google Sheet | Next build | Hardcoded FINANCE_DATA violates DASHBOARD ARCHITECTURE RULE. |
