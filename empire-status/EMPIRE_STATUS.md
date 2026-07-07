@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-07-05 | Session S61
-**Updated By:** Claude (S61) — Bedrock migration steps 2-4
+**Last Updated:** 2026-07-06 | Session S61 (closed)
+**Updated By:** Claude (S61 close) — mobile session, RWC Story Vault work; Bedrock migration steps 2-4 deferred (not executed, Chris was driving)
 
 ---
 
@@ -14,7 +14,7 @@
 | Obsidian Second Brain | LIVE | S34 - vault synced, graph live |
 | artie_report_sync.py cron | NOT FIRING | Broken since ~May 8 (I-23) |
 | Bedrock System Redesign | DESIGNED S60, migration pending | v1+v2 docs in outputs (Fable-5-authored, verified). Kills the hand-maintained master file map (all copies), adds REGISTRY + freshness gate, adds Fireteam Sprint team loop. See SPRINT S60 block for exact next steps. |
-| Lavu daily-sales export pipeline | STALLED | No exports since 2026-05-26 (37+ days as of S60). Cause undiagnosed — script broken vs. paused collection vs. unprocessed backlog. Blocks A-11 PATH-TO-BLACK (needs current revenue). |
+| Lavu daily-sales export pipeline | STALLED — CONFIRMED S61 | No exports since 2026-05-26 (41+ days as of S61 close). Direct content check on aura_thai_finance confirms data still ends 2026-05-31 despite modifiedTime of 2026-07-03 — this is the exact "touched-but-empty falsely flagged fresh" trap the v2 design named. Cause still undiagnosed. Blocks A-11 PATH-TO-BLACK (needs current revenue). Diagnostic requires Mac. |
 | Master file map (GitHub + Drive copies) | DISCONTINUING | Replaced by REGISTRY (below) once S61 migration executes. Do not update the old map further. |
 | RPG_LEDGER.md | RETIRED S60 | Confirmed zero effect on Chris. Banner added to file. Replaced by named commitments to teammates in the Fireteam Sprint loop (see TEAM section). |
 | Old Cloudflare Tunnel | DECOMMISSION PENDING | |
@@ -84,6 +84,20 @@
 | Item | Status | Notes |
 |------|--------|-------|
 | Auggie backpacking reel | SCRIPT DONE S54 | `outputs/roamwithchris_auggie-backpacking-reel_script_v1.md` — ready for CapCut. One clean pass, protocol test passed. |
+| London layover — origin story | CORE LOCKED S61 | First long layover (Copenhagen->London->LA, ~6-8hrs, queen's funeral weekend). Everyone said impossible; one friend (also named Chris) said it's doable; researched Heathrow Express, made it work, road-blocked by the funeral procession, waited it out, crossed and got fish and chips. Lesson: perseverance — one believer beats a crowd of doubters. Declared bedrock/origin story for the whole layover series — all later layovers trace back to this proof-of-concept. Not yet scripted (Bible not built). |
+| Layover criteria — teaching short | FRAMEWORK LOCKED S61 | Not a single-trip story — a system explainer (Auggie asks "how do you know if a layover's worth it?"). Ten criteria: visa, time-of-day, transportation quality, immigration speed, airport-to-city distance, currency/cash access, weather, crowds/events, safety, offline maps/connectivity as backup. Ready to script once at the Mac. |
+| Korea layover — Seoul walkabout | CORE LOCKED S61 | Landed Incheon 4am off overnight flight from 90°F Thailand into 40°F Seoul; foldable jacket saved him (prepper habit). Couldn't load the T-money transit card, gave up and just walked — ended up doing an accidental 18-mile loop: underground city discovery (empty streets above, everyone's life happens in the tunnels below), water walkway, old city on the hill, avoided touristy food (learned from Budapest), found the food market seen on Netflix, hiked Seoul Tower. Lesson: presence over efficiency — walking instead of the "efficient" route is what let him actually feel the city instead of just seeing it. Not yet scripted. |
+| Manila layover — 20hrs + Halloween | CORE LOCKED S61 | Landed no-internet (offline maps saved him), Grab driver tried to renegotiate 3x the fare mid-ride — stayed calm, bluffed, ended up paying a small premium, worth it (45-min ride). Landed on Halloween, stayed out with friends till 2am, no rides available after, squeezed 3-deep into a motorcycle sidecar to escape the crowd. Woke in AM panic thinking he'd missed his flight (was 7am not 7pm). Walked out of the expat bubble (Eastwood) into real Manila — local food court, a church, food that "wasn't as good as Thailand." Lesson: a country only counts as "been there" when you've walked the streets and eaten the food, not just landed. 25th country by that definition. Not yet scripted. |
+| Tokyo layovers (x2) | NOT STARTED | Mentioned — one evening layover with zero plan. Ran out of drive time before the story was drawn out. Pick up next session. |
+
+### Core Philosophy — Flow Beats Control (S61)
+Chris used to be a strenuous planner — scheduled to the minute — and found those trips less happy; overplanned destinations often disappointed (crowds, rigidity). Unplanned travel is "the most freeing" he gets — senses open, present, aware. At home he's a constant thinker (his words: "mind runs a million miles a second"), especially stressed about Aura Thai being in the red; that stress fully disappears while traveling. Old coping system (COVID-era): 2-hour AM routine — water, 3 pages journaling, yoga, meditation — lapsed once relationships resumed post-COVID, further crowded out by Auggie's arrival (mornings now fully committed to Auggie, by choice, no regret). Evenings on his Auggie-day are the only open window, but he currently spends them working business problems rather than decompressing — so the mental spin doesn't actually stop, it just redirects. Open thread, not resolved: whether/how to build a short (~15 min) evening decompression habit that isn't just more business-thinking. This is the through-line for the whole RWC series: "flow beats control, presence beats planning" — every locked story is a proof point of this philosophy in action.
+
+### Traveler's Kit (S61 — reference for gear-focused content)
+Backpack + headlamp (always) + foldable light jacket + rain poncho (unused so far, backup only) + power bank + snacks + water bottle + fanny pack (passport, cash, passport photocopy in case of loss). Discussed but not yet confirmed as carried: meds, notebook/pen, earplugs/eye mask, universal adapter, wet wipes, ziploc bags.
+
+### Travel Lessons Bank (S61 — pull from for voiceover lines / pinned comments across series)
+Eat where locals eat, not the tourist strip (learned Budapest, reapplied Seoul). Follow old men to find real food (Greece-specific). Stay calm under pressure — control posture/reaction before reacting; slow down via deep breathing. Trust locals over guidebooks. Always carry a backup plan (offline maps, portable Wi-Fi, cash) — Manila proved this. Detours often beat the shortcut — Korea's broken transit card became the best part of the trip. Be observant — smell, symbols, cleanliness, how people actually live is how you really know a place, not just see it. Spontaneity works — Manila with zero plan became one of the best stories.
 
 ### Content Archive System (S54)
 Pipeline: **Footage → Story Index → Story Bible → Script → Edit → Post**
