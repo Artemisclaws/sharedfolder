@@ -150,6 +150,22 @@ Pipeline: **Footage → Story Index → Story Bible → Script → Edit → Post
 
 ---
 
+## AURA THAI — INVOICE SYSTEM (ported from SPRINT, S62; S40/S43 foundation, script V2 S55)
+| Tab | Status | Owner |
+|-----|--------|-------|
+| Invoice Log | READY | Artie — enter every delivery |
+| Price Tracker | READY | Auto — run updatePriceTracker from 🍜 menu (V2) |
+| Dish Map | READY (col B blank) | Chris — fill Dish Name(s) column B |
+| Sales by Period | READY | Artie — weekly from Lavu Sale by Item |
+| COGS by Dish | WAITING FOR DATA | Claude — analyze once Invoice Log + Sales by Period overlap |
+
+## AURA THAI — KEY REVENUE NUMBERS (S40 verified; ported from SPRINT, S62)
+- YTD 2026: $381,011 | YTD 2025: $412,036 | **YoY: -7.5%**
+- Apr 2026 vs 2025: **-11.3%** (worst month so far)
+- BOH Labor: ~$15,000/month | ~$494/day
+
+---
+
 ## AURA THAI — SYSTEM STATE (S46)
 
 | System | Status | Notes |
