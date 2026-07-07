@@ -116,18 +116,5 @@ See EMPIRE_STATUS.md → AURA SWEET KEY FACTS (canonical — deduped S61; proof 
 
 ---
 
-## AURA THAI INVOICE SYSTEM (S40/S43 — FOUNDATION COMPLETE, SCRIPT V2 S55)
-| Tab | Status | Owner |
-|-----|--------|-------|
-| Invoice Log | READY | Artie — enter every delivery |
-| Price Tracker | READY | Auto — run updatePriceTracker from 🍜 menu (V2) |
-| Dish Map | READY (col B blank) | Chris — fill Dish Name(s) column B |
-| Sales by Period | READY | Artie — weekly from Lavu Sale by Item |
-| COGS by Dish | WAITING FOR DATA | Claude — analyze once Invoice Log + Sales by Period overlap |
-
----
-
-## KEY REVENUE NUMBERS (S40 verified)
-- YTD 2026: $381,011 | YTD 2025: $412,036 | **YoY: -7.5%**
-- Apr 2026 vs 2025: **-11.3%** (worst month so far)
-- BOH Labor: ~$15,000/month | ~$494/day
+## AURA THAI
+Invoice System table + Key Revenue Numbers moved to EMPIRE_STATUS.md → AURA THAI sections (S62, migration step 2).
