@@ -162,6 +162,12 @@ function writeDailyTab(ss, rows, sourceFileName) {
     'SOURCE: Lavu "Daily Totals" report. Last loaded from: ' + sourceFileName +
     ' | Pretax Net = Subtotal − Check Disc. (tax & auto-grat excluded). Re-run builder after each new upload.'
   ).setFontStyle('italic').setFontColor('#666666');
+  sheet.getRange(1, 1).setNote(
+    'GUESTS COLUMN IS NOT RELIABLE (Chris, S64): dine-in entries get an accurate headcount, but ' +
+    'takeout (~90% of orders) is always logged as 1 guest regardless of order size, since Lavu requires ' +
+    'a guest count field to submit any order. Do not use this column for avg-ticket-per-guest, covers, or ' +
+    'any per-person metric — it will be badly skewed. Fine to ignore/hide.'
+  );
   sheet.getRange(2, 1, 1, 12).setValues([[
     'Date', 'Guests', 'Subtotal (Pretax Gross)', 'Item Disc.', 'Check Disc.',
     'Pretax Net Sales', 'Tax', 'Auto Grat.', 'Total (Post-tax)', 'Cash', 'Card', 'Other'
@@ -225,7 +231,10 @@ function writeModsTab(ss, items, sourceFileName) {
 function write3pdTab(ss, channelCounts, dailyFileName) {
   const sheet = getOrCreateTab(ss, TAB_3PD);
   sheet.getRange(1, 1).setValue(
-    'Order counts (below) auto-pull from the Sales by Item report\'s channel tags — free cross-check, not fee data. ' +
+    'Order counts (below) auto-pull from the Sales by Item report\'s channel tags — a FLOOR, not an exact count ' +
+    '(Chris, S64: staff tags DD/GH/UE orders manually when entering them, and sometimes forgets — so these ' +
+    'numbers undercount, never overcount). Use as a rough cross-check against the platform portal\'s own order ' +
+    'count, not as ground truth on their own. ' +
     'FEE/COMMISSION $ COLUMNS ARE MANUAL — pull "Payout Summary" (or equivalent) from each platform\'s merchant portal and enter below.'
   ).setFontStyle('italic').setFontColor('#666666');
 
