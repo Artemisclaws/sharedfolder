@@ -103,6 +103,7 @@ function getAllFilesByPrefix(folder, prefix, excludeSubstrings) {
     const f = it.next();
     const name = f.getName();
     if (!name.startsWith(prefix)) continue;
+    if (!/\.csv$/i.test(name)) continue; // skip .xlsx/.xls — old monthly exports share this prefix
     if (excludeSubstrings.some(s => name.indexOf(s) !== -1)) continue;
     out.push(f);
   }
