@@ -33,52 +33,80 @@ function buildAuraThaiSystem() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const folder = DriveApp.getFolderById(REPORTS_FOLDER_ID);
 
-  const dailyFile = getLatestFileByPrefix(folder, 'Sales ', ['Sales by Item']);
-  const itemFile = getLatestFileByPrefix(folder, 'Sales by Item ', ['with Mods']);
-  const modsFile = getLatestFileByPrefix(folder, 'Sales by Item with Mods ');
+  const dailyFiles = getAllFilesByPrefix(folder, 'Sales ', ['Sales by Item']);
+  const itemFiles = getAllFilesByPrefix(folder, 'Sales by Item ', ['with Mods']);
+  const modsFiles = getAllFilesByPrefix(folder, 'Sales by Item with Mods ');
 
-  if (!dailyFile) {
+  if (!dailyFiles.length) {
     SpreadsheetApp.getUi().alert('No "Sales <month/range>.csv" (Daily Totals) file found in the reports folder. Upload it first.');
     return;
   }
 
-  const dailyRows = parseDailyCsv(dailyFile);
-  writeDailyTab(ss, dailyRows, dailyFile.getName());
+  // Merge all daily files: keyed by date, later-uploaded file wins on overlap.
+  dailyFiles.sort((a, b) => a.getLastUpdated() - b.getLastUpdated());
+  const dailyByDate = {};
+  dailyFiles.forEach(f => {
+    parseDailyCsv(f).forEach(row => { dailyByDate[row.dateStr] = row; });
+  });
+  const dailyRows = Object.values(dailyByDate).sort((a, b) => a.dateStr.localeCompare(b.dateStr));
+  writeDailyTab(ss, dailyRows, dailyFiles.map(f => f.getName()).join(', '));
 
+  // Merge all item files: sum qty/subtotal per item+mods key. Assumes non-overlapping periods.
   let itemRows = [], channelCounts = {};
-  if (itemFile) {
-    const parsed = parseItemCsv(itemFile);
-    itemRows = parsed.items;
-    channelCounts = parsed.channelCounts;
-    writeItemsTab(ss, itemRows, itemFile.getName());
+  if (itemFiles.length) {
+    const merged = {};
+    const chanTotal = {};
+    itemFiles.forEach(f => {
+      const parsed = parseItemCsv(f);
+      parsed.items.forEach(i => {
+        const key = i.item + '||' + i.category;
+        if (!merged[key]) merged[key] = { ...i };
+        else { merged[key].qty += i.qty; merged[key].subtotal += i.subtotal; }
+      });
+      Object.keys(parsed.channelCounts).forEach(k => {
+        chanTotal[k] = (chanTotal[k] || 0) + parsed.channelCounts[k];
+      });
+    });
+    itemRows = Object.values(merged);
+    channelCounts = chanTotal;
+    writeItemsTab(ss, itemRows, itemFiles.map(f => f.getName()).join(', '));
   }
 
-  if (modsFile) {
-    const modsParsed = parseItemCsv(modsFile, true);
-    writeModsTab(ss, modsParsed.items, modsFile.getName());
+  if (modsFiles.length) {
+    const merged = {};
+    modsFiles.forEach(f => {
+      const parsed = parseItemCsv(f, true);
+      parsed.items.forEach(i => {
+        const key = i.item + '||' + i.mods + '||' + i.category;
+        if (!merged[key]) merged[key] = { ...i };
+        else { merged[key].qty += i.qty; merged[key].subtotal += i.subtotal; }
+      });
+    });
+    writeModsTab(ss, Object.values(merged), modsFiles.map(f => f.getName()).join(', '));
   }
 
-  write3pdTab(ss, channelCounts, dailyFile.getName());
-  writePrimeCostTab(ss, dailyRows);
-  updateStreak(ss, [dailyFile, itemFile, modsFile].filter(Boolean));
+  write3pdTab(ss, channelCounts, dailyFiles.map(f => f.getName()).join(', '));
+  writePrimeCostTab(ss, dailyRows, ss.getSheetByName('Cost Baseline'));
+  updateStreak(ss, [].concat(dailyFiles, itemFiles, modsFiles));
 
-  SpreadsheetApp.getUi().alert('Aura Thai system rebuilt. Tabs updated: ' +
-    [TAB_DAILY, itemFile ? TAB_ITEMS : null, modsFile ? TAB_MODS : null, TAB_3PD, TAB_PRIME].filter(Boolean).join(', '));
+  SpreadsheetApp.getUi().alert('Aura Thai system rebuilt (merged ' + dailyFiles.length + ' daily file(s), ' +
+    itemFiles.length + ' item file(s)). Tabs updated: ' +
+    [TAB_DAILY, itemFiles.length ? TAB_ITEMS : null, modsFiles.length ? TAB_MODS : null, TAB_3PD, TAB_PRIME].filter(Boolean).join(', '));
 }
 
 // ─── FILE LOOKUP ─────────────────────────────────────────────────────────
-function getLatestFileByPrefix(folder, prefix, excludeSubstrings) {
+function getAllFilesByPrefix(folder, prefix, excludeSubstrings) {
   excludeSubstrings = excludeSubstrings || [];
   const it = folder.getFiles();
-  let best = null;
+  const out = [];
   while (it.hasNext()) {
     const f = it.next();
     const name = f.getName();
     if (!name.startsWith(prefix)) continue;
     if (excludeSubstrings.some(s => name.indexOf(s) !== -1)) continue;
-    if (!best || f.getLastUpdated() > best.getLastUpdated()) best = f;
+    out.push(f);
   }
-  return best;
+  return out;
 }
 
 // ─── PARSERS ─────────────────────────────────────────────────────────────
@@ -270,11 +298,14 @@ function write3pdTab(ss, channelCounts, dailyFileName) {
   sheet.autoResizeColumns(1, 6);
 }
 
-function writePrimeCostTab(ss, dailyRows) {
+function writePrimeCostTab(ss, dailyRows, costBaselineSheet) {
   const sheet = getOrCreateTab(ss, TAB_PRIME);
+  const linked = !!costBaselineSheet;
   sheet.getRange(1, 1).setValue(
     'PRIME COST MODEL (industry standard: COGS % + Labor % of Pretax Net Sales; target ≤60% full-service). ' +
-    'COGS % and Labor $ below are MANUAL until the Cost Baseline tab (A-13) is live — then link cells directly.'
+    (linked
+      ? 'COGS %, Labor $, and Fixed $ below are LIVE-LINKED to the Cost Baseline tab (B50/B45/B46) — edit them there, not here.'
+      : 'Cost Baseline tab not found — COGS %/Labor/Fixed below are MANUAL placeholders until it exists.')
   ).setFontStyle('italic').setFontColor('#666666');
 
   const pretaxNet = dailyRows.reduce((s, r) => s + r.pretaxNet, 0);
@@ -287,12 +318,18 @@ function writePrimeCostTab(ss, dailyRows) {
   sheet.getRange(5, 1).setValue('Avg Pretax Net Sales / Day');
   sheet.getRange(5, 2).setFormula('=B3/B4').setNumberFormat('$#,##0.00');
 
-  sheet.getRange(7, 1).setValue('COGS % (enter — from Cost Baseline tab once live)');
-  sheet.getRange(7, 2).setValue(0.30).setNumberFormat('0.0%'); // S63 scenario default — overwrite once real
-  sheet.getRange(8, 1).setValue('Monthly Labor $ (from COST_BASELINE.md, S63)');
-  sheet.getRange(8, 2).setValue(32597).setNumberFormat('$#,##0.00');
-  sheet.getRange(9, 1).setValue('Monthly Fixed Costs $ (from COST_BASELINE.md, S63)');
-  sheet.getRange(9, 2).setValue(12316).setNumberFormat('$#,##0.00');
+  sheet.getRange(7, 1).setValue('COGS % (from Cost Baseline!B50)');
+  sheet.getRange(8, 1).setValue('Monthly Labor $ (from Cost Baseline!B45)');
+  sheet.getRange(9, 1).setValue('Monthly Fixed Costs $ (from Cost Baseline!B46)');
+  if (linked) {
+    sheet.getRange(7, 2).setFormula("='Cost Baseline'!B50").setNumberFormat('0.0%');
+    sheet.getRange(8, 2).setFormula("='Cost Baseline'!B45").setNumberFormat('$#,##0.00');
+    sheet.getRange(9, 2).setFormula("='Cost Baseline'!B46").setNumberFormat('$#,##0.00');
+  } else {
+    sheet.getRange(7, 2).setValue(0.30).setNumberFormat('0.0%');
+    sheet.getRange(8, 2).setValue(32597).setNumberFormat('$#,##0.00');
+    sheet.getRange(9, 2).setValue(12316).setNumberFormat('$#,##0.00');
+  }
 
   sheet.getRange(11, 1).setValue('COGS $ (period)');
   sheet.getRange(11, 2).setFormula('=B3*B7').setNumberFormat('$#,##0.00');
