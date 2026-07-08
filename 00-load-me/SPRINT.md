@@ -1,25 +1,24 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S62 (closed) | 2026-07-07
+**Updated by:** Claude | Session S63 (closed) | 2026-07-08
 **GitHub:** `00-load-me/SPRINT.md`
 
 **Counter note (S60):** Session numbering forked — this SPRINT lineage was at S58 (closed 2026-07-03). A same-day session on 2026-07-04 (Google Drive Desktop sync repair; added CLAUDE-CORE's WORKING DOCUMENTS rule, V8) ran as "S59" but never updated this counter. This session (S60) declares the SPRINT lineage canonical going forward. **SPRINT.md line item below is now the sole home of the session counter — no other file may originate a session number.**
-**COUNTER: S62 | closed 2026-07-07**
+**COUNTER: S63 | closed 2026-07-08**
 
-**GOAL (S62 close):** Voice-session RoamWithChris story braindump (Chris driving). Two new stories captured: **Augustus Chang** (Bible locked, AI-visuals-only episode) and **Vietnam Cousin Trip** (raw braindump, not yet Bible-locked, likely splits into a 3-part series: Halong Bay / Ninh Binh / Ha Giang Loop). **Correction from S61 close:** the prior handoff claimed these were written to Drive/GitHub but the write never actually executed (Drive MCP was down and the GitHub push was narrated, not run) — caught and fixed at the start of S62 when Chris asked "did we record this session in the right places?" Both story docs are now genuinely saved to Drive. Migration steps 2-5 (Bedrock CLAUDE-CORE rewrite, REGISTRY, CACHE headers) still NOT executed — still carrying forward.
+**GOAL (S63 close):** A-11 PATH-TO-BLACK finally moved — the redirect streak (S58/S60/S61/S62) is over. Full COST-SIDE ground truth captured from Chris on payday: complete bi-weekly payroll (BOH flat-rate chefs w/ cash split + FOH W-2, all 12 people) and fixed costs (rent $7,735, CAM $1,360, SBA $436, utilities, chef housing arrangements). Tax-absorption question answered: ~$361/period ≈ $782/mo ≈ $9.4K/yr for the 3 reported chefs. **Stored permanently: `aura-thai/COST_BASELINE.md` (GitHub, canonical — never re-ask Chris for these numbers) + `aura-thai/cost_baseline_tab_builder.gs`** (Apps Script that builds a "Cost Baseline" tab with live break-even calculator in aura_thai_finance). Known costs ≈ $44.9K/mo before COGS → break-even ≈ $2,110/day @30% COGS scenario vs May actual ~$2,200/day — razor thin. NOTE: this session ran as a long-lived chat that booted on a stale S58 SPRINT (opened before S59–S62 existed); fork caught and reconciled at handoff.
 
-**COMMITMENTS (huddle, S62 close):**
-- Claude: verify-before-claiming-done going forward — do not narrate a save/push as complete without an actual tool call confirming it. This session's opening exchange is the concrete example to reference if it recurs.
-- Claude: hold migration steps 2-5 until Chris is at the Mac with review bandwidth. aura_thai_finance still RED — data still ends 2026-05-31 despite touched mtimes. Lavu export pipeline still stalled (unchanged since S61).
-- Claude: naming convention locked — Chris's college friend is **Augustus Chang**; Chris's son is **Auggie / Augustus Pinyo**. Always disambiguate by full name in any RWC reference doc.
-- Chris: Vietnam Cousin Trip story needs Ninh Binh and Ha Giang Loop details still — only Halong Bay was captured in depth this session.
-- Chris: next Mac session should open on A-11 PATH-TO-BLACK or the Lavu diagnostic — this is now the **fourth** session (S58, S60, S61, S62) this has been redirected. Flagging explicitly per standing SPRINT rule.
+**COMMITMENTS (huddle, S63 close):**
+- Chris: run `buildCostBaseline` in aura_thai_finance Apps Script (same motion as V2 install) and fill the yellow cells — COGS %, water, trash, insurance, internet, POS fees, card-processing rate.
+- Chris: answer COST_BASELINE open confirmations — $616 from EACH chef monthly?, Miguel $20.40 cash gap, Eliseo $19.78 gap, Mee Ann reporting, actual chef hours/day.
+- Chris: Lavu export stall diagnostic still owed (needs Mac) — revenue side of A-11 is blocked without current data.
+- Claude: S64 = fold COGS + revenue into the final break-even number and build the 3-lever plan (revenue/COGS/labor) with weekly targets. Do not re-collect anything already in COST_BASELINE.md.
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START — S63
-Boot per CLAUDE-CORE V9 (custom-instructions boot-loader is live). Open on: Lavu export stall diagnostic (blocks A-11), then A-11 PATH-TO-BLACK. Bedrock system is fully migrated — no infra work pending except Phase 2 (Artie freshness cron, gated on I-23) after 2-3 weeks of manual boots.
+## SESSION START — S64
+Boot per CLAUDE-CORE V9. FIRST: load `aura-thai/COST_BASELINE.md` (GitHub) — complete cost-side ground truth for A-11, captured S63. Do NOT re-ask Chris for payroll or fixed costs. Open on: (1) Lavu export stall diagnostic (needs Mac — blocks revenue side), (2) pull COGS % + filled yellow cells from the "Cost Baseline" tab in aura_thai_finance (Chris building it), (3) finalize break-even + 3-lever plan with weekly targets. Bedrock fully migrated; Phase 2 (Artie freshness cron) gated on I-23.
 
 ---
 
@@ -48,7 +47,9 @@ Do NOT load SESSION_HISTORY or MASTER_OPEN_ITEMS every session.
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
-| A-11 | Aura Thai PATH-TO-BLACK plan | NEXT — PRIORITY #1 | S63 OPENS HERE (4 sessions redirected). Chris brings fixed costs: rent, SBA payment, utilities, FOH labor, COGS. Deliverable: break-even + 3-lever plan. |
+| A-11 | Aura Thai PATH-TO-BLACK plan | 🟡 COST SIDE DONE — S63 | Ground truth in `aura-thai/COST_BASELINE.md` (canonical). Known costs ~$44.9K/mo pre-COGS; break-even ~$2,110/day @30% COGS scenario. Remaining: COGS %, missing fixed items, current revenue (Lavu stall). Then 3-lever plan. |
+| A-13 | Build + fill "Cost Baseline" tab in aura_thai_finance | OPEN — CHRIS | Run buildCostBaseline (aura-thai/cost_baseline_tab_builder.gs, safe: creates new tab only). Fill yellow cells: COGS %, water, trash, insurance, internet, POS fees, card rate. Live break-even updates automatically. |
+| A-14 | COST_BASELINE open confirmations | OPEN — CHRIS | $616/each monthly?, Miguel $20.40 gap, Eliseo $19.78 gap, Mee Ann cash?, chef actual hrs/day (→ true hourly; some scenarios below CA min wage — add to INV-15 preparer questions). |
 | A-12 | Install Apps Script V2 (timeout fix) | ✅ COMPLETE — S58 | Alerts→toasts, setupInvoiceSystem disarmed. |
 | I-25 | Soul-file audit fixes | OPEN | 5H/7M/6L. H4 (header fork) CLOSED S62 via V9. Report: soul-files_audit_S55 (outputs). Chris approves order. |
 | AS-01 | Aura Sweet spinoff strategy | OPEN — S56 | "How should we approach Aura Sweet as a spinoff?" |
