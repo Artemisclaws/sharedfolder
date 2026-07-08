@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-07-07 | Session S62 (closed)
-**Updated By:** Claude (S62 close) — voice session, Chris driving, RWC Story Vault braindump; Bedrock migration steps 2-4 still deferred
+**Last Updated:** 2026-07-08 | Session S63 (closed)
+**Updated By:** Claude (S63 close) — A-11 cost-side ground truth captured; COST_BASELINE.md is now canonical for all Aura Thai payroll + fixed costs
 
 ---
 
@@ -15,6 +15,7 @@
 | artie_report_sync.py cron | NOT FIRING | Broken since ~May 8 (I-23) |
 | Bedrock System Redesign | MIGRATED S62 — LIVE | v1+v2 docs in outputs (Fable-5-authored, verified). Kills the hand-maintained master file map (all copies), adds REGISTRY + freshness gate, adds Fireteam Sprint team loop. See SPRINT S60 block for exact next steps. |
 | Lavu daily-sales export pipeline | STALLED — CONFIRMED S61 | No exports since 2026-05-26 (41+ days as of S61 close). Direct content check on aura_thai_finance confirms data still ends 2026-05-31 despite modifiedTime of 2026-07-03 — this is the exact "touched-but-empty falsely flagged fresh" trap the v2 design named. Cause still undiagnosed. Blocks A-11 PATH-TO-BLACK (needs current revenue). Diagnostic requires Mac. |
+| Aura Thai COST BASELINE | CAPTURED S63 — CANONICAL | `aura-thai/COST_BASELINE.md` (GitHub) — complete bi-weekly payroll (BOH flat-rate w/ cash split + FOH W-2), fixed costs, tax absorption (~$782/mo absorbed for 3 chefs). Supersedes the S39 BOH labor table below. Sheet tab builder: `aura-thai/cost_baseline_tab_builder.gs` (Chris to run, A-13). Known costs ~$44.9K/mo pre-COGS. NEVER re-ask Chris for these numbers. |
 | Master file map (GitHub + Drive copies) | ARCHIVED S62 | Replaced by REGISTRY (below) once S61 migration executes. Do not update the old map further. |
 | RPG_LEDGER.md | RETIRED S60 | Confirmed zero effect on Chris. Banner added to file. Replaced by named commitments to teammates in the Fireteam Sprint loop (see TEAM section). |
 | Old Cloudflare Tunnel | DECOMMISSION PENDING | |
@@ -267,6 +268,8 @@ Artie machine:          DESKTOP-R7E8H6E | PAT ~/.pinyo_github_pat | sync: ~/.ope
 Mac projects:           /Users/macbook/Documents/Claude/Projects/ (convention: checkpoints/scripts/docs/data/archive)
 Dashboards:             ops.radrooster.co (Cloudflare Pages, auto-deploy from repo)
 Bixby Knolls Market Intel: bixby-knolls/BIXBY_KNOLLS_MARKET.md (GitHub)
+Aura Thai cost baseline:   aura-thai/COST_BASELINE.md (GitHub, canonical S63) + aura-thai/cost_baseline_tab_builder.gs
+                           -> becomes "Cost Baseline" tab in aura_thai_finance once Chris runs builder (A-13)
 ```
 
 **Ported from MASTER_FILE_MAP (S62):** Tiller sheet owner = aurathailb@gmail.com — IMPORTRANGE access must be granted manually before any master P&L sheet can pull expense data.
