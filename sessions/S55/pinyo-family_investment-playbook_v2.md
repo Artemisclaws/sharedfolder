@@ -178,6 +178,23 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 - Dividends checked clear: KO next ex-div ~Sept 11–15, 2026; SCHD next ex-div ~Sept 23, 2026 — neither falls inside this cycle's expirations, no early-assignment concern this round.
 - MCD: trigger live, not funded — revisit once cash from a closed/assigned leg accumulates past ~$28K, or MCD drops further.
 
+### v1.2 — LTH ACCUMULATION ROADMAP (locked 2026-07-09, live prices as of 2026-07-09)
+**Goal:** grow additional Dividend Aristocrat/King staples to full 100-share covered-call-eligible lots, funded by wheel premium compounding — not by diverting core capital. Same moat/staple filter as MCD: inelastic demand, decades of dividend history, does well when the broader market doesn't.
+
+**Funding rule:** premium collected from the active KO/SCHD cycle rolls forward into the cheapest unfunded tier first. Don't skip ahead to a pricier tier just because it's the "better" business — cash-efficiency picks the order, not preference.
+
+| Tier | Ticker | Price (7/9/26) | Capital/contract (100sh) | Why it fits LTH | Next earnings | Notes |
+|------|--------|------|------|------|------|------|
+| 1 — fund first | **VZ** | $42.63 | ~$4,263 | Telecom infrastructure moat, 19 yrs consecutive dividend growth, 6.6% yield — cheapest entry, achievable soonest | **Jul 24, 2026** | Just dropped from Dow (index-fund forced selling — part of why it's cheap); ex-div was Jul 10 (irrelevant to a fresh CSP, only matters once shares are held for future calls) |
+| 2 — fund next | **PG** | $148.36 | ~$14,836 | Dividend King, 70 consecutive yrs of increases, portfolio of #1-share-position staples (Tide, Pampers, Charmin) | **Jul 29, 2026** | |
+| 2 — fund next | **MMM** | ~$155–160 | ~$15,500–16,000 | Dividend King, industrial staple — smaller size than PG/MCD given real PFAS litigation tail risk | Check before entry | Size this one lighter than the others even once funded |
+| 3 — anchor, funds last | **MCD** | $278 | ~$27,800 | Real-estate + brand moat, already a locked trigger (§5) | Check before entry | Largest capital ask — likely funded by SCHD/KO premium compounding over many cycles, or a fresh capital injection |
+| 3 — anchor, funds last | **JNJ** | ~$260–268 | ~$26,000–26,800 | Healthcare staple, near-Dividend-King, MedTech + Pharma moat | **Jul 15, 2026** | Earnings imminent — do not open a CSP position in the days right before this date; wait for the post-earnings IV crush to settle, then reassess price/strike |
+
+**Execution mechanic once a tier is funded:** same wheel as KO/SCHD — sell a CSP at a strike you'd be happy owning at, 30–45 DTE, checking earnings + ex-div dates per the v1.1 overlay rules before picking the expiration. Assignment brings the name into the covered-call rotation permanently.
+
+**Do not:** undersize a position to "start" a tier early (Munger rule, §v1.1 point 8), and do not reduce the active KO/SCHD cycle's size to force an accumulation buy — this roadmap is funded by growth, not by robbing the working cycle.
+
 ---
 
 ## 6 · ONE-PAGE TRIGGER TABLE — print this
