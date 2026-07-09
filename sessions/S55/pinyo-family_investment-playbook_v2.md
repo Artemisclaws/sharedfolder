@@ -140,6 +140,17 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 
 **Playbook v1 stands:** covered calls + CSPs on KO/SCHD.
 
+### Current position — ground truth (captured 2026-07-09, do not re-ask)
+| Holding | Shares | Covered-call-eligible | Odd lot (uncovered) |
+|---------|--------|------------------------|----------------------|
+| KO | 113 | 100 (1 contract) | 13 |
+| SCHD | 316 | 300 (3 contracts) | 16 |
+| Cash available for CSPs | $9,723 | — | — |
+
+**v1 execution model, given this position:** run covered calls on the owned lots (KO x1, SCHD x3) AND cash-secured puts from the $9,723 cash simultaneously — these are two separate legs on separate capital, not a strangle. Calls only ever run against shares already owned; puts only ever run against cash already set aside. Odd lots (13 KO, 16 SCHD) ride along uncovered until they compound into another full lot (via DRIP/manual buys or put assignment).
+
+**MCD trigger (#9) reality check:** MCD ≈ $278, one CSP contract needs ~$27,800 collateral — the current $9,723 cash cannot fund it. Trigger stays logged as live but not executable until cash grows or MCD drops further. Do not attempt a partial/undersized MCD position to force the trigger.
+
 **Roth cash conflict from S55 — RESOLVED.** The conflict was CSP collateral vs. keeping powder for the BTC window. Rule 1 (Fidelity never buys crypto) kills the conflict: BTC window is KuCoin's job, so **Roth cash is 100% available as CSP collateral.** Run v1 at full size.
 
 **MCD branch (live from S55):** MCD near 52-wk low. If entering: CSP at/below the 52-wk low strike to get paid to buy the dip; if assigned, wheel into covered calls. Fits v1 mechanics — no new rules needed.
