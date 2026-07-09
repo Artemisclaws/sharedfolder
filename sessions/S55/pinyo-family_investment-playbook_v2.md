@@ -157,6 +157,27 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 
 **Age note (44):** v1's income tilt fits the 15–20 yr runway. The growth engine for the household sits in Golfii's Roth (32) and Auggie's 529 (18-yr horizon) — by design, the youngest money takes the most growth risk.
 
+### v1.1 — THE WHEEL CYCLE PROTOCOL (locked 2026-07-09)
+**Whose models this borrows from:** Buffett (only sell puts on businesses you'd genuinely want to own — "get paid to wait"); Bogle (the wheel runs on ONE slice of capital, never touches the core index/529/BTC holdings — options income is a side engine, not the plan); Taleb barbell (safe/income leg fully separated from any speculative leg — no margin, no naked options, ever); Dalio (every decision pre-written into a trigger table below — zero mid-cycle deliberation); Munger inversion (avoid the stupid move: never force an undersized position to chase a trigger — see MCD rule).
+
+**THE REPEATABLE CYCLE — run this every 30–45 days, indefinitely:**
+1. **Calls leg:** sell covered calls against every full 100-share lot already owned (KO, SCHD). Strike ≥ cost basis, ~1–3% OTM, 30–45 DTE.
+2. **Puts leg:** sell cash-secured puts against all uncommitted Roth cash. Strike = a price you'd be genuinely happy owning at, ~1–3% OTM, 30–45 DTE.
+3. **Earnings overlay (KO only — SCHD has no earnings):** if a KO expiration window spans a KO earnings date, either (a) shorten to expire *before* earnings, or (b) widen the strike 3-5%+ OTM to buy room for a post-earnings gap. Never sell tight-strike KO options through earnings just to chase extra premium.
+4. **Dividend overlay:** check both tickers' next ex-div date before selecting expiration. If a short call is meaningfully ITM heading into an ex-div date, early-assignment risk rises — either roll the call up/out beforehand or accept assignment (you keep the premium either way).
+5. **Manage at 50–75% max profit or 7–10 DTE**, whichever comes first: close early and immediately re-open the next cycle's leg. Don't ride a position to expiration out of inertia.
+6. **On assignment (puts):** new shares join the covered-call rotation next cycle. **On call-away:** cash rejoins the CSP rotation next cycle. Capital never sits idle between cycles.
+7. **Odd lots** (anything under 100 shares) ride along uncovered — never chase a mismatched contract size to "clean up" a lot.
+8. **Never oversize a new name** (e.g. MCD) — a trigger firing on paper does not override the cash-collateral rule. Wait for capital, don't force it.
+9. **Log every fill** (strike, expiration, premium, outcome) — becomes the track record that tells you if the cycle is actually working after ~6-8 turns.
+
+**Current cycle (Cycle 1, opened 2026-07-09) — ground truth:**
+- Calls: KO 1x contract (100 of 113 shares), SCHD 3x contracts (300 of 316 shares)
+- Puts: $9,723 cash → SCHD only this cycle (KO/MCD collateral needs exceed available cash)
+- KO earnings: **July 28, 2026, before open** — inside the standard 43-DTE window; widen KO call strike (not the SCHD puts) to account for it, or expire the KO call before July 28.
+- Dividends checked clear: KO next ex-div ~Sept 11–15, 2026; SCHD next ex-div ~Sept 23, 2026 — neither falls inside this cycle's expirations, no early-assignment concern this round.
+- MCD: trigger live, not funded — revisit once cash from a closed/assigned leg accumulates past ~$28K, or MCD drops further.
+
 ---
 
 ## 6 · ONE-PAGE TRIGGER TABLE — print this
