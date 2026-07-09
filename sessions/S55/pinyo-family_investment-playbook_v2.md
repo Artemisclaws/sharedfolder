@@ -143,8 +143,8 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 ### Current position — ground truth (captured 2026-07-09, do not re-ask)
 | Holding | Shares | Covered-call-eligible | Odd lot (uncovered) |
 |---------|--------|------------------------|----------------------|
-| KO | 113 (stated) / 102.673 confirmed from screenshot | 100 (1 contract) | 13 |
-| SCHD | 316 (stated) / 314.331 confirmed from screenshot | 300 (3 contracts) | 16 |
+| KO | 113 | 100 (1 contract) | 13 |
+| SCHD | 316 | 300 (3 contracts) | 16 |
 | Cash available for CSPs | $9,723 | — | — |
 
 **Cost basis (captured 2026-07-09 from Fidelity "Specify shares" screenshots):**
@@ -160,7 +160,7 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 | KO | 5 DRIP lots (Mar-30-23 to Jun-29-22) | 3.673 | shown as $0.00/sh in app (likely display placeholder) | Fractional |
 | **KO weighted avg (99 round-lot shares)** | | | **$48.83** | Current price $82.49 → **+69% unrealized gain**, well clear of cost basis for calls |
 
-**Reconciliation flag:** screenshot totals (SCHD 314.331, KO 102.673) don't exactly match the stated 316/113 — gap is small on SCHD (~1.7 sh, rounding/timing) but larger on KO (~10.3 sh). Possible additional KO lots not captured in the screenshot scroll. Confirm with Chris next session; does not change current strategy since both positions sit far above cost basis either way.
+**Reconciliation — RESOLVED 2026-07-09:** Chris confirmed 113 KO / 316 SCHD are correct; the Fidelity screenshots were incomplete (missing lots, likely cut off in scroll/screen capture). Share counts stand as 113 KO / 316 SCHD. Cost basis captured from the screenshots (weighted avg $48.83 KO on 99 shares, $27.13 SCHD on 300 shares) is still logged as directionally correct for the round-lot shares shown, but is NOT a complete cost-basis picture for the remaining ~14 KO shares and ~2 SCHD shares not captured. Treat the weighted averages as a reliable floor reference (both positions are far above cost basis regardless), not a complete tax record.
 
 **Tax-lot note (Roth IRA):** since this is Chris's Fidelity Roth, capital gains are never taxed regardless of which lot Fidelity delivers on assignment — tax-lot selection (FIFO vs specific-lot) is a taxable-account concern only. Any lot selection is fine here; no need to optimize.
 
@@ -195,7 +195,26 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 - Dividends checked clear: KO next ex-div ~Sept 11–15, 2026; SCHD next ex-div ~Sept 23, 2026 — neither falls inside this cycle's expirations, no early-assignment concern this round.
 - MCD: trigger live, not funded — revisit once cash from a closed/assigned leg accumulates past ~$28K, or MCD drops further.
 
-### v1.2 — LTH ACCUMULATION ROADMAP (locked 2026-07-09, live prices as of 2026-07-09)
+### v1.3 — SELL DISCIPLINE (decided 2026-07-09)
+**Question raised:** should we buy a stock for the dividend, then sell it if the price drops (a price-based stop-loss)?
+
+**Decision: REJECTED for the wheel/LTH names (KO, SCHD, and the v1.2 accumulation list). Use a fundamentals-based sell trigger instead.**
+
+**Why not price-based:**
+- Buffett: quality moat businesses are held "forever" — a price drop in a sound business is usually the market being emotional, not the business getting worse. Selling into it locks in the loss right when the stock is statistically most likely to recover.
+- Lynch: sell when the *story* changes (earnings deteriorate, moat erodes, dividend gets cut), not when the *price* moves. Price alone carries no information about whether the business is still good.
+- **Mechanical conflict:** a stop-loss on shares that are currently backing a covered call creates a naked short call the moment shares are sold out from under it — a direct violation of the standing "no naked options, ever" rule (§v1.1 barbell principle). Any stop-loss would first require buying back the open call, adding cost and complexity that erodes the wheel's edge.
+- **No tax benefit here:** this is a Roth — realized losses can't be deducted, so there's no tax-loss-harvesting upside to selling a loser, unlike in a taxable account.
+
+**What replaces it — fundamentals-based sell trigger:**
+| Trigger | Action |
+|---------|--------|
+| Dividend cut or suspension | Full review — likely exit |
+| Guidance/earnings show structural (not cyclical) deterioration for 2+ consecutive quarters | Full review — likely exit |
+| Loss of the core moat (e.g. major competitive disruption, brand damage) | Full review — likely exit |
+| Price drops on no fundamental change (macro selloff, sector rotation, sentiment) | **Hold. This is what the CSP/covered-call premium already gets paid for.** |
+
+**Pairs with the existing +20% trim rule (§1):** winners get trimmed mechanically at +20%; losers only get sold on a thesis break, never on price alone. Asymmetric on purpose — protects gains without panic-selling quality.
 **Goal:** grow additional Dividend Aristocrat/King staples to full 100-share covered-call-eligible lots, funded by wheel premium compounding — not by diverting core capital. Same moat/staple filter as MCD: inelastic demand, decades of dividend history, does well when the broader market doesn't.
 
 **Funding rule:** premium collected from the active KO/SCHD cycle rolls forward into the cheapest unfunded tier first. Don't skip ahead to a pricier tier just because it's the "better" business — cash-efficiency picks the order, not preference.
