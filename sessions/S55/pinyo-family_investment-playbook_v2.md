@@ -191,11 +191,17 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 
 **Collateral Buffer Rule (added 2026-07-09):** always leave a minimum 5–10% of Roth cash unencumbered by CSP collateral. Reasons: assignments can land unexpectedly and need settled cash to process cleanly; dividend receipts, trade settlement, and fees cause the cash balance to fluctuate day to day; a Roth has no margin backstop to cover a shortfall between available-to-trade and settled cash. If a clean contract count doesn't land inside the 5–10% band, round DOWN to fewer contracts rather than distorting a strike just to hit the number — the excess becomes deliberate dry powder (e.g. seeding the next v1.2 accumulation tier), not idle waste.
 
-**Current cycle (Cycle 1, opened 2026-07-09, revised 2026-07-09 for buffer) — ground truth:**
+**Concentration Cap Rule (added 2026-07-09):** no single name may exceed ~40% of total committed options capital in any cycle, no matter how attractive the setup looks. A ladder (multiple strikes/expirations on one name) protects against timing risk only — it does nothing for company-specific risk, and going "all in" on one name because it's currently the best opportunity is precisely the moment the pull to oversize is strongest and most dangerous. Spread capital across at least 2 names every cycle.
+
+**Volatility/Value Screening (added 2026-07-09):** before opening a new CSP, check recent price action on the candidate. Favor names with a *sentiment or mechanical* drop (index removal, one-time charges, sector rotation) over names that are flat or currently near highs — a sentiment-driven dip means a better strike relative to the business's real value AND richer premium from the temporary IV spike. A cheap-but-not-currently-cheap name (e.g. one that's up on the month) is lower priority than a cheap-and-currently-discounted one, even if both are in the same funding tier.
+
+**Current cycle (Cycle 1, opened 2026-07-09, revised 2026-07-09 for buffer, revised again same day for VZ) — ground truth:**
 - Calls: KO 1x contract $86 strike (100 of 113 shares), SCHD 3x contracts $32.50 strike (300 of 316 shares), both exp Aug 21, 2026
-- Puts: **2x SCHD $32.00 put, exp Aug 6, 2026** — $6,400 collateral, **$3,323 buffer (34% of $9,723 cash)**. Reduced from 3 contracts specifically to respect the buffer rule; excess cash earmarked toward v1.2 Tier 1 (VZ) once ready.
+- Puts: **1x SCHD $32.00 put, exp Aug 6, 2026** ($3,200 collateral) + **1x VZ $40.00 put, exp Aug 21, 2026** ($4,000 collateral) — total puts collateral $7,200, **buffer $2,523 (26% of $9,723 cash)**.
+- VZ rationale: dropped ~8% this week on Dow-removal mechanical selling + BT joint-venture charges — sentiment/mechanical, not fundamental — fits the Volatility/Value Screening rule as the current best opportunity. $40 strike (~5.8% OTM) chosen over a wider $39 strike to capture meaningfully more premium ($46/contract vs $26/contract) while still keeping real cushion through earnings.
 - KO earnings: **July 28, 2026, before open** — inside the standard 43-DTE window; KO call strike widened to $86 to account for it.
-- Dividends checked clear: KO next ex-div ~Sept 11–15, 2026; SCHD next ex-div ~Sept 23, 2026 — neither falls inside this cycle's expirations, no early-assignment concern this round (re-verify immediately before entry, schedules can shift).
+- VZ earnings: **July 24, 2026** — inside the Aug 21 put window; $40 strike chosen with earnings cushion in mind, per the same overlay logic as KO.
+- Dividends checked clear: KO next ex-div ~Sept 11–15, 2026; SCHD next ex-div ~Sept 23, 2026 — neither falls inside this cycle's expirations. VZ ex-div was ~Jul 10 (already passed/imminent at time of entry) — not relevant to a fresh put (dividend-driven early exercise risk applies to short calls, not puts).
 - MCD: trigger live, not funded — revisit once cash from a closed/assigned leg accumulates past ~$28K, or MCD drops further.
 
 **Pre-trade verification checklist (required every cycle, not just Cycle 1):**
