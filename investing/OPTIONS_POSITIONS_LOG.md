@@ -10,9 +10,10 @@
 
 | Ticker | Type | Side | Contracts | Strike | Expiration | Opened | Premium collected | Status |
 |--------|------|------|-----------|--------|------------|--------|--------------------|--------|
-| KO | CALL | SELL | 1 | $86.00 | 2026-08-21 | PENDING ENTRY | — | Not yet placed |
-| SCHD | CALL | SELL | 3 | $32.50 | 2026-08-21 | PENDING ENTRY | — | Not yet placed |
-| SCHD | PUT | SELL | 1 | $32.00 | 2026-08-06 | PENDING ENTRY | — | Not yet placed |
+| KO | CALL | SELL | 1 | $87.50 | 2026-08-21 | PENDING ENTRY | ~$0.82 (live bid, 7/9) | Not yet placed — strike corrected from $86 (doesn't exist on chain) |
+| SCHD | CALL | SELL | 3 | $33.00 | 2026-08-21 | PENDING ENTRY | ~$0.30 (live bid, 7/9) | Not yet placed — strike corrected from $32.50 (doesn't exist on chain) |
+| SCHD | PUT | SELL | 1 | $32.00 | 2026-08-07 | PENDING ENTRY | ~$0.25 (live bid, 7/9) | Not yet placed — expiration corrected to Aug 7 (actual Friday exp, not Aug 6) |
+| VZ | PUT | SELL | 1 | $40.00 | 2026-08-21 | PENDING ENTRY | ~$0.96 (live bid, 7/9) | Not yet placed — real premium ~2x the theoretical estimate, confirms IV spike thesis |
 | VZ | PUT | SELL | 1 | $40.00 | 2026-08-21 | PENDING ENTRY | — | Not yet placed |
 
 *Update the "Opened" and "Premium collected" columns the moment each order actually fills on Fidelity — do not log an order as open until confirmed filled.*
