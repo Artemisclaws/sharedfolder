@@ -179,21 +179,33 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 
 **THE REPEATABLE CYCLE — run this every 30–45 days, indefinitely:**
 1. **Calls leg:** sell covered calls against every full 100-share lot already owned (KO, SCHD). Strike ≥ cost basis, ~1–3% OTM, 30–45 DTE.
-2. **Puts leg:** sell cash-secured puts against all uncommitted Roth cash. Strike = a price you'd be genuinely happy owning at, ~1–3% OTM, 30–45 DTE.
+2. **Puts leg:** sell cash-secured puts against uncommitted Roth cash, **reserving a minimum 5–10% cash buffer, unencumbered** (see Collateral Buffer Rule below — never deploy to the last dollar). Strike = a price you'd be genuinely happy owning at, ~1–3% OTM, 30–45 DTE.
+2.5. **Gut-check before every put (required, not optional):** "If assigned on all contracts, am I happy owning this many more shares at this price?" If the answer isn't a clean yes, don't sell it.
 3. **Earnings overlay (KO only — SCHD has no earnings):** if a KO expiration window spans a KO earnings date, either (a) shorten to expire *before* earnings, or (b) widen the strike 3-5%+ OTM to buy room for a post-earnings gap. Never sell tight-strike KO options through earnings just to chase extra premium.
-4. **Dividend overlay:** check both tickers' next ex-div date before selecting expiration. If a short call is meaningfully ITM heading into an ex-div date, early-assignment risk rises — either roll the call up/out beforehand or accept assignment (you keep the premium either way).
+4. **Dividend / early-assignment overlay:** the actual mechanism — a short call becomes early-exercise risk when its remaining extrinsic (time) value drops below the dividend amount, because the option holder profits by exercising early to capture the dividend. This risk concentrates right before ex-div dates but is driven by extrinsic value, not the calendar alone. Check both tickers' next ex-div date before selecting expiration; if a call is deep ITM heading into ex-div with thin extrinsic value left, roll it up/out beforehand or accept assignment (the premium is kept either way). Applies to SCHD too, despite being an ETF.
 5. **Manage at 50–75% max profit or 7–10 DTE**, whichever comes first: close early and immediately re-open the next cycle's leg. Don't ride a position to expiration out of inertia.
-6. **On assignment (puts):** new shares join the covered-call rotation next cycle. **On call-away:** cash rejoins the CSP rotation next cycle. Capital never sits idle between cycles.
+6. **On assignment (puts):** new shares join the covered-call rotation next cycle. **On call-away:** cash rejoins the CSP rotation next cycle, still respecting the buffer rule. Capital never sits idle between cycles, but never goes to zero either.
 7. **Odd lots** (anything under 100 shares) ride along uncovered — never chase a mismatched contract size to "clean up" a lot.
 8. **Never oversize a new name** (e.g. MCD) — a trigger firing on paper does not override the cash-collateral rule. Wait for capital, don't force it.
 9. **Log every fill** (strike, expiration, premium, outcome) — becomes the track record that tells you if the cycle is actually working after ~6-8 turns.
 
-**Current cycle (Cycle 1, opened 2026-07-09) — ground truth:**
-- Calls: KO 1x contract (100 of 113 shares), SCHD 3x contracts (300 of 316 shares)
-- Puts: $9,723 cash → SCHD only this cycle (KO/MCD collateral needs exceed available cash)
-- KO earnings: **July 28, 2026, before open** — inside the standard 43-DTE window; widen KO call strike (not the SCHD puts) to account for it, or expire the KO call before July 28.
-- Dividends checked clear: KO next ex-div ~Sept 11–15, 2026; SCHD next ex-div ~Sept 23, 2026 — neither falls inside this cycle's expirations, no early-assignment concern this round.
+**Collateral Buffer Rule (added 2026-07-09):** always leave a minimum 5–10% of Roth cash unencumbered by CSP collateral. Reasons: assignments can land unexpectedly and need settled cash to process cleanly; dividend receipts, trade settlement, and fees cause the cash balance to fluctuate day to day; a Roth has no margin backstop to cover a shortfall between available-to-trade and settled cash. If a clean contract count doesn't land inside the 5–10% band, round DOWN to fewer contracts rather than distorting a strike just to hit the number — the excess becomes deliberate dry powder (e.g. seeding the next v1.2 accumulation tier), not idle waste.
+
+**Current cycle (Cycle 1, opened 2026-07-09, revised 2026-07-09 for buffer) — ground truth:**
+- Calls: KO 1x contract $86 strike (100 of 113 shares), SCHD 3x contracts $32.50 strike (300 of 316 shares), both exp Aug 21, 2026
+- Puts: **2x SCHD $32.00 put, exp Aug 6, 2026** — $6,400 collateral, **$3,323 buffer (34% of $9,723 cash)**. Reduced from 3 contracts specifically to respect the buffer rule; excess cash earmarked toward v1.2 Tier 1 (VZ) once ready.
+- KO earnings: **July 28, 2026, before open** — inside the standard 43-DTE window; KO call strike widened to $86 to account for it.
+- Dividends checked clear: KO next ex-div ~Sept 11–15, 2026; SCHD next ex-div ~Sept 23, 2026 — neither falls inside this cycle's expirations, no early-assignment concern this round (re-verify immediately before entry, schedules can shift).
 - MCD: trigger live, not funded — revisit once cash from a closed/assigned leg accumulates past ~$28K, or MCD drops further.
+
+**Pre-trade verification checklist (required every cycle, not just Cycle 1):**
+1. Live bid/ask and premium on every leg (estimates are theoretical, not quotes)
+2. Current open options positions (avoid double-covering or conflicts)
+3. Pending stock orders that could interfere
+4. Actual available-to-trade cash vs. settled cash (not just the headline balance)
+5. Updated ex-dividend dates for every ticker involved
+6. Exact earnings date confirmation for any name with earnings risk
+7. Confirm Fidelity is reserving collateral as expected for a Roth (no margin assumptions)
 
 ### v1.3 — SELL DISCIPLINE (decided 2026-07-09)
 **Question raised:** should we buy a stock for the dividend, then sell it if the price drops (a price-based stop-loss)?
