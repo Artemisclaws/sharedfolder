@@ -143,9 +143,26 @@ The what is now defined: **backdoor Roth, capped at min($7,500, her 2026 W-2)**.
 ### Current position — ground truth (captured 2026-07-09, do not re-ask)
 | Holding | Shares | Covered-call-eligible | Odd lot (uncovered) |
 |---------|--------|------------------------|----------------------|
-| KO | 113 | 100 (1 contract) | 13 |
-| SCHD | 316 | 300 (3 contracts) | 16 |
+| KO | 113 (stated) / 102.673 confirmed from screenshot | 100 (1 contract) | 13 |
+| SCHD | 316 (stated) / 314.331 confirmed from screenshot | 300 (3 contracts) | 16 |
 | Cash available for CSPs | $9,723 | — | — |
+
+**Cost basis (captured 2026-07-09 from Fidelity "Specify shares" screenshots):**
+
+| Ticker | Lot date | Shares | Cost/share | Notes |
+|--------|----------|--------|------------|-------|
+| SCHD | Jan-08-2025 | 100 | $27.16 | Round lot |
+| SCHD | Jan-10-2025 | 200 | $27.11 | Round lot |
+| SCHD | 5 DRIP lots (Mar-27-26 to Sep-26-25) | 14.331 | shown as $0.00/sh in app (likely display placeholder, not confirmed literal) | Fractional — flag to confirm real cost basis with Chris/Fidelity statement |
+| **SCHD weighted avg (300 round-lot shares)** | | | **$27.13** | Current price $32.30 → **+19% unrealized gain**, well clear of cost basis for calls |
+| KO | Jan-15-2021 | 42 | $48.81 | Round lot |
+| KO | Jan-15-2021 | 57 | $48.84 | Round lot |
+| KO | 5 DRIP lots (Mar-30-23 to Jun-29-22) | 3.673 | shown as $0.00/sh in app (likely display placeholder) | Fractional |
+| **KO weighted avg (99 round-lot shares)** | | | **$48.83** | Current price $82.49 → **+69% unrealized gain**, well clear of cost basis for calls |
+
+**Reconciliation flag:** screenshot totals (SCHD 314.331, KO 102.673) don't exactly match the stated 316/113 — gap is small on SCHD (~1.7 sh, rounding/timing) but larger on KO (~10.3 sh). Possible additional KO lots not captured in the screenshot scroll. Confirm with Chris next session; does not change current strategy since both positions sit far above cost basis either way.
+
+**Tax-lot note (Roth IRA):** since this is Chris's Fidelity Roth, capital gains are never taxed regardless of which lot Fidelity delivers on assignment — tax-lot selection (FIFO vs specific-lot) is a taxable-account concern only. Any lot selection is fine here; no need to optimize.
 
 **v1 execution model, given this position:** run covered calls on the owned lots (KO x1, SCHD x3) AND cash-secured puts from the $9,723 cash simultaneously — these are two separate legs on separate capital, not a strangle. Calls only ever run against shares already owned; puts only ever run against cash already set aside. Odd lots (13 KO, 16 SCHD) ride along uncovered until they compound into another full lot (via DRIP/manual buys or put assignment).
 
