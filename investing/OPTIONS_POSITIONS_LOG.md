@@ -13,8 +13,7 @@
 | KO | CALL | SELL | 1 | $87.50 | 2026-08-21 | 2026-07-09 | **$0.88/contract, $88.00 gross / $87.35 net** | **FILLED** — price improvement over $0.82 limit |
 | SCHD | CALL | SELL | 3 | $33.00 | 2026-08-21 | 2026-07-09 | **$0.32/contract, $96.00 gross / $94.05 net** | **FILLED** — price improvement over $0.30 limit |
 | SCHD | PUT | SELL | 1 | $32.00 | 2026-08-07 | PENDING ENTRY | ~$0.25 (live bid, 7/9) | Not yet placed — expiration corrected to Aug 7 (actual Friday exp, not Aug 6) |
-| VZ | PUT | SELL | 1 | $40.00 | 2026-08-21 | PENDING ENTRY | ~$0.96 (live bid, 7/9) | Not yet placed — real premium ~2x the theoretical estimate, confirms IV spike thesis |
-| VZ | PUT | SELL | 1 | $40.00 | 2026-08-21 | PENDING ENTRY | — | Not yet placed |
+| VZ | PUT | SELL | 1 | $40.00 | 2026-08-21 | 2026-07-09 | **$0.97/contract, $97.00 gross / ~$96.35 net** | **FILLED** — real premium ~2x theoretical estimate, confirms IV spike thesis |
 
 *Update the "Opened" and "Premium collected" columns the moment each order actually fills on Fidelity — do not log an order as open until confirmed filled.*
 
