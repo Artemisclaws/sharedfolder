@@ -387,4 +387,31 @@ Every deployment in this playbook assumes surplus cash. S57 ground truth: househ
 
 ---
 
+## 10 · ACCOUNT MAP & LEGACY TAXABLE SLEEVE (added 2026-07-09, S64)
+
+### Full Fidelity account map (ground truth — do not re-ask)
+| Account | Type | Available to trade (7/9/26) | Notes |
+|---------|------|------------------------------|-------|
+| ROTH IRA 236231244 | Chris's Roth | $6,000.36 ($5,722.67 settled) | The wheel/options-income account — v1.1–v1.6 |
+| Investment Account - Chris (Z31836993) | **Taxable, fully Chris's** | $1,699.65 | Purpose not yet defined — open item |
+| Morgan Standley (Z39168352) | **Taxable, transferred in-kind from Morgan Stanley** | $537.33 cash (SPAXX) + ~$12,985 in holdings | Legacy advisor-built core-satellite portfolio. Policy below. |
+| Cash Management (Individual, Z28833138) | Cash | $8,218.86 | **Excluded from all investing strategy — Chris's explicit instruction, do not touch.** |
+| Golfii's Joint Acc (Z40525247) | **Taxable, joint — NOT a Roth** | $6,842.42 | Correction from S64 draft: this is not Golfii's Roth. Her actual Roth is still INV-16 (blocked on tax preparer meeting). Chris wants to open her Roth soon — same open item, not new. |
+| Auggie's UTMA (Z38264485) | UTMA | $523.33 | **Locked by standing rule (§7.5): irrevocably his, never collateral, never parent-use. Not available for any household strategy.** |
+
+### Morgan Stanley taxable account — policy (light-touch, Bogle/Buffett "don't disturb what's working")
+**Holdings (7/9/26):** AGG (bonds), EMGF, FNDA, GLD, GSLC (largest, ~21% of acct), IEFA, JPME, QEFA, SPAXX (cash), SPMD, SPYM, TSLA (2 shares, small satellite, -2.45%). Total ~$12,985. Several core holdings carry large embedded unrealized gains (FNDA ~+49%, GSLC ~+52%, JPME ~+46%, QEFA ~+40%).
+
+1. **Do not sell to rebalance.** Real overlap exists (GSLC/SPYM/SPMD all U.S. equity; IEFA/QEFA/EMGF all international) but fixing it via sales creates an avoidable tax bill on an already-diversified portfolio. Fix overlap with new contributions only, never by selling existing lots.
+2. **The Roth's +20% trim rule (§1) does NOT apply here.** That rule manages concentrated single-stock risk in a tax-free account. Trimming a diversified index fund at +20% in a taxable account creates tax drag for no real risk reduction — different tool for a different job.
+3. **This account is the intended vehicle for the 0%-capital-gains-bracket strategy** (discussed prior session): in any year Chris's taxable income runs low, harvest gains here up to the top of the 0% bracket tax-free, then immediately rebuy to step up cost basis. No wash-sale restriction on gains. Watch for a qualifying low-income year and execute then — not before.
+4. **TSLA (2 shares)** — too small to warrant an active decision either way.
+5. **The $537.33 SPAXX cash here is legitimate flexible reserve** — taxable, no options approval required, usable for straight-share downturn buying (v1.6 ladder) without touching the Roth's options structure.
+6. **Open question for Chris:** what's this account's actual purpose (retirement runway, house fund, general wealth)? Policy above is a holding pattern until that's defined — a defined goal may change the consolidation-via-new-money approach.
+
+### Downturn reserve — scope decided 2026-07-09
+The v1.6 downturn ladder scopes to the **Roth's own settled cash ($5,722.67)** only. Excluded pending further discussion: Golfii's joint account (requires her buy-in, not Chris's unilateral call) and Auggie's UTMA (locked by standing rule, not even a discussion). Investment Account - Chris and the Morgan Stanley SPAXX cash are candidates for a **separate, secondary taxable-account ladder** (straight share buys, no options needed) — not yet built, pending Chris's confirmation on Investment Account's purpose.
+
+---
+
 *Sources: IRS 2026 limits (irs.gov); Fidelity 529→Roth rollover rules; ScholarShare/FTB SB 529 analysis; market levels via Yahoo Finance/CoinDesk as of 2026-07-01. Projections at constant annual returns — real sequences vary.*
