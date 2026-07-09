@@ -1,23 +1,26 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S63 (closed) | 2026-07-08
+**Updated by:** Claude | Session S64 (closed) | 2026-07-09
 **GitHub:** `00-load-me/SPRINT.md`
 
 **Counter note (S60):** Session numbering forked — this SPRINT lineage was at S58 (closed 2026-07-03). A same-day session on 2026-07-04 (Google Drive Desktop sync repair; added CLAUDE-CORE's WORKING DOCUMENTS rule, V8) ran as "S59" but never updated this counter. This session (S60) declares the SPRINT lineage canonical going forward. **SPRINT.md line item below is now the sole home of the session counter — no other file may originate a session number.**
-**COUNTER: S63 | closed 2026-07-08**
+**COUNTER: S64 | closed 2026-07-09**
 
-**GOAL (S63 close):** A-11 PATH-TO-BLACK finally moved — the redirect streak (S58/S60/S61/S62) is over. Full COST-SIDE ground truth captured from Chris on payday: complete bi-weekly payroll (BOH flat-rate chefs w/ cash split + FOH W-2, all 12 people) and fixed costs (rent $7,735, CAM $1,360, SBA $436, utilities, chef housing arrangements). Tax-absorption question answered: ~$361/period ≈ $782/mo ≈ $9.4K/yr for the 3 reported chefs. **Stored permanently: `aura-thai/COST_BASELINE.md` (GitHub, canonical — never re-ask Chris for these numbers) + `aura-thai/cost_baseline_tab_builder.gs`** (Apps Script that builds a "Cost Baseline" tab with live break-even calculator in aura_thai_finance). Known costs ≈ $44.9K/mo before COGS → break-even ≈ $2,110/day @30% COGS scenario vs May actual ~$2,200/day — razor thin. NOTE: this session ran as a long-lived chat that booted on a stale S58 SPRINT (opened before S59–S62 existed); fork caught and reconciled at handoff.
+**GOAL (S64 close):** Full session-length redirect into building the Options Income Wheel Strategy in Chris's Fidelity Roth — **A-11 PATH-TO-BLACK did not move this session** (Lavu diagnostic + COGS still owed, per S63's committed next step). What got built instead: v1.1–v1.6 of the wheel playbook (repeatable cycle protocol, sell discipline, LTH accumulation roadmap, collateral buffer + concentration cap rules, downturn reserve/deployment ladder); Cycle 1 placed and filled live on Fidelity — 3 of 4 legs filled (SCHD calls, KO call, VZ put; ~$277.75 net premium collected), SCHD put still pending a sizing decision; `investing/OPTIONS_POSITIONS_LOG.md` built as source of truth; Artie SOP 15 + `artie/artie_wheel_report.py` built for morning/close reporting (ready to deploy, not yet running); full Fidelity account map captured (`playbook §10`) including a policy for the legacy Morgan Stanley taxable account. All changes verified pushed (200s) to `sessions/S55/pinyo-family_investment-playbook_v2.md`.
 
-**COMMITMENTS (huddle, S63 close):**
-- Chris: run `buildCostBaseline` in aura_thai_finance Apps Script (same motion as V2 install) and fill the yellow cells — COGS %, water, trash, insurance, internet, POS fees, card-processing rate.
-- Chris: answer COST_BASELINE open confirmations — $616 from EACH chef monthly?, Miguel $20.40 cash gap, Eliseo $19.78 gap, Mee Ann reporting, actual chef hours/day.
-- Chris: Lavu export stall diagnostic still owed (needs Mac) — revenue side of A-11 is blocked without current data.
-- Claude: S64 = fold COGS + revenue into the final break-even number and build the 3-lever plan (revenue/COGS/labor) with weekly targets. Do not re-collect anything already in COST_BASELINE.md.
+**COMMITMENTS (huddle, S64 close):**
+- Chris: decide on the pending SCHD put ($32 strike, Aug 7 exp) — place it or skip given the downturn-reserve conversation.
+- Chris: get `artie/artie_wheel_report.py` onto Artie's machine and run the SOP 15 crontab commands to actually activate wheel reporting — built but not live yet.
+- Chris: **Lavu export stall diagnostic still owed (needs Mac) — this is now the 5th session this has been redirected past (S58/S60/S61/S62 partial, S64 full).** A-11 PATH-TO-BLACK cannot move without it.
+- Chris: define the purpose of "Investment Account - Chris" ($1,699.65 taxable) — unblocks whether it joins a secondary downturn-buying ladder.
+- Chris: decide whether/how to loop Golfii in before including her joint account in any household downturn-reserve planning.
+- Claude: **next session opens with an explicit huddle question — does this session open on A-11, or is this a declared RIDE on something else?** Don't let another session drift the same way this one did.
 
 Both agents load this file. It answers: what matters most right now?
 
 ---
 
-## SESSION START — S64
+## SESSION START — S65
+Boot per CLAUDE-CORE V9. **FIRST QUESTION TO CHRIS: does this session open on A-11 PATH-TO-BLACK (Lavu diagnostic + COGS → break-even), or is there an explicit different priority for today?** Do not silently continue the investing thread without naming the choice out loud — that's the one change committed at S64 close. If investing: options wheel state lives in `investing/OPTIONS_POSITIONS_LOG.md` + playbook §5/v1.1–v1.6, load those, don't re-derive.
 Boot per CLAUDE-CORE V9. FIRST: load `aura-thai/COST_BASELINE.md` (GitHub) — complete cost-side ground truth for A-11, captured S63. Do NOT re-ask Chris for payroll or fixed costs. Open on: (1) Lavu export stall diagnostic (needs Mac — blocks revenue side), (2) pull COGS % + filled yellow cells from the "Cost Baseline" tab in aura_thai_finance (Chris building it), (3) finalize break-even + 3-lever plan with weekly targets. Bedrock fully migrated; Phase 2 (Artie freshness cron) gated on I-23.
 
 ---
