@@ -12,7 +12,8 @@
 |--------|------|------|-----------|--------|------------|--------|--------------------|--------|
 | KO | CALL | SELL | 1 | $86.00 | 2026-08-21 | PENDING ENTRY | — | Not yet placed |
 | SCHD | CALL | SELL | 3 | $32.50 | 2026-08-21 | PENDING ENTRY | — | Not yet placed |
-| SCHD | PUT | SELL | 2 | $32.00 | 2026-08-06 | PENDING ENTRY | — | Not yet placed |
+| SCHD | PUT | SELL | 1 | $32.00 | 2026-08-06 | PENDING ENTRY | — | Not yet placed |
+| VZ | PUT | SELL | 1 | $40.00 | 2026-08-21 | PENDING ENTRY | — | Not yet placed |
 
 *Update the "Opened" and "Premium collected" columns the moment each order actually fills on Fidelity — do not log an order as open until confirmed filled.*
 
@@ -25,7 +26,7 @@
 | KO | 113 | ~$48.83 | 100 (1 contract) | 13 |
 | SCHD | 316 | ~$27.13 | 300 (3 contracts) | 16 |
 
-**Cash buffer status:** $9,723 total Roth cash → $6,400 committed to the SCHD put collateral above → **$3,323 (34%) uncommitted, reserved per the Collateral Buffer Rule (min 5–10%).**
+**Cash buffer status:** $9,723 total Roth cash → $3,200 (SCHD put) + $4,000 (VZ put) = $7,200 committed → **$2,523 (26%) uncommitted, within the Collateral Buffer Rule (min 5–10%).**
 
 ---
 
@@ -34,7 +35,7 @@
 | Event | Ticker | Date | Relevance |
 |-------|--------|------|-----------|
 | Earnings | KO | 2026-07-28, before open | Falls inside the Aug 21 call/expiration window — KO call strike widened to $86 to compensate |
-| Earnings | VZ | 2026-07-24 | Relevant once VZ tier is funded (v1.2) |
+| Earnings | VZ | 2026-07-24 | **Active** — inside the Aug 21 put expiration; $40 strike chosen with earnings cushion in mind |
 | Earnings | PG | 2026-07-29 | Relevant once PG tier is funded (v1.2) |
 | Earnings | JNJ | 2026-07-15 | Relevant once JNJ tier is funded (v1.2) — do not enter a fresh CSP in the days right before this date |
 | Ex-dividend | KO | ~2026-09-11 to 09-15 (est.) | Outside current cycle's expirations — re-verify closer to date |
