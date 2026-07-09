@@ -102,4 +102,45 @@ In the sheet: **Aura Thai Ops > Refresh Price Tracker**
 
 ---
 
+## SOP 15 — Wheel Cycle Morning/Close Report
+**Sheet/Source:** `investing/OPTIONS_POSITIONS_LOG.md` (GitHub, canonical — Chris/Claude update on every fill)
+**Trigger:** Cron, twice daily — see schedule below. Also runnable on demand: Chris says "morning check" or "close check."
+**Built by:** Claude | Session 64 | 2026-07-09
+
+### Cron setup (one-time)
+```bash
+(crontab -l 2>/dev/null; echo "0 8 * * 1-5 python3 /home/artemis/.openclaw/workspace/artie_wheel_report.py morning >> /home/artemis/.openclaw/workspace/artie_wheel_report.log 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo "5 16 * * 1-5 python3 /home/artemis/.openclaw/workspace/artie_wheel_report.py close >> /home/artemis/.openclaw/workspace/artie_wheel_report.log 2>&1") | crontab -
+```
+**Verify the times land at 8:00 AM ET and 4:05 PM ET** — the numbers above assume the server runs in ET. If Artie's machine is on a different timezone, convert first (`timedatectl` to check, or just run `date` and compare to actual ET).
+
+### What the script does (one script, one command — per the Bedrock Rule)
+1. Reads `investing/OPTIONS_POSITIONS_LOG.md` from GitHub — this file is the only source of truth for open positions. If it's stale, the report is wrong; Chris/Claude own keeping it current.
+2. Pulls live price per ticker (Yahoo Finance chart endpoint, Stooq CSV fallback if Yahoo fails — no new credentials needed).
+3. Computes DTE, moneyness (ITM/OTM %), and cross-checks the WATCH DATES table for anything (earnings/ex-div) inside a 10-day window.
+4. Posts the formatted report to Discord **#finance**.
+5. Appends one line to the log's REPORT LOG section and pushes back to GitHub — running history, nothing overwritten.
+
+### COMMAND (manual test)
+```bash
+python3 /home/artemis/.openclaw/workspace/artie_wheel_report.py morning
+```
+
+### EXPECTED OUTPUT
+`[mode] report sent. [N] positions checked.` — and a new message appears in Discord #finance within seconds.
+
+### IF FAILED
+- Price fetch fails for a ticker → script posts anyway with `⚠️ [ticker] — price fetch failed, check manually` inline, does not block the rest of the report.
+- GitHub read/write fails → send Chris: `⚠️ Wheel report failed — GitHub [read/write] error: [paste exact error]. Stopped.`
+- Discord post fails → send Chris: `⚠️ Wheel report computed but Discord post failed — [paste exact error].`
+- Never guess at a price or a position if the script errors. Report the failure, don't improvise a number.
+
+### Escalation Rules
+- Any position shown ITM in a close report → no action needed from Artie, this is expected wheel behavior — just visibility for Chris
+- Script reports a ticker not in the Positions Log's underlying share table → flag to Claude next session, likely means the log needs an update
+
+---
+
+
+
 *Maintained by Claude. Flag updates to Claude at next session.*
