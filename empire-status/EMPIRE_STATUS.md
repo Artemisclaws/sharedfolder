@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-07-08 | Session S63 (closed)
-**Updated By:** Claude (S63 close) — A-11 cost-side ground truth captured; COST_BASELINE.md is now canonical for all Aura Thai payroll + fixed costs
+**Last Updated:** 2026-07-09 | Session S64 (closed)
+**Updated By:** Claude (S64 close) — Options Income Wheel Strategy built end-to-end + Cycle 1 live; A-11 did not move this session (flagged, see SPRINT)
 
 ---
 
@@ -40,6 +40,7 @@
 | RoamWithChris Story: Augustus Chang | BIBLE LOCKED S62 | AI-visuals-only episode (no footage exists) — Chris's college friend, name given to Auggie (Augustus Pinyo, Chris's son — DO NOT CONFUSE the two). Bible saved to Drive: `RWC_StoryBible_Augustus-Chang.md` (fileId 13Ol2X0Z3UC70eZZzl44zbrnS4k63HhVQ). Script not yet written. |
 | RoamWithChris Story: Vietnam Cousin Trip | BRAINDUMP ONLY S62 | Not yet Bible-locked. Chris flagged likely split into 3-part series (Halong Bay / Ninh Binh / Ha Giang Loop). Only Halong Bay captured in depth; Ninh Binh + Ha Giang Loop still needed. Saved to Drive: `RWC_Braindump_Vietnam-Cousin-Trip.md` (fileId 1nE1LfKNDKAjrJ89oCZr-xKaUibw2uf7Z). |
 | Family Investment Playbook v2 | LOCKED S56 | sessions/S55/pinyo-family_investment-playbook_v2.md — all PROPOSED approved. $5K BTC ladder: $2K@$50K/$1.5K@$45K/$1.5K@$40K. Chris executing INV-13/08/15/14. |
+| Options Income Wheel Strategy | v1.1–v1.6 LOCKED S64 — CYCLE 1 LIVE | `sessions/S55/pinyo-family_investment-playbook_v2.md` §5/§10. Repeatable cycle protocol, sell discipline (fundamentals not price stop-loss), LTH accumulation roadmap (VZ/PG/MMM/MCD/JNJ tiered), Collateral Buffer Rule (5-10% min), Concentration Cap (~40% max/name), Volatility/Value Screening, downturn reserve + SPX-triggered deployment ladder (not yet finalized — pending Chris's reserve-size confirmation). Cycle 1: 3 of 4 legs filled live on Fidelity (SCHD calls, KO call, VZ put — ~$277.75 net premium), SCHD put pending sizing decision. Source of truth: `investing/OPTIONS_POSITIONS_LOG.md` (update on every fill — never let it go stale). Full account map captured in playbook §10 (Roth, 2 taxable accounts, Cash Management EXCLUDED per Chris, Golfii's joint account, Auggie's UTMA LOCKED). |
 | Playbook v2.2 — D8/D9 estate + insurance | RESOLVED S57 | §9 added. Mom's trust holds S-corp shares (QSST trap flagged), will+guardianship DIY, parent policies/IUL rejected. EST-01..05 queued. Aura Thai = S-CORP, shares under mom (shelter), SBA $350K @3% mom-guaranteed. |
 
 ---
@@ -283,6 +284,7 @@ Aura Thai cost baseline:   aura-thai/COST_BASELINE.md (GitHub, canonical S63) + 
 ## SESSION LOG
 | Session | Date | Key Work |
 |---------|------|----------|
+| S64 | 2026-07-09 | Full session-length redirect into Options Income Wheel Strategy build (Chris's Fidelity Roth). Built v1.1-v1.6: repeatable cycle protocol, sell discipline, LTH accumulation roadmap, Collateral Buffer + Concentration Cap rules, downturn reserve ladder (scoping still open). Placed and filled Cycle 1 live on Fidelity: 3/4 legs (SCHD calls, KO call, VZ put, ~$277.75 net premium) — verified via real-time screenshot review before each submit, caught a qty error and two nonexistent-strike mistakes before money moved. Built `investing/OPTIONS_POSITIONS_LOG.md` as source of truth + Artie SOP 15/`artie_wheel_report.py` for automated reporting (built, not yet deployed). Captured full Fidelity account map (§10) — corrected a same-session error (assumed Golfii's account was a Roth; it's taxable joint). **A-11 PATH-TO-BLACK did not move — 5th session redirected past it.** |
 | S62 | 2026-07-07 | Bedrock migration executed end-to-end: CLAUDE-CORE V9 (boot gate, 3-write handoff, huddle/debrief, PARK/RIDE), business blocks ported SPRINT→EMPIRE_STATUS, MASTER_FILE_MAP + RPG_LEDGER archived to _archive/, Drive Soul/ copies + map copy archived by Chris, ARTIE-CORE map row removed, Tiller IMPORTRANGE note ported, I-26 cleanup item added. SYS-01 closed. Boot gate's first live run correctly flagged 2 RED (aura_thai_finance, Lavu folder). |
 | S39 | 2026-05-27 | Decision Dashboard checklist, BOH labor, Lavu as primary source |
 | S40 | 2026-06-19 | Apps Script invoice system built |
