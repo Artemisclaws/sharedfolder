@@ -10,7 +10,7 @@
 
 | Ticker | Type | Side | Contracts | Strike | Expiration | Opened | Premium collected | Status |
 |--------|------|------|-----------|--------|------------|--------|--------------------|--------|
-| KO | CALL | SELL | 1 | $87.50 | 2026-08-21 | PENDING ENTRY | ~$0.82 (live bid, 7/9) | Not yet placed — strike corrected from $86 (doesn't exist on chain) |
+| KO | CALL | SELL | 1 | $87.50 | 2026-08-21 | 2026-07-09 | **$0.88/contract, $88.00 gross / $87.35 net** | **FILLED** — price improvement over $0.82 limit |
 | SCHD | CALL | SELL | 3 | $33.00 | 2026-08-21 | 2026-07-09 | **$0.32/contract, $96.00 gross / $94.05 net** | **FILLED** — price improvement over $0.30 limit |
 | SCHD | PUT | SELL | 1 | $32.00 | 2026-08-07 | PENDING ENTRY | ~$0.25 (live bid, 7/9) | Not yet placed — expiration corrected to Aug 7 (actual Friday exp, not Aug 6) |
 | VZ | PUT | SELL | 1 | $40.00 | 2026-08-21 | PENDING ENTRY | ~$0.96 (live bid, 7/9) | Not yet placed — real premium ~2x the theoretical estimate, confirms IV spike thesis |
