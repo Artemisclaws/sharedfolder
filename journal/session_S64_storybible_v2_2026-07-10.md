@@ -51,3 +51,19 @@ Ran a second-opinion critique pass on v2; Chris approved fixes; v2.1 pushed (com
 6. Must Never Be Forgotten rule #7 added: opener never frame 1.
 
 **Resolved conflict:** v2's Hook Engineering said open mid-action; series constant locked the opener sequence. v2.1 resolves: the Auggie visual IS the frame-1 hook and must carry motion/tension itself — stated explicitly in both the constant and Section 1.
+
+---
+
+## v2.2 addendum (same session)
+
+Chris decisions: (a) hook subject varies per story — no Auggie default; series handshake ("Daddy tell me a story" + opener) lands at ~sec 4-6 after the hook, recognition after surprise. (b) Incorporate misdirection/mission-change mechanics. (c) Needs shot guides until ingrained. (d) Editing is the bottleneck — automate via Descript/Artie. (e) Shorts-first cross-posting now, long-form YouTube later — corrected to long-master-first-cut-shorts-from-it where footage supports. (f) No failure exit — reframed KPI to 20 reels shipped with completed Retention Reviews (reps-with-feedback, not followers). (g) Cover-first strategy adopted per MrBeast (cover concept now part of Kill Criterion).
+
+**v2.2 pushed (commit 22e4451):** varied hook + fixed handshake constant; THE TURN section (false assumption / planted clues / reveal beat / hindsight check / mission change — never forced); beat list is now beats + shots + HAVE/NEED/AI/CUT footage status, script blocked until all resolve; Caption/Title block (caption first line = second hook, pinned comment = lesson, YT Shorts keyword title); cover concept + 0-3 word cover text in Kill Criterion; hook type/subject log in Retention Review; MNBF rules 8-10 added (never state the false assumption, never twist without clues, never repeat hook back-to-back).
+
+**New companion docs:**
+- `roamwithchris/RWC_Standing_Capture_Kit.md` (commit 420ecbf) — 10-item every-trip shot list + 48-hour voice-memo rule + format discipline.
+- `roamwithchris/RWC_Production_Pipeline.md` (commit a4be4f7) — 8 steps capture→retention review with owner + tool per step; Descript silence-removal as primary edit accelerant; Artie owns beat-to-clip matching; cadence target 2-3/week; 20-rep commitment; long-form runway (master edit → cut shorts).
+
+**Parked for dedicated sessions:** (1) Chris on-camera / personal brand strategy — prep discussion doc. (2) Auggie-at-scale pros/cons structured conversation with Golfii — prep discussion doc.
+
+**Research basis for v2.2 additions:** twist craft (surprising-yet-inevitable, planted clues), South Park but/therefore rule, MrBeast cover-first + format-variety rules, 2026 platform data (first frame = auto-cover on feed + often YT Shorts thumbnail; grid crops 4:5/1:1 so cover text center-frame 0-3 words; YT Shorts search-indexed unlike TikTok; ~85% muted viewing; daily cadence > weekly excellence; completion rate > length).
