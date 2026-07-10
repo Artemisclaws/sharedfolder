@@ -33,3 +33,21 @@ Pulled from MrBeast's leaked production doc, current (2026) Reels algorithm guid
 ## Open item for Chris
 
 Auggie Backpacking Reel Bible was locked under v1. Want me to backfill Sections 0 and 4 for it now (10 min), or leave it as-is and apply v2 starting with the next story?
+
+---
+
+## v2.1 addendum (same session, later)
+
+Ran a second-opinion critique pass on v2; Chris approved fixes; v2.1 pushed (commit 21439f6).
+
+**Chris decision:** Signature opener moves AFTER the hook — "grabbing attention is priority." Opener is brand, not hook; new sequence: Auggie hero visual (frame-1 pattern interrupt) → AI baby text → first story beat lands → signature opener → story continues. Opener position stays a logged variable in Retention Review.
+
+**Other v2.1 changes:**
+1. Core/Extended split — Core (9 sections) required before script; Extended fills if time allows. Fixes the solo-operator risk of a bloated template getting skipped entirely.
+2. Kill Criterion at top — "Would a stranger send this to someone? Name who and why in one sentence or park the story." Kills weak stories before edit costs.
+3. Stakes Ladder reworded to Open-Question Ladder — each rung = what question the viewer holds and at which beat it resolves. Prevents duplicating the beat list.
+4. Carry-forward field added to Bible Approval — next Bible must pull the previous episode's Retention Review change before approval. Closes the learning loop mechanically (never rely on memory).
+5. Retention Review capped at 5 min, added "opener position tested" field.
+6. Must Never Be Forgotten rule #7 added: opener never frame 1.
+
+**Resolved conflict:** v2's Hook Engineering said open mid-action; series constant locked the opener sequence. v2.1 resolves: the Auggie visual IS the frame-1 hook and must carry motion/tension itself — stated explicitly in both the constant and Section 1.
