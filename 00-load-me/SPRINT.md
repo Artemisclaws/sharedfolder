@@ -1,11 +1,11 @@
 # SPRINT.md — Current Sprint Priorities
-**Updated by:** Claude | Session S67 (closed) | 2026-07-22
+**Updated by:** Claude | Session S68 (closed) | 2026-07-23
 **GitHub:** `00-load-me/SPRINT.md`
 
 **Counter note (S60):** Session numbering forked — this SPRINT lineage was at S58 (closed 2026-07-03). A same-day session on 2026-07-04 (Google Drive Desktop sync repair; added CLAUDE-CORE's WORKING DOCUMENTS rule, V8) ran as "S59" but never updated this counter. This session (S60) declares the SPRINT lineage canonical going forward. **SPRINT.md line item below is now the sole home of the session counter — no other file may originate a session number.**
-**COUNTER: S67 | closed 2026-07-22**
+**COUNTER: S68 | closed 2026-07-23**
 
-**GOAL (S67 close):** Chris opened on a NEW thread — a Thailand land deal (INV-17). His mom's friend needs ~500,000 THB and wants to do a Kai-Fak (ขายฝาก / sale with right of redemption). Chris uploaded 4 photos of the land documents and asked for a deal analysis, structuring, exit strategies, and lender terms. He does not have the capital himself; the plan was to raise it from people he knows and offer them ~15% APR while charging the borrower 2%/mo (24%/yr) — i.e. earn a spread. **Analysis found two structural blockers that kill the deal as designed** (detail below). Full analysis delivered in chat; deliverables offered but NOT yet built: a due-diligence checklist and a draft term sheet for a Thai lawyer to formalize. A-11 did not move — **8th consecutive redirect.**
+**GOAL (S68 close):** Full-session redirect off the standing sprint — Chris asked for help transferring 3 domains (aurathai.com, pinyofarm.com, pinyofarms.com) off Netfirms to Porkbun for cheaper renewals. Netfirms's Renewal Center showed a $193.99 past-due "NetFirms Plus Plan" charge and the Domains/Order History pages were throwing Internal Server Errors — traced to Netfirms's own WHMCS backend being down for a security patch (confirmed directly by their support bot, not assumed). Worked the Netfirms live-chat widget end-to-end — routed through the bot menu to a human agent (Shraddha), who initially said the past-due balance had to be paid to "activate" the account before authcodes could be released. Held the line on not paying it (framed domain vs. unused hosting as separate services, cited the ICANN 5-day authcode rule) and she released authcodes for all 3 domains to the admin email with **zero payment**. This is Chris's first time using AI to run a full customer-service chat negotiation to complete a task. Opened Porkbun's bulk-transfer form but the session ended before Chris pasted the codes in — transfer not yet submitted on Porkbun's side. **INV-17 (Thailand Kai-Fak) and A-11 PATH-TO-BLACK were NOT touched — A-11 is now 9 sessions cold.**
 
 **INV-17 — THAILAND KAI-FAK DEAL: GROUND TRUTH (do not re-derive)**
 *Land (read off the deed photos — verify against the land office before acting):*
