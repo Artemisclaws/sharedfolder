@@ -1,6 +1,6 @@
 # EMPIRE_STATUS.md
-**Last Updated:** 2026-07-22 | Session S67 (closed)
-**Updated By:** Claude (S67 close) — new thread INV-17 (Thailand Kai-Fak land deal) analyzed; two structural blockers found (PAHA 15% cap kills the spread; foreign-ownership/nominee bar). Lavu round 4 still pending Kassey's reply. A-11 did not move (8th redirect). SESSION_HISTORY found 2 rows behind (S65, S66 missing).
+**Last Updated:** 2026-07-23 | Session S68 (closed)
+**Updated By:** Claude (S68 close) — off-sprint session: transferred 3 domains (aurathai.com, pinyofarm.com, pinyofarms.com) off Netfirms via AI-run live-chat negotiation, authcodes released with zero payment on the disputed $193.99 balance (Chris's first time using AI to complete a customer-service negotiation end-to-end). Porkbun bulk transfer opened but not yet submitted. INV-17 and A-11 untouched — A-11 now 9 sessions cold.
 
 ---
 
@@ -9,6 +9,7 @@
 | Area | Status | Notes |
 |------|--------|-------|
 | GitHub setup | LIVE | `github.com/Artemisclaws/sharedfolder` |
+| Domains (aurathai.com, pinyofarm.com, pinyofarms.com) | TRANSFER IN PROGRESS | Unlocked + authcodes emailed to admin contact by Netfirms S68, no payment made on the disputed $193.99 past-due balance; pending Chris pasting codes into Porkbun's bulk transfer form and submitting |
 | Discord setup | LIVE | All 8 channels wired |
 | ops.radrooster.co | LIVE - CLOUDFLARE PAGES | Auto-deploy from GitHub. |
 | Obsidian Second Brain | LIVE | S34 - vault synced, graph live |
