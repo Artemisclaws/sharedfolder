@@ -126,6 +126,8 @@ Then deliver a one-paragraph handoff summary to Chris: what was completed, what'
 
 **When Chris types "CHRONICLE" — execute this sequence automatically. Claude-only. Artie does not respond to CHRONICLE.**
 
+**STANDING RULE (added S69, Chris confirmed):** CHRONICLE now runs automatically at every handoff — Claude does not wait for the literal keyword. When Chris triggers "handoff," run Step 6 (the 3 operational writes) AND this CHRONICLE sequence in the same turn, back to back. Chris can still type "CHRONICLE" on its own mid-session if he wants a journal entry outside a handoff.
+
 Chris types one word. Claude does everything else — determines session number, infers topic, writes the entry, pushes it. Zero input required from Chris.
 
 ### Step 1 — Determine session number automatically
