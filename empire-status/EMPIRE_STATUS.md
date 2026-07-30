@@ -275,6 +275,8 @@ Dashboards:             ops.radrooster.co (Cloudflare Pages, auto-deploy from re
 Bixby Knolls Market Intel: bixby-knolls/BIXBY_KNOLLS_MARKET.md (GitHub)
 Aura Thai cost baseline:   aura-thai/COST_BASELINE.md (GitHub, canonical S63) + aura-thai/cost_baseline_tab_builder.gs
                            -> becomes "Cost Baseline" tab in aura_thai_finance once Chris runs builder (A-13)
+Business events log:      events/BUSINESS_LOG.md (GitHub, canonical, added S67-adjacent per Chris request) -- editable by Claude AND Artie. Check here before creating any new business-event log file.
+Personal events log:      personal/PERSONAL_LOG.md (GitHub, canonical, added S67-adjacent per Chris request) -- editable by Claude AND Artie. Separate from BUSINESS_LOG and from CHRONICLE (AI work-session narratives). Check here before creating any new personal-event log file.
 ```
 
 **Ported from MASTER_FILE_MAP (S62):** Tiller sheet owner = aurathailb@gmail.com — IMPORTRANGE access must be granted manually before any master P&L sheet can pull expense data.
