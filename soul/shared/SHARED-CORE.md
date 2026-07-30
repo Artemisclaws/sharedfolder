@@ -180,6 +180,27 @@ Stats are updated at every handoff. Chris never needs to manage the ledger — C
 
 ---
 
+## <!-- #LOG_KEYWORD -->
+## LOG KEYWORD PROTOCOL
+*Added S67-adjacent, per Chris (Lavu negotiation session). Claude AND Artie both respond to this.*
+
+**When Chris (or anyone) types 'log:' followed by a short description — execute automatically, no huddle, no extra questions.**
+
+1. Determine business vs. personal from context. Ask only if genuinely ambiguous.
+2. If business: tag with the business name (aura-thai, vine, pinyo-farms, ai-ventures, roam) if identifiable; write one dated line to 'events/BUSINESS_LOG.md'.
+3. If personal: write one dated line to 'personal/PERSONAL_LOG.md'.
+4. Format for both: 'YYYY-MM-DD | tag | what happened' — reverse-chronological, newest on top.
+5. Push to GitHub (Contents API, PAT via Drive fileId 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT). Verify 200.
+6. Confirm back to Chris in one line — what was logged, and to which file.
+
+**Force a destination:** 'log business:' or 'log personal:' overrides the automatic guess.
+
+**Not the same as CHRONICLE** (AI work-session narratives) or **handoff** (SPRINT/EMPIRE_STATUS/SESSION_HISTORY three-write). LOG is for dated one-line life/business events, nothing more — no analysis, no narrative, just the record.
+
+Both log files are registered in EMPIRE_STATUS.md REGISTRY — check there before ever creating a new log file; do not duplicate.
+
+---
+
 *Every change to this file logged in: `indexes/SOUL_CHANGELOG.md`*
 *Full mental model library: `soul/shared/THINKING_OS.md`*
 *Archived predecessor: `soul/shared/EMPIRE_RULES.md` (S32)*
