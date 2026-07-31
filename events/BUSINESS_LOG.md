@@ -7,4 +7,5 @@
 
 ---
 
+2026-07-30 | aura-thai | Lavu negotiation fully closed out post-signing. Complete fee schedule confirmed: 4% dual-pricing rate, PCI $24.99 (drops at compliance), Gateway waived, Platform $24.99, Dues & Assessments waived, Support no fee, Chargeback $25/occurrence, Replacement hardware no fee, Return shipping no fee (label provided), Statement no fee. Hardware/Lavu Care confirmed: hardware is kept outright at end of 12-month term, renewal option (12-36mo) locks rates, Lavu Care + replacement + shipping all included at no extra cost for the life of the agreement. No open items remain.
 2026-07-30 | aura-thai | Signed new Lavu POS/payments agreement (Order Form #28666). Final terms: $259/mo software (Lavu POS $150 + Additional Terminal $50 + Digital Gift Cards $59, MenuDrive $0), all hardware + professional services at 100% off ($0 one-time), 12-month term with no early termination fee (cancellation-policy language corrected mid-negotiation to remove "early exit penalty" wording), August billing waived as a goodwill credit. Full negotiation history in Drive checkpoint files (lavu_negotiation_email-draft_v1 through v22) and Drive checkpoint docs.
