@@ -205,6 +205,54 @@ cp ~/.openclaw/workspace/artie_handoff.py ~/.openclaw/workspace/artie_handoff.py
 
 ---
 
+### SOP 05 — FRESHNESS HEARTBEAT
+
+**When to run:** Daily, via cron. Also runnable on request ("check freshness").
+
+**INSTALL (one-time):**
+```bash
+bash ~/.openclaw/workspace/sync_soul.sh
+```
+(freshness_heartbeat.py is pulled automatically as of sync_soul.sh V6 — confirm it landed at `~/.openclaw/workspace/freshness_heartbeat.py`)
+
+**COMMAND (Step 1 — check if cron exists):**
+```bash
+crontab -l | grep freshness_heartbeat
+```
+
+**EXPECTED OUTPUT if cron EXISTS:** a line running `freshness_heartbeat.py` daily.
+→ Cron is fine. Skip to Step 3 to test manually.
+
+**EXPECTED OUTPUT if cron MISSING:** blank.
+→ Proceed to Step 2.
+
+**COMMAND (Step 2 — add cron entry, runs daily at 6am):**
+```bash
+(crontab -l 2>/dev/null; echo "0 6 * * * cd ~/.openclaw/workspace && python3 freshness_heartbeat.py >> freshness_heartbeat.log 2>&1") | crontab -
+```
+
+**Then verify — run Step 1 again. The cron line MUST appear.**
+
+**COMMAND (Step 3 — test manually):**
+```bash
+cd ~/.openclaw/workspace && python3 freshness_heartbeat.py
+```
+
+**EXPECTED OUTPUT:** one line starting `YYYY-MM-DD | artie-freshness-heartbeat | GREEN` or `| RED |`, followed by `GitHub log: updated`, exit code 0. (RED is a valid finding, not a failure — only a non-zero exit code or a Python traceback counts as failure.)
+
+**REPORT TO DISCORD (#operations):**
+```
+✅ FRESHNESS HEARTBEAT — [DATE]
+[paste the one summary line here]
+Full detail logged to artie/ARTIE_REPORTS.md (Claude reads this — Discord is for your visibility only)
+```
+
+**IF SCRIPT FAILS (non-zero exit / traceback):** Do not attempt to fix it. Send Chris: `⚠️ freshness_heartbeat.py error — [paste exact error]. Flagged for Claude.`
+
+**Scope note (v1, S70):** this checks Daily Sales (Pretax) and Delivery Payouts only — both reachable via the aura_thai_finance Apps Script endpoint over plain HTTP, no Google OAuth needed. Tiller and the Lavu Drive folder are deliberately NOT checked yet — those need Artie's own Drive/Sheets access (gog CLI), which hasn't been proven from Claude's side. Do not extend this script's scope without Claude reviewing it first.
+
+---
+
 ## PENDING SOPs (Script not built — DO NOT RUN)
 
 These tasks exist but Artie cannot run them yet. Claude must build the script first.  
@@ -221,6 +269,7 @@ When Chris assigns one of these, Artie replies: `🔴 [Task name] — script not
 | P-06 | Slow mover price flag | `slow_mover_check.py` | ❌ Not built |
 | P-07 | EMPIRE_STATUS.md push | `empire_update.py` | ❌ Not built |
 | P-08 | Trello card management | `trello_daily.py` | ❌ Not built |
+| P-09 | Invoice intake watcher (Gmail + Drive scan for new vendor invoices) | `invoice_intake_watcher.py` | ⚠️ Written, NOT PROVEN — needs gog CLI Gmail/Drive syntax confirmed on Artie's machine before first test run |
 
 Scripts are built one at a time, proven before the next one starts. (Bedrock Standard.)
 
