@@ -139,7 +139,7 @@ def main():
     state = load_state()
     since = state.get("last_run")
     today = datetime.date.today().isoformat()
-    now_iso = datetime.datetime.utcnow().isoformat() + "Z"
+    now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
     errors = []
     n_emails = None
