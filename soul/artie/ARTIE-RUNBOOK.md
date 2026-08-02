@@ -253,6 +253,50 @@ Full detail logged to artie/ARTIE_REPORTS.md (Claude reads this — Discord is f
 
 ---
 
+### SOP 06 — INVOICE INTAKE WATCHER
+
+**When to run:** Daily, via cron (once proven — see FIRST TEST RUN below). Also runnable on request ("check invoices").
+
+**Prerequisite (confirmed working S70):** `gog auth status` for `artemisclaws@gmail.com` must show a valid grant. If any `gog` command returns `invalid_grant`, run `gog login artemisclaws@gmail.com` and re-authorize before anything else in this SOP.
+
+**INSTALL (one-time):**
+```bash
+bash ~/.openclaw/workspace/sync_soul.sh
+ls -la ~/.openclaw/workspace/invoice_intake_watcher.py
+```
+
+**COMMAND (Step 1 — FIRST TEST RUN, manual, required before cron):**
+```bash
+cd ~/.openclaw/workspace && python3 invoice_intake_watcher.py
+```
+
+**EXPECTED OUTPUT:** one line: `YYYY-MM-DD | artie-invoice-intake-watcher | GREEN | N new invoice email(s), M new Drive file(s) since first run`, then `GitHub log: updated`, exit code 0. Confirm N and M actually match what's in the inbox/folder before trusting this on a schedule — that's the whole point of a manual first run.
+
+**IF STEP 1 FAILS with `gog ... invalid_grant`:** re-run `gog login artemisclaws@gmail.com`, then retry. Do not add to cron until Step 1 succeeds cleanly.
+
+**COMMAND (Step 2 — add cron entry, runs daily at 7am, after the freshness heartbeat):**
+```bash
+(crontab -l 2>/dev/null; echo "0 7 * * * cd ~/.openclaw/workspace && python3 invoice_intake_watcher.py >> invoice_intake_watcher.log 2>&1") | crontab -
+```
+
+**Then verify:**
+```bash
+crontab -l | grep invoice_intake_watcher
+```
+
+**REPORT TO DISCORD (#operations):**
+```
+✅ INVOICE INTAKE WATCHER — [DATE]
+[paste the one summary line here]
+Full detail logged to artie/ARTIE_REPORTS.md
+```
+
+**IF SCRIPT FAILS (non-zero exit):** Do not attempt to fix it. Send Chris: `⚠️ invoice_intake_watcher.py error — [paste exact error]. Flagged for Claude.`
+
+**Scope note (v2, S70):** existence/count check only — does NOT read or extract invoice data yet. That's a separate future script, built only after this one has run cleanly on cron for a while (Bedrock rule: prove one thing before layering the next).
+
+---
+
 ## PENDING SOPs (Script not built — DO NOT RUN)
 
 These tasks exist but Artie cannot run them yet. Claude must build the script first.  
@@ -269,7 +313,7 @@ When Chris assigns one of these, Artie replies: `🔴 [Task name] — script not
 | P-06 | Slow mover price flag | `slow_mover_check.py` | ❌ Not built |
 | P-07 | EMPIRE_STATUS.md push | `empire_update.py` | ❌ Not built |
 | P-08 | Trello card management | `trello_daily.py` | ❌ Not built |
-| P-09 | Invoice intake watcher (Gmail + Drive scan for new vendor invoices) | `invoice_intake_watcher.py` | ⚠️ Written, NOT PROVEN — needs gog CLI Gmail/Drive syntax confirmed on Artie's machine before first test run |
+| — | Invoice intake watcher | `invoice_intake_watcher.py` | ✅ gog syntax + JSON shapes confirmed S70 — see SOP 06. Needs one manual first-run confirmation before cron. |
 
 Scripts are built one at a time, proven before the next one starts. (Bedrock Standard.)
 
