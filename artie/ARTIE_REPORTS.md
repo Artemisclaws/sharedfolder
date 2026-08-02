@@ -6,3 +6,5 @@
 `YYYY-MM-DD | script-name | STATUS | detail`
 
 ---
+
+2026-08-01 | artie-freshness-heartbeat | RED | Daily Sales current to 2026-07-27 (5d, budget 7d) | Delivery Payouts: PENDING -- 2026-07-13 to 2026-07-20
