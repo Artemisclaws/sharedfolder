@@ -1,54 +1,43 @@
 #!/usr/bin/env python3
 """
-ARTIE — INVOICE INTAKE WATCHER (v1 draft, S70)
-STATUS: WRITTEN, NOT PROVEN. Do not add to cron until a manual test run
-succeeds on Artie's machine. See "OPEN QUESTIONS" below -- Claude cannot
-verify the Gmail/Drive OAuth pieces from this session; only Artie's own
-environment can.
+ARTIE — INVOICE INTAKE WATCHER (v2, S70)
+STATUS: gog syntax + JSON shapes CONFIRMED on Artie's machine (2026-08-01).
+Auth was re-authorized same session (old refresh token had gone invalid_grant).
+Still needs ONE manual test run before cron -- see FIRST TEST RUN below.
 
-PURPOSE: existence/count check only (no invoice reading/extraction yet --
-that's a separate future script, built only after this one is proven,
-per the Bedrock rule of proving one script before layering the next).
+PURPOSE: existence/count check only (no invoice reading/extraction --
+that's a separate future script, built only after this one is proven).
+
+Uses the `gog` CLI (not raw Python OAuth libraries -- v1 draft assumed
+that and was wrong; gog is the actual mechanism on this machine).
 
 Checks since the last run:
-  1. New Gmail messages to artemisclaws+invoices@gmail.com
+  1. New Gmail threads to artemisclaws+invoices@gmail.com
+     -> gog gmail search "..." -a artemisclaws@gmail.com -j --max 50
+     -> JSON shape confirmed: {"nextPageToken": "", "threads": [...]}
   2. New files in the "Invoices Dump Folder" Drive folder
-     (id: 1HkVrBfkooEdjzRlj_Jg_jFdcoGwObyza, created S70 2026-08-02)
+     (id: 1HkVrBfkooEdjzRlj_Jg_jFdcoGwObyza)
+     -> gog drive ls --parent <id> -a artemisclaws@gmail.com -j
+     -> JSON shape confirmed: {"files": [{"id","mimeType","modifiedTime",
+        "name","parents","webViewLink"}], "nextPageToken": ""}
+     -> Archive subfolder itself will always appear in this list -- it's
+        excluded by name below so it doesn't get counted as "a new invoice."
 
 COMMAND:        python3 invoice_intake_watcher.py
 EXPECTED OUTPUT: one summary line, exit code 0 (0 new items is a valid
                  result, not a failure)
 REPORT:         appends the summary line to artie/ARTIE_REPORTS.md on
-                 GitHub (same mechanism as freshness_heartbeat.py --
-                 that part IS proven). Also prints for Discord relay.
+                 GitHub. Also prints for Discord relay.
 
-OPEN QUESTIONS (resolve before first test run):
-  - Does this machine have google-api-python-client + google-auth
-    installed? (pip show google-api-python-client)
-  - Do the token files at
-      /home/artemis/.openclaw/workspace/credentials/gmail_token.json
-      /home/artemis/.config/google-drive-mcp/tokens.json
-    match the google.oauth2.credentials.Credentials schema this script
-    assumes (token, refresh_token, client_id, client_secret, scopes)?
-    If they're a different shape (e.g. the "gog" CLI's own format),
-    this script's load_credentials() needs rewriting to match -- do
-    not guess, check the actual file structure first.
-  - Does gmail_token.json have the readonly Gmail scope, and does the
-    Drive token have at least drive.readonly on the target folder?
-  - Alternative if the above is a dead end: check whether "gog" itself
-    exposes a search/list subcommand (run `gog --help` and
-    `gog gmail --help` / `gog drive --help` on Artie's machine) and
-    rewrite this to shell out to gog instead of using the Python
-    libraries directly. Report back to Claude either way.
-
-FIRST TEST RUN: run manually, read the output carefully, confirm counts
-look right against what's actually in the inbox/folder, THEN add to cron
-(same two-step pattern as SOP 03 / SOP 05).
+FIRST TEST RUN: run manually, confirm the counts match what's actually in
+the inbox/folder, THEN add to cron (same two-step pattern as SOP 03/05).
+Suggested cron once proven: daily, e.g. "0 7 * * *" (after the 6am
+freshness heartbeat).
 """
 
-import urllib.request
-import urllib.parse
+import subprocess
 import json
+import urllib.request
 import datetime
 import sys
 import os
@@ -58,11 +47,19 @@ GITHUB_REPO = "Artemisclaws/sharedfolder"
 GITHUB_LOG_PATH = "artie/ARTIE_REPORTS.md"
 STATE_FILE = os.path.expanduser("~/.openclaw/workspace/invoice_intake_state.json")
 
+ACCOUNT = "artemisclaws@gmail.com"
 INVOICES_FOLDER_ID = "1HkVrBfkooEdjzRlj_Jg_jFdcoGwObyza"  # Invoices Dump Folder
-GMAIL_QUERY = "to:artemisclaws+invoices@gmail.com"
+ARCHIVE_SUBFOLDER_NAME = "Archive"
+GMAIL_QUERY_BASE = "to:artemisclaws+invoices@gmail.com"
 
-GMAIL_TOKEN_PATH = os.path.expanduser("/home/artemis/.openclaw/workspace/credentials/gmail_token.json")
-DRIVE_TOKEN_PATH = os.path.expanduser("/home/artemis/.config/google-drive-mcp/tokens.json")
+
+def run_gog(args):
+    """Run a gog command, return parsed JSON. Raises on non-zero exit."""
+    cmd = ["gog"] + args + ["-a", ACCOUNT, "-j"]
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+    if result.returncode != 0:
+        raise RuntimeError(f"gog {' '.join(args)} failed (exit {result.returncode}): {result.stderr.strip()}")
+    return json.loads(result.stdout)
 
 
 def load_state():
@@ -118,47 +115,23 @@ def append_github_log(line):
     return bool(result.get("commit", {}).get("sha"))
 
 
-def count_new_gmail_messages(since_iso):
-    """
-    UNVERIFIED. Assumes google-api-python-client + a standard OAuth
-    Credentials JSON at GMAIL_TOKEN_PATH. If gmail_token.json is a
-    different shape, this will raise -- that's expected and fine, it'll
-    surface as a script failure the first manual test run, which is the
-    point of testing manually before cron.
-    """
-    from google.oauth2.credentials import Credentials
-    from googleapiclient.discovery import build
-
-    creds = Credentials.from_authorized_user_file(GMAIL_TOKEN_PATH)
-    service = build("gmail", "v1", credentials=creds)
-
-    query = GMAIL_QUERY
+def count_new_gmail_threads(since_iso):
+    query = GMAIL_QUERY_BASE
     if since_iso:
         since_date = datetime.date.fromisoformat(since_iso[:10])
         query += f" after:{since_date.strftime('%Y/%m/%d')}"
-
-    resp = service.users().messages().list(userId="me", q=query, maxResults=50).execute()
-    messages = resp.get("messages", [])
-    return len(messages)
+    data = run_gog(["gmail", "search", query, "--max", "50"])
+    threads = data.get("threads", [])
+    return len(threads)
 
 
 def count_new_drive_files(since_iso):
-    """
-    UNVERIFIED. Assumes google-api-python-client + a standard OAuth
-    Credentials JSON at DRIVE_TOKEN_PATH.
-    """
-    from google.oauth2.credentials import Credentials
-    from googleapiclient.discovery import build
-
-    creds = Credentials.from_authorized_user_file(DRIVE_TOKEN_PATH)
-    service = build("drive", "v3", credentials=creds)
-
-    q = f"'{INVOICES_FOLDER_ID}' in parents and trashed = false"
+    args = ["drive", "ls", "--parent", INVOICES_FOLDER_ID]
     if since_iso:
-        q += f" and modifiedTime > '{since_iso}'"
-
-    resp = service.files().list(q=q, fields="files(id, name, modifiedTime)").execute()
-    files = resp.get("files", [])
+        args += ["--query", f"modifiedTime > '{since_iso}'"]
+    data = run_gog(args)
+    files = data.get("files", [])
+    files = [f for f in files if f.get("name") != ARCHIVE_SUBFOLDER_NAME]
     return len(files), [f["name"] for f in files]
 
 
@@ -174,14 +147,14 @@ def main():
     file_names = []
 
     try:
-        n_emails = count_new_gmail_messages(since)
+        n_emails = count_new_gmail_threads(since)
     except Exception as e:
-        errors.append(f"Gmail check failed: {type(e).__name__}: {e}")
+        errors.append(f"Gmail check failed: {e}")
 
     try:
         n_files, file_names = count_new_drive_files(since)
     except Exception as e:
-        errors.append(f"Drive check failed: {type(e).__name__}: {e}")
+        errors.append(f"Drive check failed: {e}")
 
     if errors:
         line = f"{today} | artie-invoice-intake-watcher | ERROR | " + " || ".join(errors)
@@ -194,8 +167,7 @@ def main():
     if file_names:
         detail += f" ({', '.join(file_names)})"
 
-    status = "GREEN" if (n_emails or 0) + (n_files or 0) >= 0 else "GREEN"  # existence check never RED by itself
-    line = f"{today} | artie-invoice-intake-watcher | {status} | {detail}"
+    line = f"{today} | artie-invoice-intake-watcher | GREEN | {detail}"
     print(line)
 
     pushed = append_github_log(line)
