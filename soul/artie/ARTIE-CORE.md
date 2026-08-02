@@ -145,7 +145,7 @@ Auto-sync runs every 6 hours. When Chris says "soul files updated", "sync now", 
 bash /home/artemis/.openclaw/workspace/sync_soul.sh
 ```
 
-**sync_soul.sh — updated V5 (add SHARED-CORE):**
+**sync_soul.sh — updated V6 (add freshness_heartbeat.py, S70):**
 ```bash
 #!/bin/bash
 RAW="https://raw.githubusercontent.com/Artemisclaws/sharedfolder/main"
@@ -157,6 +157,7 @@ curl -sS "$RAW/soul/artie/ARTIE-PROJECTS.md"   -o "$WORKSPACE/ARTIE-PROJECTS.md"
 curl -sS "$RAW/soul/artie/ARTIE-RUNBOOK.md"    -o "$WORKSPACE/ARTIE-RUNBOOK.md"
 curl -sS "$RAW/soul/artie/ARTIE-DEPT.md"       -o "$WORKSPACE/ARTIE-DEPT.md"
 curl -sS "$RAW/soul/artie/artie_handoff.py"    -o "$WORKSPACE/artie_handoff.py"
+curl -sS "$RAW/soul/artie/freshness_heartbeat.py" -o "$WORKSPACE/freshness_heartbeat.py"
 curl -sS "$RAW/soul/shared/SHARED-CORE.md"     -o "$WORKSPACE/SHARED-CORE.md"
 curl -sS "$RAW/soul/shared/THINKING_OS.md"     -o "$WORKSPACE/THINKING_OS.md"
 
