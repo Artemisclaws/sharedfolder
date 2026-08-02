@@ -259,12 +259,14 @@ GitHub PAT:             Drive fileId 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT (Drive on
 --- LIVE data (budget + check method) ---
 Tiller (expenses):      1NCnzbY9LZXB5HYaZQ5bppEBL_19qweF2xQCdoXmaSP4  [3d | CONTENT: newest transaction date]
 aura_thai_finance:      1KSTvAjsTLHhy5Lbk3jXva0AQzPg68ff13IMoLLK2aaE  [7d | CONTENT: newest data-row date -- mtime lies here, proven 2026-07-03. Delivery Payouts tab now current to 2026-07-19 (UberEats+DoorDash rows written S69). Write endpoint LIVE: https://script.google.com/macros/s/AKfycbzpDwWXpxAfryJ6Re23HzePLOaWXTgGAkVMXLxTVArH-pzZtrzAWuKpk5KcWzSavdNLHQ/exec | WRITE_SECRET: 1-10 | GET-only (POST fails on this deployment, cause undiagnosed) -- see aura_thai_finance_write_endpoint.gs]
-Lavu Drive folder:      1_5WYvoliZ46w4mRuIayLm8uoMBeHb-mZ             [35d | MTIME: newest file in folder]
+Lavu Drive folder:      1_5WYvoliZ46w4mRuIayLm8uoMBeHb-mZ             [SUPERSEDED S70 -- real Lavu intake moved to Finance Dump Folder, this old folder is stale by design now, do not flag it red. Real freshness signal is Daily Sales (Pretax) tab in aura_thai_finance, checked automatically by Artie SOP 05 freshness_heartbeat.py (daily cron, logs to artie/ARTIE_REPORTS.md).]
+Invoices Dump Folder:   1HkVrBfkooEdjzRlj_Jg_jFdcoGwObyza             [created S70 -- fallback photo capture for Taiwah/SJ invoices when they don't email; primary path is artemisclaws+invoices@gmail.com. Watched by invoice_intake_watcher.py (P-09, NOT YET LIVE -- see ARTIE-RUNBOOK)]
 --- FROZEN (immutable -- never flag stale; flag only if unexpectedly modified) ---
 Lavu Daily Sale 2025:   1_MCQ3VeivrefxEf16e9pHidPrrZDIOJf6Ou78P9Qofc  [FROZEN -- full-year 2025, complete]
 --- No freshness semantics (reference pointers) ---
 Menu Price Chart:       1NH9jSLoUaRxGQksqB4Wyh_7eWj4Hju6FiBSuTxTVmuU
 "G Drive with Claude":  folder 1yYWUZmU__ldcvIWeTqh2wsT1ZDL30FhW (synced: ~/Documents/G Drive with Claude)
+Artie Reports Log:      artie/ARTIE_REPORTS.md (GitHub, canonical, added S70) -- machine-generated reports from Artie's automated scripts (freshness heartbeat, future invoice intake watcher). Discord posts are Chris-visibility only, Claude has no Discord connector -- this file is the actual Artie-to-Claude channel. Check on request or when Artie automation is discussed; not part of mandatory boot load.
 NOTE (S62): github_pat.txt currently sits in Drive _ARCHIVE root — fileId valid regardless; Chris to relocate.
 Apps Script:            1lNMZ_Hvwj-4ncLGy0nWN9rEr6xJYADZxM9OpOTTloNfGsAIA0DV-uDzr
 Discord: #general 1493421633359315089 | #finance 1501467891474759770 |
