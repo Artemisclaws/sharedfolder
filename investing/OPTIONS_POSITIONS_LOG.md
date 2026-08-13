@@ -52,3 +52,23 @@
 ## Graph Links
 Governing playbook: `sessions/S55/pinyo-family_investment-playbook_v2.md`
 EMPIRE_STATUS / SPRINT: `00-load-me/SPRINT.md`, `empire-status/EMPIRE_STATUS.md`
+
+
+---
+
+## S71 UPDATE — 2026-08-13 (verified against Fidelity activity + order screens)
+
+**CLOSED:**
+- VZ Aug 21 '26 $40 CSP — BOUGHT TO CLOSE 2026-07-17 @ $0.25 ($25.01 w/ fee). GTC exit order filled as designed. P/L ~ +$70. Cycle 1 leg fully closed. (Google Sheet `Options Wheel Trading Log` VZ row still says OPEN — Chris to fix; Claude cannot edit sheets.)
+
+**PENDING / OPEN as of 2026-08-13 close:**
+- SCHD Aug 21 '26 $33 C x3 (short): ITM ($34.43). ROLL ORDER PLACED 8/13: BTC 3x Aug $33 + STO 3x Oct 16 '26 $35 C, $1.00 net debit, DAY — queues for 8/14 open. If unfilled by ~11am: bump $1.05 then $1.10 max. Old $0.09 BTC GTC = canceled (Pending Cancel confirmed on screen).
+- KO Aug 21 '26 $87.50 C x1 (short): OTM (KO ~$86.48). BTC GTC $0.23 still resting. Expires 8/21 — decision by Friday: let expire / close / roll.
+
+**Roth non-options context (affects collateral):** NVDA fully exited 7/22 + 8/5 (~$3,673.78 to cash). Roth settled cash $13,679.33 = wheel collateral pot.
+
+**Related equity orders (Schwab, S71 diversification plan — logged here for cross-exposure check per combined-exposure rule):**
+- SELL PLTR 31 @ $179 GTC + 31 @ $183 GTC (walk-down rule from 8/17)
+- SELL NFLX 50 market (fills 8/14 open)
+- BUY PG 15 @ $142.50 / 15 @ $140.50 / 15 @ $137.50 GTC
+- Legacy GTC sells resting in Roth: USO 5 @ $150, UNH 3 @ $450, META 4 @ $649
