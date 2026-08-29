@@ -1,6 +1,6 @@
-# CLAUDE-CORE.md — V9
+# CLAUDE-CORE.md — V10
 **Always load this file at the start of every Claude session.**
-*Updated: 2026-07-07 | Session 62 | V9: Bedrock migration step 3 — boot/freshness gate + 3-write handoff per BEDROCK_SYSTEM_DESIGN_v2 §5, Fireteam huddle/debrief §9, PARK/RIDE idea capture §10, master-file-map section removed (REGISTRY in EMPIRE_STATUS replaces it), header version fork (V3/V8) fixed — closes I-25 H4*
+*Updated: 2026-08-29 | Session S72 | V10: Google Drive model rewritten — three-account role split (chrispinyo/aurathailb/artemisclaws), 5-bucket ATLAS/Active/Final/Resource/_ARCHIVE structure (supersedes the two-lane v2 §6 model and the S72-superseded per-business nesting), file-naming convention locked, Mac sync folder redefined as the Active/ working mirror, no-hand-maintained-map rule reaffirmed against named proven models (Forte's PARA, Wickman's EOS, Gmail's "search, don't sort"). Physical Drive migration NOT yet executed as of this session — see checkpoint_gdrive-folder-system-design_2026-08-29-v2.md for the execution order.*
 *Maintained by: Claude | Approved by: Chris*
 
 ---
@@ -303,38 +303,39 @@ github.com/Artemisclaws/sharedfolder
 └── dashboard/           index.html → ops.radrooster.co
 ```
 
-### Google Drive — Warehouse + Delivery Dock (v2 §6)
-Two lanes, nothing else:
-1. **Data lane** (`DATA/`, Lavu folder, master sheets): machine- and Chris-written; Claude reads, never writes.
-2. **Deliverables lane** (`G Drive with Claude` synced folder): docx/xlsx/pdf/drafts Chris consumes; Claude has read/write via Cowork + Drive for Desktop.
+### Google Drive — three-account model (LOCKED S72, supersedes the two-lane v2 §6 model and the prior per-business-nested nesting)
+Full reasoning and execution order: `checkpoint_gdrive-folder-system-design_2026-08-29-v2.md` (Cowork outputs — port into GitHub once execution completes). **Physical migration NOT yet executed as of S72 close** — this is the standing rule going forward, not yet the live state of Drive. Do not assume the tree below already exists; a session must confirm it before relying on it.
 
-Drive is NOT a home for anything an agent must read to act — no soul files, no status, no indexes, no SOPs. Drive `Soul/` copies carry the CACHE header or move to `_ARCHIVE/`.
+**Account roles:**
+- **chrispinyo@gmail.com** (2TB) — bulk storage, every business except Aura Thai. Only the 5-bucket structure below is shared as Editor with artemisclaws; everything else in the account (personal, sensitive) stays untouched and invisible to AI, by design — never request broader access than this.
+- **aurathailb@gmail.com** (100GB) — dedicated Aura Thai home. All Aura Thai content consolidates here. Dedup pass against chrispinyo's old Aura Thai copies required before any deletion — Chris confirms deletions explicitly; trash_file (soft-delete) only, never a permanent delete without confirmation.
+- **artemisclaws@gmail.com** — AI-operational account, hosts this GitHub repo. Gets Editor access ONLY to the 5-bucket folders on the other two accounts, via `share_file` — never a whole-account grant.
 
+**Folder shape — identical on chrispinyo and aurathailb, business subfolders live inside each stage bucket, not the reverse:**
 ```
-PROJECTS/
-├── aura-thai/           README · scripts · data · comms · media
-├── pinyo-farms/         README · plans · listings · research
-├── fb-arbitrage/        README · tracker · reviews · listings
-├── ai-ventures/         README · experiments · proposals
-├── roam/                README · photos · listings · content
-└── artie/               scripts/ · config/ · cron-logs/
-REFERENCE/               templates/
-DATA/                    doordash/ · ubereats/ · grubhub/ · lavu/ · 1099s/
-JOURNAL/                 one Google Doc per session
-_ARCHIVE/                everything superseded
+ATLAS/          ideas, brainstorms — <business>/ subfolders
+Active/         in-progress work, Claude's editable working set — <business>/ subfolders
+Final/          current good copy of completed work — <business>/ subfolders
+Resource/       reference material, not tied to one project's lifecycle — General/ + <business>/
+_ARCHIVE/       retired/superseded — deduped and consolidated BEFORE storing, never a dumping ground
 ```
+`DATA/` stays separate and untouched (raw feeds — Claude reads, never writes). `JOURNAL/` is retired from Drive — single home is this repo's `journal/` (CHRONICLE), topic tags widened to include life/personal per Chris's standing ask to record the whole journey (business, life, AI — potential future YouTube material).
 
-### Mac — Workbench
-Working copies and session artifacts; everything disposable or in transit. Folder convention: `/Users/macbook/Documents/Claude/Projects/` (checkpoints/scripts/docs/data/archive). The hand-written FILE_INDEX table is retired (step 5).
+**File naming convention (LOCKED S72):** living files (Active/Resource — Claude edits in place) use `<business>_<type>_<slug>_v#.ext`; point-in-time files (Final/_ARCHIVE snapshots — never overwritten) use `<business>_<type>_<slug>_YYYY-MM-DD.ext`. Lowercase-hyphenated slugs, underscore-separated major fields, ISO 8601 dates, controlled `<type>` vocabulary (sop, brief, checkpoint, report, tracker, template, plan, brainstorm, log) — reuse existing terms, don't invent new ones per file. Business prefix always included even though the folder implies it — filenames must be self-identifying in flat search results that don't show full path.
+
+**No hand-maintained file map — reaffirmed, do not reintroduce one.** Recall = predictable structure + live cross-account search (Drive connector's `search_files`, once aurathailb's folders are shared) + a short pinned-links REGISTRY on The Bridge dashboard for daily-use files only, same pattern as EMPIRE_STATUS's REGISTRY. Validated against three named models before locking: Tiago Forte's PARA (the bucket shape itself; his "just-in-time organizing" against exhaustive indexing), Gino Wickman's EOS scorecard discipline (track a few things well, not everything loosely), and Gmail's founding "search, don't sort" design principle.
+
+### Mac — Claude's editable working mirror (redefined S72, supersedes "Workbench")
+The "G Drive with Claude" synced folder exists for exactly one reason: the Drive MCP connector is read/search/create only — it cannot edit file content, which is why Claude was creating duplicate files instead of editing existing ones. Fix: this folder syncs specifically to the **Active/** tree (both accounts, as feasible), so Claude edits real files in place instead of duplicating via the connector. Chris does not need to browse this folder directly — outcomes surface on The Bridge dashboard, not here.
 
 ### Obsidian — Notebook + Map
 The vault IS the repo. Operational truth originates only in the five homes; `_inbox/` is where new idea notes are born. Links, graph, and dataview connect ideas to the overall picture.
 
-### WORKING DOCUMENTS — COWORK + DRIVE SYNC (MANDATORY, S59)
+### WORKING DOCUMENTS — COWORK + DRIVE SYNC (MANDATORY, S59, re-scoped S72)
 
 **All working documents Claude edits go through the synced local folder. This is the only editing method.**
 
-- **Folder:** `~/Documents/G Drive with Claude` on Chris's Mac — synced to Google Drive by Drive for Desktop (Drive web -> Computers > My MacBook Pro > Documents > G Drive with Claude).
+- **Folder:** `~/Documents/G Drive with Claude` on Chris's Mac — synced to Google Drive by Drive for Desktop (Drive web -> Computers > My MacBook Pro > Documents > G Drive with Claude). **As of S72: this folder mirrors the Active/ buckets above, not a free-floating dump** — re-point during execution of the S72 design.
 - **Why:** The Drive MCP connector is read/search/create only — it CANNOT edit files. Cowork file tools have full read/write on a connected local folder; Drive for Desktop syncs every change to the cloud automatically, both directions.
 - **Protocol:** At session start, Chris connects "G Drive with Claude" to the Cowork session. Claude reads/writes/edits files there directly. Never attempt file edits through the Drive connector.
 - **Formats:** Regular files only (.md, .docx, .xlsx, .pdf, .csv). Native Google Docs/Sheets cannot be edited this way — keep working docs in these formats.
@@ -456,6 +457,7 @@ Soul files (CLAUDE-CORE, SHARED-CORE, EMPIRE_STATUS, SPRINT) are locked. Edits w
 *V6 changes (S51): CHRONICLE keyword protocol added.*
 *V8 changes (S59): WORKING DOCUMENTS rule added.*
 *V9 changes (S62): Bedrock migration step 3 — SESSION BOOT PROTOCOL (freshness gate, boot line, huddle), HANDOFF trimmed to three writes (debrief in the SESSION_HISTORY row), PARK/RIDE idea capture added, five-homes + cache rule added to FILE SYSTEM, master-file-map section removed (REGISTRY in EMPIRE_STATUS replaces it), RPG_LEDGER retired throughout, classification rule (§8) added, header version fork fixed (closes I-25 H4).*
+*V10 changes (S72): FILE SYSTEM REFERENCE's Google Drive section fully rewritten — three-account role split (chrispinyo/aurathailb/artemisclaws) with folder-scoped Editor access only, 5-bucket ATLAS/Active/Final/Resource/_ARCHIVE structure (supersedes the two-lane model and the earlier per-business nesting), file-naming convention (versioned living files vs. dated point-in-time files), Mac sync folder redefined as the Active/ working mirror (root-cause fix for Claude creating duplicate files instead of editing), no-hand-maintained-map rule reaffirmed against three named proven models. Physical migration queued, not yet executed — see checkpoint_gdrive-folder-system-design_2026-08-29-v2.md.*
 
 ## 🔗 Graph Links
 [[HOME]] | [[SHARED-CORE]] | [[ARTIE-CORE]] | [[EMPIRE_STATUS]] | [[SPRINT]] | [[MASTER_OPEN_ITEMS]]
