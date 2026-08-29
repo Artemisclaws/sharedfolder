@@ -24,7 +24,7 @@
 | Daily digest cron (#general) | NOT BUILT | |
 | Build Philosophy | LOCKED S46 | Navy SEAL rules. Manual to automated phases. |
 | GitHub Handoff PAT | FIXED S49 | Drive MCP only (fileId: 1528C9LxOxjxQvS5iUM8vFjE50clNM1NT). No local paths. |
-| CLAUDE-CORE.md | V9 S62 | Boot/freshness gate, 3-write handoff w/ debrief, huddle, PARK/RIDE. |
+| CLAUDE-CORE.md | V10 S72 | Boot/freshness gate, 3-write handoff w/ debrief, huddle, PARK/RIDE (S62) + 3-account Drive model, 5-bucket structure, naming convention, Mac sync redefined (S72). |
 | Cowork project instructions | FIXED S51 | Now uses GitHub API via bash - no more stale web_fetch cache. |
 | CHRONICLE protocol | LIVE S51 | journal/session_SXX_date.md + indexes/CONTENT_LOG.md. S48 entry tested. |
 | ARTIE-CORE.md | V6 S50 | Session start/end protocol added |
