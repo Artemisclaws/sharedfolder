@@ -7,6 +7,7 @@
 
 ---
 
+2026-10-20 | artie-invoice-intake-watcher | ERROR | Gmail check failed: gog gmail search to:artemisclaws+invoices@gmail.com after:2026/09/29 --max 50 failed (exit 1): Get "https://gmail.googleapis.com/gmail/v1/users/me/threads?alt=json&maxResults=50&prettyPrint=false&q=to%3Aartemisclaws%2Binvoices%40gmail.com+after%3A2026%2F09%2F29": round trip: base token source: oauth2: "invalid_grant" "Bad Request" || Drive check failed: gog drive ls --parent 1HkVrBfkooEdjzRlj_Jg_jFdcoGwObyza --query modifiedTime > '2026-09-29T14:00:03.128823+00:00' failed (exit 1): Get "https://www.googleapis.com/drive/v3/files?alt=json&corpora=allDrives&fields=nextPageToken%2C+files%28id%2C+name%2C+mimeType%2C+size%2C+modifiedTime%2C+parents%2C+webViewLink%29&includeItemsFromAllDrives=true&orderBy=modifiedTime+desc&pageSize=20&pageToken=&prettyPrint=false&q=modifiedTime+%3E+%272026-09-29T14%3A00%3A03.128823%2B00%3A00%27+and+%271HkVrBfkooEdjzRlj_Jg_jFdcoGwObyza%27+in+parents+and+trashed+%3D+false&supportsAllDrives=true": round trip: base token source: oauth2: "invalid_grant" "Bad Request"
 2026-10-20 | artie-freshness-heartbeat | RED | Daily Sales STALE -- newest 2026-07-27 (85d, budget 7d) | Delivery Payouts: PENDING -- 2026-07-13 to 2026-07-20
 2026-09-29 | artie-invoice-intake-watcher | GREEN | 1 new invoice email(s), 0 new Drive file(s) since 2026-09-28T14:00:00.382199+00:00
 2026-09-29 | artie-freshness-heartbeat | RED | Daily Sales STALE -- newest 2026-07-27 (64d, budget 7d) | Delivery Payouts: PENDING -- 2026-07-13 to 2026-07-20
